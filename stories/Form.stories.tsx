@@ -1,6 +1,7 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { useForm, Form, Field } from "../src";
+import { Input } from "antd";
 
 export default {
   title: "useForm",
@@ -18,10 +19,6 @@ const style: React.CSSProperties = {
   width: 400,
 };
 
-const inputStyle: React.CSSProperties = {
-  border: "0px",
-};
-
 const initialValues = {
   firstName: "",
   lastName: "",
@@ -30,8 +27,8 @@ const initialValues = {
 const FieldTemplate: ComponentStory<typeof Form> = () => {
   return (
     <Form style={style} initialValues={initialValues}>
-      <Field as="input" name="firstName" style={inputStyle} />
-      <Field as="input" name="lastName" style={inputStyle} />
+      <Field as={Input} name="firstName" />
+      <Field as={Input} name="lastName" />
     </Form>
   );
 };
@@ -45,17 +42,15 @@ const ComponentTemplate: ComponentStory<typeof Form> = () => {
     <Form style={style} initialValues={initialValues}>
       {(form) => (
         <>
-          <input
+          <Input
             name="firstName"
             value={form.values.firstName}
             onChange={form.handleChange}
-            style={inputStyle}
           />
-          <input
+          <Input
             name="lastName"
             value={form.values.lastName}
             onChange={form.handleChange}
-            style={inputStyle}
           />
         </>
       )}
@@ -77,17 +72,15 @@ const HookTemplate: ComponentStory<typeof Form> = () => {
 
   return (
     <form style={style}>
-      <input
+      <Input
         name="firstName"
         value={form.values.firstName}
         onChange={form.handleChange}
-        style={inputStyle}
       />
-      <input
+      <Input
         name="lastName"
         value={form.values.lastName}
         onChange={form.handleChange}
-        style={inputStyle}
       />
     </form>
   );

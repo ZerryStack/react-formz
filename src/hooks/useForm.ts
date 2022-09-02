@@ -1,16 +1,7 @@
-import { useCallback, useRef } from "react";
-import uuid from "react-uuid";
-import logger from "../logger";
-import { useAddForm, useFormz, useRemoveForm } from "../store";
+import { useFormz, FormzForm } from "../store";
 import { AnyObject } from "../types";
-import { isString } from "../utils/is";
-import useEventCallback from "./useEventCallback";
-import useComponentDidMount from "./useComponentDidMount";
-import getField from "../utils/getField";
-import getFieldValue from "../utils/getFieldValue";
-import { FormzForm } from "../store/store.types";
 import useFormId from "./useFormId";
-import useFormEvents from "./useFormEvent";
+import useFormEvents from "./useFormEvents";
 
 export interface UseFormOptions<Values extends AnyObject> {
   name?: string;
@@ -27,29 +18,14 @@ export interface UseFormResult<Values extends AnyObject> {
 function useForm<Values extends AnyObject>(
   options: UseFormOptions<Values>
 ): UseFormResult<Values> {
-  const id = useFormId(options.name);
-  const addForm = useAddForm();
-  const removeForm = useRemoveForm();
+  const id = useFormId(options.name, options.initialValues);
   const formState = useFormz<FormzForm<Values> | undefined>(
     (state) => state.forms[id]
   );
   const { handleChange } = useFormEvents(id);
 
-  useComponentDidMount(() => {
-    addForm(id, options.initialValues);
-
-    return function useFormCleanup() {
-      logger.log(
-        `Removing form ${id} from the global store.`,
-        useFormz.getState().forms[id].values
-      );
-
-      removeForm(id);
-    };
-  });
-
   return {
-    id: id,
+    id,
     initialValues: options.initialValues,
     values: formState?.values ?? options.initialValues,
     handleChange,

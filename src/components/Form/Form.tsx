@@ -13,8 +13,6 @@ const FormChildren = <Values extends AnyObject>({
   return <>{children(form)}</>;
 };
 
-FormChildren.whyDidYouRender = true;
-
 const Form = <Values extends AnyObject>({
   children,
   name,
@@ -26,7 +24,11 @@ const Form = <Values extends AnyObject>({
   return (
     <FormProvider name={name} initialValues={memoizedInitialValues}>
       <form name={name} {...formProps}>
-        {isFunction(children) ? <FormChildren children={children} /> : children}
+        {isFunction(children) ? (
+          <FormChildren>{children}</FormChildren>
+        ) : (
+          children
+        )}
       </form>
     </FormProvider>
   );

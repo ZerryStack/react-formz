@@ -30,3 +30,5 @@ export function useRemoveForm() {
     return useFormz((state) => state.removeForm);
 }
 
+(global as any).formzStore = formzStore;
+

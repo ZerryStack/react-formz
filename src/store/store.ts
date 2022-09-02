@@ -21,3 +21,12 @@ const formzStore = create<FormzStore>()(
 );
 
 export const useFormz = formzStore;
+
+export function useAddForm() {
+    return useFormz((state) => state.addForm);
+}
+
+export function useRemoveForm() {
+    return useFormz((state) => state.removeForm);
+}
+

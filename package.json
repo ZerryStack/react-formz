@@ -16,6 +16,7 @@
     "@types/debug": "^4.1.7",
     "@types/react": "^18.0.18",
     "@types/react-dom": "^18.0.6",
+    "@welldone-software/why-did-you-render": "^7.0.1",
     "babel-loader": "^8.2.5",
     "debug": "^4.3.4",
     "react": "^18.2.0",

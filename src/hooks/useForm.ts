@@ -1,7 +1,7 @@
 import { useCallback, useRef } from "react";
 import uuid from "react-uuid";
 import logger from "../logger";
-import { useFormz } from "../store";
+import { useAddForm, useFormz, useRemoveForm } from "../store";
 import { AnyObject } from "../types";
 import { isString } from "../utils/is";
 import useEventCallback from "./use";
@@ -9,6 +9,8 @@ import useComponentDidMount from "./useComponentDidMount";
 import getField from "../utils/getField";
 import getFieldValue from "../utils/getFieldValue";
 import { FormzForm } from "../store/store.types";
+import useFormId from "./useFormId";
+import useFormEvents from "./useFormEvent";
 
 export interface UseFormOptions<Values extends AnyObject> {
   name?: string;
@@ -25,42 +27,16 @@ export interface UseFormResult<Values extends AnyObject> {
 function useForm<Values extends AnyObject>(
   options: UseFormOptions<Values>
 ): UseFormResult<Values> {
-  const idRef = useRef<string | undefined>(options.name);
-
-  if (!idRef.current) {
-    idRef.current = uuid();
-  }
-
-  const { current: id } = idRef;
-
-  const forms = useFormz();
+  const id = useFormId(options.name);
+  const addForm = useAddForm();
+  const removeForm = useRemoveForm();
   const formState = useFormz<FormzForm<Values> | undefined>(
     (state) => state.forms[id]
   );
-
-  const executeChange = useCallback(
-    (eventOrTextValue: string | React.ChangeEvent<any>) => {
-      useFormz.setState((state) => {
-        const field = getField(eventOrTextValue);
-        const value = getFieldValue(eventOrTextValue);
-
-        state.forms[id].values[field] = value;
-      });
-    },
-    [id]
-  );
-
-  const handleChange = useEventCallback(
-    (eventOrPath: string | React.ChangeEvent<any>) => {
-      if (isString(eventOrPath)) {
-      } else {
-        executeChange(eventOrPath);
-      }
-    }
-  );
+  const { handleChange } = useFormEvents(id);
 
   useComponentDidMount(() => {
-    forms.addForm(id, options.initialValues);
+    addForm(id, options.initialValues);
 
     return function useFormCleanup() {
       logger.log(
@@ -68,7 +44,7 @@ function useForm<Values extends AnyObject>(
         useFormz.getState().forms[id].values
       );
 
-      forms.removeForm(id);
+      removeForm(id);
     };
   });
 

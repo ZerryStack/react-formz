@@ -1,6 +1,8 @@
 import { AnyObject } from "immer/dist/internal";
-import React, { useMemo } from "react";
+import React from "react";
+import useCachedValue from "../../hooks/useCachedValue";
 import FormProvider, { useFormContext } from "../../providers/FormProvider";
+import { isFunction } from "../../utils/is";
 import { FormChildrenProps, FormProps } from "./Form.types";
 
 const FormChildren = <Values extends AnyObject>({
@@ -11,22 +13,20 @@ const FormChildren = <Values extends AnyObject>({
   return <>{children(form)}</>;
 };
 
+FormChildren.whyDidYouRender = true;
+
 const Form = <Values extends AnyObject>({
   children,
   name,
   initialValues,
   ...formProps
 }: FormProps<Values>) => {
-  const memoizedInitialValues = useMemo(() => initialValues, []);
+  const memoizedInitialValues = useCachedValue(initialValues);
 
   return (
     <FormProvider name={name} initialValues={memoizedInitialValues}>
       <form name={name} {...formProps}>
-        {typeof children === "function" ? (
-          <FormChildren children={children} />
-        ) : (
-          children
-        )}
+        {isFunction(children) ? <FormChildren children={children} /> : children}
       </form>
     </FormProvider>
   );

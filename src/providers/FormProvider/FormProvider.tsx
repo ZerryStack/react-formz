@@ -1,10 +1,14 @@
 import { AnyObject } from "immer/dist/internal";
-import React, { createContext, useContext } from "react";
+import React, { createContext, useContext, useMemo } from "react";
 import useForm, { UseFormOptions } from "../../hooks/useForm";
 
 const Context = createContext<UseFormOptions<any>  | null>(null);
 
-const FormProvider = <Values extends AnyObject>({ children, ...options }: React.PropsWithChildren<UseFormOptions<Values>>) => {
+const FormProvider = <Values extends AnyObject>({ children, name, initialValues }: React.PropsWithChildren<UseFormOptions<Values>>) => {
+    const options = useMemo(() => {
+        return { name, initialValues };
+    }, []);
+
     return (
         <Context.Provider value={options}>
             {children}
@@ -19,7 +23,9 @@ export function useFormContext<Values extends AnyObject>() {
         throw new Error("`useFormContext` must be used within a <Form />");
     }
 
-    return useForm<Values>(options);
+    const form = useForm<Values>(options);
+    
+    return form;
 }
 
 export default FormProvider;

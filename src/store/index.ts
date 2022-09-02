@@ -1,1 +1,1 @@
-export { useFormz } from "./store";
+export { useFormz, useAddForm, useRemoveForm } from "./store";

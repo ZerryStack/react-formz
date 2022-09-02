@@ -3,7 +3,7 @@ import { useFormz } from "../store";
 import getField from "../utils/getField";
 import getFieldValue from "../utils/getFieldValue";
 import { isString } from "../utils/is";
-import useEventCallback from "./use";
+import useEventCallback from "./useEventCallback";
 
 function useFormEvents(id: string) {
   const executeChange = useCallback(

@@ -4,7 +4,7 @@ import logger from "../logger";
 import { useAddForm, useFormz, useRemoveForm } from "../store";
 import { AnyObject } from "../types";
 import { isString } from "../utils/is";
-import useEventCallback from "./use";
+import useEventCallback from "./useEventCallback";
 import useComponentDidMount from "./useComponentDidMount";
 import getField from "../utils/getField";
 import getFieldValue from "../utils/getFieldValue";

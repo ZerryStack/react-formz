@@ -1,13 +1,14 @@
+import { FormzChangeEvent } from "../types/events";
 import { isCheckbox, isString } from "./is";
 
-function getFieldValue(eventOrTextValue: string | React.ChangeEvent<any>): string | number | boolean {
+function getFieldValue(eventOrTextValue: string | FormzChangeEvent<any>): string | number | boolean {
     if (!isString(eventOrTextValue)) {
-
-        const { value, type } = eventOrTextValue.target;
 
         if (isCheckbox(eventOrTextValue.target)) {
             return eventOrTextValue.target.checked;
         }
+
+        const { value } = eventOrTextValue.target;
 
         return value;
     }

@@ -10,6 +10,7 @@ type HtmlFormProps = Omit<
   "children" | "onSubmit"
 >;
 
+type FormComponentProps = Omit<React.DetailedHTMLProps<React.FormHTMLAttributes<HTMLFormElement>, HTMLFormElement>, "ref">
 export interface FormProps<Values extends FormzValues>
   extends UseFormOptions<Values>,
     HtmlFormProps {
@@ -17,6 +18,7 @@ export interface FormProps<Values extends FormzValues>
   onSubmit?:
     | ((values: Values, errors: FormzErrors<Values>) => Promise<void>)
     | ((values: Values, errors: FormzErrors<Values>) => void);
+  component?: "form" | React.ComponentType<FormComponentProps>
 }
 
 export interface FormChildrenProps<Values extends FormzValues> {

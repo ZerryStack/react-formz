@@ -1,6 +1,7 @@
+import { FormzChangeEvent } from "../types/events";
 import { isString } from "./is";
 
-function getField(eventOrTextValue: string | React.ChangeEvent<any>, path?: string): string {
+function getField(eventOrTextValue: string | FormzChangeEvent<any>, path?: string): string {
 
     if (path) {
         return path;

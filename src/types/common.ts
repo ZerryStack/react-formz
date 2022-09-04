@@ -21,7 +21,7 @@ export type AsKey<T> = Extract<T, Key>;
 export type ToKey<T> = T extends ArrayKey ? `${T}` : AsKey<T>;
 
 export type ValidKey<T, K> = K extends keyof T ? K : never;
- 
+
 /**
  * Type to access a type by a key.
  *  - Returns undefined if it can't be indexed by that key.
@@ -29,7 +29,7 @@ export type ValidKey<T, K> = K extends keyof T ? K : never;
  *  - Returns undefined if the type is not traversable.
  * @typeParam T - type which is indexed by the key
  * @typeParam K - key into the type
- * 
+ *
  * ```ts
  * type GetFoo = TryAccess<{foo: string}, 'foo'> = string
  * type UndefinedKey = TryAccess<{foo: string}, 'bar'> = undefined
@@ -42,3 +42,7 @@ export type TryAccess<T, K> = K extends keyof T
   : T extends null
   ? null
   : undefined;
+
+export type Maybe<T> = T | null | undefined;
+
+export type NotEmpty<T> = Exclude<T, null | undefined>;

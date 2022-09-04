@@ -50,11 +50,11 @@ export type FormzState<Values extends FormzValues> = {
 };
 
 /**
- * The validate function for either a form or a field. Always returns a boolean
+ * The validate function for a form Always returns a boolean
  * but the validator can be async/return a Promise.
  */
-export type FormzValidateFunction<Values extends FormzValues> =
-  | ((value: Values[ValidKey<Values>]) => boolean)
-  | ((value: Values[ValidKey<Values>]) => Promise<boolean>);
+export type FormValidator<Values extends FormzValues> =
+  | ((values: Values[ValidKey<Values>]) => boolean)
+  | ((values: Values[ValidKey<Values>]) => Promise<boolean>);
 
 

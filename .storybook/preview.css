@@ -1,0 +1,16 @@
+input {
+    padding: 6px;
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+}
+
+input:not([type='checkbox']):focus {
+    border-color: #40a9ff;
+    box-shadow: 0 0 0 2px rgba(24, 144, 255, .2);
+    outline: none;
+}
+
+input[aria-invalid='true'] {
+    border-color: #ff4d4f;
+    box-shadow: 0 0 0 2px rgba(255, 77, 79, .2);
+  }

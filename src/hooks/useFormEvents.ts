@@ -1,5 +1,6 @@
 import { useCallback } from "react";
 import { formzStore } from "../store";
+import { FormzChangeEvent } from "../types/events";
 import getField from "../utils/getField";
 import getFieldValue from "../utils/getFieldValue";
 import { isString } from "../utils/is";
@@ -12,7 +13,7 @@ import useEventCallback from "./useEventCallback";
  */
 function useFormEvents(id: string) {
   const executeChange = useCallback(
-    (eventOrTextValue: string | React.ChangeEvent<any>) => {
+    (eventOrTextValue: string | FormzChangeEvent<any>) => {
       formzStore.setState((state) => {
         const field = getField(eventOrTextValue);
         const value = getFieldValue(eventOrTextValue);
@@ -24,7 +25,7 @@ function useFormEvents(id: string) {
   );
 
   const handleChange = useEventCallback(
-    (eventOrPath: string | React.ChangeEvent<any>) => {
+    (eventOrPath: string | FormzChangeEvent<any>) => {
       if (isString(eventOrPath)) {
       } else {
         executeChange(eventOrPath);
@@ -33,7 +34,7 @@ function useFormEvents(id: string) {
   );
 
   const handleBlur = useEventCallback(
-    (eventOrPath: string | React.ChangeEvent<any>) => {
+    (eventOrPath: string | FormzChangeEvent<any>) => {
       formzStore.setState((state) => {
         const field = isString(eventOrPath)
           ? eventOrPath

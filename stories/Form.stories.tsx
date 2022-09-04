@@ -21,15 +21,32 @@ const style: React.CSSProperties = {
 const initialValues = {
   firstName: "",
   lastName: "",
-  isOver21: false
+  isOver21: false,
 };
 
+function Input(
+  props: React.DetailedHTMLProps<
+    React.InputHTMLAttributes<HTMLInputElement>,
+    HTMLInputElement
+  >
+) {
+  return <input {...props} />;
+}
 const FieldTemplate: ComponentStory<typeof Form> = () => {
   return (
     <Form style={style} name="WithFields" initialValues={initialValues}>
-      <Field as="input" name="firstName" />
-      <Field as="input" name="lastName" />
-      <Field as="input" name="isOver21" type="checkbox" />
+      <Field
+        as={({ error, ...inputProps }) => (
+          <>
+            <Input {...inputProps} />
+            {error && <span aria-live="polite">{error}</span>}
+          </>
+        )}
+        required
+        name="firstName"
+      />
+      <Field as={Input} name="lastName" />
+      <Field as={Input} name="isOver21" type="checkbox" />
     </Form>
   );
 };
@@ -72,22 +89,22 @@ WithForm.args = {};
 const HookTemplate: ComponentStory<typeof Form> = () => {
   const form = useForm({
     name: "WithHook",
-    initialValues
+    initialValues,
   });
 
   return (
     <form style={style}>
-      <input
+      <Input
         name="firstName"
         value={form.values.firstName}
         onChange={form.handleChange}
       />
-      <input
+      <Input
         name="lastName"
         value={form.values.lastName}
         onChange={form.handleChange}
       />
-      <input
+      <Input
         name="isOver21"
         type="checkbox"
         checked={form.values.isOver21}
@@ -112,32 +129,36 @@ const initialValuesPerformance: Record<string, string> = array.reduce(
   {}
 );
 
-const PerformanceTemplate: ComponentStory<typeof Form> = () => {
-  const form = useForm({
-    name: "Performance",
-    initialValues: initialValuesPerformance,
-  });
+const performanceStyle: React.CSSProperties = {
+  ...style,
+  flexDirection: "row",
+  flexWrap: "wrap",
+  width: "100%",
+};
 
+const PerformanceTemplate: ComponentStory<typeof Form> = () => {
   return (
-    <form
-      style={{
-        ...style,
-        flexDirection: "row",
-        flexWrap: "wrap",
-        width: "100%",
-      }}
+    <Form
+      style={performanceStyle}
+      name="Performance"
+      initialValues={initialValuesPerformance}
     >
       {array.map((name) => {
         return (
-          <input
+          <Field
             key={name}
+            as={({ error, ...inputProps }) => (
+              <div>
+                <Input {...inputProps} />
+                {error && <div><span aria-live="polite">{error}</span></div>}
+              </div>
+            )}
             name={name.toString()}
-            value={form.values[name]}
-            onChange={form.handleChange}
+            required
           />
         );
       })}
-    </form>
+    </Form>
   );
 };
 

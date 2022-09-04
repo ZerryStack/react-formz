@@ -1,6 +1,8 @@
 import "./wdyr";
 import { Profiler } from "react";
 import uuid from "react-uuid";
+import 'antd/dist/antd.css';
+import './preview.css';
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },

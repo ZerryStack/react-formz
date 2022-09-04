@@ -1,16 +1,37 @@
 import React from "react";
 import useField from "../../hooks/useField";
-import { isBoolean } from "../../utils/is";
+import { TextFieldValue } from "../../types/field";
+import { isString } from "../../utils/is";
 import { FieldProps } from "./Field.types";
 
-const Field = ({ as: Tag, name, children, type = "text", ...restProps }: FieldProps): JSX.Element | null => {
-  const field = useField(name, { type });
-  const value = isBoolean(field.value) ? undefined : field.value ?? undefined;
-  const checked = isBoolean(field.value) ? field.value : undefined;
+const Field = <
+  Key extends string = string,
+  Value extends TextFieldValue = TextFieldValue
+>({
+  as: Tag,
+  name,
+  children,
+  type = "text",
+  required,
+  validator,
+  ...restProps
+}: FieldProps<Key, Value>): JSX.Element | null => {
+  const field = useField<Key, Value>(name, { type, required, validator });
 
   if (Tag) {
     return (
-      <Tag {...restProps} type={type} value={value} checked={checked} onChange={field.onChange}>
+      <Tag
+        {...restProps}
+        type={type}
+        value={field.value}
+        checked={field.checked}
+        onChange={field.onChange}
+        onBlur={field.onBlur}
+        required={required}
+        error={isString(Tag) ? undefined : field.error}
+        name={name}
+        aria-invalid={field.error !== undefined}
+      >
         {children}
       </Tag>
     );

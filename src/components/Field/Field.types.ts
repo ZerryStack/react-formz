@@ -1,17 +1,30 @@
 import React from "react";
-import { TextFieldValue } from "../../types/field";
+import { FormzChangeEventHandler } from "../../types/events";
+import { FieldValidator, TextFieldValue } from "../../types/field";
 
-export interface FieldComponentProps {
-    name?: string;
-    value?: TextFieldValue;
-    checked?: boolean;
-    onChange?: React.ChangeEventHandler<any>;
-    [key: `data-${string}`]: string | undefined;
+export interface FieldComponentProps<
+  Key extends string = string,
+  Value extends TextFieldValue = TextFieldValue
+> {
+  name: Key;
+  onChange: FormzChangeEventHandler<any>;
+  value?: Value;
+  checked?: boolean;
+  error?: string;
+  [key: `data-${string}`]: string | undefined;
 }
-export interface FieldProps {
-    name: string;
-    as?: "input" | "select" | ((props: Partial<FieldComponentProps>) => JSX.Element | null);
-    children?: React.ReactNode;
-    style?: React.CSSProperties;
-    type?: React.HTMLInputTypeAttribute;
+export interface FieldProps<
+  Key extends string = string,
+  Value extends TextFieldValue = TextFieldValue
+> {
+  name: Key;
+  as?:
+    | "input"
+    | "select"
+    | ((props: FieldComponentProps<Key, Value>) => JSX.Element | null);
+  children?: React.ReactNode;
+  style?: React.CSSProperties;
+  type?: React.HTMLInputTypeAttribute;
+  required?: boolean;
+  validator?: FieldValidator<Value>
 }

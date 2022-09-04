@@ -1,7 +1,8 @@
 import { useFormz } from "../store";
-import { FormzState, FormzValues } from "../types/form";
+import { FormzErrors, FormzState, FormzValues } from "../types/form";
 import useFormId from "./useFormId";
 import useFormEvents from "./useFormEvents";
+import { FormzChangeEvent } from "../types/events";
 
 export interface UseFormOptions<Values extends FormzValues> {
   name?: string;
@@ -13,8 +14,9 @@ export interface UseFormResult<Values extends FormzValues> {
   id: string;
   initialValues: Values;
   values: Values;
-  handleChange: (eventOrPath: string | React.ChangeEvent<any>) => void;
+  handleChange: (eventOrPath: string | FormzChangeEvent<any>) => void;
   initialized: boolean;
+  errors: FormzErrors<Values>;
 }
 
 function useForm<Values extends FormzValues>(
@@ -31,7 +33,8 @@ function useForm<Values extends FormzValues>(
     initialValues: options.initialValues,
     values: formState?.values ?? options.initialValues,
     handleChange,
-    initialized: formState?.initialized ?? false
+    initialized: formState?.initialized ?? false,
+    errors: formState?.errors ?? {}
   };
 }
 

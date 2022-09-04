@@ -1,11 +1,15 @@
 import React, { createContext, useContext } from "react";
 import { UseFormOptions } from "../../hooks/useForm";
 import useFormId from "../../hooks/useFormId";
-import { AnyObject } from "../../types";
+import { FormzValues } from "../../types/form";
 
 const Context = createContext<string | null>(null);
 
-const FormIdProvider = <Values extends AnyObject>({
+/**
+ * Provides consumers with a stable unique id for a
+ * single form.
+ */
+const FormIdProvider = <Values extends FormzValues>({
   children,
   name,
   initialValues,

@@ -1,52 +1,37 @@
-import { useCallback, useMemo } from "react";
 import { useFormIdContext } from "../providers/FormIdProvider";
-import { useFormContext } from "../providers/FormProvider";
-import { useFormz } from "../store";
-import { FormzForm } from "../store/store.types";
-import { AnyFormObject } from "../types";
-import getFieldValue from "../utils/getFieldValue";
+import { updateFormValue, useFormz } from "../store";
+import { FieldValue } from "../types/field";
+import { FormzState } from "../types/form";
+import useEventCallback from "./useEventCallback";
 
-export interface UseFieldOptions<
-  Values extends AnyFormObject,
-  Key extends keyof Values
-> {
-  name: Key;
+export interface UseFieldOptions {
+  type: React.HTMLInputTypeAttribute;
 }
 
-export interface UseFieldResult<
-  Values extends AnyFormObject,
-  Key extends keyof Values
-> {
-  value:  Values[Key];
+export interface UseFieldResult<Value extends FieldValue> {
+  value: Value;
   onChange: (event: React.ChangeEvent<any>) => void;
 }
 
 function useField<
-  Values extends AnyFormObject,
-  Key extends keyof Values = keyof Values
->(options: UseFieldOptions<Values, Key>): UseFieldResult<Values, Key> {
-  const { id } = useFormContext();
+  Key extends string = string,
+  Value extends FieldValue = FieldValue
+>(name: Key, options?: UseFieldOptions): UseFieldResult<Value> {
+  const id = useFormIdContext();
 
-  const value = useFormz<Values[Key]>((state) => {
-    const form = state.forms[id] as FormzForm<Values>;
+  const value = useFormz((state) => {
+    const form = state.forms[id] as FormzState<Record<Key, Value>>;
 
-    return form?.values[options.name] ?? "";
+    const value = form?.values[name];
+
+    return value;
   });
 
-  const handleChange = useCallback(
-    (event: React.ChangeEvent<any>) => {
-      useFormz.setState((state) => {
-        const value = getFieldValue(event);
+  const handleChange = useEventCallback((event: React.ChangeEvent<any>) => {
+    updateFormValue(event, id, name);
+  });
 
-        state.forms[id].values[options.name] = value;
-      });
-    },
-    [id]
-  );
-
-  const result = useMemo(() => ({ value, onChange: handleChange }), [value, handleChange]);
-
-  return result;
+  return { value, onChange: handleChange };
 }
 
 export default useField;

@@ -1,5 +1,6 @@
-import './wdyr';
-import 'antd/dist/antd.css';
+import "./wdyr";
+import { Profiler } from "react";
+import uuid from "react-uuid";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -9,4 +10,12 @@ export const parameters = {
       date: /Date$/,
     },
   },
-}
+};
+
+export const decorators = [
+  (Story) => (
+    // <Profiler id={uuid()} onRender={console.log}>
+      <Story />
+    // </Profiler>
+  ),
+];

@@ -1,13 +1,25 @@
-import { AnyObject } from "immer/dist/internal";
 import React from "react";
 import { UseFormOptions, UseFormResult } from "../../hooks/useForm";
+import { FormzErrors, FormzValues } from "../../types/form";
 
-type HtmlFormProps = React.DetailedHTMLProps<React.FormHTMLAttributes<HTMLFormElement>, HTMLFormElement>;
+type HtmlFormProps = Omit<
+  React.DetailedHTMLProps<
+    React.FormHTMLAttributes<HTMLFormElement>,
+    HTMLFormElement
+  >,
+  "children" | "onSubmit"
+>;
 
-export interface FormProps<Values extends AnyObject> extends UseFormOptions<Values>, Omit<HtmlFormProps, "children"> {
-   children?: React.ReactNode | ((form: UseFormResult<Values>) => JSX.Element );
+export interface FormProps<Values extends FormzValues>
+  extends UseFormOptions<Values>,
+    HtmlFormProps {
+  children?: React.ReactNode | ((form: UseFormResult<Values>) => JSX.Element);
+  onSubmit?:
+    | ((values: Values, errors: FormzErrors<Values>) => Promise<void>)
+    | ((values: Values, errors: FormzErrors<Values>) => void);
 }
 
-export interface FormChildrenProps<Values extends AnyObject> {
-    children: ((form: UseFormResult<Values>) => React.ReactNode )
+export interface FormChildrenProps<Values extends FormzValues> {
+  children: (form: UseFormResult<Values>) => React.ReactNode;
+  form: UseFormResult<Values>;
 }

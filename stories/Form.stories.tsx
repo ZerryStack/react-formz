@@ -1,7 +1,6 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { useForm, Form, Field } from "../src";
-import { Input } from "antd";
 
 export default {
   title: "useForm",
@@ -22,13 +21,15 @@ const style: React.CSSProperties = {
 const initialValues = {
   firstName: "",
   lastName: "",
+  isOver21: false
 };
 
 const FieldTemplate: ComponentStory<typeof Form> = () => {
   return (
-    <Form style={style} initialValues={initialValues}>
-      <Field as={Input} name="firstName" />
-      <Field as={Input} name="lastName" />
+    <Form style={style} name="WithFields" initialValues={initialValues}>
+      <Field as="input" name="firstName" />
+      <Field as="input" name="lastName" />
+      <Field as="input" name="isOver21" type="checkbox" />
     </Form>
   );
 };
@@ -39,17 +40,23 @@ WithFields.args = {};
 
 const ComponentTemplate: ComponentStory<typeof Form> = () => {
   return (
-    <Form style={style} initialValues={initialValues}>
+    <Form style={style} name="WithForm" initialValues={initialValues}>
       {(form) => (
         <>
-          <Input
+          <input
             name="firstName"
             value={form.values.firstName}
             onChange={form.handleChange}
           />
-          <Input
+          <input
             name="lastName"
             value={form.values.lastName}
+            onChange={form.handleChange}
+          />
+          <input
+            name="isOver21"
+            checked={form.values.isOver21}
+            type="checkbox"
             onChange={form.handleChange}
           />
         </>
@@ -64,22 +71,26 @@ WithForm.args = {};
 
 const HookTemplate: ComponentStory<typeof Form> = () => {
   const form = useForm({
-    initialValues: {
-      firstName: "",
-      lastName: "",
-    },
+    name: "WithHook",
+    initialValues
   });
 
   return (
     <form style={style}>
-      <Input
+      <input
         name="firstName"
         value={form.values.firstName}
         onChange={form.handleChange}
       />
-      <Input
+      <input
         name="lastName"
         value={form.values.lastName}
+        onChange={form.handleChange}
+      />
+      <input
+        name="isOver21"
+        type="checkbox"
+        checked={form.values.isOver21}
         onChange={form.handleChange}
       />
     </form>
@@ -89,3 +100,47 @@ const HookTemplate: ComponentStory<typeof Form> = () => {
 export const WithHook = HookTemplate.bind({});
 
 WithHook.args = {};
+
+const array = new Array(1000).fill(null).map((_, index) => index);
+const initialValuesPerformance: Record<string, string> = array.reduce(
+  (acc, current) => {
+    return {
+      ...acc,
+      [current.toString()]: "",
+    };
+  },
+  {}
+);
+
+const PerformanceTemplate: ComponentStory<typeof Form> = () => {
+  const form = useForm({
+    name: "Performance",
+    initialValues: initialValuesPerformance,
+  });
+
+  return (
+    <form
+      style={{
+        ...style,
+        flexDirection: "row",
+        flexWrap: "wrap",
+        width: "100%",
+      }}
+    >
+      {array.map((name) => {
+        return (
+          <input
+            key={name}
+            name={name.toString()}
+            value={form.values[name]}
+            onChange={form.handleChange}
+          />
+        );
+      })}
+    </form>
+  );
+};
+
+export const Performance = PerformanceTemplate.bind({});
+
+Performance.args = {};

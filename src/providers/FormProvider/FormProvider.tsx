@@ -1,10 +1,11 @@
 import React, { createContext, useContext, useMemo } from "react";
 import useForm, { UseFormOptions } from "../../hooks/useForm";
-import { AnyObject } from "../../types";
+import { FormzValues } from "../../types/form";
+import FormIdProvider, { useFormIdContext } from "../FormIdProvider";
 
 const Context = createContext<UseFormOptions<any> | null>(null);
 
-const FormProvider = <Values extends AnyObject>({
+const FormProvider = <Values extends FormzValues>({
   children,
   name,
   initialValues,
@@ -13,17 +14,22 @@ const FormProvider = <Values extends AnyObject>({
     return { name, initialValues };
   }, []);
 
-  return <Context.Provider value={options}>{children}</Context.Provider>;
+  return (
+    <FormIdProvider name={name} initialValues={initialValues}>
+      <Context.Provider value={options}>{children}</Context.Provider>
+    </FormIdProvider>
+  );
 };
 
-export function useFormContext<Values extends AnyObject>() {
+export function useFormContext<Values extends FormzValues>() {
+  const id = useFormIdContext();
   const options = useContext(Context);
 
   if (!options) {
     throw new Error("`useFormContext` must be used within a <Form />");
   }
 
-  const form = useForm<Values>(options);
+  const form = useForm<Values>({ ...options, id });
 
   return form;
 }

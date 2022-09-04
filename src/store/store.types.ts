@@ -1,11 +1,7 @@
-import { AnyObject } from "../types";
-
-export interface FormzForm<Values extends AnyObject = AnyObject> {
-    values: Values;
-}
+import { FormzState, FormzValues } from "../types/form";
 
 export interface FormzStore {
-    forms: Record<string, FormzForm<any>>;
-    addForm: <Values extends AnyObject>(id: string, initialValues: Values) => void;
+    forms: Record<string, FormzState<any>>;
+    addForm: <Values extends FormzValues>(id: string, initialValues: Values) => void;
     removeForm: (id: string) => void;
 }

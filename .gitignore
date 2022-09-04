@@ -174,4 +174,7 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+# Storybook
+storybook-static
+
 # End of https://mrkandreev.name/snippets/gitignore-generator/#Node,yarn,react,macOS

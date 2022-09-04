@@ -52,14 +52,16 @@ const config = {
       }),
     ],
   ],
-
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      colorMode: {
+        defaultMode: "dark"
+      },
       navbar: {
-        title: 'My Site',
+        title: 'React Formz',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'React Formz',
           src: 'img/logo.svg',
         },
         items: [
@@ -67,9 +69,8 @@ const config = {
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Docs',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
           {
             href: 'https://github.com/react-formz/react-formz',
             label: 'GitHub',
@@ -120,7 +121,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} React Formz Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,

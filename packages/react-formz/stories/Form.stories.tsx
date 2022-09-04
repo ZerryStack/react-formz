@@ -18,12 +18,6 @@ export default {
   },
 } as ComponentMeta<typeof Form>;
 
-type Values = {
-  firstName: string;
-  lastName: string;
-  isOver21: string;
-};
-
 const style: React.CSSProperties = {
   display: "flex",
   flexDirection: "column",

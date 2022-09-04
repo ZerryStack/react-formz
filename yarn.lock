@@ -10071,6 +10071,12 @@ __metadata:
   languageName: node
   linkType: hard
 
+"monorepo@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "monorepo@workspace:."
+  languageName: unknown
+  linkType: soft
+
 "move-concurrently@npm:^1.0.1":
   version: 1.0.1
   resolution: "move-concurrently@npm:1.0.1"
@@ -12054,9 +12060,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-formz@workspace:.":
+"react-formz@workspace:packages/react-formz":
   version: 0.0.0-use.local
-  resolution: "react-formz@workspace:."
+  resolution: "react-formz@workspace:packages/react-formz"
   dependencies:
     "@babel/core": ^7.18.13
     "@emotion/react": ^11.10.4

@@ -1,6 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
+import { Profiler } from "react";
+import {
+  Formik,
+  Form as FormikForm,
+  Field as FormikField,
+  FieldProps as FormikFieldProps,
+} from "formik";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { useForm, Form, Field } from "../src";
+import { Form, Field } from "../src";
+import { FormControl, FormHelperText, InputLabel } from "@mui/material";
 
 export default {
   title: "useForm",
@@ -9,6 +17,12 @@ export default {
     layout: "fullscreen",
   },
 } as ComponentMeta<typeof Form>;
+
+type Values = {
+  firstName: string;
+  lastName: string;
+  isOver21: string;
+};
 
 const style: React.CSSProperties = {
   display: "flex",
@@ -55,70 +69,7 @@ export const WithFields = FieldTemplate.bind({});
 
 WithFields.args = {};
 
-const ComponentTemplate: ComponentStory<typeof Form> = () => {
-  return (
-    <Form style={style} name="WithForm" initialValues={initialValues}>
-      {(form) => (
-        <>
-          <input
-            name="firstName"
-            value={form.values.firstName}
-            onChange={form.handleChange}
-          />
-          <input
-            name="lastName"
-            value={form.values.lastName}
-            onChange={form.handleChange}
-          />
-          <input
-            name="isOver21"
-            checked={form.values.isOver21}
-            type="checkbox"
-            onChange={form.handleChange}
-          />
-        </>
-      )}
-    </Form>
-  );
-};
-
-export const WithForm = ComponentTemplate.bind({});
-
-WithForm.args = {};
-
-const HookTemplate: ComponentStory<typeof Form> = () => {
-  const form = useForm({
-    name: "WithHook",
-    initialValues,
-  });
-
-  return (
-    <form style={style}>
-      <Input
-        name="firstName"
-        value={form.values.firstName}
-        onChange={form.handleChange}
-      />
-      <Input
-        name="lastName"
-        value={form.values.lastName}
-        onChange={form.handleChange}
-      />
-      <Input
-        name="isOver21"
-        type="checkbox"
-        checked={form.values.isOver21}
-        onChange={form.handleChange}
-      />
-    </form>
-  );
-};
-
-export const WithHook = HookTemplate.bind({});
-
-WithHook.args = {};
-
-const array = new Array(1000).fill(null).map((_, index) => index);
+const array = new Array(50).fill(null).map((_, index) => index);
 const initialValuesPerformance: Record<string, string> = array.reduce(
   (acc, current) => {
     return {
@@ -136,29 +87,114 @@ const performanceStyle: React.CSSProperties = {
   width: "100%",
 };
 
-const PerformanceTemplate: ComponentStory<typeof Form> = () => {
+const logProfiler: React.ProfilerOnRenderCallback = (
+  id,
+  phase,
+  actualDuration,
+  baseDuration
+) => {
+  console.log(
+    id,
+    phase,
+    `actualDuration:`,
+    actualDuration,
+    `baseDuration:`,
+    baseDuration
+  );
+};
+
+const ReactFormz = () => {
+  const Profile =
+    process.env.NODE_ENV === "development" ? Profiler : React.Fragment;
+
   return (
-    <Form
-      style={performanceStyle}
-      name="Performance"
-      initialValues={initialValuesPerformance}
-    >
-      {array.map((name) => {
-        return (
-          <Field
-            key={name}
-            as={({ error, ...inputProps }) => (
-              <div>
-                <Input {...inputProps} />
-                {error && <div><span aria-live="polite">{error}</span></div>}
-              </div>
-            )}
-            name={name.toString()}
-            required
-          />
-        );
-      })}
-    </Form>
+    <Profile id="React-Formz" onRender={logProfiler}>
+      <Form
+        style={performanceStyle}
+        name="Performance"
+        initialValues={initialValuesPerformance}
+      >
+        {array.map((name) => {
+          return (
+            <Field
+              key={name}
+              as={({ error, ...inputProps }) => (
+                <FormControl error={error !== undefined}>
+                  <InputLabel htmlFor="my-input">Item {name}</InputLabel>
+                  <Input
+                    {...inputProps}
+                    aria-describedby="component-error-text"
+                    required
+                  />
+                  {error && (
+                    <FormHelperText id="component-error-text">
+                      {error}
+                    </FormHelperText>
+                  )}
+                </FormControl>
+              )}
+              name={name.toString()}
+              required
+            />
+          );
+        })}
+      </Form>
+    </Profile>
+  );
+};
+
+const FormikForms = () => {
+  const Profile =
+    process.env.NODE_ENV === "development" ? Profiler : React.Fragment;
+
+  return (
+    <Profile id="Formik" onRender={logProfiler}>
+      <Formik initialValues={initialValuesPerformance} onSubmit={console.log}>
+        <FormikForm style={performanceStyle} name="Performance">
+          {array.map((name) => {
+            return (
+              <FormikField key={name} name={name.toString()}>
+                {({ field, form: { errors } }: FormikFieldProps) => {
+                  return (
+                    <FormControl error={errors[name] !== undefined}>
+                      <InputLabel htmlFor="my-input">Item {name}</InputLabel>
+                      <Input
+                        {...field}
+                        aria-describedby="component-error-text"
+                        required
+                      />
+                      {errors[name] && (
+                        <FormHelperText id="component-error-text">
+                          {errors[name] as string}
+                        </FormHelperText>
+                      )}
+                    </FormControl>
+                  );
+                }}
+              </FormikField>
+            );
+          })}
+        </FormikForm>
+      </Formik>
+    </Profile>
+  );
+};
+const PerformanceTemplate: ComponentStory<typeof Form> = () => {
+  const [library, setLibrary] =
+    useState<"react-formz" | "formik">("react-formz");
+
+  return (
+    <div>
+      <select
+        value={library}
+        onChange={(e) => setLibrary(e.target.value as any)}
+      >
+        <option value="react-formz">React-Formz</option>
+        <option value="formik">Formik</option>
+      </select>
+      {library === "react-formz" && <ReactFormz />}
+      {library === "formik" && <FormikForms />}
+    </div>
   );
 };
 

@@ -1,6 +1,6 @@
 import { useRef } from "react";
 
-function useCachedValue<Value extends any>(value: Value): Value {
+function useLatest<Value extends any>(value: Value): Value {
     const ref = useRef<Value | null>(null);
 
     if (!ref.current) {
@@ -10,4 +10,4 @@ function useCachedValue<Value extends any>(value: Value): Value {
     return ref.current;
 }
 
-export default useCachedValue;
+export default useLatest;

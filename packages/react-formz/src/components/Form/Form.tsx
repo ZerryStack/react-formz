@@ -1,5 +1,5 @@
 import React from "react";
-import useCachedValue from "../../hooks/useCachedValue";
+import useLatest from "../../hooks/useLatest";
 import useStableCallback from "../../hooks/useStableCallback";
 import logger from "../../logger";
 import FormProvider, { useFormContext } from "../../providers/FormProvider";
@@ -65,7 +65,7 @@ const Form = <Values extends FormzValues>({
   initialValues,
   ...formProps
 }: FormProps<Values>) => {
-  const memoizedInitialValues = useCachedValue(initialValues);
+  const memoizedInitialValues = useLatest(initialValues);
 
   return (
     <FormProvider name={name} initialValues={memoizedInitialValues}>

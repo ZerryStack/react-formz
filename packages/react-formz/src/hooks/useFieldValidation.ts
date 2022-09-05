@@ -5,7 +5,7 @@ import { isEmpty, isNotEmpty as isDefined, isNumber, isString } from "../utils/i
 import doesNotMatchPattern from "../validations/doesNotMatchPattern";
 import isAboveMax from "../validations/isAboveMax";
 import isBelowMin from "../validations/isBelowMin";
-import useEventCallback from "./useEventCallback";
+import useStableCallback from "./useStableCallback";
 
 export interface UseFieldValidationOptions<
   Value extends FieldValue = FieldValue
@@ -78,7 +78,7 @@ function useFieldValidation<
     return null;
   };
 
-  const validate = useEventCallback(async () => {
+  const validate = useStableCallback(async () => {
     const message = await getErrorMessage();
 
     if (message) {

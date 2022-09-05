@@ -1,6 +1,6 @@
 import React from "react";
 import useCachedValue from "../../hooks/useCachedValue";
-import useEventCallback from "../../hooks/useEventCallback";
+import useStableCallback from "../../hooks/useStableCallback";
 import logger from "../../logger";
 import FormProvider, { useFormContext } from "../../providers/FormProvider";
 import { actions } from "../../store";
@@ -24,7 +24,7 @@ const FormInner = <Values extends FormzValues>({
 }: Omit<FormProps<Values>, "initialValues">) => {
   const form = useFormContext<Values>();
 
-  const handleSubmit = useEventCallback(
+  const handleSubmit = useStableCallback(
     async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
 

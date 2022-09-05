@@ -4,7 +4,7 @@ import { FormzChangeEvent } from "../types/events";
 import getField from "../utils/getField";
 import getFieldValue from "../utils/getFieldValue";
 import { isString } from "../utils/is";
-import useEventCallback from "./useEventCallback";
+import useStableCallback from "./useStableCallback";
 
 /**
  * Creates event callbacks for form fields such as `onChange` or `onBlur`.
@@ -24,7 +24,7 @@ function useFormEvents(id: string) {
     [id]
   );
 
-  const handleChange = useEventCallback(
+  const handleChange = useStableCallback(
     (eventOrPath: string | FormzChangeEvent<any>) => {
       if (isString(eventOrPath)) {
       } else {
@@ -33,7 +33,7 @@ function useFormEvents(id: string) {
     }
   );
 
-  const handleBlur = useEventCallback(
+  const handleBlur = useStableCallback(
     (eventOrPath: string | FormzChangeEvent<any>) => {
       formzStore.setState((state) => {
         const field = isString(eventOrPath)

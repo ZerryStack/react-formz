@@ -4,7 +4,7 @@ import { FormzChangeEvent } from "../types/events";
 import { FieldValue } from "../types/field";
 import { FormzError, FormzState, FormzValues } from "../types/form";
 import { isBoolean } from "../utils/is";
-import useEventCallback from "./useEventCallback";
+import useStableCallback from "./useStableCallback";
 import useFieldValidation, {
   UseFieldValidationOptions,
 } from "./useFieldValidation";
@@ -47,13 +47,13 @@ function useField<
     return value;
   });
 
-  const handleChange = useEventCallback((event: FormzChangeEvent<any>) => {
+  const handleChange = useStableCallback((event: FormzChangeEvent<any>) => {
     actions.updateFormValue(event, id, name);
 
     validate();
   });
 
-  const handleBlur = useEventCallback((_: React.FocusEvent<any>) => {
+  const handleBlur = useStableCallback((_: React.FocusEvent<any>) => {
     validate();
   });
 

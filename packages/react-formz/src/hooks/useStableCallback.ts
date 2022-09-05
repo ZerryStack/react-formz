@@ -2,12 +2,13 @@ import { useCallback, useRef } from "react";
 import useIsomorphicLayoutEffect from "./useIsomorphicLayoutEffect";
 
 /**
- * Returns a memoized callback that does not require a dependency
- * list. This prevents callbacks from being invalidated too frequently
- * which can cause excessive re-renders.
+ * Returns a memoized version of your function that maintains a stable reference, but
+ * also can read the latest scope (props and state) of the component in which it is used.
+ * 
+ * See: https://github.com/facebook/react/issues/14099
  * @param fn The function to call.
  */
-function useEventCallback<T extends (...args: any[]) => any>(fn: T): T {
+function useStableCallback<T extends (...args: any[]) => any>(fn: T): T {
   const ref = useRef(fn);
 
   useIsomorphicLayoutEffect(() => {
@@ -22,4 +23,4 @@ function useEventCallback<T extends (...args: any[]) => any>(fn: T): T {
   return callback;
 }
 
-export default useEventCallback;
+export default useStableCallback;

@@ -29,6 +29,8 @@ const FormInner = <Values extends FormzValues>({
       e.preventDefault();
 
       if (onSubmit) {
+        actions.setFormIsSubmitting(form.id, true);
+
         const { values, errors } = actions.getFormState<Values>(form.id);
 
         try {
@@ -41,6 +43,7 @@ const FormInner = <Values extends FormzValues>({
           );
         } finally {
           actions.incrementFormSubmitCount(form.id);
+          actions.setFormIsSubmitting(form.id, false);
         }
       }
     }

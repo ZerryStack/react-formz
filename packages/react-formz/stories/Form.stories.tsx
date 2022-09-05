@@ -7,7 +7,7 @@ import {
   FieldProps as FormikFieldProps,
 } from "formik";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { Form, Field, ErrorMessage } from "../src";
+import { Form, Field, ErrorMessage, SubmitButton } from "../src";
 import { FormControl, FormHelperText, InputLabel } from "@mui/material";
 import { FieldComponentProps } from "../src/components/Field";
 import logger from "../src/logger";
@@ -68,6 +68,7 @@ const FieldTemplate: ComponentStory<typeof Form> = () => {
       <Field as={Input} type="number" name="age" min={3} max={40} />
       <Field as={Input} type="date" name="dob" />
       <Field as={Input} name="isOver21" type="checkbox" />
+      <SubmitButton>Submit</SubmitButton>
     </Form>
   );
 };

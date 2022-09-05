@@ -11,9 +11,27 @@ export interface FieldComponentProps<
   onChange: FormzChangeEventHandler<any>;
   value?: Value;
   checked?: boolean;
+  /**
+   * The react formz error object.
+   */
   error?: FormzError;
+  /**
+   * Data attributes
+   */
   [key: `data-${string}`]: string | undefined;
+  /**
+   * The aria-invalid state indicates the entered value 
+   * does not conform to the format expected by the application.
+   */
+  ["aria-invalid"]?: boolean;
+  /**
+   * The aria-required attribute informs assistive technologies about
+   * required controls so that they are appropriately announced to the
+   * users (as opposed to validating the input).
+   */
+  ["aria-required"]?: boolean;
 }
+
 export interface FieldProps<
   Key extends string = string,
   Value extends TextFieldValue = TextFieldValue

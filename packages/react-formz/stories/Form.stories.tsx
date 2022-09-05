@@ -33,13 +33,20 @@ const initialValues = {
   isOver21: false,
 };
 
-function Input(
-  props: React.DetailedHTMLProps<
-    React.InputHTMLAttributes<HTMLInputElement>,
-    HTMLInputElement
-  >
-) {
-  return <input {...props} />;
+function Input({
+  error,
+  ...props
+}: React.DetailedHTMLProps<
+  React.InputHTMLAttributes<HTMLInputElement>,
+  HTMLInputElement
+> &
+  FieldComponentProps) {
+  return (
+    <>
+      <input {...props} />
+      {error && <span aria-live="polite">{error.message}</span>}
+    </>
+  );
 }
 const FieldTemplate: ComponentStory<typeof Form> = () => {
   return (
@@ -48,16 +55,7 @@ const FieldTemplate: ComponentStory<typeof Form> = () => {
       name="WithFields"
       initialValues={{ ...initialValues, age: 0, dob: "1970-01-01" }}
     >
-      <Field
-        as={({ error, ...inputProps }) => (
-          <>
-            <Input {...inputProps} />
-            {error && <span aria-live="polite">{error.message}</span>}
-          </>
-        )}
-        required
-        name="firstName"
-      />
+      <Field as={Input} required name="firstName" />
       <Field
         as={Input}
         name="lastName"

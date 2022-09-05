@@ -1,7 +1,6 @@
 import React from "react";
 import useField from "../../hooks/useField";
 import { TextFieldValue } from "../../types/field";
-import { isString } from "../../utils/is";
 import { FieldProps } from "./Field.types";
 
 const Field = <
@@ -19,7 +18,14 @@ const Field = <
   max,
   ...restProps
 }: FieldProps<Key, Value>): JSX.Element | null => {
-  const field = useField<Key, Value>(name, { type, required, validate, pattern, min, max });
+  const field = useField<Key, Value>(name, {
+    type,
+    required,
+    validate,
+    pattern,
+    min,
+    max,
+  });
 
   if (Tag) {
     return (
@@ -30,10 +36,11 @@ const Field = <
         checked={field.checked}
         onChange={field.onChange}
         onBlur={field.onBlur}
+        error={field.error}
         required={required}
-        error={isString(Tag) ? undefined : field.error}
         name={name}
-        aria-invalid={field.error !== undefined}
+        aria-invalid={field.error !== undefined || undefined}
+        aria-required={required ?? undefined}
       >
         {children}
       </Tag>

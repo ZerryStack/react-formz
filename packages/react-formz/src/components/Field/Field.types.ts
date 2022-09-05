@@ -49,4 +49,5 @@ export interface FieldProps<
   min?: number;
   max?: number;
   pattern?: RegExp;
+  placeholder?: string;
 }

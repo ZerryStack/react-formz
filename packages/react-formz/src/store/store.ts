@@ -16,6 +16,7 @@ export const formzStore = create<FormzStore>()(
             isValidating: false,
             submitCount: 0,
             initialized: true,
+            isInvalid: false
           };
         }
       });

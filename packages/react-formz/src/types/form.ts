@@ -50,6 +50,7 @@ export type FormzState<Values extends FormzValues> = {
   touched: FormzTouched<Values>;
   isSubmitting: boolean;
   isValidating: boolean;
+  isInvalid: boolean;
   submitCount: number;
   initialized: true;
 };

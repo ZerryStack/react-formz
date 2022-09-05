@@ -57,16 +57,17 @@ const FieldTemplate: ComponentStory<typeof Form> = () => {
       name="WithFields"
       initialValues={{ ...initialValues, age: 0, dob: "1970-01-01" }}
     >
-      <Field as={Input} required name="firstName" />
+      <Field as={Input} required name="firstName" placeholder="First Name" />
       <Field
         as={Input}
         name="lastName"
         validate={(value) =>
           value !== "Hogan" ? "Last name should be Hogan" : undefined
         }
+        placeholder="Last Name"
       />
-      <Field as={Input} type="number" name="age" min={3} max={40} />
-      <Field as={Input} type="date" name="dob" />
+      <Field as={Input} type="number" name="age" min={3} max={40} placeholder="Age" />
+      <Field as={Input} type="date" name="dob" placeholder="Date of Birth" />
       <Field as={Input} name="isOver21" type="checkbox" />
       <SubmitButton>Submit</SubmitButton>
     </Form>

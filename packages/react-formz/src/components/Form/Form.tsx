@@ -20,6 +20,7 @@ const FormInner = <Values extends FormzValues>({
   onSubmit,
   children,
   component: Component = "form",
+  resetOnSubmit = false,
   ...formProps
 }: Omit<FormProps<Values>, "initialValues">) => {
   const form = useFormContext<Values>();
@@ -35,6 +36,8 @@ const FormInner = <Values extends FormzValues>({
 
         try {
           await onSubmit(values, errors);
+
+          if (resetOnSubmit) actions.resetFormState(form.id);
         } catch (error) {
           logger.error(
             `An uncaught expception occured when submitting form with id`,
@@ -67,12 +70,19 @@ const Form = <Values extends FormzValues>({
   name,
   initialValues,
   saveDrafts,
+  onFormRehydrated = () => {},
   ...formProps
 }: FormProps<Values>) => {
   const memoizedInitialValues = useLatest(initialValues);
+  const formRehydrationCallback = useStableCallback(onFormRehydrated);
 
   return (
-    <FormProvider name={name} initialValues={memoizedInitialValues} saveDrafts={saveDrafts}>
+    <FormProvider
+      name={name}
+      initialValues={memoizedInitialValues}
+      saveDrafts={saveDrafts}
+      onFormRehydrated={formRehydrationCallback}
+    >
       <FormInner name={name} {...formProps}>
         {children}
       </FormInner>

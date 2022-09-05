@@ -1,5 +1,5 @@
 import { useFormz } from "../../store";
-import { FormzErrors, FormzState, FormzValues } from "../../types/form";
+import { FormRehydrationCallback, FormzErrors, FormzState, FormzValues } from "../../types/form";
 import useFormId from "./useFormId";
 import useFormEvents from "./useFormEvents";
 import { FormzChangeEvent } from "../../types/events";
@@ -9,6 +9,7 @@ export interface UseFormOptions<Values extends FormzValues> {
   id?: string;
   initialValues: Values;
   saveDrafts?: boolean;
+  onFormRehydrated?: FormRehydrationCallback<Values>;
 }
 
 export interface UseFormResult<Values extends FormzValues> {

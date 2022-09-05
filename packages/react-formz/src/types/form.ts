@@ -41,6 +41,7 @@ export type FormzTouched<Values extends FormzValues> = {
   [K in keyof Values]?: boolean;
 };
 
+export type FormRehydrationCallback<Values extends FormzValues> = (state: FormzState<Values>, restoredFromDate: Date | null) => void;
 /**
  * The complete state of a form.
  */
@@ -54,6 +55,10 @@ export type FormzState<Values extends FormzValues> = {
   submitCount: number;
   initialized: true;
   saveDrafts: boolean;
+  initialValues?: Values;
+  lastPersistedAt: Date | null;
+  hydrated: boolean;
+  restoredFromDate: Date | null;
 };
 
 /**

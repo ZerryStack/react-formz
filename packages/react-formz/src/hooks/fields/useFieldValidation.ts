@@ -73,12 +73,15 @@ function useFieldValidation<
     }
 
     if (isDefined(options.validate)) {
-      const result = await options.validate(value);
+      const message = await options.validate(value);
 
-      return {
-        type: "custom",
-        message: result,
-      };
+      if (message) {
+        return {
+          type: "custom",
+          message,
+        };
+      }
+      
     }
 
     return null;

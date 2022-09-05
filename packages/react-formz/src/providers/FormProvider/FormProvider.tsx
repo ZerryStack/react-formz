@@ -12,14 +12,15 @@ const FormProvider = <Values extends FormzValues>({
   children,
   name,
   initialValues,
-  saveDrafts
+  saveDrafts,
+  onFormRehydrated
 }: React.PropsWithChildren<UseFormOptions<Values>>) => {
   const options = useMemo(() => {
-    return { name, initialValues, saveDrafts };
+    return { name, initialValues, saveDrafts, onFormRehydrated };
   }, []);
 
   return (
-    <FormIdProvider name={name} initialValues={initialValues} saveDrafts={saveDrafts}>
+    <FormIdProvider name={name} initialValues={initialValues} saveDrafts={saveDrafts} onFormRehydrated={onFormRehydrated}>
       <Context.Provider value={options}>{children}</Context.Provider>
     </FormIdProvider>
   );

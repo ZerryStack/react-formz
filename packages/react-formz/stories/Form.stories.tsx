@@ -7,10 +7,18 @@ import {
   FieldProps as FormikFieldProps,
 } from "formik";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { Form, Field, ErrorMessage, SubmitButton } from "../src";
+import {
+  Form,
+  Field,
+  ErrorMessage,
+  SubmitButton,
+  FormLastPersistedAt,
+} from "../src";
 import { FormControl, FormHelperText, InputLabel } from "@mui/material";
 import { FieldComponentProps } from "../src/components/Field";
 import logger from "../src/logger";
+import { useSnackbar } from "notistack";
+import format from "date-fns/format";
 
 export default {
   title: "useForm",
@@ -51,12 +59,32 @@ function Input({
   );
 }
 const FieldTemplate: ComponentStory<typeof Form> = () => {
+  const { enqueueSnackbar } = useSnackbar();
+
   return (
     <Form
       style={style}
       name="WithFields"
       initialValues={{ ...initialValues, age: 0, dob: "1970-01-01" }}
+      onSubmit={() => new Promise((resolve) => setTimeout(resolve, 2000))}
       saveDrafts
+      onFormRehydrated={(state) => {
+        if (state.restoredFromDate) {
+          enqueueSnackbar(
+            `We've restore your form from ${format(
+              new Date(state.restoredFromDate),
+              "Pp"
+            )}.`,
+            {
+              variant: "success",
+            }
+          );
+        } else {
+          enqueueSnackbar(`We've restore your form.`, {
+            variant: "success",
+          });
+        }
+      }}
     >
       <Field as={Input} required name="firstName" placeholder="First Name" />
       <Field
@@ -67,9 +95,17 @@ const FieldTemplate: ComponentStory<typeof Form> = () => {
         }
         placeholder="Last Name"
       />
-      <Field as={Input} type="number" name="age" min={3} max={40} placeholder="Age" />
+      <Field
+        as={Input}
+        type="number"
+        name="age"
+        min={3}
+        max={40}
+        placeholder="Age"
+      />
       <Field as={Input} type="date" name="dob" placeholder="Date of Birth" />
       <Field as={Input} name="isOver21" type="checkbox" />
+      <FormLastPersistedAt />
       <SubmitButton>Submit</SubmitButton>
     </Form>
   );

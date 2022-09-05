@@ -1,11 +1,8 @@
 import create from "zustand";
-import { persist } from "zustand/middleware";
 import { immer } from "zustand/middleware/immer";
 import { FormzStore } from "./store.types";
-import { mergeDeepLeft } from "ramda";
 
 export const formzStore = create<FormzStore>()(
-  persist(
     immer((set) => ({
       forms: {},
       addForm: (id, initialValues, saveDrafts) => {
@@ -21,7 +18,11 @@ export const formzStore = create<FormzStore>()(
               initialized: true,
               isInvalid: false,
               saveDrafts: saveDrafts,
-            };
+              initialValues,
+              lastPersistedAt: saveDrafts ? new Date() : null,
+              hydrated: false,
+              restoredFromDate: null
+            }
           }
         });
       },
@@ -30,28 +31,7 @@ export const formzStore = create<FormzStore>()(
           if (state.forms[id]) delete state.forms[id];
         });
       },
-    })),
-    {
-      name: "react-formz",
-      getStorage: () => localStorage,
-      merge: (persistedState, currentState) =>
-        mergeDeepLeft(
-          persistedState as FormzStore["forms"],
-          currentState
-        ) as FormzStore,
-      partialize: (state) => ({
-        forms: Object.keys(state.forms).reduce((forms, key) => {
-          const form = state.forms[key];
-
-          if (form?.saveDrafts) {
-            return { ...forms, [key]: form };
-          }
-          return forms;
-        }, {}),
-      }),
-      onRehydrateStorage: () => {},
-    }
-  )
+    }))
 );
 
 export const useFormz = formzStore;

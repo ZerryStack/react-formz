@@ -2,7 +2,7 @@ import { useFormIdContext } from "../../providers/FormIdProvider";
 import { useFormz, actions } from "../../store";
 import { FormzChangeEvent } from "../../types/events";
 import { FieldValue } from "../../types/field";
-import { FormzError, FormzState, FormzValues } from "../../types/form";
+import { FormzError, FormzState } from "../../types/form";
 import { isBoolean } from "../../utils/is";
 import useStableCallback from "../utils/useStableCallback";
 import useFieldValidation, {
@@ -30,8 +30,7 @@ export interface UseFieldResult<Value extends FieldValue> {
  */
 function useField<
   Key extends string = string,
-  Value extends FieldValue = FieldValue,
-  Values extends FormzValues = FormzValues
+  Value extends FieldValue = FieldValue
 >(name: Key, options: UseFieldOptions<Value>): UseFieldResult<Value> {
   const { required, type, max, min, pattern } = options;
 

@@ -1,1 +1,3 @@
-export type ValidationType = "required" | "min" | "max" | "pattern" | "custom";
+import { LiteralUnion } from "./utils";
+
+export type ValidationType = LiteralUnion<"required" | "min" | "max" | "pattern" | "custom">;

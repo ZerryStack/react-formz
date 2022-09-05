@@ -4,44 +4,66 @@ sidebar_position: 1
 
 # Getting Started
 
-Let's discover **Docusaurus in less than 5 minutes**.
+React Formz was built to be performant and as unopinionated as possible about how you build your forms.
 
-## Getting Started
+## Motivation
 
-Get started by **creating a new site**.
+Most other form libraries either use React's Context API or Redux. When it comes to React's Context API you will run into performance issues with the more components you have and the more updates you are making to form state per second. Redux on the other hand is extremely bloated and overly verbose. To make it less verbose you have to add additional dependencies and that just increases your bundle size.
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+I wanted a form library that was blazing fast and didn't require the use of `React.memo` or `shouldComponentUpdate` to optimize performance. A form library should enable developers to just build forms without having to spend valuable time optimizing re-renders. After reviewing other libraries I couldn't find a form library that didn't require user-defined optimization once forms became complex or nested and I found that frustrating. So, React Formsz was born.
 
-### What you'll need
+## Installation
 
-- [Node.js](https://nodejs.org/en/download/) version 16.14 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+### NPM
 
-## Generate a new site
+React Formz can be installed the same as every other package.
 
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
+```sh
+npm install react-formz
 ```
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+### Yarn
 
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
+```sh
+yarn add react-formz
 ```
 
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
+## Da Basics
 
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
+```tsx title="Basic usage"
+import { Form, Field } from "react-formz";
 
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+function MyCoolInput({ error, ...restProps }) {
+  return (
+    <>
+      <input {...restProps} />
+      {error && <span aria-live="polite">{error.message}</span>}
+    </>
+  );
+}
+
+function MyCoolForm({ submitToServer }) {
+  return (
+    <Form
+      name="MyCoolForm"
+      initialValues={{ fullName: "" }}
+      onSubmit={submitToServer}
+    >
+      <Field
+        name="fullName"
+        as={MyCoolInput}
+        required
+        pattern={/^[\w]+\s[\w]+$/gm}
+      />
+      <Field
+        name="title"
+        as={MyCoolInput}
+        validate={(value) => {
+          if (value !== "CoolDude") return "Have you heard about Doge Coin?";
+          return null;
+        }}
+      />
+    </Form>
+  );
+}
+```

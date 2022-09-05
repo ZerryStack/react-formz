@@ -34,3 +34,9 @@ keyof any[]
 >;
 
 export type IsNot<T, U> = Exclude<T, U>;
+
+/**
+ * Type which defines a string or number union with the option of
+ * specifying any string as well
+ */
+export type LiteralUnion<T extends string | number> = T extends string ? (string & {}) | T : (number & {}) | T;

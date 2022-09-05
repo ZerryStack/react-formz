@@ -1,6 +1,6 @@
 import { Empty } from "../types/common";
 import { HTMLCheckboxInputElement, HTMLDateInputElement, HTMLNumberInputElement } from "../types/input";
-import { IsNot, Primitive } from "../types/utils";
+import { IsNot } from "../types/utils";
 
 export function isString(value: any): value is string {
   return typeof value === "string";

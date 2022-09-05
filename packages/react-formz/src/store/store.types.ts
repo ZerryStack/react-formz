@@ -1,4 +1,4 @@
-import { FormRehydrationCallback, FormzState, FormzValues } from "../types/form";
+import { FormzState, FormzValues } from "../types/form";
 
 export interface FormzStore {
   forms: Record<string, FormzState<any>>;

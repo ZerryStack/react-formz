@@ -1,5 +1,6 @@
-import { Key } from "./common";
+import { Key, Maybe } from "./common";
 import { FieldValue } from "./field";
+import { ValidationType } from "./validation";
 
 
 export type StringKeyOf<T> = Extract<keyof T, string>;
@@ -21,11 +22,15 @@ export type FormzValues = {
   [field: Key]: FieldValue;
 };
 
+export type FormzError = {
+  type: ValidationType;
+  message: Maybe<string>;
+}
 /**
  * Type for form state errors.
  */
 export type FormzErrors<Values extends FormzValues> = {
-  [K in keyof Values]?: string;
+  [K in keyof Values]?: FormzError;
 };
 
 /**

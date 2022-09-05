@@ -1,4 +1,5 @@
 import { Maybe } from "./common";
+import { FormzValues } from "./form";
 
 export type TextFieldValue = string | number | undefined | readonly string[];
 
@@ -22,3 +23,9 @@ export type FieldElement =
 export type FieldValidator<Value extends FieldValue = FieldValue> =
   | ((value: Maybe<Value>) => Maybe<string>)
   | ((value: Maybe<Value>) => Promise<Maybe<string>>);
+
+export type FieldValueFormatter<
+  Value,
+  Values extends FormzValues,
+  ReturnValue
+> = (value: Value, formValues: Values) => ReturnValue;

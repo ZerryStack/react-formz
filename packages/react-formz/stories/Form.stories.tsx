@@ -9,6 +9,7 @@ import {
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { Form, Field } from "../src";
 import { FormControl, FormHelperText, InputLabel } from "@mui/material";
+import { FieldComponentProps } from "../src/components/Field";
 
 export default {
   title: "useForm",
@@ -42,18 +43,30 @@ function Input(
 }
 const FieldTemplate: ComponentStory<typeof Form> = () => {
   return (
-    <Form style={style} name="WithFields" initialValues={initialValues}>
+    <Form
+      style={style}
+      name="WithFields"
+      initialValues={{ ...initialValues, age: 0, dob: "1970-01-01" }}
+    >
       <Field
         as={({ error, ...inputProps }) => (
           <>
             <Input {...inputProps} />
-            {error && <span aria-live="polite">{error}</span>}
+            {error && <span aria-live="polite">{error.message}</span>}
           </>
         )}
         required
         name="firstName"
       />
-      <Field as={Input} name="lastName" />
+      <Field
+        as={Input}
+        name="lastName"
+        validate={(value) =>
+          value !== "Hogan" ? "Last name should be Hogan" : undefined
+        }
+      />
+      <Field as={Input} type="number" name="age" min={3} max={40} />
+      <Field as={Input} type="date" name="dob" />
       <Field as={Input} name="isOver21" type="checkbox" />
     </Form>
   );
@@ -97,6 +110,16 @@ const logProfiler: React.ProfilerOnRenderCallback = (
   );
 };
 
+const ReactFormzField = ({ error, ...inputProps }: FieldComponentProps) => (
+  <FormControl error={error !== undefined}>
+    <InputLabel htmlFor="my-input">Item {inputProps.name}</InputLabel>
+    <Input {...inputProps} aria-describedby="component-error-text" required />
+    {error && (
+      <FormHelperText id="component-error-text">{error.message}</FormHelperText>
+    )}
+  </FormControl>
+);
+
 const ReactFormz = () => {
   const Profile =
     process.env.NODE_ENV === "development" ? Profiler : React.Fragment;
@@ -112,21 +135,7 @@ const ReactFormz = () => {
           return (
             <Field
               key={name}
-              as={({ error, ...inputProps }) => (
-                <FormControl error={error !== undefined}>
-                  <InputLabel htmlFor="my-input">Item {name}</InputLabel>
-                  <Input
-                    {...inputProps}
-                    aria-describedby="component-error-text"
-                    required
-                  />
-                  {error && (
-                    <FormHelperText id="component-error-text">
-                      {error}
-                    </FormHelperText>
-                  )}
-                </FormControl>
-              )}
+              as={ReactFormzField}
               name={name.toString()}
               required
             />
@@ -134,6 +143,21 @@ const ReactFormz = () => {
         })}
       </Form>
     </Profile>
+  );
+};
+
+const FormikFormsField = ({ field, form: { errors } }: FormikFieldProps) => {
+  const { name } = field;
+  return (
+    <FormControl error={errors[name] !== undefined}>
+      <InputLabel htmlFor="my-input">Item {name}</InputLabel>
+      <Input {...field} aria-describedby="component-error-text" required />
+      {errors[name] && (
+        <FormHelperText id="component-error-text">
+          {errors[name] as string}
+        </FormHelperText>
+      )}
+    </FormControl>
   );
 };
 
@@ -148,23 +172,7 @@ const FormikForms = () => {
           {array.map((name) => {
             return (
               <FormikField key={name} name={name.toString()}>
-                {({ field, form: { errors } }: FormikFieldProps) => {
-                  return (
-                    <FormControl error={errors[name] !== undefined}>
-                      <InputLabel htmlFor="my-input">Item {name}</InputLabel>
-                      <Input
-                        {...field}
-                        aria-describedby="component-error-text"
-                        required
-                      />
-                      {errors[name] && (
-                        <FormHelperText id="component-error-text">
-                          {errors[name] as string}
-                        </FormHelperText>
-                      )}
-                    </FormControl>
-                  );
-                }}
+                {FormikFormsField}
               </FormikField>
             );
           })}

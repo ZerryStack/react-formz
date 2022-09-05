@@ -1,8 +1,8 @@
 import { useFormIdContext } from "../providers/FormIdProvider";
-import { updateFormValue, useFormz } from "../store";
+import { useFormz, actions } from "../store";
 import { FormzChangeEvent } from "../types/events";
 import { FieldValue } from "../types/field";
-import { FormzState } from "../types/form";
+import { FormzError, FormzState, FormzValues } from "../types/form";
 import { isBoolean } from "../utils/is";
 import useEventCallback from "./useEventCallback";
 import useFieldValidation, {
@@ -18,21 +18,25 @@ export interface UseFieldResult<Value extends FieldValue> {
   value: Value;
   onChange: (event: FormzChangeEvent<any>) => void;
   onBlur: (event: React.FocusEvent<any>) => void;
-  error: string | undefined;
+  error: FormzError | undefined;
   checked?: boolean;
 }
 
 function useField<
   Key extends string = string,
-  Value extends FieldValue = FieldValue
+  Value extends FieldValue = FieldValue,
+  Values extends FormzValues = FormzValues
 >(name: Key, options: UseFieldOptions<Value>): UseFieldResult<Value> {
-  const { validator, required, type } = options;
+  const { required, type, max, min, pattern } = options;
 
   const id = useFormIdContext();
 
-  const { validate, error } = useFieldValidation(id, name, {
-    validator,
+  const { validate, error } = useFieldValidation<Key, Value>(id, name, {
+    validate: options.validate,
     required,
+    max,
+    min,
+    pattern
   });
 
   const value = useFormz((state) => {
@@ -44,7 +48,7 @@ function useField<
   });
 
   const handleChange = useEventCallback((event: FormzChangeEvent<any>) => {
-    updateFormValue(event, id, name);
+    actions.updateFormValue(event, id, name);
 
     validate();
   });

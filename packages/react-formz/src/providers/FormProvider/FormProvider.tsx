@@ -5,6 +5,9 @@ import FormIdProvider, { useFormIdContext } from "../FormIdProvider";
 
 const Context = createContext<UseFormOptions<any> | null>(null);
 
+/**
+ * Context provider for a forms configuration.
+ */
 const FormProvider = <Values extends FormzValues>({
   children,
   name,
@@ -21,6 +24,9 @@ const FormProvider = <Values extends FormzValues>({
   );
 };
 
+/** 
+ * Creates a form api for interacting with a form.
+*/
 export function useFormContext<Values extends FormzValues>() {
   const id = useFormIdContext();
   const options = useContext(Context);

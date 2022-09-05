@@ -1,0 +1,1 @@
+export type ValidationType = "required" | "min" | "max" | "pattern" | "custom";

@@ -1,6 +1,7 @@
 import React from "react";
 import { FormzChangeEventHandler } from "../../types/events";
 import { FieldValidator, TextFieldValue } from "../../types/field";
+import { FormzError } from "../../types/form";
 
 export interface FieldComponentProps<
   Key extends string = string,
@@ -10,7 +11,7 @@ export interface FieldComponentProps<
   onChange: FormzChangeEventHandler<any>;
   value?: Value;
   checked?: boolean;
-  error?: string;
+  error?: FormzError;
   [key: `data-${string}`]: string | undefined;
 }
 export interface FieldProps<
@@ -26,5 +27,8 @@ export interface FieldProps<
   style?: React.CSSProperties;
   type?: React.HTMLInputTypeAttribute;
   required?: boolean;
-  validator?: FieldValidator<Value>
+  validate?: FieldValidator<Value>;
+  min?: number;
+  max?: number;
+  pattern?: RegExp;
 }

@@ -3,8 +3,7 @@ import useCachedValue from "../../hooks/useCachedValue";
 import useEventCallback from "../../hooks/useEventCallback";
 import logger from "../../logger";
 import FormProvider, { useFormContext } from "../../providers/FormProvider";
-import { incrementFormSubmitCount } from "../../store";
-import { getFormState } from "../../store/store";
+import { actions } from "../../store";
 import { FormzValues } from "../../types/form";
 import { isFunction } from "../../utils/is";
 import { FormChildrenProps, FormProps } from "./Form.types";
@@ -16,7 +15,7 @@ const FormChildren = <Values extends FormzValues>({
   return <>{children(form)}</>;
 };
 
-const HtmlForm = <Values extends FormzValues>({
+const FormInner = <Values extends FormzValues>({
   name,
   onSubmit,
   children,
@@ -30,7 +29,7 @@ const HtmlForm = <Values extends FormzValues>({
       e.preventDefault();
 
       if (onSubmit) {
-        const { values, errors } = getFormState<Values>(form.id);
+        const { values, errors } = actions.getFormState<Values>(form.id);
 
         try {
           await onSubmit(values, errors);
@@ -41,7 +40,7 @@ const HtmlForm = <Values extends FormzValues>({
             error
           );
         } finally {
-          incrementFormSubmitCount(form.id);
+          actions.incrementFormSubmitCount(form.id);
         }
       }
     }
@@ -70,9 +69,9 @@ const Form = <Values extends FormzValues>({
 
   return (
     <FormProvider name={name} initialValues={memoizedInitialValues}>
-      <HtmlForm name={name} {...formProps}>
+      <FormInner name={name} {...formProps}>
         {children}
-      </HtmlForm>
+      </FormInner>
     </FormProvider>
   );
 };

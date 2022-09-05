@@ -46,3 +46,9 @@ export type TryAccess<T, K> = K extends keyof T
 export type Maybe<T> = T | null | undefined;
 
 export type NotEmpty<T> = Exclude<T, null | undefined>;
+
+export type EmptyString = "";
+
+export type Empty = EmptyString | undefined | null;
+
+

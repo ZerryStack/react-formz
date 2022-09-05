@@ -13,10 +13,13 @@ const Field = <
   children,
   type = "text",
   required,
-  validator,
+  validate,
+  pattern,
+  min,
+  max,
   ...restProps
 }: FieldProps<Key, Value>): JSX.Element | null => {
-  const field = useField<Key, Value>(name, { type, required, validator });
+  const field = useField<Key, Value>(name, { type, required, validate, pattern, min, max });
 
   if (Tag) {
     return (

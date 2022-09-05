@@ -1,1 +1,2 @@
-export { useFormz, useAddForm, useRemoveForm, formzStore, incrementFormSubmitCount, updateFormValue } from "./store";
+export { default as actions } from "./actions";
+export { useFormz, useAddForm, useRemoveForm, formzStore } from "./store";

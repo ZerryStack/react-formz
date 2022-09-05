@@ -7,7 +7,11 @@ const Context = createContext<string | null>(null);
 
 /**
  * Provides consumers with a stable unique id for a
- * single form.
+ * single form. Since the `id` is stable, it gets it's
+ * own provider which allows any component in its' subtree
+ * to subscribe to the `id` and not re-render because the
+ * `id` never changes. This id is used to interact with the
+ * form store.
  */
 const FormIdProvider = <Values extends FormzValues>({
   children,
@@ -19,6 +23,9 @@ const FormIdProvider = <Values extends FormzValues>({
   return <Context.Provider value={id}>{children}</Context.Provider>;
 };
 
+/**
+ * Hook to grab the id of a form.
+ */
 export function useFormIdContext() {
   const id = useContext(Context);
 

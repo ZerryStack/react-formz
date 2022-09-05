@@ -1,14 +1,21 @@
 import { FormzChangeEvent } from "../types/events";
-import { isCheckbox, isString } from "./is";
+import { PossibleHTMLInputElement } from "../types/input";
+import { isCheckboxInput, isNumberInput, isString } from "./is";
 
 function getFieldValue(eventOrTextValue: string | FormzChangeEvent<any>): string | number | boolean {
     if (!isString(eventOrTextValue)) {
 
-        if (isCheckbox(eventOrTextValue.target)) {
-            return eventOrTextValue.target.checked;
+        const target = eventOrTextValue.target as PossibleHTMLInputElement;
+
+        if (isCheckboxInput(target)) {
+            return target.checked;
         }
 
-        const { value } = eventOrTextValue.target;
+        if (isNumberInput(target)) {
+            return target.valueAsNumber;
+        }
+
+        const { value } = target;
 
         return value;
     }

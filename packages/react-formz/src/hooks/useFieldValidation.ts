@@ -1,11 +1,20 @@
-import { clearFieldError, getFieldStoreValue, setFieldError, useFormz } from "../store/store";
+import { useFormz, actions } from "../store";
 import { FieldValidator, FieldValue } from "../types/field";
-import { isPromiseLike } from "../utils/is";
+import { FormzError } from "../types/form";
+import { isEmpty, isNotEmpty as isDefined, isNumber, isString } from "../utils/is";
+import doesNotMatchPattern from "../validations/doesNotMatchPattern";
+import isAboveMax from "../validations/isAboveMax";
+import isBelowMin from "../validations/isBelowMin";
 import useEventCallback from "./useEventCallback";
 
-export interface UseFieldValidationOptions<Value extends FieldValue> {
-  validator?: FieldValidator<Value>;
+export interface UseFieldValidationOptions<
+  Value extends FieldValue = FieldValue
+> {
+  validate?: FieldValidator<Value>;
   required?: boolean;
+  min?: number;
+  max?: number;
+  pattern?: RegExp;
 }
 
 function useFieldValidation<
@@ -14,21 +23,56 @@ function useFieldValidation<
 >(formId: string, name: Key, options: UseFieldValidationOptions<Value>) {
   const error = useFormz((state) => state.forms[formId].errors[name]);
 
-  const getErrorMessage = async () => {
-    const value = getFieldStoreValue(formId, name);
+  const getErrorMessage = async (): Promise<FormzError | null> => {
+    const value = actions.getFieldStoreValue<Value>(formId, name);
 
-    const valueIsEmpty = value === undefined || value === null || value === "";
-
-    if (options.required && valueIsEmpty) {
-      return `${name} is required.`;
+    if (options.required && isEmpty(value)) {
+      return {
+        type: "required",
+        message: `${name} is required.`,
+      };
     }
 
-    if (options.validator) {
-      const result = (isPromiseLike(options.validator)
-        ? await options.validator(value)
-        : options.validator(value));
+    if (
+      isDefined(options.max) &&
+      isNumber(value) &&
+      isAboveMax(value, options.max)
+    ) {
+      return {
+        type: "max",
+        message: `${name} is above the maximum value of  ${options.max}.`,
+      };
+    }
 
-      return result;
+    if (
+      isDefined(options.min) &&
+      isNumber(value) &&
+      isBelowMin(value, options.min)
+    ) {
+      return {
+        type: "min",
+        message: `${name} is below the minimum value of  ${options.min}.`,
+      };
+    }
+
+    if (
+      isDefined(options.pattern) &&
+      isString(value) &&
+      doesNotMatchPattern(value, options.pattern)
+    ) {
+      return {
+        type: "pattern",
+        message: `${name} does not match pattern ${options.pattern}.`,
+      };
+    }
+
+    if (isDefined(options.validate)) {
+      const result = await options.validate(value);
+
+      return {
+        type: "custom",
+        message: result,
+      };
     }
 
     return null;
@@ -38,13 +82,12 @@ function useFieldValidation<
     const message = await getErrorMessage();
 
     if (message) {
-      setFieldError(formId, name, message);
+      actions.setFieldError(formId, name, message);
       return false;
+    } else {
+      actions.resetFieldError(formId, name);
+      return true;
     }
-
-    clearFieldError(formId, name);
-
-    return true;
   });
 
   return { validate, error };

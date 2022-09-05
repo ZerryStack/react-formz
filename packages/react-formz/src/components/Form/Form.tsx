@@ -66,12 +66,13 @@ const Form = <Values extends FormzValues>({
   children,
   name,
   initialValues,
+  saveDrafts,
   ...formProps
 }: FormProps<Values>) => {
   const memoizedInitialValues = useLatest(initialValues);
 
   return (
-    <FormProvider name={name} initialValues={memoizedInitialValues}>
+    <FormProvider name={name} initialValues={memoizedInitialValues} saveDrafts={saveDrafts}>
       <FormInner name={name} {...formProps}>
         {children}
       </FormInner>

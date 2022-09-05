@@ -17,8 +17,9 @@ const FormIdProvider = <Values extends FormzValues>({
   children,
   name,
   initialValues,
+  saveDrafts
 }: React.PropsWithChildren<UseFormOptions<Values>>) => {
-  const id = useFormId(name, initialValues);
+  const id = useFormId(name, initialValues, undefined, saveDrafts);
 
   return <Context.Provider value={id}>{children}</Context.Provider>;
 };

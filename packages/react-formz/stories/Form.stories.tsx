@@ -56,6 +56,7 @@ const FieldTemplate: ComponentStory<typeof Form> = () => {
       style={style}
       name="WithFields"
       initialValues={{ ...initialValues, age: 0, dob: "1970-01-01" }}
+      saveDrafts
     >
       <Field as={Input} required name="firstName" placeholder="First Name" />
       <Field

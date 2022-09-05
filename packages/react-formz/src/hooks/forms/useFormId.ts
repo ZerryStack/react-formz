@@ -14,14 +14,15 @@ import useLatest from "../utils/useLatest";
 function useFormId(
   name: string | undefined = undefined,
   initialValues: FormzValues,
-  existingId: string | undefined = undefined
+  existingId: string | undefined = undefined,
+  saveDrafts: boolean = false
 ) {
   const id = useLatest(name || existingId || uuid());
     
   useComponentDidMount(() => {
     const { addForm, removeForm } = formzStore.getState();
 
-    addForm(id, initialValues);
+    addForm(id, initialValues, saveDrafts);
 
     return function useFormIdCleanup() {
       const form = useFormz.getState().forms[id];
@@ -33,7 +34,7 @@ function useFormId(
           form.values
         );
 
-        removeForm(id);
+        if (!saveDrafts) removeForm(id);
       }
     };
   });

@@ -53,6 +53,7 @@ export type FormzState<Values extends FormzValues> = {
   isInvalid: boolean;
   submitCount: number;
   initialized: true;
+  saveDrafts: boolean;
 };
 
 /**

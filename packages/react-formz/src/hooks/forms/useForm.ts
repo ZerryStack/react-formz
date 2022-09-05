@@ -8,6 +8,7 @@ export interface UseFormOptions<Values extends FormzValues> {
   name?: string;
   id?: string;
   initialValues: Values;
+  saveDrafts?: boolean;
 }
 
 export interface UseFormResult<Values extends FormzValues> {
@@ -22,7 +23,7 @@ export interface UseFormResult<Values extends FormzValues> {
 function useForm<Values extends FormzValues>(
   options: UseFormOptions<Values>
 ): UseFormResult<Values> {
-  const id = useFormId(options.name, options.initialValues);
+  const id = useFormId(options.name, options.initialValues, options.id, options.saveDrafts ?? false);
   const formState = useFormz<FormzState<Values> | undefined>(
     (state) => state.forms[id]
   );

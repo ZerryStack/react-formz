@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useMemo } from "react";
-import useForm, { UseFormOptions } from "../../hooks/useForm";
+import useForm, { UseFormOptions } from "../../hooks/forms/useForm";
 import { FormzValues } from "../../types/form";
 import FormIdProvider, { useFormIdContext } from "../FormIdProvider";
 

@@ -1,8 +1,8 @@
-import { useFormz } from "../store";
-import { FormzErrors, FormzState, FormzValues } from "../types/form";
+import { useFormz } from "../../store";
+import { FormzErrors, FormzState, FormzValues } from "../../types/form";
 import useFormId from "./useFormId";
 import useFormEvents from "./useFormEvents";
-import { FormzChangeEvent } from "../types/events";
+import { FormzChangeEvent } from "../../types/events";
 
 export interface UseFormOptions<Values extends FormzValues> {
   name?: string;

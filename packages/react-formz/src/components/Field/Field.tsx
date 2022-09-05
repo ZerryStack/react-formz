@@ -1,5 +1,5 @@
 import React from "react";
-import useField from "../../hooks/useField";
+import useField from "../../hooks/fields/useField";
 import { TextFieldValue } from "../../types/field";
 import { FieldProps } from "./Field.types";
 

@@ -1,6 +1,6 @@
 import React, { createContext, useContext } from "react";
-import { UseFormOptions } from "../../hooks/useForm";
-import useFormId from "../../hooks/useFormId";
+import { UseFormOptions } from "../../hooks/forms/useForm";
+import useFormId from "../../hooks/forms/useFormId";
 import { FormzValues } from "../../types/form";
 
 const Context = createContext<string | null>(null);

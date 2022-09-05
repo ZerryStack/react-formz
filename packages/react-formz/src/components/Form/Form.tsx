@@ -1,6 +1,6 @@
 import React from "react";
-import useLatest from "../../hooks/useLatest";
-import useStableCallback from "../../hooks/useStableCallback";
+import useLatest from "../../hooks/utils/useLatest";
+import useStableCallback from "../../hooks/utils/useStableCallback";
 import logger from "../../logger";
 import FormProvider, { useFormContext } from "../../providers/FormProvider";
 import { actions } from "../../store";

@@ -1,9 +1,9 @@
-import { useRef } from "react";
 import uuid from "react-uuid";
-import logger from "../logger";
-import { useFormz, formzStore } from "../store";
-import { FormzValues } from "../types/form";
-import useComponentDidMount from "./useComponentDidMount";
+import logger from "../../logger";
+import { useFormz, formzStore } from "../../store";
+import { FormzValues } from "../../types/form";
+import useComponentDidMount from "../utils/useComponentDidMount";
+import useLatest from "../utils/useLatest";
 
 /**
  * Creates a unique id for a form and adds that id to the form store.
@@ -16,16 +16,10 @@ function useFormId(
   initialValues: FormzValues,
   existingId: string | undefined = undefined
 ) {
-  const idRef = useRef<string | undefined>(name || existingId);
-
-  if (!idRef.current) {
-    idRef.current = uuid();
-  }
-
-  const { current: id } = idRef;
-
+  const id = useLatest(name || existingId || uuid());
+    
   useComponentDidMount(() => {
-    const { addForm, removeForm, forms } = formzStore.getState();
+    const { addForm, removeForm } = formzStore.getState();
 
     addForm(id, initialValues);
 
@@ -36,7 +30,7 @@ function useFormId(
         logger.log(
           `${id}:`,
           `Removing form from the global store.`,
-          useFormz.getState().forms[id]?.values
+          form.values
         );
 
         removeForm(id);

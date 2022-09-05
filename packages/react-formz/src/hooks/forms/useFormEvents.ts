@@ -1,10 +1,10 @@
 import { useCallback } from "react";
-import { formzStore } from "../store";
-import { FormzChangeEvent } from "../types/events";
-import getField from "../utils/getField";
-import getFieldValue from "../utils/getFieldValue";
-import { isString } from "../utils/is";
-import useStableCallback from "./useStableCallback";
+import { formzStore } from "../../store";
+import { FormzChangeEvent } from "../../types/events";
+import getField from "../../utils/getField";
+import getFieldValue from "../../utils/getFieldValue";
+import { isString } from "../../utils/is";
+import useStableCallback from "../utils/useStableCallback";
 
 /**
  * Creates event callbacks for form fields such as `onChange` or `onBlur`.

@@ -1,5 +1,5 @@
 import React from "react";
-import { UseFormOptions, UseFormResult } from "../../hooks/useForm";
+import { UseFormOptions, UseFormResult } from "../../hooks/forms/useForm";
 import { FormzErrors, FormzValues } from "../../types/form";
 
 type HtmlFormProps = Omit<

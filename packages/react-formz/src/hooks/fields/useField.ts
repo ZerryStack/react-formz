@@ -1,10 +1,10 @@
-import { useFormIdContext } from "../providers/FormIdProvider";
-import { useFormz, actions } from "../store";
-import { FormzChangeEvent } from "../types/events";
-import { FieldValue } from "../types/field";
-import { FormzError, FormzState, FormzValues } from "../types/form";
-import { isBoolean } from "../utils/is";
-import useStableCallback from "./useStableCallback";
+import { useFormIdContext } from "../../providers/FormIdProvider";
+import { useFormz, actions } from "../../store";
+import { FormzChangeEvent } from "../../types/events";
+import { FieldValue } from "../../types/field";
+import { FormzError, FormzState, FormzValues } from "../../types/form";
+import { isBoolean } from "../../utils/is";
+import useStableCallback from "../utils/useStableCallback";
 import useFieldValidation, {
   UseFieldValidationOptions,
 } from "./useFieldValidation";

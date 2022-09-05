@@ -1,11 +1,11 @@
-import { useFormz, actions } from "../store";
-import { FieldValidator, FieldValue } from "../types/field";
-import { FormzError } from "../types/form";
-import { isEmpty, isNotEmpty as isDefined, isNumber, isString } from "../utils/is";
-import doesNotMatchPattern from "../validations/doesNotMatchPattern";
-import isAboveMax from "../validations/isAboveMax";
-import isBelowMin from "../validations/isBelowMin";
-import useStableCallback from "./useStableCallback";
+import { useFormz, actions } from "../../store";
+import { FieldValidator, FieldValue } from "../../types/field";
+import { FormzError } from "../../types/form";
+import { isEmpty, isNotEmpty as isDefined, isNumber, isString } from "../../utils/is";
+import doesNotMatchPattern from "../../validations/doesNotMatchPattern";
+import isAboveMax from "../../validations/isAboveMax";
+import isBelowMin from "../../validations/isBelowMin";
+import useStableCallback from "../utils/useStableCallback";
 
 export interface UseFieldValidationOptions<
   Value extends FieldValue = FieldValue

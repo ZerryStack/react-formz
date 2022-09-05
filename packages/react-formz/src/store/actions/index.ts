@@ -3,6 +3,7 @@ import getFormState from "./getFormState";
 import incrementFormSubmitCount from "./incrementFormSubmitCount";
 import resetFieldError from "./resetFieldError";
 import { setFieldError } from "./setFieldError";
+import setFieldTouched from "./setFieldTouched";
 import updateFormValue from "./updateFormValue";
 
 const actions = {
@@ -11,6 +12,7 @@ const actions = {
     incrementFormSubmitCount,
     resetFieldError,
     setFieldError,
+    setFieldTouched,
     updateFormValue,
 }
 

@@ -31,9 +31,11 @@
   },
   "scripts": {
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "typecheck": "tsc"
   },
   "dependencies": {
+    "ansi-colors": "^4.1.3",
     "immer": "^9.0.15",
     "react-uuid": "^1.0.3",
     "zustand": "^4.1.1"

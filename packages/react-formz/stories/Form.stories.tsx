@@ -7,9 +7,10 @@ import {
   FieldProps as FormikFieldProps,
 } from "formik";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { Form, Field } from "../src";
+import { Form, Field, ErrorMessage } from "../src";
 import { FormControl, FormHelperText, InputLabel } from "@mui/material";
 import { FieldComponentProps } from "../src/components/Field";
+import logger from "../src/logger";
 
 export default {
   title: "useForm",
@@ -35,6 +36,7 @@ const initialValues = {
 
 function Input({
   error,
+  name,
   ...props
 }: React.DetailedHTMLProps<
   React.InputHTMLAttributes<HTMLInputElement>,
@@ -43,8 +45,8 @@ function Input({
   FieldComponentProps) {
   return (
     <>
-      <input {...props} />
-      {error && <span aria-live="polite">{error.message}</span>}
+      <input {...props} name={name} />
+      <ErrorMessage field={name} />
     </>
   );
 }
@@ -98,8 +100,8 @@ const logProfiler: React.ProfilerOnRenderCallback = (
   actualDuration,
   baseDuration
 ) => {
-  console.log(
-    id,
+  logger.log(
+    `${id}:`,
     phase,
     `actualDuration:`,
     actualDuration,

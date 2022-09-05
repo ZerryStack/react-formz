@@ -17,6 +17,12 @@ export interface UseFieldValidationOptions<
   pattern?: RegExp;
 }
 
+/**
+ * Custom hook that creates a validation api for an input field.
+ * @param formId The id of the form.
+ * @param name The name of the input field.
+ * @param options Options to customize the way a field is validated.
+ */
 function useFieldValidation<
   Key extends string = string,
   Value extends FieldValue = FieldValue

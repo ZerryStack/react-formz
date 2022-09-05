@@ -7,7 +7,7 @@ import { isString } from "../../utils/is";
 import useStableCallback from "../utils/useStableCallback";
 
 /**
- * Creates event callbacks for form fields such as `onChange` or `onBlur`.
+ * Custom react hook that returns event handlers for a form.
  * @param id The id of the form to subscribe to.
  * @returns Event handlers to be used on fields within a form.
  */

@@ -22,6 +22,12 @@ export interface UseFieldResult<Value extends FieldValue> {
   checked?: boolean;
 }
 
+/**
+ * Custom hook to plugin to the state of a specific input field. You can use this to
+ * build your own input primitives if you so desire.
+ * @param name The name of the input field.
+ * @param options Options to customize behaviour.
+ */
 function useField<
   Key extends string = string,
   Value extends FieldValue = FieldValue,
@@ -54,6 +60,7 @@ function useField<
   });
 
   const handleBlur = useStableCallback((_: React.FocusEvent<any>) => {
+    actions.setFieldTouched(id, name, true);
     validate();
   });
 

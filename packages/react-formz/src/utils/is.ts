@@ -1,6 +1,6 @@
 import { Empty } from "../types/common";
 import { HTMLCheckboxInputElement, HTMLDateInputElement, HTMLNumberInputElement } from "../types/input";
-import { IsNot } from "../types/utils";
+import { IsNot, Primitive } from "../types/utils";
 
 export function isString(value: any): value is string {
   return typeof value === "string";
@@ -66,8 +66,9 @@ export function isEmpty(value: unknown): value is Empty {
   return value == undefined || value === null || value === "";
 }
 
-export function isNotEmpty<V extends unknown>(
-  value: V
-): value is IsNot<V, Empty> {
-  return value !== undefined && value !== null && value !== "";
+export function isNotEmpty<T extends unknown>(
+  value: T
+): value is IsNot<T, Empty> {
+  if (typeof value === "string") return value !== "";
+  return value !== undefined && value !== null;
 }

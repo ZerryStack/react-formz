@@ -6,9 +6,10 @@ import { FieldProps } from "./Field.types";
 
 const Field = <
   Key extends string = string,
-  Value extends FieldValue = FieldValue
+  Value extends FieldValue = FieldValue,
+  Element = HTMLInputElement
 >(
-  props: FieldProps<Key, Value>
+  props: FieldProps<Key, Value, Element>
 ): JSX.Element | null => {
   const {
     as: Tag,
@@ -33,6 +34,7 @@ const Field = <
   });
 
   const inputProps = {
+    ...restProps,
     name,
     required,
     type,
@@ -48,8 +50,7 @@ const Field = <
     if (typeof Tag === "function") {
       return (
         <Tag
-          {...restProps}
-          {...inputProps}
+          input={inputProps}
           error={field.error}
           storeValue={field.value}
         >
@@ -58,7 +59,7 @@ const Field = <
       );
     } else {
       return (
-        <Tag {...restProps} {...inputProps}>
+        <Tag {...inputProps}>
           {children}
         </Tag>
       );
@@ -86,10 +87,16 @@ export const CheckboxField = <Key extends string = string>(
   return <Field<Key, boolean> {...props} type="checkbox" />;
 };
 
-export const ArrayField = <Key extends string = string>(
-  props: Omit<FieldProps<Key, readonly string[]>, "type">
+export const SelectField = <Key extends string = string>(
+  props: Omit<FieldProps<Key, string>, "type">
 ) => {
-  return <Field<Key, readonly string[]> as="select" {...props} />;
+  return <Field<Key, string>  {...props} as="select" />;
+};
+
+export const MultiSelectField = <Key extends string = string>(
+  props: Omit<FieldProps<Key, string>, "type">
+) => {
+  return <Field<Key, string>  {...props} as="select" multiple />;
 };
 
 export default Field;

@@ -72,4 +72,12 @@ function useField<
   };
 }
 
+export function useNumberField<Key extends string = string>(name: Key, options: UseFieldOptions<number>) {
+  return useField<Key, number>(name, options);
+}
+
+export function useBooleanField<Key extends string = string>(name: Key, options: UseFieldOptions<boolean>) {
+  return useField<Key, boolean>(name, options);
+}
+
 export default useField;

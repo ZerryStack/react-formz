@@ -44,12 +44,12 @@ const initialValues = {
 };
 
 function Input<Key extends string>(props: FieldComponentProps<Key>) {
-  const { error, name, value, checked, storeValue, ...restProps } = props;
+  const { input } = props;
 
   return (
     <>
-      <input {...restProps} value={value} checked={checked} name={name} />
-      <ErrorMessage field={name} />
+      <input {...input} />
+      <ErrorMessage field={input.name} />
     </>
   );
 }
@@ -145,10 +145,10 @@ const logProfiler: React.ProfilerOnRenderCallback = (
   );
 };
 
-const ReactFormzField = ({ error, ...inputProps }: FieldComponentProps) => (
+const ReactFormzField = ({ error, input, ...restProps }: FieldComponentProps) => (
   <FormControl error={error !== undefined}>
-    <InputLabel htmlFor="my-input">Item {inputProps.name}</InputLabel>
-    <Input {...inputProps} aria-describedby="component-error-text" required />
+    <InputLabel htmlFor="my-input">Item {input.name}</InputLabel>
+    <Input {...restProps} input={input} aria-describedby="component-error-text" />
     {error && (
       <FormHelperText id="component-error-text">{error.message}</FormHelperText>
     )}
@@ -186,7 +186,7 @@ const FormikFormsField = ({ field, form: { errors } }: FormikFieldProps) => {
   return (
     <FormControl error={errors[name] !== undefined}>
       <InputLabel htmlFor="my-input">Item {name}</InputLabel>
-      <Input {...field} aria-describedby="component-error-text" required />
+      <Input input={field} aria-describedby="component-error-text" />
       {errors[name] && (
         <FormHelperText id="component-error-text">
           {errors[name] as string}

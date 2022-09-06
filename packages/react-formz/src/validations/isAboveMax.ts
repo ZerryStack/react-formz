@@ -1,5 +1,5 @@
 function isAboveMax(value: number, max: number) {
-  return value >= max;
+  return value > max;
 }
 
 export default isAboveMax;

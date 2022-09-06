@@ -10,15 +10,23 @@ import {
   SubmitButton,
   SelectField,
   CheckboxField,
-  NumberField
+  NumberField,
+  RadioField,
+  FieldComponentProps,
 } from "../src";
 import MuiButton from "@mui/material/Button";
-import { FieldComponentProps } from "../src/components/Field";
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
-import { Checkbox, FormControlLabel, FormHelperText } from "@mui/material";
+import {
+  Checkbox,
+  FormControlLabel,
+  FormHelperText,
+  FormLabel,
+  Radio,
+  RadioGroup,
+} from "@mui/material";
 
 export default {
   title: "Examples/Material UI",
@@ -28,18 +36,20 @@ export default {
   },
 } as ComponentMeta<typeof Field>;
 
-const MuiTextFieldComponent = ({
+const MuiTextFieldComponent = <Key extends string>({
   error,
-  input: { color, ref, label, id, required, ...input },
-}: FieldComponentProps) => (
+  input: { label, required, ...input },
+  ref,
+  storeValue,
+  ...restProps
+}: FieldComponentProps<Key, string | number, HTMLInputElement>) => (
   <MuiTextField
     error={error !== undefined}
     {...input}
     inputProps={{
-      color,
       ref,
     }}
-    id={id}
+    {...restProps}
     label={label}
     helperText={error?.message}
     required={required}
@@ -48,21 +58,24 @@ const MuiTextFieldComponent = ({
 
 const MuiSelectFieldComponent = ({
   error,
-  input: { color, ref, label, id, required, onChange, onBlur, value, ...input },
+  input: { label, required, onChange, onBlur, value },
   children,
-}: FieldComponentProps) => {
+  ref,
+  storeValue,
+  ...restProps
+}: FieldComponentProps<string, string, HTMLSelectElement>) => {
   return (
     <FormControl error={error !== undefined}>
       <InputLabel>{label}</InputLabel>
       <Select
-        id={id}
+        {...restProps}
         value={value}
         label={label}
         onChange={onChange}
         onBlur={onBlur}
         required={required}
         style={{ width: 200 }}
-        {...input}
+        inputRef={ref}
       >
         {children}
       </Select>
@@ -73,18 +86,23 @@ const MuiSelectFieldComponent = ({
 
 const MuiCheckboxFieldComponent = <Key extends string>({
   error,
-  input: { color, ref, label, value, onBlur, onChange, required, ...input },
-}: FieldComponentProps<Key, boolean>) => {
+  input: { label, onBlur, onChange, required, checked, ...input },
+  ref,
+  storeValue,
+  ...restProps
+}: FieldComponentProps<Key, boolean, HTMLInputElement>) => {
   return (
     <FormControl error={error !== undefined}>
       <FormControlLabel
         control={
           <Checkbox
-            value={value}
+            {...restProps}
+            checked={checked}
             onBlur={onBlur}
             onChange={onChange}
             required={required}
-            inputProps={{ ...input }}
+            inputProps={input}
+            inputRef={ref}
           />
         }
         label={label}
@@ -94,6 +112,28 @@ const MuiCheckboxFieldComponent = <Key extends string>({
   );
 };
 
+const MuiRadioFieldComponent = <Key extends string>({
+  error,
+  input: { label, value, onBlur, onChange, name },
+  children,
+  storeValue,
+  ...restProps
+}: FieldComponentProps<Key, string, HTMLInputElement>) => {
+  return (
+    <FormControl error={error !== undefined}>
+      <FormLabel>{label}</FormLabel>
+      <RadioGroup
+        {...restProps}
+        value={value}
+        onBlur={onBlur}
+        onChange={onChange}
+        name={name}
+      >
+        {children}
+      </RadioGroup>
+    </FormControl>
+  );
+};
 const SimpleFormTemplate: ComponentStory<typeof Field> = () => {
   const {} = useSnackbar();
 
@@ -104,6 +144,7 @@ const SimpleFormTemplate: ComponentStory<typeof Field> = () => {
         kg: "",
         library: "",
         cool: false,
+        gender: ""
       }}
       name="SimpleForm"
       onSubmit={console.log}
@@ -123,6 +164,7 @@ const SimpleFormTemplate: ComponentStory<typeof Field> = () => {
             label="Kilograms"
             required
             min={3}
+            max={10}
             as={MuiTextFieldComponent}
           />
           <SelectField
@@ -144,6 +186,20 @@ const SimpleFormTemplate: ComponentStory<typeof Field> = () => {
             required
             as={MuiCheckboxFieldComponent}
           />
+          <RadioField
+            name="gender"
+            label="Gender"
+            required
+            as={MuiRadioFieldComponent}
+          >
+            <FormControlLabel
+              value="female"
+              control={<Radio />}
+              label="Female"
+            />
+            <FormControlLabel value="male" control={<Radio />} label="Male" />
+            <FormControlLabel value="other" control={<Radio />} label="Other" />
+          </RadioField>
         </Box>
         <Box>
           <MuiButton component={SubmitButton}>Submit</MuiButton>

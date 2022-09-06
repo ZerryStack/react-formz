@@ -43,7 +43,7 @@ const initialValues = {
   isOver21: false,
 };
 
-function Input<Key extends string>(props: FieldComponentProps<Key>) {
+function Input<Key extends string>(props: FieldComponentProps<Key> & { dude?: true}) {
   const { input } = props;
 
   return (

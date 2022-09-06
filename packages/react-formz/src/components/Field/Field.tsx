@@ -4,12 +4,15 @@ import { FieldValue } from "../../types/field";
 import { isValidInputValue } from "../../utils/is";
 import { FieldProps } from "./Field.types";
 
-const Field = <
+const FieldInner = <
   Key extends string = string,
   Value extends FieldValue = FieldValue,
-  Element = HTMLInputElement
+  Element = HTMLInputElement,
+  Component extends React.ComponentType<{}> = React.ComponentType<{}>
 >(
-  props: FieldProps<Key, Value, Element>
+  props: FieldProps<Key, Value, Element, Component> &
+    React.ComponentProps<Component>,
+  ref: React.Ref<Element>
 ): JSX.Element | null => {
   const {
     as: Tag,
@@ -32,11 +35,10 @@ const Field = <
     pattern,
     min,
     max,
-    label
+    label,
   });
 
   const inputProps = {
-    ...restProps,
     label,
     name,
     required,
@@ -53,16 +55,18 @@ const Field = <
     if (typeof Tag === "function") {
       return (
         <Tag
+          {...restProps}
           input={inputProps}
           error={field.error}
           storeValue={field.value}
+          ref={ref}
         >
           {children}
         </Tag>
       );
     } else {
       return (
-        <Tag {...inputProps}>
+        <Tag {...inputProps} ref={ref as any}>
           {children}
         </Tag>
       );
@@ -72,40 +76,45 @@ const Field = <
   return null;
 };
 
-export const TextField = <Key extends string = string>(
-  props: FieldProps<Key, string | undefined>
-) => {
-  return <Field<Key, string | undefined> {...props} />;
-};
+const Field = React.forwardRef<any, FieldProps>(FieldInner) as <
+  Key extends string = string,
+  Value extends FieldValue = FieldValue,
+  Element = HTMLInputElement,
+  Component extends React.ComponentType<{}> = React.ComponentType<{}>
+>(
+  props: FieldProps<Key, Value, Element, Component>
+) => JSX.Element;
 
-export const NumberField = <Key extends string = string>(
-  props: FieldProps<Key, number | undefined>
-) => {
-  return <Field<Key, number | undefined> {...props} type="number" />;
-};
+/**
+ * Factory function to create fields with standard values.
+ */
+function createComponent<Value extends FieldValue>(type?: React.HTMLInputTypeAttribute, additionalProps?: { multiple?: boolean }) {
+  const component = React.forwardRef<
+    HTMLInputElement,
+    FieldProps<string, Value, HTMLInputElement>
+  >((props: FieldProps<string, Value, HTMLInputElement>, ref) => {
+    return <Field type={type} {...additionalProps} {...props} ref={ref} />;
+  });
 
-export const CheckboxField = <Key extends string = string>(
-  props: Omit<FieldProps<Key, boolean>, "type">
-) => {
-  return <Field<Key, boolean> {...props} type="checkbox" />;
-};
+  return component as <
+    Key extends string,
+    Element = HTMLInputElement,
+    Component extends React.ComponentType<{}> = React.ComponentType<{}>
+  >(
+    props: FieldProps<Key, Value, Element, Component>
+  ) => JSX.Element;
+}
 
-export const RadioField = <Key extends string = string>(
-  props: Omit<FieldProps<Key, boolean>, "type">
-) => {
-  return <Field<Key, boolean> {...props} type="radio" />;
-};
+export const TextField = createComponent<string>("text");
 
-export const SelectField = <Key extends string = string>(
-  props: Omit<FieldProps<Key, string>, "type">
-) => {
-  return <Field<Key, string>  as="select" {...props} />;
-};
+export const NumberField = createComponent<number>("number");
 
-export const MultiSelectField = <Key extends string = string>(
-  props: Omit<FieldProps<Key, string>, "type">
-) => {
-  return <Field<Key, string>  {...props} as="select" multiple />;
-};
+export const CheckboxField = createComponent<boolean>("checkbox");
+
+export const RadioField = createComponent<string>("radio");
+
+export const SelectField = createComponent<string>("select");
+
+export const MultiSelectField = createComponent<string>("select", { multiple: true });
 
 export default Field;

@@ -1,9 +1,11 @@
+import React from "react";
 import { FieldId } from "../types/field";
 import { FormId, FormzState, FormzValues } from "../types/form";
 
 export interface RegisterFieldPayload {
     id: FieldId;
     validate: () => Promise<boolean>;
+    type: React.HTMLInputTypeAttribute
 }
 export interface FormzFieldsStore {
   forms: Record<FormId, {

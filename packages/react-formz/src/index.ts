@@ -9,6 +9,7 @@ export {
   MultiSelectField,
   RadioField
 } from "./components/Field";
+export type { FieldComponentProps, FieldProps } from "./components/Field";
 export type { FieldValue, TextFieldValue } from "./types/field"; 
 export { default as Form } from "./components/Form";
 export { default as FormLastPersistedAt } from "./components/FormLastPersistedAt";

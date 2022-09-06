@@ -3,21 +3,24 @@ import { FormzChangeEventHandler } from "../../types/events";
 import { FieldValidator, FieldValue } from "../../types/field";
 import { FormzError } from "../../types/form";
 
-type FieldComponentElementProps<T> = React.DetailedHTMLProps<React.HTMLAttributes<T>, T>;
+type NativeElementProps<T> = Omit<
+  React.DetailedHTMLProps<React.HTMLAttributes<T>, T>,
+  "color" | "ref"
+>;
 
-export interface FieldComponentProps<
+export interface BaseFieldComponentProps<
   Key extends string = string,
   Value extends FieldValue = FieldValue,
   Element = HTMLInputElement
 > {
+  ref?: React.Ref<Element>;
   input: {
     name: Key;
     onChange: FormzChangeEventHandler<any>;
     value?: Exclude<Value, boolean | null>;
     checked?: boolean;
     type?: React.HTMLInputTypeAttribute;
-    onBlur?: React.FocusEventHandler;
-    onFocus?: React.FocusEventHandler;
+    onBlur: React.FocusEventHandler;
     required?: boolean;
     label?: string;
     /**
@@ -31,7 +34,7 @@ export interface FieldComponentProps<
      * users (as opposed to validating the input).
      */
     ["aria-required"]?: boolean;
-  } & FieldComponentElementProps<Element>;
+  };
   storeValue?: Value;
   /**
    * The react formz error object.
@@ -45,7 +48,15 @@ export interface FieldComponentProps<
   children?: React.ReactNode;
 }
 
-export interface FieldProps<
+export type FieldComponentProps<
+  Key extends string = string,
+  Value extends FieldValue = FieldValue,
+  Element = HTMLInputElement,
+  Component extends React.ComponentType<{}> = React.ComponentType<{}>
+> = BaseFieldComponentProps<Key, Value, Element> &
+  React.ComponentProps<Component>;
+
+export interface BaseFieldProps<
   Key extends string = string,
   Value extends FieldValue = FieldValue,
   Element = HTMLInputElement
@@ -54,7 +65,10 @@ export interface FieldProps<
   as?:
     | "input"
     | "select"
-    | ((props: FieldComponentProps<Key, Value, Element>) => JSX.Element | null);
+    | "textarea"
+    | React.ComponentType<
+        FieldComponentProps<Key, Value, Element> & NativeElementProps<Element>
+      >;
   children?: React.ReactNode;
   style?: React.CSSProperties;
   type?: React.HTMLInputTypeAttribute;
@@ -66,4 +80,12 @@ export interface FieldProps<
   placeholder?: string;
   multiple?: boolean;
   label?: string;
+  ref?: React.Ref<Element>
 }
+
+export type FieldProps<
+  Key extends string = string,
+  Value extends FieldValue = FieldValue,
+  Element = HTMLInputElement,
+  Component extends React.ComponentType<{}> = React.ComponentType<{}>
+> = BaseFieldProps<Key, Value, Element> & React.ComponentProps<Component>;

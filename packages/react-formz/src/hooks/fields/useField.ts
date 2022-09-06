@@ -34,7 +34,7 @@ function useField<
   Key extends string = string,
   Value extends FieldValue = FieldValue
 >(name: Key, options: UseFieldOptions<Value>): UseFieldResult<Value> {
-  const { required, type, max, min, pattern, label } = options;
+  const { required, type = "text", max, min, pattern, label } = options;
 
   const id = useFormIdContext();
   const value = useFieldValue<Key, Value>(id, name)
@@ -50,7 +50,7 @@ function useField<
 
   const { onChange, onBlur } = useFieldEvents(id, name, validate);
 
-  useFieldRegistration(id, name, validate);
+  useFieldRegistration(id, name, validate, type);
 
   return {
     value,

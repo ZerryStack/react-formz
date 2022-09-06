@@ -1,3 +1,4 @@
+import React from "react";
 import { useRegisterField, useUnregisterField } from "../../store";
 import useComponentDidMount from "../utils/useComponentDidMount";
 
@@ -11,13 +12,14 @@ import useComponentDidMount from "../utils/useComponentDidMount";
 function useFieldRegistration(
   formId: string,
   fieldId: string,
-  validate: () => Promise<boolean>
+  validate: () => Promise<boolean>,
+  type: React.HTMLInputTypeAttribute
 ) {
   const registerField = useRegisterField();
   const unregisterField = useUnregisterField();
 
   useComponentDidMount(() => {
-    registerField(formId, { id: fieldId, validate });
+    registerField(formId, { id: fieldId, validate, type });
 
     return function fieldUnmount() {
       unregisterField(formId, fieldId);

@@ -4,6 +4,12 @@ import { formzStore, useFormz } from "../../store";
 import { FormRehydrationCallback, FormzValues } from "../../types/form";
 import useComponentDidMount from "../utils/useComponentDidMount";
 
+/**
+ * A custom hook to handle form rehydration and persistance.
+ * @param id The id of the form
+ * @param saveDrafts If true, will persist form state when changed
+ * @param callback Will be called after a form has been rehydrated
+ */
 function useFormHydration<Values extends FormzValues>(
   id: string,
   saveDrafts: boolean,

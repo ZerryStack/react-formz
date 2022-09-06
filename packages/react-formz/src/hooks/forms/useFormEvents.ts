@@ -7,7 +7,7 @@ import { isString } from "../../utils/is";
 import useStableCallback from "../utils/useStableCallback";
 
 /**
- * Custom react hook that returns event handlers for a form.
+ * Custom react hook that returns event handlers for a forms inputs.
  * @param id The id of the form to subscribe to.
  * @returns Event handlers to be used on fields within a form.
  */

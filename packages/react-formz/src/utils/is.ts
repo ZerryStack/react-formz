@@ -1,5 +1,10 @@
 import { Empty } from "../types/common";
-import { HTMLCheckboxInputElement, HTMLDateInputElement, HTMLNumberInputElement } from "../types/input";
+import { FieldValue } from "../types/field";
+import {
+  HTMLCheckboxInputElement,
+  HTMLDateInputElement,
+  HTMLNumberInputElement,
+} from "../types/input";
 import { IsNot } from "../types/utils";
 
 export function isString(value: any): value is string {
@@ -10,8 +15,12 @@ export function isFunction(value: any): value is Function {
   return typeof value === "function";
 }
 
-export function isBoolean(value: any): value is boolean {
+export function isBoolean(value: unknown): value is boolean {
   return typeof value === "boolean";
+}
+
+export function isNull(value: unknown): value is null {
+  return typeof value === null;
 }
 
 export function isNumber(value: any): value is number {
@@ -20,6 +29,12 @@ export function isNumber(value: any): value is number {
 
 export function isRegExp(value: unknown): value is RegExp {
   return value instanceof RegExp;
+}
+
+export function isValidInputValue<Value extends FieldValue>(
+  value: Value
+): value is Exclude<Value, boolean | null> {
+  return !isBoolean(value) && !isNull(value);
 }
 
 export function isCheckboxInput(

@@ -1,15 +1,16 @@
 import React from "react";
 import { FormzChangeEventHandler } from "../../types/events";
-import { FieldValidator, TextFieldValue } from "../../types/field";
+import { FieldValidator, FieldValue } from "../../types/field";
 import { FormzError } from "../../types/form";
 
 export interface FieldComponentProps<
   Key extends string = string,
-  Value extends TextFieldValue = TextFieldValue
+  Value extends FieldValue = FieldValue
 > {
   name: Key;
   onChange: FormzChangeEventHandler<any>;
-  value?: Value;
+  storeValue?: Value;
+  value?: Exclude<Value, boolean | null>;
   checked?: boolean;
   /**
    * The react formz error object.
@@ -20,7 +21,7 @@ export interface FieldComponentProps<
    */
   [key: `data-${string}`]: string | undefined;
   /**
-   * The aria-invalid state indicates the entered value 
+   * The aria-invalid state indicates the entered value
    * does not conform to the format expected by the application.
    */
   ["aria-invalid"]?: boolean;
@@ -30,17 +31,24 @@ export interface FieldComponentProps<
    * users (as opposed to validating the input).
    */
   ["aria-required"]?: boolean;
+  children?: React.ReactNode;
+  type?: React.HTMLInputTypeAttribute;
+  onBlur?: React.FocusEventHandler;
+  onFocus?: React.FocusEventHandler;
+  required?: boolean;
 }
 
 export interface FieldProps<
   Key extends string = string,
-  Value extends TextFieldValue = TextFieldValue
+  Value extends FieldValue = FieldValue
 > {
   name: Key;
   as?:
     | "input"
     | "select"
-    | ((props: FieldComponentProps<Key, Value>) => JSX.Element | null);
+    | ((
+        props: FieldComponentProps<Key, Value>
+      ) => JSX.Element | null);
   children?: React.ReactNode;
   style?: React.CSSProperties;
   type?: React.HTMLInputTypeAttribute;

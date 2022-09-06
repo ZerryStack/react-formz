@@ -13,6 +13,7 @@ import {
   ErrorMessage,
   SubmitButton,
   FormLastPersistedAt,
+  CheckboxField,
 } from "../src";
 import { FormControl, FormHelperText, InputLabel } from "@mui/material";
 import { FieldComponentProps } from "../src/components/Field";
@@ -42,22 +43,17 @@ const initialValues = {
   isOver21: false,
 };
 
-function Input({
-  error,
-  name,
-  ...props
-}: React.DetailedHTMLProps<
-  React.InputHTMLAttributes<HTMLInputElement>,
-  HTMLInputElement
-> &
-  FieldComponentProps) {
+function Input<Key extends string>(props: FieldComponentProps<Key>) {
+  const { error, name, value, checked, storeValue, ...restProps } = props;
+
   return (
     <>
-      <input {...props} name={name} />
+      <input {...restProps} value={value} checked={checked} name={name} />
       <ErrorMessage field={name} />
     </>
   );
 }
+
 const FieldTemplate: ComponentStory<typeof Form> = () => {
   const { enqueueSnackbar } = useSnackbar();
 
@@ -71,7 +67,7 @@ const FieldTemplate: ComponentStory<typeof Form> = () => {
       onFormRehydrated={(state) => {
         if (state.restoredFromDate) {
           enqueueSnackbar(
-            `We've restore your form from ${format(
+            `We've restored your form from ${format(
               new Date(state.restoredFromDate),
               "Pp"
             )}.`,
@@ -80,7 +76,7 @@ const FieldTemplate: ComponentStory<typeof Form> = () => {
             }
           );
         } else {
-          enqueueSnackbar(`We've restore your form.`, {
+          enqueueSnackbar(`We've restored your form.`, {
             variant: "success",
           });
         }
@@ -104,7 +100,7 @@ const FieldTemplate: ComponentStory<typeof Form> = () => {
         placeholder="Age"
       />
       <Field as={Input} type="date" name="dob" placeholder="Date of Birth" />
-      <Field as={Input} name="isOver21" type="checkbox" />
+      <CheckboxField as={Input} name="isOver21" />
       <FormLastPersistedAt />
       <SubmitButton>Submit</SubmitButton>
     </Form>

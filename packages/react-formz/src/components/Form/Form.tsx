@@ -1,9 +1,9 @@
 import React from "react";
+import useFormSubmission from "../../hooks/forms/useFormSubmission";
 import useLatest from "../../hooks/utils/useLatest";
 import useStableCallback from "../../hooks/utils/useStableCallback";
 import logger from "../../logger";
 import FormProvider, { useFormContext } from "../../providers/FormProvider";
-import { actions, formzFieldsStore } from "../../store";
 import { FormzValues } from "../../types/form";
 import { isFunction } from "../../utils/is";
 import { FormChildrenProps, FormProps } from "./Form.types";
@@ -25,55 +25,7 @@ const FormInner = <Values extends FormzValues>({
 }: Omit<FormProps<Values>, "initialValues">) => {
   const form = useFormContext<Values>();
 
-  const runFieldLevelValidations = useStableCallback(async () => {
-    const { forms } = formzFieldsStore.getState();
-    const { fields } = forms[form.id];
-
-    let valid = true;
-
-    for (const id in fields) {
-      if (Object.prototype.hasOwnProperty.call(fields, id)) {
-        const field = fields[id];
-        
-        const result = await field.validate();
-
-        if (result === false) valid = false;
-      }
-    }
-
-    return valid;
-  });
-
-  const handleSubmit = useStableCallback(
-    async (e: React.FormEvent<HTMLFormElement>) => {
-      e.preventDefault();
-
-      if (onSubmit) {
-        actions.setFormIsSubmitting(form.id, true);
-
-        const { values, errors } = actions.getFormState<Values>(form.id);
-
-        try {
-          const fieldsValid = await runFieldLevelValidations();
-
-          if (fieldsValid) {
-            await onSubmit(values, errors);
-
-            if (resetOnSubmit) actions.resetFormState(form.id);
-          }
-        } catch (error) {
-          logger.error(
-            `An uncaught expception occured when submitting form with id`,
-            form.id,
-            error
-          );
-        } finally {
-          actions.incrementFormSubmitCount(form.id);
-          actions.setFormIsSubmitting(form.id, false);
-        }
-      }
-    }
-  );
+  const handleSubmit = useFormSubmission(form.id, onSubmit, resetOnSubmit)
 
   if (!form.initialized) return null;
 

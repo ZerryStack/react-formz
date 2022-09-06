@@ -16,6 +16,9 @@ export type ValueOf<
   K extends ValidKey<T> = ValidKey<T>
 > = K extends never ? never : T[K];
 
+export type FormSubmitCallback<Values extends FormzValues> = ((values: Values, errors: FormzErrors<Values>) => Promise<void>)
+| ((values: Values, errors: FormzErrors<Values>) => void);
+
 /**
  * Type for form state values i.e. the desired data structure of the form.
  */

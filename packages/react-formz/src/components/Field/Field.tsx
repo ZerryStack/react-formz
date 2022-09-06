@@ -81,7 +81,7 @@ export const TextField = <Key extends string = string>(
 export const NumberField = <Key extends string = string>(
   props: FieldProps<Key, number | undefined>
 ) => {
-  return <Field<Key, number | undefined> {...props} />;
+  return <Field<Key, number | undefined> {...props} type="number" />;
 };
 
 export const CheckboxField = <Key extends string = string>(
@@ -90,10 +90,16 @@ export const CheckboxField = <Key extends string = string>(
   return <Field<Key, boolean> {...props} type="checkbox" />;
 };
 
+export const RadioField = <Key extends string = string>(
+  props: Omit<FieldProps<Key, boolean>, "type">
+) => {
+  return <Field<Key, boolean> {...props} type="radio" />;
+};
+
 export const SelectField = <Key extends string = string>(
   props: Omit<FieldProps<Key, string>, "type">
 ) => {
-  return <Field<Key, string>  {...props} as="select" />;
+  return <Field<Key, string>  as="select" {...props} />;
 };
 
 export const MultiSelectField = <Key extends string = string>(

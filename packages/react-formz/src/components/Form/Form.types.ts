@@ -1,6 +1,10 @@
 import React from "react";
 import { UseFormOptions, UseFormResult } from "../../hooks/forms/useForm";
-import { FormRehydrationCallback, FormzErrors, FormzValues } from "../../types/form";
+import {
+  FormRehydrationCallback,
+  FormSubmitCallback,
+  FormzValues,
+} from "../../types/form";
 
 type HtmlFormProps = Omit<
   React.DetailedHTMLProps<
@@ -10,14 +14,18 @@ type HtmlFormProps = Omit<
   "children" | "onSubmit"
 >;
 
-type FormComponentProps = Omit<React.DetailedHTMLProps<React.FormHTMLAttributes<HTMLFormElement>, HTMLFormElement>, "ref">
+type FormComponentProps = Omit<
+  React.DetailedHTMLProps<
+    React.FormHTMLAttributes<HTMLFormElement>,
+    HTMLFormElement
+  >,
+  "ref"
+>;
 export interface FormProps<Values extends FormzValues>
   extends UseFormOptions<Values>,
     HtmlFormProps {
   children?: React.ReactNode | ((form: UseFormResult<Values>) => JSX.Element);
-  onSubmit?:
-    | ((values: Values, errors: FormzErrors<Values>) => Promise<void>)
-    | ((values: Values, errors: FormzErrors<Values>) => void);
+  onSubmit?: FormSubmitCallback<Values>;
   component?: "form" | React.ComponentType<FormComponentProps>;
   /**
    * If true, the form state will reset after a successful submission.

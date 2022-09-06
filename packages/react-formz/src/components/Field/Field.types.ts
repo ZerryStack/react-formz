@@ -19,6 +19,7 @@ export interface FieldComponentProps<
     onBlur?: React.FocusEventHandler;
     onFocus?: React.FocusEventHandler;
     required?: boolean;
+    label?: string;
     /**
      * The aria-invalid state indicates the entered value
      * does not conform to the format expected by the application.
@@ -64,4 +65,5 @@ export interface FieldProps<
   pattern?: RegExp;
   placeholder?: string;
   multiple?: boolean;
+  label?: string;
 }

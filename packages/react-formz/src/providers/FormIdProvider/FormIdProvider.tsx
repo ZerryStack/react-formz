@@ -29,7 +29,7 @@ const FormIdProvider = <Values extends FormzValues>({
 };
 
 /**
- * Hook to grab the id of a form.
+ * Hook to grab the id of a form from the form id context.
  */
 export function useFormIdContext() {
   const id = useContext(Context);

@@ -48,7 +48,7 @@ function Input<Key extends string>(props: FieldComponentProps<Key>) {
 
   return (
     <>
-      <input {...input} />
+      <input {...input} className="rf-input" />
       <ErrorMessage field={input.name} />
     </>
   );
@@ -102,7 +102,7 @@ const FieldTemplate: ComponentStory<typeof Form> = () => {
       <Field as={Input} type="date" name="dob" placeholder="Date of Birth" />
       <CheckboxField as={Input} name="isOver21" />
       <FormLastPersistedAt />
-      <SubmitButton>Submit</SubmitButton>
+      <SubmitButton className="rf-button">Submit</SubmitButton>
     </Form>
   );
 };
@@ -148,7 +148,7 @@ const logProfiler: React.ProfilerOnRenderCallback = (
 const ReactFormzField = ({ error, input, ...restProps }: FieldComponentProps) => (
   <FormControl error={error !== undefined}>
     <InputLabel htmlFor="my-input">Item {input.name}</InputLabel>
-    <Input {...restProps} input={input} aria-describedby="component-error-text" />
+    <Input {...restProps} input={input} aria-describedby="component-error-text"/>
     {error && (
       <FormHelperText id="component-error-text">{error.message}</FormHelperText>
     )}

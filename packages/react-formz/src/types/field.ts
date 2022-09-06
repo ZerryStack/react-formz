@@ -1,6 +1,8 @@
 import { Maybe } from "./common";
 import { FormzValues } from "./form";
 
+export type FieldId = string;
+
 export type TextFieldValue = string | number | undefined | readonly string[];
 
 export type FieldValue =

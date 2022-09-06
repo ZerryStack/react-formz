@@ -21,6 +21,7 @@ const Field = <
     pattern,
     min,
     max,
+    label,
     ...restProps
   } = props;
 
@@ -31,10 +32,12 @@ const Field = <
     pattern,
     min,
     max,
+    label
   });
 
   const inputProps = {
     ...restProps,
+    label,
     name,
     required,
     type,

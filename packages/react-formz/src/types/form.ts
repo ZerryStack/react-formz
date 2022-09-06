@@ -2,6 +2,7 @@ import { Key, Maybe } from "./common";
 import { FieldValue } from "./field";
 import { ValidationType } from "./validation";
 
+export type FormId = string;
 
 export type StringKeyOf<T> = Extract<keyof T, string>;
 

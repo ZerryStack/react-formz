@@ -3,7 +3,7 @@ import useLatest from "../../hooks/utils/useLatest";
 import useStableCallback from "../../hooks/utils/useStableCallback";
 import logger from "../../logger";
 import FormProvider, { useFormContext } from "../../providers/FormProvider";
-import { actions } from "../../store";
+import { actions, formzFieldsStore } from "../../store";
 import { FormzValues } from "../../types/form";
 import { isFunction } from "../../utils/is";
 import { FormChildrenProps, FormProps } from "./Form.types";
@@ -25,6 +25,25 @@ const FormInner = <Values extends FormzValues>({
 }: Omit<FormProps<Values>, "initialValues">) => {
   const form = useFormContext<Values>();
 
+  const runFieldLevelValidations = useStableCallback(async () => {
+    const { forms } = formzFieldsStore.getState();
+    const { fields } = forms[form.id];
+
+    let valid = true;
+
+    for (const id in fields) {
+      if (Object.prototype.hasOwnProperty.call(fields, id)) {
+        const field = fields[id];
+        
+        const result = await field.validate();
+
+        if (result === false) valid = false;
+      }
+    }
+
+    return valid;
+  });
+
   const handleSubmit = useStableCallback(
     async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
@@ -35,9 +54,13 @@ const FormInner = <Values extends FormzValues>({
         const { values, errors } = actions.getFormState<Values>(form.id);
 
         try {
-          await onSubmit(values, errors);
+          const fieldsValid = await runFieldLevelValidations();
 
-          if (resetOnSubmit) actions.resetFormState(form.id);
+          if (fieldsValid) {
+            await onSubmit(values, errors);
+
+            if (resetOnSubmit) actions.resetFormState(form.id);
+          }
         } catch (error) {
           logger.error(
             `An uncaught expception occured when submitting form with id`,
@@ -55,7 +78,7 @@ const FormInner = <Values extends FormzValues>({
   if (!form.initialized) return null;
 
   return (
-    <Component {...formProps} onSubmit={handleSubmit} name={name}>
+    <Component noValidate {...formProps} onSubmit={handleSubmit} name={name}>
       {isFunction(children) ? (
         <FormChildren form={form}>{children}</FormChildren>
       ) : (

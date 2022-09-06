@@ -8,6 +8,7 @@ export {
   NumberField,
   MultiSelectField,
 } from "./components/Field";
+export type { FieldValue, TextFieldValue } from "./types/field"; 
 export { default as Form } from "./components/Form";
 export { default as FormLastPersistedAt } from "./components/FormLastPersistedAt";
 export {

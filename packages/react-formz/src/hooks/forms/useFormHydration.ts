@@ -37,6 +37,9 @@ function useFormHydration<Values extends FormzValues>(
           state.forms[id].restoredFromDate = state.forms[id].lastPersistedAt;
           state.forms[id].lastPersistedAt = new Date();
           state.forms[id].hydrated = true;
+          state.forms[id].isSubmitting = false;
+          state.forms[id].submitCount = 0;
+          state.forms[id].errors = {};
         });
       }
 

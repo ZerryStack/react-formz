@@ -15,6 +15,7 @@ export interface UseFieldValidationOptions<
   min?: number;
   max?: number;
   pattern?: RegExp;
+  label?: string;
 }
 
 /**
@@ -28,6 +29,7 @@ function useFieldValidation<
   Value extends FieldValue = FieldValue
 >(formId: string, name: Key, options: UseFieldValidationOptions<Value>) {
   const error = useFormz((state) => state.forms[formId].errors[name]);
+  const { label = name } = options;
 
   const getErrorMessage = async (): Promise<FormzError | null> => {
     const value = actions.getFieldStoreValue<Value>(formId, name);
@@ -35,7 +37,7 @@ function useFieldValidation<
     if (options.required && isEmpty(value)) {
       return {
         type: "required",
-        message: `${name} is required.`,
+        message: `${label} is required.`,
       };
     }
 
@@ -46,7 +48,7 @@ function useFieldValidation<
     ) {
       return {
         type: "max",
-        message: `${name} is above the maximum value of  ${options.max}.`,
+        message: `${label} is above the maximum value of  ${options.max}.`,
       };
     }
 
@@ -57,7 +59,7 @@ function useFieldValidation<
     ) {
       return {
         type: "min",
-        message: `${name} is below the minimum value of  ${options.min}.`,
+        message: `${label} is below the minimum value of  ${options.min}.`,
       };
     }
 
@@ -68,7 +70,7 @@ function useFieldValidation<
     ) {
       return {
         type: "pattern",
-        message: `${name} does not match pattern ${options.pattern}.`,
+        message: `${label} does not match pattern ${options.pattern}.`,
       };
     }
 

@@ -13,6 +13,7 @@ import {
   NumberField,
   RadioField,
   FieldComponentProps,
+  ArrayField,
 } from "../src";
 import MuiButton from "@mui/material/Button";
 import FormControl from "@mui/material/FormControl";
@@ -144,7 +145,8 @@ const SimpleFormTemplate: ComponentStory<typeof Field> = () => {
         kg: "",
         library: "",
         cool: false,
-        gender: ""
+        gender: "",
+        friends: [{ name: "John" }],
       }}
       name="SimpleForm"
       onSubmit={console.log}
@@ -200,6 +202,28 @@ const SimpleFormTemplate: ComponentStory<typeof Field> = () => {
             <FormControlLabel value="male" control={<Radio />} label="Male" />
             <FormControlLabel value="other" control={<Radio />} label="Other" />
           </RadioField>
+        </Box>
+        <Box display="flex" flexDirection="column">
+          <ArrayField<{ name: string }>
+            name="friends"
+            render={({ values }) => {
+              return (
+                <Box>
+                  {values.map((_, index) => {
+                    return (
+                      <TextField
+                        key={index}
+                        name={`friends.${index}[name]`}
+                        label="Friend"
+                        required
+                        as={MuiTextFieldComponent}
+                      />
+                    );
+                  })}
+                </Box>
+              );
+            }}
+          />
         </Box>
         <Box>
           <MuiButton component={SubmitButton}>Submit</MuiButton>

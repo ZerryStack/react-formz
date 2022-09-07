@@ -1,5 +1,6 @@
 import { FormzChangeEvent } from "../../types/events";
 import getFieldValue from "../../utils/getFieldValue";
+import set from "../../utils/set";
 import { formzStore } from "../store";
 
 function updateFormValue(
@@ -10,7 +11,7 @@ function updateFormValue(
   formzStore.setState((state) => {
     const value = getFieldValue(event);
 
-    state.forms[id].values[field] = value;
+    set(state.forms[id].values, field, value);
   });
 }
 

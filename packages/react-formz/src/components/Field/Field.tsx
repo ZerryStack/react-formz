@@ -1,11 +1,11 @@
 import React from "react";
 import useField from "../../hooks/fields/useField";
-import { FieldValue } from "../../types/field";
+import { FieldId, FieldValue } from "../../types/field";
 import { isValidInputValue } from "../../utils/is";
-import { FieldProps } from "./Field.types";
+import { FieldInputProps, FieldProps } from "./Field.types";
 
 const FieldInner = <
-  Key extends string = string,
+  Key extends FieldId = FieldId,
   Value extends FieldValue = FieldValue,
   Element = HTMLInputElement,
   Component extends React.ComponentType<{}> = React.ComponentType<{}>
@@ -38,7 +38,7 @@ const FieldInner = <
     label,
   });
 
-  const inputProps = {
+  const inputProps: FieldInputProps<Key, Value> = {
     label,
     name,
     required,
@@ -77,7 +77,7 @@ const FieldInner = <
 };
 
 const Field = React.forwardRef<any, FieldProps>(FieldInner) as <
-  Key extends string = string,
+  Key extends FieldId = FieldId,
   Value extends FieldValue = FieldValue,
   Element = HTMLInputElement,
   Component extends React.ComponentType<{}> = React.ComponentType<{}>

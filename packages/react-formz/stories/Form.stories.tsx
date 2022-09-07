@@ -22,7 +22,7 @@ import { useSnackbar } from "notistack";
 import format from "date-fns/format";
 
 export default {
-  title: "useForm",
+  title: "Components/Form",
   component: Form,
   parameters: {
     layout: "fullscreen",

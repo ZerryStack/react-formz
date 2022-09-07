@@ -1,3 +1,4 @@
+export type AnyObject = Record<string, any>;
 /**
  * Type which can be used to index an array or tuple type.
  */

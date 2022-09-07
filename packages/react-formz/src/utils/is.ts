@@ -1,11 +1,13 @@
-import { Empty } from "../types/common";
-import { FieldValue } from "../types/field";
+import { fieldArrayItemNameRegex, MAX_SAFE_INTEGER } from "../constants";
+import { AnyObject, Empty } from "../types/common";
+import { FieldId, FieldValue } from "../types/field";
 import {
   HTMLCheckboxInputElement,
   HTMLDateInputElement,
   HTMLNumberInputElement,
 } from "../types/input";
 import { IsNot } from "../types/utils";
+import getTag from "./getTag";
 
 export function isString(value: any): value is string {
   return typeof value === "string";
@@ -20,7 +22,11 @@ export function isBoolean(value: unknown): value is boolean {
 }
 
 export function isNull(value: unknown): value is null {
-  return typeof value === null;
+  return value === null;
+}
+
+export function isUndefined(value: unknown): value is undefined {
+  return value === undefined;
 }
 
 export function isNumber(value: any): value is number {
@@ -31,9 +37,26 @@ export function isRegExp(value: unknown): value is RegExp {
   return value instanceof RegExp;
 }
 
+export function isObject(value: unknown): value is AnyObject {
+  return (
+    !isNull(value) &&
+    !isUndefined(value) &&
+    !isArray(value) &&
+    typeof value === "object"
+  );
+}
+
+export function isArray(value: unknown): value is Array<any> {
+  return Array.isArray(value);
+}
+
+export function isKey(value: string) {
+  return /^\w*$/.test(value);
+}
+
 export function isValidInputValue<Value extends FieldValue>(
   value: Value
-): value is Exclude<Value, boolean | null> {
+): value is Exclude<Value, boolean | null | AnyObject | Array<any>> {
   return !isBoolean(value) && !isNull(value);
 }
 
@@ -86,4 +109,29 @@ export function isNotEmpty<T extends unknown>(
 ): value is IsNot<T, Empty> {
   if (typeof value === "string") return value !== "";
   return value !== undefined && value !== null;
+}
+
+export function isArrayFieldItemName(
+  name: FieldId
+): name is `${string}.${number}` {
+  return fieldArrayItemNameRegex.test(name);
+}
+
+export function isSymbol(value: unknown) {
+  const type = typeof value
+  return type == 'symbol' || (type === 'object' && value != null && getTag(value) == '[object Symbol]')
+}
+
+export function isIndex(value: any, length?: number) {
+  const type = typeof value;
+  length = length == null ? MAX_SAFE_INTEGER : length;
+
+  return (
+    !!length &&
+    (type === "number" ||
+      (type !== "symbol" && /^(?:0|[1-9]\d*)$/.test(value))) &&
+    value > -1 &&
+    value % 1 == 0 &&
+    value < length
+  );
 }

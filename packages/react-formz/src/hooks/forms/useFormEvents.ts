@@ -4,6 +4,7 @@ import { FormzChangeEvent } from "../../types/events";
 import getField from "../../utils/getField";
 import getFieldValue from "../../utils/getFieldValue";
 import { isString } from "../../utils/is";
+import set from "../../utils/set";
 import useStableCallback from "../utils/useStableCallback";
 
 /**
@@ -18,7 +19,7 @@ function useFormEvents(id: string) {
         const field = getField(eventOrTextValue);
         const value = getFieldValue(eventOrTextValue);
 
-        state.forms[id].values[field] = value;
+        set(state.forms[id].values, field, value);
       });
     },
     [id]

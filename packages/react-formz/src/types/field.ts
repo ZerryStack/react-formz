@@ -1,8 +1,10 @@
-import { Maybe } from "./common";
+import { AnyObject, Maybe } from "./common";
 import { FormzValues } from "./form";
+import { LiteralUnion } from "./utils";
 
-export type FieldId = string;
+export type FieldId = LiteralUnion<`${string}.${number}`>;
 
+/** Native HTMLField Values */
 export type TextFieldValue = string | number | undefined | readonly string[];
 
 export type FieldValue =
@@ -11,6 +13,8 @@ export type FieldValue =
   | boolean
   | null
   | undefined
+  | Array<any>
+  | AnyObject
   | readonly string[];
 
 export type FieldElement =

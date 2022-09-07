@@ -1,5 +1,5 @@
 import { useFormz, actions } from "../../store";
-import { FieldValidator, FieldValue } from "../../types/field";
+import { FieldId, FieldValidator, FieldValue } from "../../types/field";
 import { FormzError } from "../../types/form";
 import { isEmpty, isNotEmpty as isDefined, isNumber, isString } from "../../utils/is";
 import doesNotMatchPattern from "../../validations/doesNotMatchPattern";
@@ -25,7 +25,7 @@ export interface UseFieldValidationOptions<
  * @param options Options to customize the way a field is validated.
  */
 function useFieldValidation<
-  Key extends string = string,
+  Key extends FieldId = FieldId,
   Value extends FieldValue = FieldValue
 >(formId: string, name: Key, options: UseFieldValidationOptions<Value>) {
   const error = useFormz((state) => state.forms[formId].errors[name]);

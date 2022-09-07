@@ -1,3 +1,5 @@
+export type { ArrayFieldComponentProps, ArrayFieldProps } from "./components/ArrayField";
+export { default as ArrayField } from "./components/ArrayField";
 export { default as SubmitButton } from "./components/SubmitButton";
 export { default as ErrorMessage } from "./components/ErrorMessage";
 export {

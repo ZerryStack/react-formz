@@ -1,7 +1,7 @@
 import { useFormIdContext } from "../../providers/FormIdProvider";
 import useFieldValue from "../../store/hooks/useFieldValue";
 import { FormzChangeEvent } from "../../types/events";
-import { FieldValue } from "../../types/field";
+import { FieldId, FieldValue } from "../../types/field";
 import { FormzError } from "../../types/form";
 import { isBoolean } from "../../utils/is";
 import useFieldEvents from "./useFieldEvents";
@@ -22,6 +22,7 @@ export interface UseFieldResult<Value extends FieldValue> {
   onBlur: (event: React.FocusEvent<any>) => void;
   error: FormzError | undefined;
   checked?: boolean;
+  formId: string;
 }
 
 /**
@@ -31,7 +32,7 @@ export interface UseFieldResult<Value extends FieldValue> {
  * @param options Options to customize behaviour.
  */
 function useField<
-  Key extends string = string,
+  Key extends FieldId = FieldId,
   Value extends FieldValue = FieldValue
 >(name: Key, options: UseFieldOptions<Value>): UseFieldResult<Value> {
   const { required, type = "text", max, min, pattern, label } = options;
@@ -58,14 +59,15 @@ function useField<
     onChange,
     onBlur,
     error,
+    formId: id
   };
 }
 
-export function useNumberField<Key extends string = string>(name: Key, options: UseFieldOptions<number>) {
+export function useNumberField<Key extends FieldId = FieldId>(name: Key, options: UseFieldOptions<number>) {
   return useField<Key, number>(name, options);
 }
 
-export function useBooleanField<Key extends string = string>(name: Key, options: UseFieldOptions<boolean>) {
+export function useBooleanField<Key extends FieldId = FieldId>(name: Key, options: UseFieldOptions<boolean>) {
   return useField<Key, boolean>(name, options);
 }
 

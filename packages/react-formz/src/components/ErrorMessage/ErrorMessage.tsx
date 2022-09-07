@@ -12,9 +12,9 @@ const ErrorMessage = ({
   const error = useErrorMessage(field);
   const touched = useFieldTouched(field);
 
-  if (error && onlyShowIfTouched && touched) {
+  if (error && (onlyShowIfTouched ? touched !== false : true)) {
     if (Component) {
-      <Component  {...spanProps} aria-live="polite" field={field} error={error}>
+      <Component {...spanProps} aria-live="polite" field={field} error={error}>
         {error.message}
       </Component>;
     }

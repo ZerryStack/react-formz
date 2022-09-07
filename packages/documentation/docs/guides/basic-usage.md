@@ -8,56 +8,9 @@ The goal of React Formz is to make form building feel natural, painless and decl
 
 The most basic components of React Formz are `Form` and `Field`. `Form`'s serve as the contextual data and api wrapper for all of its' fields. Fields can be nested to any depth, dynamically rendered and deleted as needed.
 
-```tsx
-import { Form, TextField, NumberField, ErrorMessage } from "react-formz";
-
-type FormState = {
-  name: string;
-  age: number;
-};
-
-function MyForm() {
-  function handleSubmit(data) {
-    apiRequest(data);
-  }
-
-  return (
-    <Form<FormState>
-      initialValues={{
-        name: "",
-        age: "",
-      }}
-      name="SimpleForm"
-      onSubmit={handleSubmit}
-      resetOnSubmit
-    >
-      <TextField
-        name="name"
-        label="Name"
-        required
-        as={({ input: { label, ...input } }) => (
-          <>
-            <label htmlFor={input.name}>{label}</label>
-            <input {...input} />
-            <ErrorMessage field={input.name} />
-          </>
-        )}
-      />
-      <NumberField
-        name="age"
-        label="Age"
-        required
-        min={18}
-        max={75}
-        as={({ input: { label, ...input } }) => (
-          <>
-            <label htmlFor={input.name}>{label}</label>
-            <input {...input} />
-            <ErrorMessage field={input.name} />
-          </>
-        )}
-      />
-    </Form>
-  );
-}
-```
+<iframe src="https://codesandbox.io/embed/zerry-react-formz-basic-1kk9jb?fontsize=14&hidenavigation=1&theme=dark"
+     style={{ width: "100%", height: 500 }}
+     title="zerry-react-formz-basic"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>

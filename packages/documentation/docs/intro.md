@@ -31,7 +31,7 @@ I wanted a form library that was blazing fast and didn't require the use of `Rea
 React Formz can be installed the same as every other package.
 
 ```sh
-npm install react-formz
+npm install react-formz immer
 ```
 
 ### Yarn
@@ -40,42 +40,3 @@ npm install react-formz
 yarn add react-formz immer
 ```
 
-## Da Basics
-
-```tsx title="Basic usage"
-import { Form, Field } from "react-formz";
-
-function MyCoolInput({ error, ...restProps }) {
-  return (
-    <>
-      <input {...restProps} />
-      {error && <span aria-live="polite">{error.message}</span>}
-    </>
-  );
-}
-
-function MyCoolForm({ submitToServer }) {
-  return (
-    <Form
-      name="MyCoolForm"
-      initialValues={{ fullName: "" }}
-      onSubmit={submitToServer}
-    >
-      <Field
-        name="fullName"
-        as={MyCoolInput}
-        required
-        pattern={/^[\w]+\s[\w]+$/gm}
-      />
-      <Field
-        name="title"
-        as={MyCoolInput}
-        validate={(value) => {
-          if (value !== "CoolDude") return "Have you heard about Doge Coin?";
-          return null;
-        }}
-      />
-    </Form>
-  );
-}
-```

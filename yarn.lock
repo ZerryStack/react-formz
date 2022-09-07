@@ -15532,6 +15532,10 @@ __metadata:
     typescript: ^4.8.2
     yup: ^0.32.11
     zustand: ^4.1.1
+  peerDependencies:
+    date-fns: ">=1.0.0"
+    immer: "*"
+    ramda: "*"
   languageName: unknown
   linkType: soft
 

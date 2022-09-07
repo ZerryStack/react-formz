@@ -37,7 +37,7 @@ npm install react-formz
 ### Yarn
 
 ```sh
-yarn add react-formz
+yarn add react-formz immer
 ```
 
 ## Da Basics

@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Basic Usage
+# Form
 
 The goal of React Formz is to make form building feel natural, painless and declarative so the api is designed to be easy-to-use and solve common issues with building forms behind the scenes.
 

@@ -1,4 +1,4 @@
-import { mergeDeepLeft } from "ramda";
+import mergeDeepLeft from "ramda/es/mergeDeepLeft";
 import { useEffect } from "react";
 import { formzStore, useFormz } from "../../store";
 import { FormRehydrationCallback, FormzValues } from "../../types/form";

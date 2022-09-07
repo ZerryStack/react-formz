@@ -1,10 +1,12 @@
 import { useFormz, actions } from "../../store";
+import makeSelectFieldError from "../../store/selectors/makeSelectFieldError";
 import { FieldId, FieldValidator, FieldValue } from "../../types/field";
 import { FormzError } from "../../types/form";
 import { isEmpty, isNotEmpty as isDefined, isNumber, isString } from "../../utils/is";
 import doesNotMatchPattern from "../../validations/doesNotMatchPattern";
 import isAboveMax from "../../validations/isAboveMax";
 import isBelowMin from "../../validations/isBelowMin";
+import useSelector from "../utils/useSelector";
 import useStableCallback from "../utils/useStableCallback";
 
 export interface UseFieldValidationOptions<
@@ -28,7 +30,8 @@ function useFieldValidation<
   Key extends FieldId = FieldId,
   Value extends FieldValue = FieldValue
 >(formId: string, name: Key, options: UseFieldValidationOptions<Value>) {
-  const error = useFormz((state) => state.forms[formId].errors[name]);
+  const selectFieldError = useSelector(makeSelectFieldError(formId, name));
+  const error = useFormz(selectFieldError);
   const { label = name } = options;
 
   const getErrorMessage = async (): Promise<FormzError | null> => {

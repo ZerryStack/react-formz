@@ -1,6 +1,6 @@
+import useSelector from "../../hooks/utils/useSelector";
 import { FieldId, FieldValue } from "../../types/field";
-import { FormzState } from "../../types/form";
-import get from "../../utils/get";
+import makeSelectFieldValue from "../selectors/makeSelectFieldValue";
 import { useFormz } from "../store";
 
 /**
@@ -10,11 +10,9 @@ function useFieldValue<
   Key extends FieldId = FieldId,
   Value extends FieldValue = FieldValue
 >(formId: string, fieldId: Key): Value {
-  const value = useFormz((state) => {
-    const form = state.forms[formId] as FormzState<Record<Key, Value>>;
+  const selectFieldValue = useSelector(makeSelectFieldValue(formId, fieldId));
 
-    return get<Key, Record<Key, Value>, Value>(form?.values ?? {}, fieldId);
-  });
+  const value = useFormz(selectFieldValue);
 
   return value as Value;
 }

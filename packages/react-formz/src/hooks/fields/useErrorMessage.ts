@@ -1,5 +1,7 @@
 import { useFormIdContext } from "../../providers/FormIdProvider";
 import { useFormz } from "../../store";
+import makeSelectFieldError from "../../store/selectors/makeSelectFieldError";
+import useSelector from "../utils/useSelector";
 
 /**
  * Returns the error object for a form field.
@@ -8,7 +10,9 @@ import { useFormz } from "../../store";
 function useErrorMessage(field: string) {
   const id = useFormIdContext();
 
-  const error = useFormz((state) => state.forms[id].errors[field]);
+  const selector = useSelector(makeSelectFieldError(id, field));
+
+  const error = useFormz(selector);
 
   return error;
 }

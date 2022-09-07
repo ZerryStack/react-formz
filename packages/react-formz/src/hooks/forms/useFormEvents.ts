@@ -41,7 +41,7 @@ function useFormEvents(id: string) {
           ? eventOrPath
           : getField(eventOrPath);
 
-        state.forms[id].touched[field] = true;
+          set(state.forms[id].touched, field, true);
       });
     }
   );

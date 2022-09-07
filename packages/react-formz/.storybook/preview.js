@@ -4,6 +4,8 @@ import uuid from "react-uuid";
 import "antd/dist/antd.css";
 import "./preview.css";
 import { SnackbarProvider } from "notistack";
+import { FormzDateProvider } from "../src";
+import formatDate from "date-fns/format";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -18,9 +20,13 @@ export const parameters = {
 export const decorators = [
   (Story) => (
     // <Profiler id={uuid()} onRender={console.log}>
-    <SnackbarProvider>
-      <Story />
-    </SnackbarProvider>
+    <FormzDateProvider
+      formatter={(date, format) => formatDate(new Date(date), format)}
+    >
+      <SnackbarProvider>
+        <Story />
+      </SnackbarProvider>
+    </FormzDateProvider>
     // </Profiler>
   ),
 ];

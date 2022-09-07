@@ -2,6 +2,7 @@ export type { ArrayFieldComponentProps, ArrayFieldProps } from "./components/Arr
 export { default as ArrayField } from "./components/ArrayField";
 export { default as SubmitButton } from "./components/SubmitButton";
 export { default as ErrorMessage } from "./components/ErrorMessage";
+export { default as FormzDateProvider } from "./providers/FormDateProvider";
 export {
   default as Field,
   TextField,

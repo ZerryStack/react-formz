@@ -135,11 +135,21 @@ const MuiRadioFieldComponent = <Key extends string>({
     </FormControl>
   );
 };
+
+type SimpleFormState = {
+  firstName: string;
+  kg: string;
+  library: string;
+  cool: boolean;
+  gender: string;
+  friends: { name: string }[];
+};
+
 const SimpleFormTemplate: ComponentStory<typeof Field> = () => {
   const {} = useSnackbar();
 
   return (
-    <Form
+    <Form<SimpleFormState>
       initialValues={{
         firstName: "",
         kg: "",
@@ -213,7 +223,7 @@ const SimpleFormTemplate: ComponentStory<typeof Field> = () => {
                     return (
                       <TextField
                         key={index}
-                        name={`friends.${index}[name]`}
+                        name={`friends.${index}[hey]`}
                         label="Friend"
                         required
                         as={MuiTextFieldComponent}

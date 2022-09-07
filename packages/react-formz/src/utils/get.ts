@@ -6,10 +6,10 @@ function get<
   DefaultValue = TypeFromPath<Data, Path>
 >(
   data: Data,
-  path: Path,
+  path: Path | string[],
   defaultValue?: DefaultValue
 ): TypeFromPath<Data, Path> | DefaultValue {
-  const parts = path.split(/[.[\]]/).filter(Boolean);
+  const parts = Array.isArray(path) ? path : path.split(/[.[\]]/).filter(Boolean);
 
   const value = parts.reduce<TypeFromPath<Data, Path>>((value, key) => {
     return (value as any)?.[key];

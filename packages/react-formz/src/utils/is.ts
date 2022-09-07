@@ -1,6 +1,6 @@
-import { fieldArrayItemNameRegex, MAX_SAFE_INTEGER } from "../constants";
+import { MAX_SAFE_INTEGER } from "../constants";
 import { AnyObject, Empty } from "../types/common";
-import { FieldId, FieldValue } from "../types/field";
+import { FieldValue } from "../types/field";
 import {
   HTMLCheckboxInputElement,
   HTMLDateInputElement,
@@ -109,12 +109,6 @@ export function isNotEmpty<T extends unknown>(
 ): value is IsNot<T, Empty> {
   if (typeof value === "string") return value !== "";
   return value !== undefined && value !== null;
-}
-
-export function isArrayFieldItemName(
-  name: FieldId
-): name is `${string}.${number}` {
-  return fieldArrayItemNameRegex.test(name);
 }
 
 export function isSymbol(value: unknown) {

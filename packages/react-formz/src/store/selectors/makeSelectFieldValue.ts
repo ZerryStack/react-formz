@@ -6,7 +6,9 @@ function makeSelectFieldValue<Key extends string, Values extends FormzValues>(
   id: string,
   field: Key
 ) {
-  return (state: FormzStore) => get<Key, Values>(state.forms[id].values, field);
+  return (state: FormzStore) => {
+    return get<Key, Values>(state.forms[id].values, field)
+  };
 }
 
 export default makeSelectFieldValue;

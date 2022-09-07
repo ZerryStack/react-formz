@@ -36,9 +36,15 @@ function set<Value extends unknown, Values extends AnyObject>(
       newValue = nextValue;
     }
     
-    nested[key] = newValue;
-    nested = nested[key];
+    if (newValue === undefined) {
+      delete nested[key];
+    }
+    else {
+      nested[key] = newValue;
+      nested = nested[key];
+    }
   }
+
   return object;
 }
 

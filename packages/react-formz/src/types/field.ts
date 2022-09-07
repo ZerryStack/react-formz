@@ -1,8 +1,7 @@
 import { AnyObject, Maybe } from "./common";
 import { FormzValues } from "./form";
-import { LiteralUnion } from "./utils";
 
-export type FieldId = LiteralUnion<`${string}.${number}`>;
+export type FieldId = string;
 
 /** Native HTMLField Values */
 export type TextFieldValue = string | number | undefined | readonly string[];

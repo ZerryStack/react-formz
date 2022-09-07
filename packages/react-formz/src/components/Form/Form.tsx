@@ -1,19 +1,13 @@
 import React from "react";
+import useFormStateInitialized from "../../hooks/forms/useFormStateInitialized";
 import useFormSubmission from "../../hooks/forms/useFormSubmission";
 import useLatest from "../../hooks/utils/useLatest";
 import useStableCallback from "../../hooks/utils/useStableCallback";
 import logger from "../../logger";
-import FormProvider, { useFormContext } from "../../providers/FormProvider";
+import { useFormIdContext } from "../../providers/FormIdProvider";
+import FormProvider from "../../providers/FormProvider";
 import { FormzValues } from "../../types/form";
-import { isFunction } from "../../utils/is";
-import { FormChildrenProps, FormProps } from "./Form.types";
-
-const FormChildren = <Values extends FormzValues>({
-  children,
-  form,
-}: FormChildrenProps<Values>) => {
-  return <>{children(form)}</>;
-};
+import { FormProps } from "./Form.types";
 
 const FormInner = <Values extends FormzValues>({
   name,
@@ -23,19 +17,16 @@ const FormInner = <Values extends FormzValues>({
   resetOnSubmit = false,
   ...formProps
 }: Omit<FormProps<Values>, "initialValues">) => {
-  const form = useFormContext<Values>();
+  const id = useFormIdContext();
+  const initialized = useFormStateInitialized(id);
 
-  const handleSubmit = useFormSubmission(form.id, onSubmit, resetOnSubmit)
+  const handleSubmit = useFormSubmission(id, onSubmit, resetOnSubmit)
 
-  if (!form.initialized) return null;
+  if (!initialized) return null;
 
   return (
     <Component noValidate {...formProps} onSubmit={handleSubmit} name={name}>
-      {isFunction(children) ? (
-        <FormChildren form={form}>{children}</FormChildren>
-      ) : (
-        children
-      )}
+      {children}
     </Component>
   );
 };
@@ -71,6 +62,6 @@ const Form = <Values extends FormzValues>({
       </FormInner>
     </FormProvider>
   );
-};
+}
 
 export default Form;

@@ -38,7 +38,7 @@ function useField<
   const { required, type = "text", max, min, pattern, label } = options;
 
   const id = useFormIdContext();
-  const value = useFieldValue<Key, Value>(id, name)
+  const value = useFieldValue<Key>(id, name) as Value;
 
   const { validate, error } = useFieldValidation<Key, Value>(id, name, {
     validate: options.validate,

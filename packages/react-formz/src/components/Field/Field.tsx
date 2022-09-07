@@ -88,7 +88,7 @@ const Field = React.forwardRef<any, FieldProps>(FieldInner) as <
 /**
  * Factory function to create fields with standard values.
  */
-function createComponent<Value extends FieldValue>(type?: React.HTMLInputTypeAttribute, additionalProps?: { multiple?: boolean }) {
+function createField<Value extends FieldValue>(type?: React.HTMLInputTypeAttribute, additionalProps?: { multiple?: boolean }) {
   const component = React.forwardRef<
     HTMLInputElement,
     FieldProps<string, Value, HTMLInputElement>
@@ -105,16 +105,16 @@ function createComponent<Value extends FieldValue>(type?: React.HTMLInputTypeAtt
   ) => JSX.Element;
 }
 
-export const TextField = createComponent<string>("text");
+export const TextField = createField<string>("text");
 
-export const NumberField = createComponent<number>("number");
+export const NumberField = createField<number>("number");
 
-export const CheckboxField = createComponent<boolean>("checkbox");
+export const CheckboxField = createField<boolean>("checkbox");
 
-export const RadioField = createComponent<string>("radio");
+export const RadioField = createField<string>("radio");
 
-export const SelectField = createComponent<string>("select");
+export const SelectField = createField<string>("select");
 
-export const MultiSelectField = createComponent<string>("select", { multiple: true });
+export const MultiSelectField = createField<string>("select", { multiple: true });
 
 export default Field;

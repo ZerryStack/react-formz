@@ -31,12 +31,12 @@ I wanted a form library that was blazing fast and didn't require the use of `Rea
 React Formz can be installed the same as every other package.
 
 ```sh
-npm install react-formz immer
+npm install @zerry/react-formz immer
 ```
 
 ### Yarn
 
 ```sh
-yarn add react-formz immer
+yarn add @zerry/react-formz immer
 ```
 

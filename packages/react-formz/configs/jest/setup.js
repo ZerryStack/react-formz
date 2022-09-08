@@ -1,3 +1,4 @@
+import "@testing-library/jest-dom";
 import { formzFieldsStore, formzStore } from "../../src/store";
 
 beforeEach(() => {

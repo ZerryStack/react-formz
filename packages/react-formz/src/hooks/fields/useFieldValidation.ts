@@ -51,7 +51,7 @@ function useFieldValidation<
     ) {
       return {
         type: "max",
-        message: `${label} is above the maximum value of  ${options.max}.`,
+        message: `${label} is above the maximum value of ${options.max}.`,
       };
     }
 
@@ -62,7 +62,7 @@ function useFieldValidation<
     ) {
       return {
         type: "min",
-        message: `${label} is below the minimum value of  ${options.min}.`,
+        message: `${label} is below the minimum value of ${options.min}.`,
       };
     }
 

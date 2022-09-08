@@ -42,4 +42,4 @@ Custom change event handler using
 
 #### Defined in
 
-[packages/react-formz/src/types/events.ts:15](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/types/events.ts#L15)
+[packages/react-formz/src/types/events.ts:15](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/events.ts#L15)

@@ -21,4 +21,4 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/react-formz/src/types/keys.ts:52](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/types/keys.ts#L52)
+[packages/react-formz/src/types/keys.ts:52](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/keys.ts#L52)

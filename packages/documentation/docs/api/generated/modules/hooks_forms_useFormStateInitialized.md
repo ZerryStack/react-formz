@@ -28,4 +28,4 @@ after the first mount of the form.
 
 #### Defined in
 
-[packages/react-formz/src/hooks/forms/useFormStateInitialized.ts:9](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/hooks/forms/useFormStateInitialized.ts#L9)
+[packages/react-formz/src/hooks/forms/useFormStateInitialized.ts:9](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useFormStateInitialized.ts#L9)

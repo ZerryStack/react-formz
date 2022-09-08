@@ -28,4 +28,4 @@ Path<{foo: {bar: string}}> = 'foo' | 'foo.bar'
 
 #### Defined in
 
-[packages/react-formz/src/types/path.ts:20](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/types/path.ts#L20)
+[packages/react-formz/src/types/path.ts:20](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/path.ts#L20)

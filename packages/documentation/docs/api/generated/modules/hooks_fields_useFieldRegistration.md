@@ -30,4 +30,4 @@ fields and is used to call field functions at various times.
 
 #### Defined in
 
-[packages/react-formz/src/hooks/fields/useFieldRegistration.ts:12](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/hooks/fields/useFieldRegistration.ts#L12)
+[packages/react-formz/src/hooks/fields/useFieldRegistration.ts:12](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/fields/useFieldRegistration.ts#L12)

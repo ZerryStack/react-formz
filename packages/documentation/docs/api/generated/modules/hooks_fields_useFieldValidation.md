@@ -44,4 +44,4 @@ Custom hook that creates a validation api for an input field.
 
 #### Defined in
 
-[packages/react-formz/src/hooks/fields/useFieldValidation.ts:29](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/hooks/fields/useFieldValidation.ts#L29)
+[packages/react-formz/src/hooks/fields/useFieldValidation.ts:29](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/fields/useFieldValidation.ts#L29)

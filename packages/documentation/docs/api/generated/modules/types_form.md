@@ -18,7 +18,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/react-formz/src/types/form.ts:9](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/types/form.ts#L9)
+[packages/react-formz/src/types/form.ts:9](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/form.ts#L9)
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/types/form.ts:5](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/types/form.ts#L5)
+[packages/react-formz/src/types/form.ts:5](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/form.ts#L5)
 
 ___
 
@@ -59,7 +59,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/types/form.ts:48](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/types/form.ts#L48)
+[packages/react-formz/src/types/form.ts:48](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/form.ts#L48)
 
 ___
 
@@ -75,7 +75,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/types/form.ts:19](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/types/form.ts#L19)
+[packages/react-formz/src/types/form.ts:19](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/form.ts#L19)
 
 ___
 
@@ -94,7 +94,7 @@ but the validator can be async/return a Promise.
 
 #### Defined in
 
-[packages/react-formz/src/types/form.ts:72](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/types/form.ts#L72)
+[packages/react-formz/src/types/form.ts:72](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/form.ts#L72)
 
 ___
 
@@ -111,7 +111,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/types/form.ts:29](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/types/form.ts#L29)
+[packages/react-formz/src/types/form.ts:29](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/form.ts#L29)
 
 ___
 
@@ -129,7 +129,7 @@ Type for form state errors.
 
 #### Defined in
 
-[packages/react-formz/src/types/form.ts:36](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/types/form.ts#L36)
+[packages/react-formz/src/types/form.ts:36](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/form.ts#L36)
 
 ___
 
@@ -165,7 +165,7 @@ The complete state of a form.
 
 #### Defined in
 
-[packages/react-formz/src/types/form.ts:52](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/types/form.ts#L52)
+[packages/react-formz/src/types/form.ts:52](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/form.ts#L52)
 
 ___
 
@@ -184,7 +184,7 @@ focus/blur combination of events has happened at least once.
 
 #### Defined in
 
-[packages/react-formz/src/types/form.ts:44](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/types/form.ts#L44)
+[packages/react-formz/src/types/form.ts:44](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/form.ts#L44)
 
 ___
 
@@ -200,7 +200,7 @@ Type for form state values i.e. the desired data structure of the form.
 
 #### Defined in
 
-[packages/react-formz/src/types/form.ts:25](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/types/form.ts#L25)
+[packages/react-formz/src/types/form.ts:25](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/form.ts#L25)
 
 ___
 
@@ -216,7 +216,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/types/form.ts:7](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/types/form.ts#L7)
+[packages/react-formz/src/types/form.ts:7](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/form.ts#L7)
 
 ___
 
@@ -233,7 +233,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/types/form.ts:11](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/types/form.ts#L11)
+[packages/react-formz/src/types/form.ts:11](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/form.ts#L11)
 
 ___
 
@@ -250,4 +250,4 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/types/form.ts:14](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/types/form.ts#L14)
+[packages/react-formz/src/types/form.ts:14](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/form.ts#L14)

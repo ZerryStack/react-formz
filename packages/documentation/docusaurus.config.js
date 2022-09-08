@@ -45,6 +45,7 @@ const config = {
         "externalPattern": ["**/node_modules/**"],
         "excludeExternals": true,
         "plugin": ["typedoc-plugin-rename-defaults"],
+        "gitRevision": "main"
       },
     ],
   ],

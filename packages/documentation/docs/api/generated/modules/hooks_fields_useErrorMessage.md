@@ -26,4 +26,4 @@ Returns the error object for a form field.
 
 #### Defined in
 
-[packages/react-formz/src/hooks/fields/useErrorMessage.ts:10](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/hooks/fields/useErrorMessage.ts#L10)
+[packages/react-formz/src/hooks/fields/useErrorMessage.ts:10](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/fields/useErrorMessage.ts#L10)

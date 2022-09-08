@@ -23,7 +23,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/react-formz/src/components/ArrayField/ArrayField.types.ts:23](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/components/ArrayField/ArrayField.types.ts#L23)
+[packages/react-formz/src/components/ArrayField/ArrayField.types.ts:23](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/ArrayField/ArrayField.types.ts#L23)
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/components/ArrayField/ArrayField.types.ts:24](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/components/ArrayField/ArrayField.types.ts#L24)
+[packages/react-formz/src/components/ArrayField/ArrayField.types.ts:24](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/ArrayField/ArrayField.types.ts#L24)
 
 ___
 
@@ -43,4 +43,4 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/components/ArrayField/ArrayField.types.ts:25](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/components/ArrayField/ArrayField.types.ts#L25)
+[packages/react-formz/src/components/ArrayField/ArrayField.types.ts:25](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/ArrayField/ArrayField.types.ts#L25)

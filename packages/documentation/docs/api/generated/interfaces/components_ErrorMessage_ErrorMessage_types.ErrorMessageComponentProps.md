@@ -21,7 +21,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/react-formz/src/components/ErrorMessage/ErrorMessage.types.ts:13](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/components/ErrorMessage/ErrorMessage.types.ts#L13)
+[packages/react-formz/src/components/ErrorMessage/ErrorMessage.types.ts:13](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/ErrorMessage/ErrorMessage.types.ts#L13)
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/components/ErrorMessage/ErrorMessage.types.ts:12](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/components/ErrorMessage/ErrorMessage.types.ts#L12)
+[packages/react-formz/src/components/ErrorMessage/ErrorMessage.types.ts:12](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/ErrorMessage/ErrorMessage.types.ts#L12)
 
 ___
 
@@ -45,7 +45,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/components/ErrorMessage/ErrorMessage.types.ts:7](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/components/ErrorMessage/ErrorMessage.types.ts#L7)
+[packages/react-formz/src/components/ErrorMessage/ErrorMessage.types.ts:7](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/ErrorMessage/ErrorMessage.types.ts#L7)
 
 ___
 
@@ -59,4 +59,4 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/components/ErrorMessage/ErrorMessage.types.ts:8](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/components/ErrorMessage/ErrorMessage.types.ts#L8)
+[packages/react-formz/src/components/ErrorMessage/ErrorMessage.types.ts:8](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/ErrorMessage/ErrorMessage.types.ts#L8)

@@ -36,7 +36,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/react-formz/src/hooks/fields/useField.ts:70](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/hooks/fields/useField.ts#L70)
+[packages/react-formz/src/hooks/fields/useField.ts:70](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/fields/useField.ts#L70)
 
 ___
 
@@ -67,7 +67,7 @@ build your own input primitives if you so desire.
 
 #### Defined in
 
-[packages/react-formz/src/hooks/fields/useField.ts:34](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/hooks/fields/useField.ts#L34)
+[packages/react-formz/src/hooks/fields/useField.ts:34](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/fields/useField.ts#L34)
 
 ___
 
@@ -94,4 +94,4 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/hooks/fields/useField.ts:66](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/hooks/fields/useField.ts#L66)
+[packages/react-formz/src/hooks/fields/useField.ts:66](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/fields/useField.ts#L66)

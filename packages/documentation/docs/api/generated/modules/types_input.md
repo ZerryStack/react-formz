@@ -21,4 +21,4 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/react-formz/src/types/input.ts:15](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/types/input.ts#L15)
+[packages/react-formz/src/types/input.ts:15](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/input.ts#L15)

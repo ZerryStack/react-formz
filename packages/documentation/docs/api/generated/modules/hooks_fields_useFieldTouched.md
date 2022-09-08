@@ -26,4 +26,4 @@ Custom hook that returns whether or not a field has been touched.
 
 #### Defined in
 
-[packages/react-formz/src/hooks/fields/useFieldTouched.ts:10](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/hooks/fields/useFieldTouched.ts#L10)
+[packages/react-formz/src/hooks/fields/useFieldTouched.ts:10](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/fields/useFieldTouched.ts#L10)

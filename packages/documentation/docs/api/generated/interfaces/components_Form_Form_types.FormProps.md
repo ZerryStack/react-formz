@@ -29,7 +29,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/react-formz/src/components/Form/Form.types.ts:30](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/components/Form/Form.types.ts#L30)
+[packages/react-formz/src/components/Form/Form.types.ts:30](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L30)
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/components/Form/Form.types.ts:32](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/components/Form/Form.types.ts#L32)
+[packages/react-formz/src/components/Form/Form.types.ts:32](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L32)
 
 ___
 
@@ -53,7 +53,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/hooks/forms/useForm.ts:9](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/hooks/forms/useForm.ts#L9)
+[packages/react-formz/src/hooks/forms/useForm.ts:9](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L9)
 
 ___
 
@@ -67,7 +67,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/hooks/forms/useForm.ts:10](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/hooks/forms/useForm.ts#L10)
+[packages/react-formz/src/hooks/forms/useForm.ts:10](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L10)
 
 ___
 
@@ -81,7 +81,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/hooks/forms/useForm.ts:8](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/hooks/forms/useForm.ts#L8)
+[packages/react-formz/src/hooks/forms/useForm.ts:8](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L8)
 
 ___
 
@@ -95,7 +95,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/components/Form/Form.types.ts:37](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/components/Form/Form.types.ts#L37)
+[packages/react-formz/src/components/Form/Form.types.ts:37](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L37)
 
 ___
 
@@ -105,7 +105,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/components/Form/Form.types.ts:31](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/components/Form/Form.types.ts#L31)
+[packages/react-formz/src/components/Form/Form.types.ts:31](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L31)
 
 ___
 
@@ -117,7 +117,7 @@ If true, the form state will reset after a successful submission.
 
 #### Defined in
 
-[packages/react-formz/src/components/Form/Form.types.ts:36](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/components/Form/Form.types.ts#L36)
+[packages/react-formz/src/components/Form/Form.types.ts:36](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L36)
 
 ___
 
@@ -131,4 +131,4 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/hooks/forms/useForm.ts:11](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/hooks/forms/useForm.ts#L11)
+[packages/react-formz/src/hooks/forms/useForm.ts:11](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L11)

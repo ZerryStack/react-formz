@@ -35,4 +35,4 @@ See: https://github.com/facebook/react/issues/14099
 
 #### Defined in
 
-[packages/react-formz/src/hooks/utils/useStableCallback.ts:11](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/hooks/utils/useStableCallback.ts#L11)
+[packages/react-formz/src/hooks/utils/useStableCallback.ts:11](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/utils/useStableCallback.ts#L11)

@@ -35,4 +35,4 @@ fields are valid.
 
 #### Defined in
 
-[packages/react-formz/src/hooks/forms/useExecuteFieldValidations.ts:11](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/hooks/forms/useExecuteFieldValidations.ts#L11)
+[packages/react-formz/src/hooks/forms/useExecuteFieldValidations.ts:11](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useExecuteFieldValidations.ts#L11)

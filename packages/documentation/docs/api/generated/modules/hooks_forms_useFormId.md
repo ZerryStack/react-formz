@@ -35,4 +35,4 @@ Creates a unique id for a form and adds that id to the form store.
 
 #### Defined in
 
-[packages/react-formz/src/hooks/forms/useFormId.ts:14](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/hooks/forms/useFormId.ts#L14)
+[packages/react-formz/src/hooks/forms/useFormId.ts:14](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useFormId.ts#L14)

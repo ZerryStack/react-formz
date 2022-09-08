@@ -33,4 +33,4 @@ Custom react hook that returns event handlers for a field.
 
 #### Defined in
 
-[packages/react-formz/src/hooks/fields/useFieldEvents.ts:11](https://github.com/ZerryStack/react-formz/blob/1ba1704/packages/react-formz/src/hooks/fields/useFieldEvents.ts#L11)
+[packages/react-formz/src/hooks/fields/useFieldEvents.ts:11](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/hooks/fields/useFieldEvents.ts#L11)

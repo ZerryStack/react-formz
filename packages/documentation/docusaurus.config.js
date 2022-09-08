@@ -41,6 +41,7 @@ const config = {
         tsconfig: "../react-formz/tsconfig.json",
         entryPointStrategy: "expand",
         "out": "./api/generated",
+        "exclude": ["**/*+(test|.spec|.e2e).ts"],
         "externalPattern": ["**/node_modules/**"],
         "excludeExternals": true,
         "plugin": ["typedoc-plugin-rename-defaults"],

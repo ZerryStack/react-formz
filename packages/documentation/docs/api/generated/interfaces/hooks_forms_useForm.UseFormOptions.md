@@ -27,7 +27,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/react-formz/src/hooks/forms/useForm.ts:9](https://github.com/ZerryStack/react-formz/blob/1ba1704/packages/react-formz/src/hooks/forms/useForm.ts#L9)
+[packages/react-formz/src/hooks/forms/useForm.ts:9](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/hooks/forms/useForm.ts#L9)
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/hooks/forms/useForm.ts:10](https://github.com/ZerryStack/react-formz/blob/1ba1704/packages/react-formz/src/hooks/forms/useForm.ts#L10)
+[packages/react-formz/src/hooks/forms/useForm.ts:10](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/hooks/forms/useForm.ts#L10)
 
 ___
 
@@ -47,7 +47,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/hooks/forms/useForm.ts:8](https://github.com/ZerryStack/react-formz/blob/1ba1704/packages/react-formz/src/hooks/forms/useForm.ts#L8)
+[packages/react-formz/src/hooks/forms/useForm.ts:8](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/hooks/forms/useForm.ts#L8)
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/hooks/forms/useForm.ts:12](https://github.com/ZerryStack/react-formz/blob/1ba1704/packages/react-formz/src/hooks/forms/useForm.ts#L12)
+[packages/react-formz/src/hooks/forms/useForm.ts:12](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/hooks/forms/useForm.ts#L12)
 
 ___
 
@@ -67,4 +67,4 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/hooks/forms/useForm.ts:11](https://github.com/ZerryStack/react-formz/blob/1ba1704/packages/react-formz/src/hooks/forms/useForm.ts#L11)
+[packages/react-formz/src/hooks/forms/useForm.ts:11](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/hooks/forms/useForm.ts#L11)

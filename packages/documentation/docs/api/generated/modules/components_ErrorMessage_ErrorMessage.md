@@ -24,4 +24,4 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/react-formz/src/components/ErrorMessage/ErrorMessage.tsx:6](https://github.com/ZerryStack/react-formz/blob/1ba1704/packages/react-formz/src/components/ErrorMessage/ErrorMessage.tsx#L6)
+[packages/react-formz/src/components/ErrorMessage/ErrorMessage.tsx:6](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/components/ErrorMessage/ErrorMessage.tsx#L6)

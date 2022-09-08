@@ -47,4 +47,4 @@ will handle running validations, error catching and state management.
 
 #### Defined in
 
-[packages/react-formz/src/hooks/forms/useFormSubmission.ts:14](https://github.com/ZerryStack/react-formz/blob/1ba1704/packages/react-formz/src/hooks/forms/useFormSubmission.ts#L14)
+[packages/react-formz/src/hooks/forms/useFormSubmission.ts:14](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/hooks/forms/useFormSubmission.ts#L14)

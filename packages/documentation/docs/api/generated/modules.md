@@ -45,7 +45,6 @@ custom_edit_url: null
 - [hooks/forms/useFormSubmission](modules/hooks_forms_useFormSubmission.md)
 - [hooks/utils/useComponentDidMount](modules/hooks_utils_useComponentDidMount.md)
 - [hooks/utils/useIsomorphicLayoutEffect](modules/hooks_utils_useIsomorphicLayoutEffect.md)
-- [hooks/utils/useLatest](modules/hooks_utils_useLatest.md)
 - [hooks/utils/useSelector](modules/hooks_utils_useSelector.md)
 - [hooks/utils/useStableCallback](modules/hooks_utils_useStableCallback.md)
 - [providers/FormDateProvider](modules/providers_FormDateProvider.md)

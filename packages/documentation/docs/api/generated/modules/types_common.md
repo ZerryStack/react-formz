@@ -14,7 +14,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/react-formz/src/types/common.ts:1](https://github.com/ZerryStack/react-formz/blob/1ba1704/packages/react-formz/src/types/common.ts#L1)
+[packages/react-formz/src/types/common.ts:1](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/types/common.ts#L1)
 
 ___
 
@@ -26,7 +26,7 @@ Type which can be used to index an array or tuple type.
 
 #### Defined in
 
-[packages/react-formz/src/types/common.ts:5](https://github.com/ZerryStack/react-formz/blob/1ba1704/packages/react-formz/src/types/common.ts#L5)
+[packages/react-formz/src/types/common.ts:5](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/types/common.ts#L5)
 
 ___
 
@@ -44,7 +44,7 @@ Type to assert that a type is a [Key](types_common.md#key).
 
 #### Defined in
 
-[packages/react-formz/src/types/common.ts:16](https://github.com/ZerryStack/react-formz/blob/1ba1704/packages/react-formz/src/types/common.ts#L16)
+[packages/react-formz/src/types/common.ts:16](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/types/common.ts#L16)
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/types/common.ts:53](https://github.com/ZerryStack/react-formz/blob/1ba1704/packages/react-formz/src/types/common.ts#L53)
+[packages/react-formz/src/types/common.ts:53](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/types/common.ts#L53)
 
 ___
 
@@ -64,7 +64,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/types/common.ts:51](https://github.com/ZerryStack/react-formz/blob/1ba1704/packages/react-formz/src/types/common.ts#L51)
+[packages/react-formz/src/types/common.ts:51](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/types/common.ts#L51)
 
 ___
 
@@ -76,7 +76,7 @@ Type which can be used to index an object.
 
 #### Defined in
 
-[packages/react-formz/src/types/common.ts:10](https://github.com/ZerryStack/react-formz/blob/1ba1704/packages/react-formz/src/types/common.ts#L10)
+[packages/react-formz/src/types/common.ts:10](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/types/common.ts#L10)
 
 ___
 
@@ -92,7 +92,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/types/common.ts:47](https://github.com/ZerryStack/react-formz/blob/1ba1704/packages/react-formz/src/types/common.ts#L47)
+[packages/react-formz/src/types/common.ts:47](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/types/common.ts#L47)
 
 ___
 
@@ -108,7 +108,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/types/common.ts:49](https://github.com/ZerryStack/react-formz/blob/1ba1704/packages/react-formz/src/types/common.ts#L49)
+[packages/react-formz/src/types/common.ts:49](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/types/common.ts#L49)
 
 ___
 
@@ -126,7 +126,7 @@ Type to convert a type to a [Key](types_common.md#key).
 
 #### Defined in
 
-[packages/react-formz/src/types/common.ts:22](https://github.com/ZerryStack/react-formz/blob/1ba1704/packages/react-formz/src/types/common.ts#L22)
+[packages/react-formz/src/types/common.ts:22](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/types/common.ts#L22)
 
 ___
 
@@ -148,7 +148,7 @@ Type to access a type by a key.
 
 #### Defined in
 
-[packages/react-formz/src/types/common.ts:41](https://github.com/ZerryStack/react-formz/blob/1ba1704/packages/react-formz/src/types/common.ts#L41)
+[packages/react-formz/src/types/common.ts:41](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/types/common.ts#L41)
 
 ___
 
@@ -165,4 +165,4 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/types/common.ts:24](https://github.com/ZerryStack/react-formz/blob/1ba1704/packages/react-formz/src/types/common.ts#L24)
+[packages/react-formz/src/types/common.ts:24](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/types/common.ts#L24)

@@ -35,4 +35,4 @@ was created from.
 
 #### Defined in
 
-[packages/react-formz/src/hooks/utils/useLatest.ts:10](https://github.com/ZerryStack/react-formz/blob/1ba1704/packages/react-formz/src/hooks/utils/useLatest.ts#L10)
+[packages/react-formz/src/hooks/utils/useLatest.ts:10](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/hooks/utils/useLatest.ts#L10)

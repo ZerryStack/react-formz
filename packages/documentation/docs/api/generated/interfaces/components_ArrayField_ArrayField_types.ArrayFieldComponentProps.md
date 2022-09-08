@@ -21,4 +21,4 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/react-formz/src/components/ArrayField/ArrayField.types.ts:12](https://github.com/ZerryStack/react-formz/blob/1ba1704/packages/react-formz/src/components/ArrayField/ArrayField.types.ts#L12)
+[packages/react-formz/src/components/ArrayField/ArrayField.types.ts:12](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/components/ArrayField/ArrayField.types.ts#L12)

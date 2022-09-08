@@ -21,7 +21,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/react-formz/src/types/utils.ts:36](https://github.com/ZerryStack/react-formz/blob/1ba1704/packages/react-formz/src/types/utils.ts#L36)
+[packages/react-formz/src/types/utils.ts:36](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/types/utils.ts#L36)
 
 ___
 
@@ -46,7 +46,7 @@ IsTuple<number[]> = false
 
 #### Defined in
 
-[packages/react-formz/src/types/utils.ts:19](https://github.com/ZerryStack/react-formz/blob/1ba1704/packages/react-formz/src/types/utils.ts#L19)
+[packages/react-formz/src/types/utils.ts:19](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/types/utils.ts#L19)
 
 ___
 
@@ -65,7 +65,7 @@ specifying any string as well
 
 #### Defined in
 
-[packages/react-formz/src/types/utils.ts:42](https://github.com/ZerryStack/react-formz/blob/1ba1704/packages/react-formz/src/types/utils.ts#L42)
+[packages/react-formz/src/types/utils.ts:42](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/types/utils.ts#L42)
 
 ___
 
@@ -75,7 +75,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/types/utils.ts:1](https://github.com/ZerryStack/react-formz/blob/1ba1704/packages/react-formz/src/types/utils.ts#L1)
+[packages/react-formz/src/types/utils.ts:1](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/types/utils.ts#L1)
 
 ___
 
@@ -99,4 +99,4 @@ TupleKeys<[number, string]> = '0' | '1'
 
 #### Defined in
 
-[packages/react-formz/src/types/utils.ts:31](https://github.com/ZerryStack/react-formz/blob/1ba1704/packages/react-formz/src/types/utils.ts#L31)
+[packages/react-formz/src/types/utils.ts:31](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/types/utils.ts#L31)

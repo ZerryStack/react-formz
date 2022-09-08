@@ -28,4 +28,4 @@ local storage.
 
 #### Defined in
 
-[packages/react-formz/src/hooks/forms/useFormLastPersistedAt.ts:9](https://github.com/ZerryStack/react-formz/blob/1ba1704/packages/react-formz/src/hooks/forms/useFormLastPersistedAt.ts#L9)
+[packages/react-formz/src/hooks/forms/useFormLastPersistedAt.ts:9](https://github.com/ZerryStack/react-formz/blob/1bf2d41/packages/react-formz/src/hooks/forms/useFormLastPersistedAt.ts#L9)

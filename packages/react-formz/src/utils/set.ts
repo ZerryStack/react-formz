@@ -29,9 +29,10 @@ function set<Value extends unknown, Values extends AnyObject>(
       const objValue = nested[key];
       const nextValue: any = isObject(objValue) || isArray(objValue)
       ? objValue
-      : isIndex(path[index + 1])
+      : isIndex(pathArray[index + 1])
       ? []
       : {}
+
 
       newValue = nextValue;
     }

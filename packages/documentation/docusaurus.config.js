@@ -38,14 +38,14 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            "https://github.com/react-formz/react-formz/tree/main/packages/documentation/",
+            "https://github.com/ZerryStack/react-formz/tree/main/packages/documentation/",
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            "https://github.com/react-formz/react-formz/tree/main/packages/documentation/",
+            "https://github.com/ZerryStack/react-formz/tree/main/packages/documentation/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -73,7 +73,7 @@ const config = {
             label: "Docs",
           },
           {
-            href: "https://github.com/react-formz/react-formz",
+            href: "https://github.com/ZerryStack/react-formz",
             label: "GitHub",
             position: "right",
           },
@@ -117,7 +117,7 @@ const config = {
               },
               {
                 label: "GitHub",
-                href: "https://github.com/react-formz/react-formz",
+                href: "https://github.com/ZerryStack/react-formz",
               },
             ],
           },

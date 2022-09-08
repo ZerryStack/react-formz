@@ -31,14 +31,34 @@ const FormInner = <Values extends FormzValues>({
   );
 };
 
-const Form = <Values extends FormzValues>({
-  children,
-  name,
-  initialValues,
-  saveDrafts,
-  onFormRehydrated = () => {},
-  ...formProps
-}: FormProps<Values>) => {
+/**
+ * A `Form` is reponsible for wrapping the `Fields` that you want to render. It will keep track
+ * of the form state and act as a context/provider for various hooks used within the `Form`'s
+ * component tree. 
+ * 
+ * Example Usage:
+ * 
+ * ```tsx
+ * function UserProfile() {
+ *   return (
+ *     <Form name="UserProfile" initialValues={{ firstName: "" }}>
+ *        <TextField name="firstName" required pattern={/\w+/} as={({ input }) => <input {...input} />} />
+ *     </Form>
+ *   );
+ * }
+ * ```
+ * @param props {@link FormProps} - The react props for the form component.
+ * @typeParam Values {@link FormzValues} - The shape of the forms state i.e. the form data.
+ */
+const Form = <Values extends FormzValues>(props: FormProps<Values>) => {
+  const {
+    children,
+    name,
+    initialValues,
+    saveDrafts,
+    onFormRehydrated = () => {},
+    ...formProps
+  } = props;
   const memoizedInitialValues = useLatest(initialValues);
   const formRehydrationCallback = useStableCallback(onFormRehydrated);
 

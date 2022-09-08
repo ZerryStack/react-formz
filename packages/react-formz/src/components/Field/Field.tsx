@@ -76,6 +76,27 @@ const FieldInner = <
   return null;
 };
 
+/**
+ * A `Field` is a consumer of some data in its' parent `Form`. The user interface of a `Field`
+ * is completely determined by you, the developer. This component abstracts away all of the
+ * complexities of dealing with inputs, values, events, and validations.
+ * 
+ * ```tsx
+ * function UserProfile() {
+ *   return (
+ *     <Form name="UserProfile" initialValues={{ firstName: "" }}>
+ *        <Field name="firstName" type="text" required pattern={/\w+/} as={({ input }) => <input {...input} />} />
+ *     </Form>
+ *   );
+ * }
+ * ```
+ * @param props {@link FieldProps} - The react props for the field component.
+ * @typeParam Key {@link FieldId} - The input/field `name` property. This value should correspond to a property in the form.
+ * @typeParam Value {@link FieldValue} - The value of the input/field.
+ * @typeParam Element - The underlying html element either "input", "select", or "textarea".
+ * @typeParam Component - If rendering your own component via the `as` prop the `Component` type parameter applies to that component.
+ */
+
 const Field = React.forwardRef<any, FieldProps>(FieldInner) as <
   Key extends FieldId = FieldId,
   Value extends FieldValue = FieldValue,
@@ -84,37 +105,5 @@ const Field = React.forwardRef<any, FieldProps>(FieldInner) as <
 >(
   props: FieldProps<Key, Value, Element, Component>
 ) => JSX.Element;
-
-/**
- * Factory function to create fields with standard values.
- */
-function createField<Value extends FieldValue>(type?: React.HTMLInputTypeAttribute, additionalProps?: { multiple?: boolean }) {
-  const component = React.forwardRef<
-    HTMLInputElement,
-    FieldProps<string, Value, HTMLInputElement>
-  >((props: FieldProps<string, Value, HTMLInputElement>, ref) => {
-    return <Field type={type} {...additionalProps} {...props} ref={ref} />;
-  });
-
-  return component as <
-    Key extends string,
-    Element = HTMLInputElement,
-    Component extends React.ComponentType<{}> = React.ComponentType<{}>
-  >(
-    props: FieldProps<Key, Value, Element, Component>
-  ) => JSX.Element;
-}
-
-export const TextField = createField<string>("text");
-
-export const NumberField = createField<number>("number");
-
-export const CheckboxField = createField<boolean>("checkbox");
-
-export const RadioField = createField<string>("radio");
-
-export const SelectField = createField<string>("select");
-
-export const MultiSelectField = createField<string>("select", { multiple: true });
 
 export default Field;

@@ -28,6 +28,25 @@ const config = {
     locales: ["en"],
   },
 
+  plugins: [
+    [
+      "docusaurus-plugin-typedoc",
+      {
+        entryPoints: [
+          "../react-formz/src/components",
+          "../react-formz/src/hooks",
+          "../react-formz/src/providers",
+          "../react-formz/src/types",
+        ],
+        tsconfig: "../react-formz/tsconfig.json",
+        entryPointStrategy: "expand",
+        "out": "./api/generated",
+        "externalPattern": ["**/node_modules/**"],
+        "excludeExternals": true,
+        "plugin": ["typedoc-plugin-rename-defaults"],
+      },
+    ],
+  ],
   presets: [
     [
       "classic",

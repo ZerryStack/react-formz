@@ -1,2 +1,3 @@
 export type { FieldComponentProps, FieldProps } from "./Field.types";
-export { default, TextField, NumberField, SelectField, CheckboxField, MultiSelectField, RadioField } from "./Field";
+export { default } from "./Field";
+export { TextField, NumberField, SelectField, CheckboxField, MultiSelectField, RadioField } from "./Field.extras";

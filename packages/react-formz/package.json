@@ -55,8 +55,9 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "typecheck": "tsc",
-    "build": "rm -rf ./dist && yarn typecheck && vite build && yarn build:types",
+    "build": "rm -rf ./dist && yarn typecheck && vite build && yarn build:types && yarn build:documentation",
     "build:types": "tsc -P tsconfig.build.json",
+    "build:documentation": "yarn workspace @zerry/react-formz-documentation build",
     "prepublishOnly": "yarn build"
   },
   "dependencies": {

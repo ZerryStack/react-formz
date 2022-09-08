@@ -5,6 +5,7 @@
     "packages/*"
   ],
   "scripts": {
+    "test": "yarn workspace @zerry/react-formz test",
     "build:documentation": "yarn workspace @zerry/react-formz-documentation build"
   }
 }

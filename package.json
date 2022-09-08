@@ -1,7 +1,10 @@
 {
-  "name": "monorepo",
+  "name": "react-formz",
   "packageManager": "yarn@3.2.3",
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "scripts": {
+    "build:documentation": "yarn workspace @zerry/react-formz-documentation build"
+  }
 }

@@ -1,4 +1,4 @@
-# React Formz
+# React Formz 🚀
 
 A small, blazing fast, intuitive form library for React. React Formz has a cozy api that let's you build forms they way you want to. With less the 10kb bundle size, React Formz boasts near constant performance regardless of how many form elements you render. 
 

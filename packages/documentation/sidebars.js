@@ -18,6 +18,7 @@ const sidebars = {
 
   tutorialSidebar: [
     'intro',
+    'performance',
     {
       type: 'category',
       label: 'Guides',

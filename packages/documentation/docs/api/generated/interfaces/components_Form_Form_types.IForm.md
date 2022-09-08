@@ -69,7 +69,7 @@ node_modules/@types/react/index.d.ts:520
 
 #### Defined in
 
-[packages/react-formz/src/components/Form/Form.types.ts:66](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L66)
+[packages/react-formz/src/components/Form/Form.types.ts:91](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L91)
 
 ___
 
@@ -101,7 +101,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/components/Form/Form.types.ts:47](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L47)
+[packages/react-formz/src/components/Form/Form.types.ts:72](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L72)
 
 ___
 
@@ -132,7 +132,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/components/Form/Form.types.ts:60](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L60)
+[packages/react-formz/src/components/Form/Form.types.ts:85](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L85)
 
 ___
 
@@ -163,4 +163,4 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/components/Form/Form.types.ts:54](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L54)
+[packages/react-formz/src/components/Form/Form.types.ts:79](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L79)

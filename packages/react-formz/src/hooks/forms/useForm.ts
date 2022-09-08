@@ -5,10 +5,32 @@ import useFormEvents from "./useFormEvents";
 import { FormzChangeEvent } from "../../types/events";
 
 export interface UseFormOptions<Values extends FormzValues> {
+  /**
+   * A unique name for the form. If `saveDrafts` is enabled, a name is required.
+   */
   name?: string;
   id?: string;
+  /**
+   * The initial values of the form.
+   */
   initialValues: Values;
+  /**
+   * If true, the form state will be saved to localstorage as the user updates values.
+   */
   saveDrafts?: boolean;
+  /**
+   * A callback that will be called after a form has successfully been rehydrated with
+   * the locally cached form state from a previous session. You can use this event
+   * callback to notify users that the form has been rehydrated.
+   * 
+   * Example Usage:
+   * 
+   * ```tsx
+   * useForm({
+   *  onFormRehydrated: () => notifyUser("We've restore your form!")
+   * })
+   * ```
+   */
   onFormRehydrated?: FormRehydrationCallback<Values>;
 }
 

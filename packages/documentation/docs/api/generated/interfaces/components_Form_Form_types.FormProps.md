@@ -37,9 +37,18 @@ ___
 
 • `Optional` **component**: ``"form"`` \| `ComponentType`<`FormComponentProps`\>
 
+If the value is a component then that component will be rendered
+instead of the native html `form` element. 
+
+Example Usage:
+
+```
+<Form component={MaterialUIForm} />
+```
+
 #### Defined in
 
-[packages/react-formz/src/components/Form/Form.types.ts:32](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L32)
+[packages/react-formz/src/components/Form/Form.types.ts:46](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L46)
 
 ___
 
@@ -53,7 +62,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/hooks/forms/useForm.ts:9](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L9)
+[packages/react-formz/src/hooks/forms/useForm.ts:12](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L12)
 
 ___
 
@@ -61,13 +70,15 @@ ___
 
 • **initialValues**: `Values`
 
+The initial values of the form.
+
 #### Inherited from
 
 [UseFormOptions](hooks_forms_useForm.UseFormOptions.md).[initialValues](hooks_forms_useForm.UseFormOptions.md#initialvalues)
 
 #### Defined in
 
-[packages/react-formz/src/hooks/forms/useForm.ts:10](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L10)
+[packages/react-formz/src/hooks/forms/useForm.ts:16](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L16)
 
 ___
 
@@ -75,13 +86,15 @@ ___
 
 • `Optional` **name**: `string`
 
+A unique name for the form. If `saveDrafts` is enabled, a name is required.
+
 #### Inherited from
 
 [UseFormOptions](hooks_forms_useForm.UseFormOptions.md).[name](hooks_forms_useForm.UseFormOptions.md#name)
 
 #### Defined in
 
-[packages/react-formz/src/hooks/forms/useForm.ts:8](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L8)
+[packages/react-formz/src/hooks/forms/useForm.ts:11](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L11)
 
 ___
 
@@ -89,13 +102,23 @@ ___
 
 • `Optional` **onFormRehydrated**: [`FormRehydrationCallback`](../modules/types_form.md#formrehydrationcallback)<`Values`\>
 
+A callback that will be called after a form has successfully been rehydrated with
+the locally cached form state from a previous session. You can use this event
+callback to notify users that the form has been rehydrated.
+
+Example Usage:
+
+```tsx
+<Form onFormRehydrated={() => notifyUser("We've restore your form!")} />
+```
+
 #### Overrides
 
 [UseFormOptions](hooks_forms_useForm.UseFormOptions.md).[onFormRehydrated](hooks_forms_useForm.UseFormOptions.md#onformrehydrated)
 
 #### Defined in
 
-[packages/react-formz/src/components/Form/Form.types.ts:37](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L37)
+[packages/react-formz/src/components/Form/Form.types.ts:62](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L62)
 
 ___
 
@@ -103,9 +126,12 @@ ___
 
 • `Optional` **onSubmit**: [`FormSubmitCallback`](../modules/types_form.md#formsubmitcallback)<`Values`\>
 
+A callback that will be called if and when a form is submitted and 
+the form is not in an invalid state.
+
 #### Defined in
 
-[packages/react-formz/src/components/Form/Form.types.ts:31](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L31)
+[packages/react-formz/src/components/Form/Form.types.ts:35](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L35)
 
 ___
 
@@ -117,7 +143,7 @@ If true, the form state will reset after a successful submission.
 
 #### Defined in
 
-[packages/react-formz/src/components/Form/Form.types.ts:36](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L36)
+[packages/react-formz/src/components/Form/Form.types.ts:50](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L50)
 
 ___
 
@@ -125,10 +151,12 @@ ___
 
 • `Optional` **saveDrafts**: `boolean`
 
+If true, the form state will be saved to localstorage as the user updates values.
+
 #### Inherited from
 
 [UseFormOptions](hooks_forms_useForm.UseFormOptions.md).[saveDrafts](hooks_forms_useForm.UseFormOptions.md#savedrafts)
 
 #### Defined in
 
-[packages/react-formz/src/hooks/forms/useForm.ts:11](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L11)
+[packages/react-formz/src/hooks/forms/useForm.ts:20](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L20)

@@ -27,7 +27,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/react-formz/src/hooks/forms/useForm.ts:9](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L9)
+[packages/react-formz/src/hooks/forms/useForm.ts:12](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L12)
 
 ___
 
@@ -35,9 +35,11 @@ ___
 
 • **initialValues**: `Values`
 
+The initial values of the form.
+
 #### Defined in
 
-[packages/react-formz/src/hooks/forms/useForm.ts:10](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L10)
+[packages/react-formz/src/hooks/forms/useForm.ts:16](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L16)
 
 ___
 
@@ -45,9 +47,11 @@ ___
 
 • `Optional` **name**: `string`
 
+A unique name for the form. If `saveDrafts` is enabled, a name is required.
+
 #### Defined in
 
-[packages/react-formz/src/hooks/forms/useForm.ts:8](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L8)
+[packages/react-formz/src/hooks/forms/useForm.ts:11](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L11)
 
 ___
 
@@ -55,9 +59,21 @@ ___
 
 • `Optional` **onFormRehydrated**: [`FormRehydrationCallback`](../modules/types_form.md#formrehydrationcallback)<`Values`\>
 
+A callback that will be called after a form has successfully been rehydrated with
+the locally cached form state from a previous session. You can use this event
+callback to notify users that the form has been rehydrated.
+
+Example Usage:
+
+```tsx
+useForm({
+ onFormRehydrated: () => notifyUser("We've restore your form!")
+})
+```
+
 #### Defined in
 
-[packages/react-formz/src/hooks/forms/useForm.ts:12](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L12)
+[packages/react-formz/src/hooks/forms/useForm.ts:34](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L34)
 
 ___
 
@@ -65,6 +81,8 @@ ___
 
 • `Optional` **saveDrafts**: `boolean`
 
+If true, the form state will be saved to localstorage as the user updates values.
+
 #### Defined in
 
-[packages/react-formz/src/hooks/forms/useForm.ts:11](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L11)
+[packages/react-formz/src/hooks/forms/useForm.ts:20](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L20)

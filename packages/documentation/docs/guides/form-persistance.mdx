@@ -8,6 +8,13 @@ One frustrating aspect of forms for users is when you are filling out a form and
 or something else happens to your workflow and all of the data you have been entering is suddenly lost. React Formz has built-in localStorage persistance
 that will save a forms state locally and should something interupt a users ability to finish the form their values will be restored.
 
+Forms can be persisted by using the [`saveDrafts`](/docs/api/generated/interfaces/hooks_forms_useForm.UseFormOptions#savedrafts) prop. When using form persistance you **must** specify a unique form name that will be reused
+each time a user revists that specific form. So this name could be `UserProfileForm` form example and that will be the cache key.
+
+If you want to display some feedback when a form is rehydrated using the cache you can pass a callback to the [`onFormRehydrated`](/docs/api/generated/interfaces/components_Form_Form_types.FormProps#onformrehydrated) property.
+This callback will recieve the rehydrated state. You can use this to notify the user that you have restored their previous form values and 
+that they can continue where they left off.
+
 <iframe
   src="https://codesandbox.io/embed/zerry-react-formz-persistance-1kk9jb?fontsize=14&hidenavigation=1&theme=dark"
   style={{ width: "100%", height: 500 }}

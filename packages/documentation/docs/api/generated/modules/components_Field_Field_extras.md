@@ -11,6 +11,9 @@ custom_edit_url: null
 
 ▸ **CheckboxField**<`Key`, `Element`, `Component`\>(`props`): `Element`
 
+An abstraction of `Field` that can be used for boolean field values. The default
+input type will be `checkbox` but can be overriden.
+
 #### Type parameters
 
 | Name | Type |
@@ -38,6 +41,9 @@ ___
 ### MultiSelectField
 
 ▸ **MultiSelectField**<`Key`, `Element`, `Component`\>(`props`): `Element`
+
+An abstraction of `Field` that can be used for multi select field values. The default
+input type will be `select` but can be overriden.
 
 #### Type parameters
 
@@ -67,6 +73,9 @@ ___
 
 ▸ **NumberField**<`Key`, `Element`, `Component`\>(`props`): `Element`
 
+An abstraction of `Field` that can be used for number field values. The default
+input type will be `number` but can be overriden.
+
 #### Type parameters
 
 | Name | Type |
@@ -94,6 +103,9 @@ ___
 ### RadioField
 
 ▸ **RadioField**<`Key`, `Element`, `Component`\>(`props`): `Element`
+
+An abstraction of `Field` that can be used for radio field values. The default
+input type will be `radio` but can be overriden.
 
 #### Type parameters
 
@@ -123,6 +135,9 @@ ___
 
 ▸ **SelectField**<`Key`, `Element`, `Component`\>(`props`): `Element`
 
+An abstraction of `Field` that can be used for select field values. The default
+input type will be `select` but can be overriden.
+
 #### Type parameters
 
 | Name | Type |
@@ -150,6 +165,9 @@ ___
 ### TextField
 
 ▸ **TextField**<`Key`, `Element`, `Component`\>(`props`): `Element`
+
+An abstraction of `Field` that can be used for text field values. The default
+input type will be `text` but can be overriden.
 
 #### Type parameters
 

@@ -1,6 +1,6 @@
 {
   "name": "@zerry/react-formz",
-  "version": "0.0.6-beta",
+  "version": "0.0.7-beta",
   "packageManager": "yarn@3.2.3",
   "files": [
     "dist"
@@ -68,7 +68,7 @@
     "build": "rm -rf ./dist && yarn typecheck && vite build && yarn build:types && yarn build:documentation",
     "build:types": "tsc -P tsconfig.build.json",
     "build:documentation": "yarn workspace @zerry/react-formz-documentation build",
-    "prepublishOnly": "yarn build",
+    "prepublishOnly": "yarn test && yarn build",
     "test": "jest",
     "test:watch": "jest --watch"
   },

@@ -6,6 +6,7 @@ const rootNodeModules = path.resolve(__dirname, "node_modules");
 
 /** @type {import('jest').Config} */
 const config = {
+  testMatch: ["<rootDir>/src/**/__tests__/**/*.[jt]s?(x)"],
   verbose: true,
   setupFilesAfterEnv: [path.resolve(__dirname, "configs", "jest", "setup.js")],
   transform: {

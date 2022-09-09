@@ -21,13 +21,23 @@ custom_edit_url: null
 
 ## Properties
 
+### actions
+
+• **actions**: [`FieldActions`](hooks_fields_useFieldActions.FieldActions.md)<`Value`\>
+
+#### Defined in
+
+[packages/react-formz/src/components/Field/Field.types.ts:60](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L60)
+
+___
+
 ### children
 
 • `Optional` **children**: `ReactNode`
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:58](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L58)
+[packages/react-formz/src/components/Field/Field.types.ts:59](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L59)
 
 ___
 
@@ -39,7 +49,7 @@ The react formz error object.
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:52](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L52)
+[packages/react-formz/src/components/Field/Field.types.ts:53](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L53)
 
 ___
 
@@ -49,7 +59,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:43](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L43)
+[packages/react-formz/src/components/Field/Field.types.ts:44](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L44)
 
 ___
 
@@ -59,7 +69,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:42](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L42)
+[packages/react-formz/src/components/Field/Field.types.ts:43](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L43)
 
 ___
 
@@ -72,4 +82,4 @@ for non-native html input values like lists or objects.
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:48](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L48)
+[packages/react-formz/src/components/Field/Field.types.ts:49](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L49)

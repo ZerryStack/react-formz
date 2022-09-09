@@ -4,12 +4,16 @@ sidebar_position: 1
 
 # Array Field
 
-The goal of React Formz is to make form building feel natural, painless and declarative so the api is designed to be easy-to-use and solve common issues with building forms behind the scenes.
+An `ArrayField` is used to manage state contained in an array such as an array of friends that a user can add or remove. Just like a `Field` you can render your own user interface using the `as` property of a `Field`.
 
-The most basic components of React Formz are `Form` and `Field`. `Form`'s serve as the contextual data and api wrapper for all of its' fields. Fields can be nested to any depth, dynamically rendered and deleted as needed.
+The difference between a `Field` and an `ArrayField` are that the custom component prop that you pass in will recieve a `values` propery instead of a single `value` property. The `values` will contain an array of values in the state for that particular field.
+
+The example below demonstrates a simple use case with an array field.
+
+You can view the full api spec of the `ArrayField` [here](/docs/api/array-field).
 
 ```tsx
-import { Form, TextField, NumberField, ErrorMessage } from "react-formz";
+import { Form, ArrayField, ErrorMessage } from "react-formz";
 
 type FormState = {
   name: string;
@@ -24,38 +28,40 @@ function MyForm() {
   return (
     <Form<FormState>
       initialValues={{
-        name: "",
-        age: "",
+        friends: [{ name: "John Smith" }],
       }}
       name="SimpleForm"
       onSubmit={handleSubmit}
       resetOnSubmit
     >
-      <TextField
-        name="name"
-        label="Name"
-        required
-        as={({ input: { label, ...input } }) => (
-          <>
-            <label htmlFor={input.name}>{label}</label>
-            <input {...input} />
-            <ErrorMessage field={input.name} />
-          </>
-        )}
-      />
-      <NumberField
-        name="age"
-        label="Age"
-        required
-        min={18}
-        max={75}
-        as={({ input: { label, ...input } }) => (
-          <>
-            <label htmlFor={input.name}>{label}</label>
-            <input {...input} />
-            <ErrorMessage field={input.name} />
-          </>
-        )}
+      <ArrayField<{ name: string }>
+        name="friends"
+        render={({ values, actions }) => {
+          return (
+            <div>
+              <button onClick={() => actions.add({ name: "" })}>
+                Add New User
+              </button>
+              {values.map((_, index) => {
+                return (
+                  <TextField
+                    key={index}
+                    name={`friends.${index}[hey]`}
+                    label="Friend"
+                    required
+                    as={({ input: { label, ...input } }) => (
+                      <>
+                        <label htmlFor={input.name}>{label}</label>
+                        <input {...input} />
+                        <ErrorMessage field={input.name} />
+                      </>
+                    )}
+                  />
+                );
+              })}
+            </div>
+          );
+        }}
       />
     </Form>
   );

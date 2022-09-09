@@ -14,6 +14,7 @@ import {
   SubmitButton,
   FormLastPersistedAt,
   CheckboxField,
+  FieldValue,
 } from "../src";
 import { FormControl, FormHelperText, InputLabel } from "@mui/material";
 import { FieldComponentProps } from "../src/components/Field";
@@ -43,7 +44,7 @@ const initialValues = {
   isOver21: false,
 };
 
-function Input<Key extends string>(props: FieldComponentProps<Key> & { dude?: true}) {
+function Input<Key extends string, Value extends FieldValue>(props: Omit<FieldComponentProps<Key, Value> , "actions">) {
   const { input } = props;
 
   return (

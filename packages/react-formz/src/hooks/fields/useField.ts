@@ -4,6 +4,7 @@ import { FormzChangeEvent } from "../../types/events";
 import { FieldId, FieldValue } from "../../types/field";
 import { FormzError } from "../../types/form";
 import { isBoolean } from "../../utils/is";
+import useFieldActions, { FieldActions } from "./useFieldActions";
 import useFieldEvents from "./useFieldEvents";
 import useFieldRegistration from "./useFieldRegistration";
 import useFieldValidation, {
@@ -23,6 +24,7 @@ export interface UseFieldResult<Value extends FieldValue> {
   error: FormzError | undefined;
   checked?: boolean;
   formId: string;
+  actions: FieldActions<Value>;
 }
 
 /**
@@ -39,6 +41,7 @@ function useField<
 
   const id = useFormIdContext();
   const value = useFieldValue<Key>(id, name) as Value;
+  const actions = useFieldActions(id, name);
 
   const { validate, error } = useFieldValidation<Key, Value>(id, name, {
     validate: options.validate,
@@ -59,7 +62,8 @@ function useField<
     onChange,
     onBlur,
     error,
-    formId: id
+    formId: id,
+    actions
   };
 }
 

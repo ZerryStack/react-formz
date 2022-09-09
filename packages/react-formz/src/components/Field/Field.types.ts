@@ -1,4 +1,5 @@
 import React from "react";
+import { FieldActions } from "../../hooks/fields/useFieldActions";
 import { AnyObject } from "../../types/common";
 import { FormzChangeEventHandler } from "../../types/events";
 import { FieldId, FieldValidator, FieldValue } from "../../types/field";
@@ -56,6 +57,7 @@ export interface BaseFieldComponentProps<
   [key: `data-${string}`]: string | undefined;
 
   children?: React.ReactNode;
+  actions: FieldActions<Value>;
 }
 
 export type FieldComponentProps<

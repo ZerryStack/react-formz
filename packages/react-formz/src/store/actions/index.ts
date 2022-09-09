@@ -5,6 +5,7 @@ import resetFieldError from "./resetFieldError";
 import resetFormState from "./resetFormState";
 import { setFieldError } from "./setFieldError";
 import setFieldTouched from "./setFieldTouched";
+import setFieldValue from "./setFieldValue";
 import setFormIsSubmitting from "./setFormIsSubmitting";
 import updateFormValue from "./updateFormValue";
 
@@ -16,6 +17,7 @@ const actions = {
     resetFormState,
     setFieldError,
     setFieldTouched,
+    setFieldValue,
     setFormIsSubmitting,
     updateFormValue,
 }

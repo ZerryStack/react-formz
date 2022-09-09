@@ -4,9 +4,25 @@ sidebar_position: 1
 
 # Field
 
-The goal of React Formz is to make form building feel natural, painless and declarative so the api is designed to be easy-to-use and solve common issues with building forms behind the scenes.
+A `Field` is responsible for consuming a slice of data from its' parent form's state. A `Field` essentially *owns* that slice of data
+although other `Field`'s can subscribe and mutate that data if needed. The goal of the `Field` component is to abstract away all of the complexities of dealing with form inputs including:
 
-The most basic components of React Formz are `Form` and `Field`. `Form`'s serve as the contextual data and api wrapper for all of its' fields. Fields can be nested to any depth, dynamically rendered and deleted as needed.
+- Validation
+- Error Management
+- Focus Management
+- Accessibility
+
+## User Interface
+
+By default a `Field` just renders a single html `input` however for most projects you will probably want to render your own user interface. You can render your own user interface using the `as` property of a `Field`.
+
+The example below shows a custom component being rendered. The component you pass in will recieve several props that you can use to display information related to the field:
+
+- error - The error if there is one
+- input - Props belonging to the html input
+- actions - An object that contains functions that you can use to interact with a fields state
+
+You can view the full api spec of the `field` [here](/docs/api/field).
 
 ```tsx
 import { Form, TextField, NumberField, ErrorMessage } from "react-formz";

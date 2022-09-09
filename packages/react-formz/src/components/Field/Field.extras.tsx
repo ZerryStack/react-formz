@@ -23,16 +23,40 @@ function createField<Value extends FieldValue>(
   ) => JSX.Element;
 }
 
+/**
+ * An abstraction of `Field` that can be used for text field values. The default
+ * input type will be `text` but can be overriden.
+ */
 export const TextField = createField<string>("text");
 
+/**
+ * An abstraction of `Field` that can be used for number field values. The default
+ * input type will be `number` but can be overriden.
+ */
 export const NumberField = createField<number>("number");
 
+/**
+ * An abstraction of `Field` that can be used for boolean field values. The default
+ * input type will be `checkbox` but can be overriden.
+ */
 export const CheckboxField = createField<boolean>("checkbox");
 
+/**
+ * An abstraction of `Field` that can be used for radio field values. The default
+ * input type will be `radio` but can be overriden.
+ */
 export const RadioField = createField<string>("radio");
 
+/**
+ * An abstraction of `Field` that can be used for select field values. The default
+ * input type will be `select` but can be overriden.
+ */
 export const SelectField = createField<string>("select");
 
+/**
+ * An abstraction of `Field` that can be used for multi select field values. The default
+ * input type will be `select` but can be overriden.
+ */
 export const MultiSelectField = createField<string>("select", {
   multiple: true,
 });

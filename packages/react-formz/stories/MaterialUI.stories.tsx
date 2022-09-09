@@ -43,7 +43,27 @@ const MuiTextFieldComponent = <Key extends string>({
   ref,
   storeValue,
   ...restProps
-}: FieldComponentProps<Key, string | number, HTMLInputElement>) => (
+}: FieldComponentProps<Key, string, HTMLInputElement>) => (
+  <MuiTextField
+    error={error !== undefined}
+    {...input}
+    inputProps={{
+      ref,
+    }}
+    {...restProps}
+    label={label}
+    helperText={error?.message}
+    required={required}
+  />
+);
+
+const MuiNumberFieldComponent = <Key extends string>({
+  error,
+  input: { label, required, ...input },
+  ref,
+  storeValue,
+  ...restProps
+}: FieldComponentProps<Key, number, HTMLInputElement>) => (
   <MuiTextField
     error={error !== undefined}
     {...input}
@@ -177,7 +197,7 @@ const SimpleFormTemplate: ComponentStory<typeof Field> = () => {
             required
             min={3}
             max={10}
-            as={MuiTextFieldComponent}
+            as={MuiNumberFieldComponent}
           />
           <SelectField
             name="library"

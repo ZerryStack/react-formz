@@ -32,7 +32,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'API',
-      items: ['api/form', 'api/field'],
+      items: ['api/form', 'api/field', 'api/array-field'],
     },
   ],
 };

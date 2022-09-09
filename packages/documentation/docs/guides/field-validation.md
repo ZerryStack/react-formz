@@ -4,31 +4,20 @@ sidebar_position: 3
 
 # Field Validation
 
-Docusaurus creates a **page for each blog post**, but also a **blog index page**, a **tag system**, an **RSS** feed...
+`Field`'s can be validated in a few ways. The following pre-built validations are available:
 
-## Create your first Post
+- required
+- min
+- max
+- pattern
 
-Create a file at `blog/2021-02-28-greetings.md`:
+If you want to use your own validation either sync or async (returns a Promise) you can use the `validate` property of a `Field`.
 
-```md title="blog/2021-02-28-greetings.md"
----
-slug: greetings
-title: Greetings!
-authors:
-  - name: Joel Marcey
-    title: Co-creator of Docusaurus 1
-    url: https://github.com/JoelMarcey
-    image_url: https://github.com/JoelMarcey.png
-  - name: Sébastien Lorber
-    title: Docusaurus maintainer
-    url: https://sebastienlorber.com
-    image_url: https://github.com/slorber.png
-tags: [greetings]
----
+The sandbox below shows how the validator can be used.
 
-Congratulations, you have made your first post!
-
-Feel free to play around and edit this post as much you like.
-```
-
-A new blog post is now available at [http://localhost:3000/blog/greetings](http://localhost:3000/blog/greetings).
+<iframe src="https://codesandbox.io/embed/zerry-react-formz-form-validation-forked-cvh97b?fontsize=14&hidenavigation=1&theme=dark"
+  style={{ width: "100%", height: 500 }}
+     title="zerry-react-formz-form-validation (forked)"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>

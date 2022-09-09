@@ -60,6 +60,7 @@ const FieldInner = <
           error={field.error}
           storeValue={field.value}
           ref={ref}
+          actions={field.actions}
         >
           {children}
         </Tag>

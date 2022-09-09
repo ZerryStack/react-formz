@@ -4,9 +4,10 @@ sidebar_position: 1
 
 # Form
 
-The goal of React Formz is to make form building feel natural, painless and declarative so the api is designed to be easy-to-use and solve common issues with building forms behind the scenes.
+A `Form` is a small wrapper around the html `form` element. The `Form` component is responsible for providing its' component tree
+with access to the forms state and methods. `Fields` can **only** be rendered within a `Form`.
 
-The most basic components of React Formz are `Form` and `Field`. `Form`'s serve as the contextual data and api wrapper for all of its' fields. Fields can be nested to any depth, dynamically rendered and deleted as needed.
+You can render a custom component for a form by using the `component` prop. You can view the full api spec of the form [here](/docs/api/form).
 
 ```tsx
 import { Form, TextField, NumberField, ErrorMessage } from "react-formz";

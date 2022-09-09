@@ -25,7 +25,7 @@ The example below shows a custom component being rendered. The component you pas
 You can view the full api spec of the `field` [here](/docs/api/field).
 
 ```tsx
-import { Form, TextField, NumberField, ErrorMessage } from "react-formz";
+import { Form, TextField, NumberField, ErrorMessage } from "@zerry/react-formz";
 
 type FormState = {
   name: string;

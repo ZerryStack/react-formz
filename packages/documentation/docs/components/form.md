@@ -10,7 +10,7 @@ with access to the forms state and methods. `Fields` can **only** be rendered wi
 You can render a custom component for a form by using the `component` prop. You can view the full api spec of the form [here](/docs/api/form).
 
 ```tsx
-import { Form, TextField, NumberField, ErrorMessage } from "react-formz";
+import { Form, TextField, NumberField, ErrorMessage } from "@zerry/react-formz";
 
 type FormState = {
   name: string;

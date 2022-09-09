@@ -13,7 +13,7 @@ The example below demonstrates a simple use case with an array field.
 You can view the full api spec of the `ArrayField` [here](/docs/api/array-field).
 
 ```tsx
-import { Form, ArrayField, ErrorMessage } from "react-formz";
+import { Form, ArrayField, ErrorMessage } from "@zerry/react-formz";
 
 type FormState = {
   name: string;

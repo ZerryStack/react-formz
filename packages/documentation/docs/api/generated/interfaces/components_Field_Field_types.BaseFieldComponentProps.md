@@ -27,7 +27,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:60](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L60)
+[packages/react-formz/src/components/Field/Field.types.ts:61](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L61)
 
 ___
 
@@ -60,6 +60,16 @@ ___
 #### Defined in
 
 [packages/react-formz/src/components/Field/Field.types.ts:44](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L44)
+
+___
+
+### placeholder
+
+• `Optional` **placeholder**: `string`
+
+#### Defined in
+
+[packages/react-formz/src/components/Field/Field.types.ts:60](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L60)
 
 ___
 

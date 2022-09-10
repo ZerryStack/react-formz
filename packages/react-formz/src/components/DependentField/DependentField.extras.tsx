@@ -24,7 +24,7 @@ function createField<Value extends FieldValue>(
 
   return component as <
     Values extends FormzValues,
-    Key extends FieldId,
+    Key extends FieldId = FieldId,
     Element = HTMLInputElement,
     Component extends React.ComponentType<{}> = React.ComponentType<{}>,
     DependentValues extends Partial<Values> = Partial<Values>

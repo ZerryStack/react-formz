@@ -41,7 +41,7 @@ function useField<
 
   const id = useFormIdContext();
   const value = useFieldValue<Key>(id, name) as Value;
-  const actions = useFieldActions(id, name);
+  const actions = useFieldActions<Value>(id, name);
 
   const { validate, error } = useFieldValidation<Key, Value>(id, name, {
     validate: options.validate,

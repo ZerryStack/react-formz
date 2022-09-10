@@ -16,6 +16,25 @@ A `DependentField` is a field that depends on the value of another field or fiel
 its owner `Form`. The `DependentField` has the exact same interface except with the added
 ability to respond to changes in other fields within its parent form.
 
+Example Usage:
+
+```tsx
+<DependentField
+ name="favoriteDrink"
+ dependencies={(values) => ({ dob: values.dob })}
+ validate={(_, { dob }) => {
+     if (dob <= 21) {
+     return "Must be 21 years old"
+   }
+}}
+onDependenciesChange={(dependencies, actions) => {
+  if (dependencies.dob <= 21) {
+   actions.setValue("N/A");
+  }
+}}
+/>
+```
+
 #### Type parameters
 
 | Name | Type |
@@ -39,4 +58,4 @@ ability to respond to changes in other fields within its parent form.
 
 #### Defined in
 
-packages/react-formz/src/components/DependentField/DependentField.tsx:85
+[packages/react-formz/src/components/DependentField/DependentField.tsx:103](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/DependentField/DependentField.tsx#L103)

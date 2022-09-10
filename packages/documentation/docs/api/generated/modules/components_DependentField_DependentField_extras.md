@@ -19,7 +19,7 @@ input type will be `checkbox` but can be overriden.
 | Name | Type |
 | :------ | :------ |
 | `Values` | extends [`FormzValues`](types_form.md#formzvalues) |
-| `Key` | extends `string` |
+| `Key` | extends `string` = `string` |
 | `Element` | `HTMLInputElement` |
 | `Component` | extends `ComponentType`<{}\> = `ComponentType`<{}\> |
 | `DependentValues` | extends `Partial`<`Values`\> = `Partial`<`Values`\> |
@@ -36,7 +36,7 @@ input type will be `checkbox` but can be overriden.
 
 #### Defined in
 
-packages/react-formz/src/components/DependentField/DependentField.extras.tsx:25
+[packages/react-formz/src/components/DependentField/DependentField.extras.tsx:25](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/DependentField/DependentField.extras.tsx#L25)
 
 ___
 
@@ -52,7 +52,7 @@ input type will be `select` but can be overriden.
 | Name | Type |
 | :------ | :------ |
 | `Values` | extends [`FormzValues`](types_form.md#formzvalues) |
-| `Key` | extends `string` |
+| `Key` | extends `string` = `string` |
 | `Element` | `HTMLInputElement` |
 | `Component` | extends `ComponentType`<{}\> = `ComponentType`<{}\> |
 | `DependentValues` | extends `Partial`<`Values`\> = `Partial`<`Values`\> |
@@ -69,7 +69,7 @@ input type will be `select` but can be overriden.
 
 #### Defined in
 
-packages/react-formz/src/components/DependentField/DependentField.extras.tsx:25
+[packages/react-formz/src/components/DependentField/DependentField.extras.tsx:25](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/DependentField/DependentField.extras.tsx#L25)
 
 ___
 
@@ -85,7 +85,7 @@ input type will be `number` but can be overriden.
 | Name | Type |
 | :------ | :------ |
 | `Values` | extends [`FormzValues`](types_form.md#formzvalues) |
-| `Key` | extends `string` |
+| `Key` | extends `string` = `string` |
 | `Element` | `HTMLInputElement` |
 | `Component` | extends `ComponentType`<{}\> = `ComponentType`<{}\> |
 | `DependentValues` | extends `Partial`<`Values`\> = `Partial`<`Values`\> |
@@ -102,7 +102,7 @@ input type will be `number` but can be overriden.
 
 #### Defined in
 
-packages/react-formz/src/components/DependentField/DependentField.extras.tsx:25
+[packages/react-formz/src/components/DependentField/DependentField.extras.tsx:25](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/DependentField/DependentField.extras.tsx#L25)
 
 ___
 
@@ -118,7 +118,7 @@ input type will be `radio` but can be overriden.
 | Name | Type |
 | :------ | :------ |
 | `Values` | extends [`FormzValues`](types_form.md#formzvalues) |
-| `Key` | extends `string` |
+| `Key` | extends `string` = `string` |
 | `Element` | `HTMLInputElement` |
 | `Component` | extends `ComponentType`<{}\> = `ComponentType`<{}\> |
 | `DependentValues` | extends `Partial`<`Values`\> = `Partial`<`Values`\> |
@@ -135,7 +135,7 @@ input type will be `radio` but can be overriden.
 
 #### Defined in
 
-packages/react-formz/src/components/DependentField/DependentField.extras.tsx:25
+[packages/react-formz/src/components/DependentField/DependentField.extras.tsx:25](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/DependentField/DependentField.extras.tsx#L25)
 
 ___
 
@@ -151,7 +151,7 @@ input type will be `select` but can be overriden.
 | Name | Type |
 | :------ | :------ |
 | `Values` | extends [`FormzValues`](types_form.md#formzvalues) |
-| `Key` | extends `string` |
+| `Key` | extends `string` = `string` |
 | `Element` | `HTMLInputElement` |
 | `Component` | extends `ComponentType`<{}\> = `ComponentType`<{}\> |
 | `DependentValues` | extends `Partial`<`Values`\> = `Partial`<`Values`\> |
@@ -168,7 +168,7 @@ input type will be `select` but can be overriden.
 
 #### Defined in
 
-packages/react-formz/src/components/DependentField/DependentField.extras.tsx:25
+[packages/react-formz/src/components/DependentField/DependentField.extras.tsx:25](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/DependentField/DependentField.extras.tsx#L25)
 
 ___
 
@@ -184,7 +184,7 @@ input type will be `text` but can be overriden.
 | Name | Type |
 | :------ | :------ |
 | `Values` | extends [`FormzValues`](types_form.md#formzvalues) |
-| `Key` | extends `string` |
+| `Key` | extends `string` = `string` |
 | `Element` | `HTMLInputElement` |
 | `Component` | extends `ComponentType`<{}\> = `ComponentType`<{}\> |
 | `DependentValues` | extends `Partial`<`Values`\> = `Partial`<`Values`\> |
@@ -201,4 +201,4 @@ input type will be `text` but can be overriden.
 
 #### Defined in
 
-packages/react-formz/src/components/DependentField/DependentField.extras.tsx:25
+[packages/react-formz/src/components/DependentField/DependentField.extras.tsx:25](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/DependentField/DependentField.extras.tsx#L25)

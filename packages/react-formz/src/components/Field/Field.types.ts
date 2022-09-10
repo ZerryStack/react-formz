@@ -57,6 +57,7 @@ export interface BaseFieldComponentProps<
   [key: `data-${string}`]: string | undefined;
 
   children?: React.ReactNode;
+  placeholder?: string;
   actions: FieldActions<Value>;
 }
 

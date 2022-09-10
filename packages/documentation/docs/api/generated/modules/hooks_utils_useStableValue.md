@@ -34,4 +34,4 @@ it to change.
 
 #### Defined in
 
-packages/react-formz/src/hooks/utils/useStableValue.ts:9
+[packages/react-formz/src/hooks/utils/useStableValue.ts:9](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/utils/useStableValue.ts#L9)

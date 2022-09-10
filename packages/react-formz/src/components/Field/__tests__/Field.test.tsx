@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import { defaultTestFormName } from "../../../../testUtils/constants";
 import createDefaultFormzState from "../../../../testUtils/createDefaultFormzState";
 import { formzStore } from "../../../store";
@@ -7,32 +7,22 @@ import Form from "../../Form";
 import Field from "../Field";
 import userEvent from "@testing-library/user-event";
 import { FieldProps } from "../Field.types";
-import ErrorMessage from "../../ErrorMessage";
 import SubmitButton from "../../SubmitButton";
+import TestFieldComponent from "../../../../testUtils/TestFieldComponent";
 
-function TestField(props: FieldProps) {
-  return (
-    <Field
-      {...props}
-      as={({ input: { label, ...input }, error }) => {
-        const rerenders = useRef(0);
-        rerenders.current++;
-        return (
-          <div>
-            <label htmlFor={input.name}>{label}</label>
-            <input {...input} id={input.name} />
-            <div data-testid={`rerenders-${input.name}`}>
-              {rerenders.current}
-            </div>
-            {error && <ErrorMessage field={input.name} />}
-          </div>
-        );
-      }}
-    />
-  );
+function resetState() {
+  () => {
+    formzStore.setState((state) => {
+      state.forms[defaultTestFormName] = createDefaultFormzState();
+    });
+  };
 }
 
-function renderField(
+function TestField(props: FieldProps) {
+  return <Field {...props} as={TestFieldComponent} />;
+}
+
+function renderTest(
   ui?: React.ReactElement<any, string | React.JSXElementConstructor<any>>,
   options?: { lastName: Partial<FieldProps> }
 ) {
@@ -97,22 +87,20 @@ function renderField(
 }
 
 describe("components/Field", () => {
-  beforeEach(() => {
-    formzStore.setState((state) => {
-      state.forms[defaultTestFormName] = createDefaultFormzState();
-    });
-  });
+  beforeEach(resetState);
 
   it("should render without error", () => {
-    const { FirstNameInput, LastNameInput } = renderField();
+    const { FirstNameInput, LastNameInput } = renderTest();
 
     expect(FirstNameInput()).toBeInTheDocument();
     expect(LastNameInput()).toBeInTheDocument();
   });
 
   describe("functionality", () => {
+    beforeEach(resetState);
+
     it("should update input value when user types", async () => {
-      const { changeFirstNameValue, expectInputValueToBe } = renderField();
+      const { changeFirstNameValue, expectInputValueToBe } = renderTest();
 
       await changeFirstNameValue("u");
 
@@ -121,8 +109,10 @@ describe("components/Field", () => {
   });
 
   describe("performance", () => {
+    beforeEach(resetState);
+
     it("should not re-render if its' value does not change.", async () => {
-      const { changeFirstNameValue, result } = renderField();
+      const { changeFirstNameValue, result } = renderTest();
 
       await changeFirstNameValue("John");
 
@@ -133,7 +123,7 @@ describe("components/Field", () => {
 
   describe("accessibility", () => {
     it("should have aria-required=true if field is required", async () => {
-      const { LastNameInput } = renderField();
+      const { LastNameInput } = renderTest();
 
       expect(LastNameInput()).toHaveAttribute("aria-required", "true");
     });
@@ -145,7 +135,7 @@ describe("components/Field", () => {
         clickSubmit,
         clickField,
         LastNameInput,
-      } = renderField();
+      } = renderTest();
 
       await changeFirstNameValue("John");
 
@@ -165,7 +155,7 @@ describe("components/Field", () => {
         clickSubmit,
         clickField,
         LastNameInput,
-      } = renderField();
+      } = renderTest();
 
       await changeFirstNameValue("John");
 
@@ -187,9 +177,11 @@ describe("components/Field", () => {
   });
 
   describe("validation", () => {
+    beforeEach(resetState);
+
     it("should show error if field is required", async () => {
       const { changeFirstNameValue, result, clickSubmit, clickField } =
-        renderField();
+        renderTest();
 
       await changeFirstNameValue("John");
 
@@ -201,7 +193,7 @@ describe("components/Field", () => {
     });
 
     it("should not show error if a field has not yet been touched", async () => {
-      const { changeFirstNameValue, result, clickSubmit } = renderField();
+      const { changeFirstNameValue, result, clickSubmit } = renderTest();
 
       await changeFirstNameValue("John");
 
@@ -214,7 +206,7 @@ describe("components/Field", () => {
 
     it("should show error if value is above max", async () => {
       const { changeLastNameValue, result, clickSubmit, clickField } =
-        renderField(undefined, { lastName: { max: 5, type: "number" } });
+        renderTest(undefined, { lastName: { max: 5, type: "number" } });
 
       await changeLastNameValue("10");
 
@@ -230,7 +222,7 @@ describe("components/Field", () => {
 
     it("should show error if value is below min", async () => {
       const { changeLastNameValue, result, clickSubmit, clickField } =
-        renderField(undefined, { lastName: { min: 5, type: "number" } });
+        renderTest(undefined, { lastName: { min: 5, type: "number" } });
 
       await changeLastNameValue("3");
 
@@ -245,7 +237,7 @@ describe("components/Field", () => {
 
     it("should show error if value does not match pattern", async () => {
       const { changeLastNameValue, result, clickSubmit, clickField } =
-        renderField(undefined, {
+        renderTest(undefined, {
           lastName: { pattern: /[a-z]+/, type: "text" },
         });
 

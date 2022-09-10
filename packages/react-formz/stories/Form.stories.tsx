@@ -187,7 +187,7 @@ const FormikFormsField = ({ field, form: { errors } }: FormikFieldProps) => {
   return (
     <FormControl error={errors[name] !== undefined}>
       <InputLabel htmlFor="my-input">Item {name}</InputLabel>
-      <Input input={{ ...field, "aria-describedby": `${name}-error`}} aria-describedby="component-error-text" />
+      <Input input={{ ...field, "aria-describedby": `${name}-error`, id: name}} aria-describedby="component-error-text" />
       {errors[name] && (
         <FormHelperText id="component-error-text">
           {errors[name] as string}

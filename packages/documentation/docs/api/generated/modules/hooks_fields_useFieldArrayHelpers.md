@@ -14,7 +14,7 @@ custom_edit_url: null
 
 ### useFieldArrayHelpers
 
-▸ **useFieldArrayHelpers**<`Value`\>(`formId`, `fieldName`): [`ArrayHelpers`](../interfaces/hooks_fields_useFieldArrayHelpers.ArrayHelpers.md)<`Value`\>
+▸ **useFieldArrayHelpers**<`Value`\>(`formId`, `fieldName`, `validate?`): [`ArrayHelpers`](../interfaces/hooks_fields_useFieldArrayHelpers.ArrayHelpers.md)<`Value`\>
 
 Helper functions for manipulating fields that are arrays.
 
@@ -30,6 +30,7 @@ Helper functions for manipulating fields that are arrays.
 | :------ | :------ |
 | `formId` | `string` |
 | `fieldName` | `string` |
+| `validate?` | [`FieldValidator`](types_field.md#fieldvalidator)<`Value`[]\> |
 
 #### Returns
 
@@ -37,4 +38,4 @@ Helper functions for manipulating fields that are arrays.
 
 #### Defined in
 
-[packages/react-formz/src/hooks/fields/useFieldArrayHelpers.ts:15](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/fields/useFieldArrayHelpers.ts#L15)
+[packages/react-formz/src/hooks/fields/useFieldArrayHelpers.ts:18](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/fields/useFieldArrayHelpers.ts#L18)

@@ -13,11 +13,9 @@ const ArrayField = <
 ) => {
   const { render: Component, name, validate, ...restProps } = props;
     
-  const field = useField<Key, Value[]>(name, {
-    validate,
-  });
+  const field = useField<Key, Value[]>(name, {});
 
-  const arrayHelpers = useFieldArrayHelpers<Value>(field.formId, name);
+  const arrayHelpers = useFieldArrayHelpers<Value>(field.formId, name, validate);
   
   return <Component {...restProps} values={field.value} arrayHelpers={arrayHelpers} />;
 };

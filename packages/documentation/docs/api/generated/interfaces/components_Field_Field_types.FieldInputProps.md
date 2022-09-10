@@ -16,6 +16,19 @@ custom_edit_url: null
 
 ## Properties
 
+### aria-describedby
+
+• **aria-describedby**: `string`
+
+An auto generated id for the form error. If using the `ErrorMessage` component
+this id will automatically be applied.
+
+#### Defined in
+
+[packages/react-formz/src/components/Field/Field.types.ts:41](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L41)
+
+___
+
 ### aria-invalid
 
 • `Optional` **aria-invalid**: `boolean`
@@ -25,7 +38,7 @@ does not conform to the format expected by the application.
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:29](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L29)
+[packages/react-formz/src/components/Field/Field.types.ts:30](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L30)
 
 ___
 
@@ -39,7 +52,7 @@ users (as opposed to validating the input).
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:35](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L35)
+[packages/react-formz/src/components/Field/Field.types.ts:36](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L36)
 
 ___
 
@@ -50,6 +63,16 @@ ___
 #### Defined in
 
 [packages/react-formz/src/components/Field/Field.types.ts:20](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L20)
+
+___
+
+### id
+
+• **id**: `Key`
+
+#### Defined in
+
+[packages/react-formz/src/components/Field/Field.types.ts:25](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L25)
 
 ___
 

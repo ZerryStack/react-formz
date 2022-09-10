@@ -15,6 +15,31 @@ custom_edit_url: null
 
 ## Properties
 
+### add
+
+• **add**: (`value`: `Value`, `index?`: `number`) => `void`
+
+#### Type declaration
+
+▸ (`value`, `index?`): `void`
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | `Value` |
+| `index?` | `number` |
+
+##### Returns
+
+`void`
+
+#### Defined in
+
+[packages/react-formz/src/hooks/fields/useFieldArrayHelpers.ts:10](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/fields/useFieldArrayHelpers.ts#L10)
+
+___
+
 ### insert
 
 • **insert**: (`index`: `number`, `value`: `Value`) => `void`
@@ -36,7 +61,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/react-formz/src/hooks/fields/useFieldArrayHelpers.ts:8](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/fields/useFieldArrayHelpers.ts#L8)
+[packages/react-formz/src/hooks/fields/useFieldArrayHelpers.ts:11](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/fields/useFieldArrayHelpers.ts#L11)
 
 ___
 
@@ -60,7 +85,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/hooks/fields/useFieldArrayHelpers.ts:7](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/fields/useFieldArrayHelpers.ts#L7)
+[packages/react-formz/src/hooks/fields/useFieldArrayHelpers.ts:9](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/fields/useFieldArrayHelpers.ts#L9)
 
 ___
 
@@ -85,4 +110,4 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/hooks/fields/useFieldArrayHelpers.ts:9](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/fields/useFieldArrayHelpers.ts#L9)
+[packages/react-formz/src/hooks/fields/useFieldArrayHelpers.ts:12](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/fields/useFieldArrayHelpers.ts#L12)

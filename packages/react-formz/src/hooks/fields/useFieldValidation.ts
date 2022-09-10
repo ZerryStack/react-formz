@@ -33,7 +33,7 @@ function useFieldValidation<
   const { label = name } = options;
 
   const selectFieldError = useSelector(makeSelectFieldError(formId, name));
-  
+
   const error = useFormz(selectFieldError);
 
   const getErrorMessage = async (): Promise<FormzError | null> => {

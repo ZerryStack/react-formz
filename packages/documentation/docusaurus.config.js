@@ -81,7 +81,7 @@ const config = {
         defaultMode: "light",
       },
       navbar: {
-        title: "React Formz",
+        title: "React Formz (beta)",
         logo: {
           alt: "React Formz",
           src: "img/logo.png",

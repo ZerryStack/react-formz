@@ -17,6 +17,7 @@ const config = {
     rootNodeModules,
     "src",
   ],
+  testEnvironment: "jsdom"
 };
 
 module.exports = config;

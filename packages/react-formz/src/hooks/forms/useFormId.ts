@@ -3,7 +3,7 @@ import logger from "../../logger";
 import { useFormz, formzStore } from "../../store";
 import { FormzValues } from "../../types/form";
 import useComponentDidMount from "../utils/useComponentDidMount";
-import useLatest from "../utils/useLatest";
+import useStableValue from "../utils/useStableValue";
 
 /**
  * Creates a unique id for a form and adds that id to the form store.
@@ -17,7 +17,7 @@ function useFormId<Values extends FormzValues>(
   existingId: string | undefined = undefined,
   saveDrafts: boolean = false,
 ) {
-  const id = useLatest(name || existingId || uuid());
+  const id = useStableValue(name || existingId || uuid());
     
   useComponentDidMount(() => {
     const { addForm, removeForm } = formzStore.getState();

@@ -28,12 +28,12 @@ function UserProfile() {
 
 #### Type parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `Key` | extends `string` = `string` | FieldId - The input/field `name` property. This value should correspond to a property in the form. |
-| `Value` | extends [`FieldValue`](types_field.md#fieldvalue) = [`FieldValue`](types_field.md#fieldvalue) | FieldValue - The value of the input/field. |
-| `Element` | `HTMLInputElement` | The underlying html element either "input", "select", or "textarea". |
-| `Component` | extends `ComponentType`<{}\> = `ComponentType`<{}\> | If rendering your own component via the `as` prop the `Component` type parameter applies to that component. |
+| Name | Type |
+| :------ | :------ |
+| `Key` | extends `string` = `string` |
+| `Value` | extends [`FieldValue`](types_field.md#fieldvalue) = [`FieldValue`](types_field.md#fieldvalue) |
+| `Element` | `HTMLInputElement` |
+| `Component` | extends `ComponentType`<{}\> = `ComponentType`<{}\> |
 
 #### Parameters
 

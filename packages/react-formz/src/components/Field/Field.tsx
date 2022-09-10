@@ -92,10 +92,10 @@ const FieldInner = <
  * }
  * ```
  * @param props {@link FieldProps} - The react props for the field component.
- * @typeParam Key {@link FieldId} - The input/field `name` property. This value should correspond to a property in the form.
- * @typeParam Value {@link FieldValue} - The value of the input/field.
- * @typeParam Element - The underlying html element either "input", "select", or "textarea".
- * @typeParam Component - If rendering your own component via the `as` prop the `Component` type parameter applies to that component.
+ * @typeParam `Key` {@link FieldId} - The input/field `name` property. This value should correspond to a property in the form.
+ * @typeParam `Value` {@link FieldValue} - The value of the input/field.
+ * @typeParam `Element` - The underlying html element either "input", "select", or "textarea".
+ * @typeParam `Component` - If rendering your own component via the `as` prop the `Component` type parameter applies to that component.
  */
 
 const Field = React.forwardRef<any, FieldProps>(FieldInner) as <

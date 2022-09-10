@@ -8,13 +8,77 @@ custom_edit_url: null
 
 ## Type Aliases
 
+### DependentFieldChangeCallback
+
+Ƭ **DependentFieldChangeCallback**<`Value`, `DependentValues`\>: (`dependencies`: `DependentValues`, `actions`: [`FieldActions`](../interfaces/hooks_fields_useFieldActions.FieldActions.md)<`Value`\>) => `void`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `Value` | extends [`FieldValue`](types_field.md#fieldvalue) = [`FieldValue`](types_field.md#fieldvalue) |
+| `DependentValues` | extends [`FormzValues`](types_form.md#formzvalues) = [`FormzValues`](types_form.md#formzvalues) |
+
+#### Type declaration
+
+▸ (`dependencies`, `actions`): `void`
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `dependencies` | `DependentValues` |
+| `actions` | [`FieldActions`](../interfaces/hooks_fields_useFieldActions.FieldActions.md)<`Value`\> |
+
+##### Returns
+
+`void`
+
+#### Defined in
+
+[packages/react-formz/src/types/field.ts:41](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/field.ts#L41)
+
+___
+
+### DependentFieldValidator
+
+Ƭ **DependentFieldValidator**<`Value`, `DependentValues`\>: (`value`: [`Maybe`](types_common.md#maybe)<`Value`\>, `dependencies`: `DependentValues`) => [`Maybe`](types_common.md#maybe)<`string`\> \| `Promise`<[`Maybe`](types_common.md#maybe)<`string`\>\>
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `Value` | extends [`FieldValue`](types_field.md#fieldvalue) = [`FieldValue`](types_field.md#fieldvalue) |
+| `DependentValues` | extends [`FormzValues`](types_form.md#formzvalues) = [`FormzValues`](types_form.md#formzvalues) |
+
+#### Type declaration
+
+▸ (`value`, `dependencies`): [`Maybe`](types_common.md#maybe)<`string`\> \| `Promise`<[`Maybe`](types_common.md#maybe)<`string`\>\>
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | [`Maybe`](types_common.md#maybe)<`Value`\> |
+| `dependencies` | `DependentValues` |
+
+##### Returns
+
+[`Maybe`](types_common.md#maybe)<`string`\> \| `Promise`<[`Maybe`](types_common.md#maybe)<`string`\>\>
+
+#### Defined in
+
+[packages/react-formz/src/types/field.ts:33](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/field.ts#L33)
+
+___
+
 ### FieldElement
 
 Ƭ **FieldElement**: `HTMLInputElement` \| `HTMLSelectElement` \| `HTMLTextAreaElement`
 
 #### Defined in
 
-[packages/react-formz/src/types/field.ts:19](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/field.ts#L19)
+[packages/react-formz/src/types/field.ts:20](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/field.ts#L20)
 
 ___
 
@@ -24,16 +88,13 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/types/field.ts:4](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/field.ts#L4)
+[packages/react-formz/src/types/field.ts:5](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/field.ts#L5)
 
 ___
 
 ### FieldValidator
 
-Ƭ **FieldValidator**<`Value`\>: (`value`: [`Maybe`](types_common.md#maybe)<`Value`\>) => [`Maybe`](types_common.md#maybe)<`string`\> \| (`value`: [`Maybe`](types_common.md#maybe)<`Value`\>) => `Promise`<[`Maybe`](types_common.md#maybe)<`string`\>\>
-
-The validate function for a field. Always returns a boolean
-but the validator can be async/return a Promise.
+Ƭ **FieldValidator**<`Value`\>: (`value`: [`Maybe`](types_common.md#maybe)<`Value`\>) => [`Maybe`](types_common.md#maybe)<`string`\> \| `Promise`<[`Maybe`](types_common.md#maybe)<`string`\>\>
 
 #### Type parameters
 
@@ -41,9 +102,26 @@ but the validator can be async/return a Promise.
 | :------ | :------ |
 | `Value` | extends [`FieldValue`](types_field.md#fieldvalue) = [`FieldValue`](types_field.md#fieldvalue) |
 
+#### Type declaration
+
+▸ (`value`): [`Maybe`](types_common.md#maybe)<`string`\> \| `Promise`<[`Maybe`](types_common.md#maybe)<`string`\>\>
+
+The validate function for a field. Always returns a boolean
+but the validator can be async/return a Promise.
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | [`Maybe`](types_common.md#maybe)<`Value`\> |
+
+##### Returns
+
+[`Maybe`](types_common.md#maybe)<`string`\> \| `Promise`<[`Maybe`](types_common.md#maybe)<`string`\>\>
+
 #### Defined in
 
-[packages/react-formz/src/types/field.ts:28](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/field.ts#L28)
+[packages/react-formz/src/types/field.ts:29](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/field.ts#L29)
 
 ___
 
@@ -53,7 +131,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/types/field.ts:9](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/field.ts#L9)
+[packages/react-formz/src/types/field.ts:10](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/field.ts#L10)
 
 ___
 
@@ -86,7 +164,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/types/field.ts:32](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/field.ts#L32)
+[packages/react-formz/src/types/field.ts:46](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/field.ts#L46)
 
 ___
 
@@ -98,4 +176,4 @@ Native HTMLField Values
 
 #### Defined in
 
-[packages/react-formz/src/types/field.ts:7](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/field.ts#L7)
+[packages/react-formz/src/types/field.ts:8](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/field.ts#L8)

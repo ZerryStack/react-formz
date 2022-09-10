@@ -1,6 +1,6 @@
 {
   "name": "@zerry/react-formz",
-  "version": "0.0.7-beta",
+  "version": "0.0.10-beta",
   "packageManager": "yarn@3.2.3",
   "files": [
     "dist"
@@ -78,5 +78,9 @@
   },
   "peerDependencies": {
     "immer": ">=7.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ZerryStack/react-formz.git"
   }
 }

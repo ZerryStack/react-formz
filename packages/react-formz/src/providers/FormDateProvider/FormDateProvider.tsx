@@ -1,5 +1,5 @@
 import React, { createContext, useContext } from "react";
-import useLatest from "../../hooks/utils/useLatest";
+import useStableValue from "../../hooks/utils/useStableValue";
 import { FormDateProviderProps } from "./FormDateProvider.types";
 
 const Context = createContext<FormDateProviderProps | null>(null);
@@ -13,7 +13,7 @@ const FormDateProvider = ({
   formatter,
   children
 }: React.PropsWithChildren<Partial<FormDateProviderProps>>) => {
-  const value = useLatest<FormDateProviderProps>({
+  const value = useStableValue<FormDateProviderProps>({
     formatter: formatter ?? defaultFormatter
   })
 

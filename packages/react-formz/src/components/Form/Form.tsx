@@ -1,7 +1,7 @@
 import React from "react";
 import useFormStateInitialized from "../../hooks/forms/useFormStateInitialized";
 import useFormSubmission from "../../hooks/forms/useFormSubmission";
-import useLatest from "../../hooks/utils/useLatest";
+import useStableValue from "../../hooks/utils/useStableValue";
 import useStableCallback from "../../hooks/utils/useStableCallback";
 import logger from "../../logger";
 import { useFormIdContext } from "../../providers/FormIdProvider";
@@ -59,7 +59,7 @@ const Form = <Values extends FormzValues>(props: FormProps<Values>) => {
     onFormRehydrated = () => {},
     ...formProps
   } = props;
-  const memoizedInitialValues = useLatest(initialValues);
+  const memoizedInitialValues = useStableValue(initialValues);
   const formRehydrationCallback = useStableCallback(onFormRehydrated);
 
   if (saveDrafts && !name) {

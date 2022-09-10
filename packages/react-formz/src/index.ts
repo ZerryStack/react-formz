@@ -1,8 +1,20 @@
-export type { ArrayFieldComponentProps, ArrayFieldProps } from "./components/ArrayField";
+export type {
+  ArrayFieldComponentProps,
+  ArrayFieldProps,
+} from "./components/ArrayField";
 export { default as ArrayField } from "./components/ArrayField";
 export { default as SubmitButton } from "./components/SubmitButton";
 export { default as ErrorMessage } from "./components/ErrorMessage";
 export { default as FormzDateProvider } from "./providers/FormDateProvider";
+export {
+  default as DependentField,
+  DependentCheckboxField,
+  DependentMultiSelectField,
+  DependentNumberField,
+  DependentRadioField,
+  DependentSelectField,
+  DependentTextField,
+} from "./components/DependentField";
 export {
   default as Field,
   TextField,
@@ -10,10 +22,10 @@ export {
   SelectField,
   NumberField,
   MultiSelectField,
-  RadioField
+  RadioField,
 } from "./components/Field";
 export type { FieldComponentProps, FieldProps } from "./components/Field";
-export type { FieldValue, TextFieldValue } from "./types/field"; 
+export type { FieldValue, TextFieldValue } from "./types/field";
 export { default as Form } from "./components/Form";
 export { default as FormLastPersistedAt } from "./components/FormLastPersistedAt";
 export {

@@ -30,9 +30,11 @@ function useFieldValidation<
   Key extends FieldId = FieldId,
   Value extends FieldValue = FieldValue
 >(formId: string, name: Key, options: UseFieldValidationOptions<Value>) {
-  const selectFieldError = useSelector(makeSelectFieldError(formId, name));
-  const error = useFormz(selectFieldError);
   const { label = name } = options;
+
+  const selectFieldError = useSelector(makeSelectFieldError(formId, name));
+  
+  const error = useFormz(selectFieldError);
 
   const getErrorMessage = async (): Promise<FormzError | null> => {
     const value = actions.getFieldStoreValue<Value>(formId, name);

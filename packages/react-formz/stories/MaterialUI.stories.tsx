@@ -138,6 +138,7 @@ const MuiRadioFieldComponent = <Key extends string>({
   input: { label, value, onBlur, onChange, name },
   children,
   storeValue,
+  actions,
   ...restProps
 }: FieldComponentProps<Key, string, HTMLInputElement>) => {
   return (

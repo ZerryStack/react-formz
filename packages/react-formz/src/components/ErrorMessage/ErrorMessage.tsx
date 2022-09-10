@@ -14,13 +14,13 @@ const ErrorMessage = ({
 
   if (error && (onlyShowIfTouched ? touched !== false : true)) {
     if (Component) {
-      <Component {...spanProps} aria-live="polite" field={field} error={error}>
+      <Component id={`${field}-error`} {...spanProps} aria-live="polite" field={field} error={error}>
         {error.message}
       </Component>;
     }
 
     return (
-      <span aria-live="polite" {...spanProps}>
+      <span aria-live="polite" id={`${field}-error`} {...spanProps}>
         {error.message}
       </span>
     );

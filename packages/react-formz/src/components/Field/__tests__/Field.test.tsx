@@ -40,7 +40,12 @@ function renderField(
     ui ?? (
       <Form initialValues={{ firstName: "", lastName: "" }} noValidate>
         <TestField name="firstName" label="First Name" />
-        <TestField name="lastName" label="Last Name" required {...options?.lastName} />
+        <TestField
+          name="lastName"
+          label="Last Name"
+          required
+          {...options?.lastName}
+        />
         <SubmitButton>Submit</SubmitButton>
       </Form>
     )
@@ -105,84 +110,154 @@ describe("components/Field", () => {
     expect(LastNameInput()).toBeInTheDocument();
   });
 
-  it("should update input value when user types", async () => {
-    const { changeFirstNameValue, expectInputValueToBe } = renderField();
+  describe("functionality", () => {
+    it("should update input value when user types", async () => {
+      const { changeFirstNameValue, expectInputValueToBe } = renderField();
 
-    await changeFirstNameValue("u");
+      await changeFirstNameValue("u");
 
-    expectInputValueToBe("u");
+      expectInputValueToBe("u");
+    });
   });
 
-  it("should not re-render if its' value does not change.", async () => {
-    const { changeFirstNameValue, result } = renderField();
+  describe("performance", () => {
+    it("should not re-render if its' value does not change.", async () => {
+      const { changeFirstNameValue, result } = renderField();
 
-    await changeFirstNameValue("John");
+      await changeFirstNameValue("John");
 
-    expect(result.getByTestId("rerenders-firstName")).toHaveTextContent("5");
-    expect(result.getByTestId("rerenders-lastName")).toHaveTextContent("1");
+      expect(result.getByTestId("rerenders-firstName")).toHaveTextContent("5");
+      expect(result.getByTestId("rerenders-lastName")).toHaveTextContent("1");
+    });
   });
 
-  it("should show error if field is required", async () => {
-    const { changeFirstNameValue, result, clickSubmit, clickField } =
-      renderField();
+  describe("accessibility", () => {
+    it("should have aria-required=true if field is required", async () => {
+      const { LastNameInput } = renderField();
 
-    await changeFirstNameValue("John");
+      expect(LastNameInput()).toHaveAttribute("aria-required", "true");
+    });
 
-    await clickField("Last Name");
+    it("should have aria-invalid=true when there is an error", async () => {
+      const {
+        changeFirstNameValue,
+        result,
+        clickSubmit,
+        clickField,
+        LastNameInput,
+      } = renderField();
 
-    await clickSubmit();
+      await changeFirstNameValue("John");
 
-    expect(result.getByText("Last Name is required.")).toBeInTheDocument();
+      await clickField("Last Name");
+
+      await clickSubmit();
+
+      expect(LastNameInput()).toHaveAttribute("aria-invalid", "true");
+
+      expect(result.getByText("Last Name is required.")).toBeInTheDocument();
+    });
+
+    it("should have aria-describedby when there is an error", async () => {
+      const {
+        changeFirstNameValue,
+        result,
+        clickSubmit,
+        clickField,
+        LastNameInput,
+      } = renderField();
+
+      await changeFirstNameValue("John");
+
+      await clickField("Last Name");
+
+      await clickSubmit();
+
+      expect(LastNameInput()).toHaveAttribute(
+        "aria-describedby",
+        "lastName-error"
+      );
+
+      expect(result.getByText("Last Name is required.")).toBeInTheDocument();
+      expect(result.getByText("Last Name is required.")).toHaveAttribute(
+        "id",
+        "lastName-error"
+      );
+    });
   });
 
-  it("should not show error if a field has not yet been touched", async () => {
-    const { changeFirstNameValue, result, clickSubmit } =
-      renderField();
+  describe("validation", () => {
+    it("should show error if field is required", async () => {
+      const { changeFirstNameValue, result, clickSubmit, clickField } =
+        renderField();
 
-    await changeFirstNameValue("John");
+      await changeFirstNameValue("John");
 
-    await clickSubmit();
+      await clickField("Last Name");
 
-    expect(result.queryByText("Last Name is required.")).not.toBeInTheDocument();
-  });
+      await clickSubmit();
 
-  it("should show error if value is above max", async () => {
-    const { changeLastNameValue, result, clickSubmit, clickField } =
-      renderField(undefined, { lastName: { max: 5, type: "number" }});
+      expect(result.getByText("Last Name is required.")).toBeInTheDocument();
+    });
 
-    await changeLastNameValue("10");
+    it("should not show error if a field has not yet been touched", async () => {
+      const { changeFirstNameValue, result, clickSubmit } = renderField();
 
-    await clickField("Last Name");
+      await changeFirstNameValue("John");
 
-    await clickSubmit();
+      await clickSubmit();
 
-    expect(result.getByTestId("rerenders-firstName")).toHaveTextContent("1");
-    expect(result.getByText("Last Name is above the maximum value of 5.")).toBeInTheDocument();
-  });
+      expect(
+        result.queryByText("Last Name is required.")
+      ).not.toBeInTheDocument();
+    });
 
-  it("should show error if value is below min", async () => {
-    const { changeLastNameValue, result, clickSubmit, clickField } =
-      renderField(undefined, { lastName: { min: 5, type: "number" }});
+    it("should show error if value is above max", async () => {
+      const { changeLastNameValue, result, clickSubmit, clickField } =
+        renderField(undefined, { lastName: { max: 5, type: "number" } });
 
-    await changeLastNameValue("3");
+      await changeLastNameValue("10");
 
-    await clickField("Last Name");
+      await clickField("Last Name");
 
-    await clickSubmit();
+      await clickSubmit();
 
-    expect(result.getByText("Last Name is below the minimum value of 5.")).toBeInTheDocument();
-  });
+      expect(result.getByTestId("rerenders-firstName")).toHaveTextContent("1");
+      expect(
+        result.getByText("Last Name is above the maximum value of 5.")
+      ).toBeInTheDocument();
+    });
 
-  it("should show error if value does not match pattern", async () => {
-    const { changeLastNameValue, result, clickSubmit, clickField } =
-      renderField(undefined, { lastName: { pattern: /[a-z]+/, type: "text" }});
+    it("should show error if value is below min", async () => {
+      const { changeLastNameValue, result, clickSubmit, clickField } =
+        renderField(undefined, { lastName: { min: 5, type: "number" } });
 
-    await changeLastNameValue("3");
+      await changeLastNameValue("3");
 
-    await clickField("Last Name");
+      await clickField("Last Name");
 
-    await clickSubmit();
+      await clickSubmit();
 
-    expect(result.getByText("Last Name does not match pattern /[a-z]+/.")).toBeInTheDocument();
+      expect(
+        result.getByText("Last Name is below the minimum value of 5.")
+      ).toBeInTheDocument();
+    });
+
+    it("should show error if value does not match pattern", async () => {
+      const { changeLastNameValue, result, clickSubmit, clickField } =
+        renderField(undefined, {
+          lastName: { pattern: /[a-z]+/, type: "text" },
+        });
+
+      await changeLastNameValue("3");
+
+      await clickField("Last Name");
+
+      await clickSubmit();
+
+      expect(
+        result.getByText("Last Name does not match pattern /[a-z]+/.")
+      ).toBeInTheDocument();
+    });
   });
 });

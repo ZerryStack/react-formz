@@ -53,8 +53,9 @@ function Input<Key extends string, Value extends FieldValue>(
 
   return (
     <>
+    <label htmlFor={input.name}>{input.label ?? input.name}</label>
       <input {...input} className="rf-input" />
-      <ErrorMessage field={input.name} />
+      <ErrorMessage field={input.name} style={{ color: "#bd0101" }} />
     </>
   );
 }
@@ -87,10 +88,11 @@ const SimpleTemplate: ComponentStory<typeof Form> = () => {
         }
       }}
     >
-      <Field as={Input} required name="firstName" placeholder="First Name" />
+      <Field as={Input} required name="firstName" placeholder="First Name" label="First Name" />
       <Field
         as={Input}
         name="lastName"
+        label="Last Name"
         validate={(value) =>
           value !== "Hogan" ? "Last name should be Hogan" : undefined
         }
@@ -98,17 +100,19 @@ const SimpleTemplate: ComponentStory<typeof Form> = () => {
       />
       <Field
         as={Input}
+        label="Age"
         type="number"
         name="age"
         min={3}
         max={40}
         placeholder="Age"
       />
-      <Field as={Input} type="date" name="dob" placeholder="Date of Birth" />
+      <Field as={Input} type="date" name="dob" label="Date of Birth" placeholder="Date of Birth" />
       <DependentField<SimpleFormState>
         as={Input}
         type="text"
         name="favoriteDrink"
+        label="Favorite Drink"
         placeholder="What's your favorite drink?"
         dependencies={({ isOver21, dob }) => ({ isOver21, dob })}
         onDependenciesChange={({ dob, isOver21 }, { setValue }) => {
@@ -123,7 +127,7 @@ const SimpleTemplate: ComponentStory<typeof Form> = () => {
           return null;
         }}
       />
-      <CheckboxField as={Input} name="isOver21" />
+      <CheckboxField as={Input} name="isOver21" label="Over 21?" />
       <FormLastPersistedAt />
       <SubmitButton className="rf-button">Submit</SubmitButton>
     </Form>

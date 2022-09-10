@@ -49,6 +49,8 @@ const FieldInner = <
     "aria-invalid": field.error !== undefined || undefined,
     "aria-required": required ?? undefined,
     value: isValidInputValue(field.value) ? field.value : undefined,
+    "aria-describedby": `${name}-error`,
+    id: name,
   };
 
   if (Tag) {

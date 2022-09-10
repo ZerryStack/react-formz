@@ -22,17 +22,23 @@ export interface FieldInputProps<
   onBlur: React.FocusEventHandler;
   required?: boolean;
   label?: string;
+  id: Key;
   /**
    * The aria-invalid state indicates the entered value
    * does not conform to the format expected by the application.
    */
-  ["aria-invalid"]?: boolean;
+  "aria-invalid"?: boolean;
   /**
    * The aria-required attribute informs assistive technologies about
    * required controls so that they are appropriately announced to the
    * users (as opposed to validating the input).
    */
-  ["aria-required"]?: boolean;
+  "aria-required"?: boolean;
+  /**
+   * An auto generated id for the form error. If using the `ErrorMessage` component
+   * this id will automatically be applied.
+   */
+  "aria-describedby": string;
 }
 
 export interface BaseFieldComponentProps<

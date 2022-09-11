@@ -36,7 +36,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/react-formz/src/types/field.ts:41](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/field.ts#L41)
+[packages/react-formz/src/types/field.ts:42](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/field.ts#L42)
 
 ___
 
@@ -68,7 +68,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/types/field.ts:33](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/field.ts#L33)
+[packages/react-formz/src/types/field.ts:34](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/field.ts#L34)
 
 ___
 
@@ -78,7 +78,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/types/field.ts:20](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/field.ts#L20)
+[packages/react-formz/src/types/field.ts:21](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/field.ts#L21)
 
 ___
 
@@ -121,13 +121,13 @@ but the validator can be async/return a Promise.
 
 #### Defined in
 
-[packages/react-formz/src/types/field.ts:29](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/field.ts#L29)
+[packages/react-formz/src/types/field.ts:30](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/field.ts#L30)
 
 ___
 
 ### FieldValue
 
-Ƭ **FieldValue**: `string` \| `number` \| `boolean` \| ``null`` \| `undefined` \| `any`[] \| [`AnyObject`](types_common.md#anyobject) \| readonly `string`[]
+Ƭ **FieldValue**: `string` \| `number` \| `boolean` \| ``null`` \| `undefined` \| `any`[] \| [`AnyObject`](types_common.md#anyobject) \| `Date` \| readonly `string`[]
 
 #### Defined in
 
@@ -164,7 +164,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/types/field.ts:46](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/field.ts#L46)
+[packages/react-formz/src/types/field.ts:47](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/field.ts#L47)
 
 ___
 

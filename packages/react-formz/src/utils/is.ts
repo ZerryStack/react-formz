@@ -1,5 +1,6 @@
 import { MAX_SAFE_INTEGER } from "../constants";
 import { AnyObject, Empty } from "../types/common";
+import { FormzChangeEvent } from "../types/events";
 import { FieldValue } from "../types/field";
 import {
   HTMLCheckboxInputElement,
@@ -128,4 +129,8 @@ export function isIndex(value: any, length?: number) {
     value % 1 == 0 &&
     value < length
   );
+}
+
+export function isChangeEvent(value: any): value is FormzChangeEvent {
+  return 'target' in value;
 }

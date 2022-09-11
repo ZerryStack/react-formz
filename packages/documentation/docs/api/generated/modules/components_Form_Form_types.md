@@ -9,4 +9,3 @@ custom_edit_url: null
 
 - [FormChildrenProps](../interfaces/components_Form_Form_types.FormChildrenProps.md)
 - [FormProps](../interfaces/components_Form_Form_types.FormProps.md)
-- [IForm](../interfaces/components_Form_Form_types.IForm.md)

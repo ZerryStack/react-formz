@@ -13,6 +13,12 @@ custom_edit_url: null
 | :------ | :------ |
 | `Value` | extends [`FieldValue`](../modules/types_field.md#fieldvalue) |
 
+## Hierarchy
+
+- [`FieldEevents`](hooks_fields_useFieldEvents.FieldEevents.md)<`Value`\>
+
+  ↳ **`UseFieldResult`**
+
 ## Properties
 
 ### actions
@@ -21,7 +27,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/react-formz/src/hooks/fields/useField.ts:27](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/fields/useField.ts#L27)
+[packages/react-formz/src/hooks/fields/useField.ts:24](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/fields/useField.ts#L24)
 
 ___
 
@@ -31,7 +37,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/hooks/fields/useField.ts:25](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/fields/useField.ts#L25)
+[packages/react-formz/src/hooks/fields/useField.ts:22](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/fields/useField.ts#L22)
 
 ___
 
@@ -41,7 +47,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/hooks/fields/useField.ts:24](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/fields/useField.ts#L24)
+[packages/react-formz/src/hooks/fields/useField.ts:21](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/fields/useField.ts#L21)
 
 ___
 
@@ -51,7 +57,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/hooks/fields/useField.ts:26](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/fields/useField.ts#L26)
+[packages/react-formz/src/hooks/fields/useField.ts:23](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/fields/useField.ts#L23)
 
 ___
 
@@ -63,6 +69,9 @@ ___
 
 ▸ (`event`): `void`
 
+The `onBlur` callback should be called when the field loses focuses
+i.e. the `onBlur` event is called.
+
 ##### Parameters
 
 | Name | Type |
@@ -73,33 +82,35 @@ ___
 
 `void`
 
+#### Inherited from
+
+[FieldEevents](hooks_fields_useFieldEvents.FieldEevents.md).[onBlur](hooks_fields_useFieldEvents.FieldEevents.md#onblur)
+
 #### Defined in
 
-[packages/react-formz/src/hooks/fields/useField.ts:23](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/fields/useField.ts#L23)
+[packages/react-formz/src/hooks/fields/useFieldEvents.ts:21](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/fields/useFieldEvents.ts#L21)
 
 ___
 
 ### onChange
 
-• **onChange**: (`event`: [`FormzChangeEvent`](types_events.FormzChangeEvent.md)<`any`\>) => `void`
+• **onChange**: [`FormzChangeEventHandler`](types_events.FormzChangeEventHandler.md)<`Value`, `Element`\>
 
-#### Type declaration
+The `onChange` callback should be called when the value of a field
+changes. This will update the form state. 
 
-▸ (`event`): `void`
+`onChange` has 2 signatures:
 
-##### Parameters
+1. `onChange(event)`
+2. `onChange(value)`
 
-| Name | Type |
-| :------ | :------ |
-| `event` | [`FormzChangeEvent`](types_events.FormzChangeEvent.md)<`any`\> |
+#### Inherited from
 
-##### Returns
-
-`void`
+[FieldEevents](hooks_fields_useFieldEvents.FieldEevents.md).[onChange](hooks_fields_useFieldEvents.FieldEevents.md#onchange)
 
 #### Defined in
 
-[packages/react-formz/src/hooks/fields/useField.ts:22](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/fields/useField.ts#L22)
+[packages/react-formz/src/hooks/fields/useFieldEvents.ts:16](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/fields/useFieldEvents.ts#L16)
 
 ___
 
@@ -109,4 +120,4 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/hooks/fields/useField.ts:21](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/fields/useField.ts#L21)
+[packages/react-formz/src/hooks/fields/useField.ts:20](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/fields/useField.ts#L20)

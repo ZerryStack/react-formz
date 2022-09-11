@@ -1,6 +1,6 @@
 {
   "name": "@zerry/react-formz",
-  "version": "0.0.14-beta",
+  "version": "0.0.15-beta",
   "packageManager": "yarn@3.2.3",
   "files": [
     "dist"
@@ -42,6 +42,7 @@
     "@types/jest": "^29.0.0",
     "@types/ramda": "^0.28.15",
     "@types/react": "^18.0.18",
+    "@types/react-datepicker": "^4.4.2",
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^2.1.0",
     "@welldone-software/why-did-you-render": "^7.0.1",
@@ -58,6 +59,7 @@
     "notistack": "^2.0.5",
     "ramda": "^0.28.0",
     "react": "^18.2.0",
+    "react-datepicker": "^4.8.0",
     "react-dom": "^18.2.0",
     "react-test-renderer": "^18.2.0",
     "typescript": "^4.8.2",

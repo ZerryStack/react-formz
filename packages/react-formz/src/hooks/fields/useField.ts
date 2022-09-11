@@ -1,11 +1,10 @@
 import { useFormIdContext } from "../../providers/FormIdProvider";
 import useFieldValue from "../../store/hooks/useFieldValue";
-import { FormzChangeEvent } from "../../types/events";
 import { FieldId, FieldValue } from "../../types/field";
 import { FormzError } from "../../types/form";
 import { isBoolean } from "../../utils/is";
 import useFieldActions, { FieldActions } from "./useFieldActions";
-import useFieldEvents from "./useFieldEvents";
+import useFieldEvents, { FieldEevents } from "./useFieldEvents";
 import useFieldRegistration from "./useFieldRegistration";
 import useFieldValidation, {
   UseFieldValidationOptions,
@@ -17,10 +16,8 @@ export interface UseFieldOptions<Value extends FieldValue>
   label?: string;
 }
 
-export interface UseFieldResult<Value extends FieldValue> {
+export interface UseFieldResult<Value extends FieldValue> extends FieldEevents<Value> {
   value: Value;
-  onChange: (event: FormzChangeEvent<any>) => void;
-  onBlur: (event: React.FocusEvent<any>) => void;
   error: FormzError | undefined;
   checked?: boolean;
   formId: string;

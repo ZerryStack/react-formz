@@ -29,7 +29,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/react-formz/src/components/Form/Form.types.ts:30](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L30)
+[packages/react-formz/src/components/Form/Form.types.ts:27](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L27)
 
 ___
 
@@ -48,7 +48,7 @@ Example Usage:
 
 #### Defined in
 
-[packages/react-formz/src/components/Form/Form.types.ts:46](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L46)
+[packages/react-formz/src/components/Form/Form.types.ts:43](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L43)
 
 ___
 
@@ -118,7 +118,7 @@ Example Usage:
 
 #### Defined in
 
-[packages/react-formz/src/components/Form/Form.types.ts:62](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L62)
+[packages/react-formz/src/components/Form/Form.types.ts:59](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L59)
 
 ___
 
@@ -131,7 +131,7 @@ the form is not in an invalid state.
 
 #### Defined in
 
-[packages/react-formz/src/components/Form/Form.types.ts:35](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L35)
+[packages/react-formz/src/components/Form/Form.types.ts:32](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L32)
 
 ___
 
@@ -143,7 +143,7 @@ If true, the form state will reset after a successful submission.
 
 #### Defined in
 
-[packages/react-formz/src/components/Form/Form.types.ts:50](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L50)
+[packages/react-formz/src/components/Form/Form.types.ts:47](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L47)
 
 ___
 

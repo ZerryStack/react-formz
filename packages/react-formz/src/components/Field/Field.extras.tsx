@@ -17,9 +17,8 @@ function createField<Value extends FieldValue>(
   return component as <
     Key extends FieldId,
     Element = HTMLInputElement,
-    Component extends React.ComponentType<{}> = React.ComponentType<{}>
   >(
-    props: FieldProps<Key, Value, Element, Component>
+    props: FieldProps<Key, Value, Element>
   ) => JSX.Element;
 }
 
@@ -29,7 +28,6 @@ function createField<Value extends FieldValue>(
  *
  * @typeParam `Key` {@link FieldId} - The input/field `name` property. This value should correspond to a property in the form.
  * @typeParam `Element` - The underlying html element either "input", "select", or "textarea".
- * @typeParam `Component` - If rendering your own component via the `as` prop the `Component` type parameter applies to that component.
  */
 export const TextField = createField<string>("text");
 
@@ -39,7 +37,6 @@ export const TextField = createField<string>("text");
  *
  * @typeParam `Key` {@link FieldId} - The input/field `name` property. This value should correspond to a property in the form.
  * @typeParam `Element` - The underlying html element either "input", "select", or "textarea".
- * @typeParam `Component` - If rendering your own component via the `as` prop the `Component` type parameter applies to that component.
  */
 export const NumberField = createField<number>("number");
 
@@ -49,7 +46,6 @@ export const NumberField = createField<number>("number");
  *
  * @typeParam `Key` {@link FieldId} - The input/field `name` property. This value should correspond to a property in the form.
  * @typeParam `Element` - The underlying html element either "input", "select", or "textarea".
- * @typeParam `Component` - If rendering your own component via the `as` prop the `Component` type parameter applies to that component.
  */
 export const CheckboxField = createField<boolean>("checkbox");
 
@@ -59,7 +55,6 @@ export const CheckboxField = createField<boolean>("checkbox");
  *
  * @typeParam `Key` {@link FieldId} - The input/field `name` property. This value should correspond to a property in the form.
  * @typeParam `Element` - The underlying html element either "input", "select", or "textarea".
- * @typeParam `Component` - If rendering your own component via the `as` prop the `Component` type parameter applies to that component.
  */
 export const RadioField = createField<string>("radio");
 
@@ -69,9 +64,17 @@ export const RadioField = createField<string>("radio");
  *
  * @typeParam `Key` {@link FieldId} - The input/field `name` property. This value should correspond to a property in the form.
  * @typeParam `Element` - The underlying html element either "input", "select", or "textarea".
- * @typeParam `Component` - If rendering your own component via the `as` prop the `Component` type parameter applies to that component.
  */
 export const SelectField = createField<string>("select");
+
+/**
+ * An abstraction of `Field` that can be used for date field values. The default
+ * input type will be `date` but can be overriden.
+ *
+ * @typeParam `Key` {@link FieldId} - The input/field `name` property. This value should correspond to a property in the form.
+ * @typeParam `Element` - The underlying html element either "input", "select", or "textarea".
+ */
+ export const DateField = createField<Date | null | undefined>("date");
 
 /**
  * An abstraction of `Field` that can be used for multi select field values. The default
@@ -79,7 +82,6 @@ export const SelectField = createField<string>("select");
  *
  * @typeParam `Key` {@link FieldId} - The input/field `name` property. This value should correspond to a property in the form.
  * @typeParam `Element` - The underlying html element either "input", "select", or "textarea".
- * @typeParam `Component` - If rendering your own component via the `as` prop the `Component` type parameter applies to that component.
  */
 export const MultiSelectField = createField<string>("select", {
   multiple: true,

@@ -23,6 +23,7 @@ export {
   NumberField,
   MultiSelectField,
   RadioField,
+  DateField
 } from "./components/Field";
 export type { FieldComponentProps, FieldProps } from "./components/Field";
 export type { FieldValue, TextFieldValue } from "./types/field";

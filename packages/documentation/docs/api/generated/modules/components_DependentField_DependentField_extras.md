@@ -9,7 +9,7 @@ custom_edit_url: null
 
 ### DependentCheckboxField
 
-▸ **DependentCheckboxField**<`Values`, `Key`, `Element`, `Component`, `DependentValues`\>(`props`): `Element`
+▸ **DependentCheckboxField**<`Values`, `Key`, `Element`, `DependentValues`\>(`props`): `Element`
 
 An abstraction of `DependentField` that can be used for boolean field values. The default
 input type will be `checkbox` but can be overriden.
@@ -21,14 +21,13 @@ input type will be `checkbox` but can be overriden.
 | `Values` | extends [`FormzValues`](types_form.md#formzvalues) |
 | `Key` | extends `string` = `string` |
 | `Element` | `HTMLInputElement` |
-| `Component` | extends `ComponentType`<{}\> = `ComponentType`<{}\> |
 | `DependentValues` | extends `Partial`<`Values`\> = `Partial`<`Values`\> |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `props` | [`DependentFieldProps`](components_DependentField_DependentField_types.md#dependentfieldprops)<`Values`, `Key`, `boolean`, `Element`, `Component`, `DependentValues`\> |
+| `props` | [`DependentFieldProps`](components_DependentField_DependentField_types.md#dependentfieldprops)<`Values`, `Key`, `boolean`, `Element`, `DependentValues`\> |
 
 #### Returns
 
@@ -42,7 +41,7 @@ ___
 
 ### DependentMultiSelectField
 
-▸ **DependentMultiSelectField**<`Values`, `Key`, `Element`, `Component`, `DependentValues`\>(`props`): `Element`
+▸ **DependentMultiSelectField**<`Values`, `Key`, `Element`, `DependentValues`\>(`props`): `Element`
 
 An abstraction of `DependentField` that can be used for multi select field values. The default
 input type will be `select` but can be overriden.
@@ -54,14 +53,13 @@ input type will be `select` but can be overriden.
 | `Values` | extends [`FormzValues`](types_form.md#formzvalues) |
 | `Key` | extends `string` = `string` |
 | `Element` | `HTMLInputElement` |
-| `Component` | extends `ComponentType`<{}\> = `ComponentType`<{}\> |
 | `DependentValues` | extends `Partial`<`Values`\> = `Partial`<`Values`\> |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `props` | [`DependentFieldProps`](components_DependentField_DependentField_types.md#dependentfieldprops)<`Values`, `Key`, `string`, `Element`, `Component`, `DependentValues`\> |
+| `props` | [`DependentFieldProps`](components_DependentField_DependentField_types.md#dependentfieldprops)<`Values`, `Key`, `string`, `Element`, `DependentValues`\> |
 
 #### Returns
 
@@ -75,7 +73,7 @@ ___
 
 ### DependentNumberField
 
-▸ **DependentNumberField**<`Values`, `Key`, `Element`, `Component`, `DependentValues`\>(`props`): `Element`
+▸ **DependentNumberField**<`Values`, `Key`, `Element`, `DependentValues`\>(`props`): `Element`
 
 An abstraction of `DependentField` that can be used for number field values. The default
 input type will be `number` but can be overriden.
@@ -87,14 +85,13 @@ input type will be `number` but can be overriden.
 | `Values` | extends [`FormzValues`](types_form.md#formzvalues) |
 | `Key` | extends `string` = `string` |
 | `Element` | `HTMLInputElement` |
-| `Component` | extends `ComponentType`<{}\> = `ComponentType`<{}\> |
 | `DependentValues` | extends `Partial`<`Values`\> = `Partial`<`Values`\> |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `props` | [`DependentFieldProps`](components_DependentField_DependentField_types.md#dependentfieldprops)<`Values`, `Key`, `number`, `Element`, `Component`, `DependentValues`\> |
+| `props` | [`DependentFieldProps`](components_DependentField_DependentField_types.md#dependentfieldprops)<`Values`, `Key`, `number`, `Element`, `DependentValues`\> |
 
 #### Returns
 
@@ -108,7 +105,7 @@ ___
 
 ### DependentRadioField
 
-▸ **DependentRadioField**<`Values`, `Key`, `Element`, `Component`, `DependentValues`\>(`props`): `Element`
+▸ **DependentRadioField**<`Values`, `Key`, `Element`, `DependentValues`\>(`props`): `Element`
 
 An abstraction of `DependentField` that can be used for radio field values. The default
 input type will be `radio` but can be overriden.
@@ -120,14 +117,13 @@ input type will be `radio` but can be overriden.
 | `Values` | extends [`FormzValues`](types_form.md#formzvalues) |
 | `Key` | extends `string` = `string` |
 | `Element` | `HTMLInputElement` |
-| `Component` | extends `ComponentType`<{}\> = `ComponentType`<{}\> |
 | `DependentValues` | extends `Partial`<`Values`\> = `Partial`<`Values`\> |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `props` | [`DependentFieldProps`](components_DependentField_DependentField_types.md#dependentfieldprops)<`Values`, `Key`, `string`, `Element`, `Component`, `DependentValues`\> |
+| `props` | [`DependentFieldProps`](components_DependentField_DependentField_types.md#dependentfieldprops)<`Values`, `Key`, `string`, `Element`, `DependentValues`\> |
 
 #### Returns
 
@@ -141,7 +137,7 @@ ___
 
 ### DependentSelectField
 
-▸ **DependentSelectField**<`Values`, `Key`, `Element`, `Component`, `DependentValues`\>(`props`): `Element`
+▸ **DependentSelectField**<`Values`, `Key`, `Element`, `DependentValues`\>(`props`): `Element`
 
 An abstraction of `DependentField` that can be used for select field values. The default
 input type will be `select` but can be overriden.
@@ -153,14 +149,13 @@ input type will be `select` but can be overriden.
 | `Values` | extends [`FormzValues`](types_form.md#formzvalues) |
 | `Key` | extends `string` = `string` |
 | `Element` | `HTMLInputElement` |
-| `Component` | extends `ComponentType`<{}\> = `ComponentType`<{}\> |
 | `DependentValues` | extends `Partial`<`Values`\> = `Partial`<`Values`\> |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `props` | [`DependentFieldProps`](components_DependentField_DependentField_types.md#dependentfieldprops)<`Values`, `Key`, `string`, `Element`, `Component`, `DependentValues`\> |
+| `props` | [`DependentFieldProps`](components_DependentField_DependentField_types.md#dependentfieldprops)<`Values`, `Key`, `string`, `Element`, `DependentValues`\> |
 
 #### Returns
 
@@ -174,7 +169,7 @@ ___
 
 ### DependentTextField
 
-▸ **DependentTextField**<`Values`, `Key`, `Element`, `Component`, `DependentValues`\>(`props`): `Element`
+▸ **DependentTextField**<`Values`, `Key`, `Element`, `DependentValues`\>(`props`): `Element`
 
 An abstraction of `DependentField` that can be used for text field values. The default
 input type will be `text` but can be overriden.
@@ -186,14 +181,13 @@ input type will be `text` but can be overriden.
 | `Values` | extends [`FormzValues`](types_form.md#formzvalues) |
 | `Key` | extends `string` = `string` |
 | `Element` | `HTMLInputElement` |
-| `Component` | extends `ComponentType`<{}\> = `ComponentType`<{}\> |
 | `DependentValues` | extends `Partial`<`Values`\> = `Partial`<`Values`\> |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `props` | [`DependentFieldProps`](components_DependentField_DependentField_types.md#dependentfieldprops)<`Values`, `Key`, `string`, `Element`, `Component`, `DependentValues`\> |
+| `props` | [`DependentFieldProps`](components_DependentField_DependentField_types.md#dependentfieldprops)<`Values`, `Key`, `string`, `Element`, `DependentValues`\> |
 
 #### Returns
 

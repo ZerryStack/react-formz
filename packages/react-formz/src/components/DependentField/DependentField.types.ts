@@ -34,7 +34,5 @@ export type DependentFieldProps<
   Key extends FieldId = FieldId,
   Value extends FieldValue = FieldValue,
   Element = HTMLInputElement,
-  Component extends React.ComponentType<{}> = React.ComponentType<{}>,
   DependentValues extends Partial<Values> = Partial<Values>
-> = BaseDependentFieldProps<Values, Key, Value, Element, DependentValues> &
-  React.ComponentProps<Component>;
+> = BaseDependentFieldProps<Values, Key, Value, Element, DependentValues>;

@@ -1,7 +1,7 @@
 import React from "react";
 import { FieldActions } from "../../hooks/fields/useFieldActions";
+import { FieldEevents } from "../../hooks/fields/useFieldEvents";
 import { AnyObject } from "../../types/common";
-import { FormzChangeEventHandler } from "../../types/events";
 import { FieldId, FieldValidator, FieldValue } from "../../types/field";
 import { FormzError } from "../../types/form";
 
@@ -13,13 +13,11 @@ type NativeElementProps<T> = Omit<
 export interface FieldInputProps<
   Key extends FieldId = FieldId,
   Value extends FieldValue = FieldValue
-> {
+> extends FieldEevents<Value> {
   name: Key;
-  onChange: FormzChangeEventHandler<any>;
   value?: Exclude<Value, boolean | null | AnyObject | Array<any>>;
   checked?: boolean;
   type?: React.HTMLInputTypeAttribute;
-  onBlur: React.FocusEventHandler;
   required?: boolean;
   label?: string;
   id: Key;
@@ -71,16 +69,20 @@ export type FieldComponentProps<
   Key extends FieldId = FieldId,
   Value extends FieldValue = FieldValue,
   Element = HTMLInputElement,
-  Component extends React.ComponentType<{}> = React.ComponentType<{}>
-> = BaseFieldComponentProps<Key, Value, Element> &
-  React.ComponentProps<Component>;
+> = BaseFieldComponentProps<Key, Value, Element>;
 
 export interface BaseFieldProps<
   Key extends FieldId = FieldId,
   Value extends FieldValue = FieldValue,
   Element = HTMLInputElement
 > {
+  /**
+   * The unique name/id of the field.
+   */
   name: Key;
+  /**
+   * The component to render the ui of the field.
+   */
   as?:
     | "input"
     | "select"
@@ -89,8 +91,17 @@ export interface BaseFieldProps<
         FieldComponentProps<Key, Value, Element> & NativeElementProps<Element>
       >;
   children?: React.ReactNode;
+  /**
+   * CSS Styles to pass to the rendered component.
+   */
   style?: React.CSSProperties;
+  /**
+   * HTML input type.
+   */
   type?: React.HTMLInputTypeAttribute;
+  /**
+   * If true, the field must have a value to not be in an error state.
+   */
   required?: boolean;
   validate?: FieldValidator<Value>;
   min?: number;
@@ -106,5 +117,4 @@ export type FieldProps<
   Key extends FieldId = FieldId,
   Value extends FieldValue = FieldValue,
   Element = HTMLInputElement,
-  Component extends React.ComponentType<{}> = React.ComponentType<{}>
-> = BaseFieldProps<Key, Value, Element> & React.ComponentProps<Component>;
+> = BaseFieldProps<Key, Value, Element>;

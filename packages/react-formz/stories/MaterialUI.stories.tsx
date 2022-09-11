@@ -92,7 +92,7 @@ const MuiSelectFieldComponent = ({
         {...restProps}
         value={value}
         label={label}
-        onChange={onChange}
+        onChange={(e) => onChange(e.target.value)}
         onBlur={onBlur}
         required={required}
         style={{ width: 200 }}

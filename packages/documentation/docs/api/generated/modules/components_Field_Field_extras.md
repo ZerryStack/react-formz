@@ -9,7 +9,7 @@ custom_edit_url: null
 
 ### CheckboxField
 
-▸ **CheckboxField**<`Key`, `Element`, `Component`\>(`props`): `Element`
+▸ **CheckboxField**<`Key`, `Element`\>(`props`): `Element`
 
 An abstraction of `Field` that can be used for boolean field values. The default
 input type will be `checkbox` but can be overriden.
@@ -20,13 +20,42 @@ input type will be `checkbox` but can be overriden.
 | :------ | :------ |
 | `Key` | extends `string` |
 | `Element` | `HTMLInputElement` |
-| `Component` | extends `ComponentType`<{}\> = `ComponentType`<{}\> |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `props` | [`FieldProps`](components_Field_Field_types.md#fieldprops)<`Key`, `boolean`, `Element`, `Component`\> |
+| `props` | [`FieldProps`](components_Field_Field_types.md#fieldprops)<`Key`, `boolean`, `Element`\> |
+
+#### Returns
+
+`Element`
+
+#### Defined in
+
+[packages/react-formz/src/components/Field/Field.extras.tsx:17](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.extras.tsx#L17)
+
+___
+
+### DateField
+
+▸ **DateField**<`Key`, `Element`\>(`props`): `Element`
+
+An abstraction of `Field` that can be used for date field values. The default
+input type will be `date` but can be overriden.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `Key` | extends `string` |
+| `Element` | `HTMLInputElement` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `props` | [`FieldProps`](components_Field_Field_types.md#fieldprops)<`Key`, `undefined` \| ``null`` \| `Date`, `Element`\> |
 
 #### Returns
 
@@ -40,7 +69,7 @@ ___
 
 ### MultiSelectField
 
-▸ **MultiSelectField**<`Key`, `Element`, `Component`\>(`props`): `Element`
+▸ **MultiSelectField**<`Key`, `Element`\>(`props`): `Element`
 
 An abstraction of `Field` that can be used for multi select field values. The default
 input type will be `select` but can be overriden.
@@ -51,13 +80,12 @@ input type will be `select` but can be overriden.
 | :------ | :------ |
 | `Key` | extends `string` |
 | `Element` | `HTMLInputElement` |
-| `Component` | extends `ComponentType`<{}\> = `ComponentType`<{}\> |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `props` | [`FieldProps`](components_Field_Field_types.md#fieldprops)<`Key`, `string`, `Element`, `Component`\> |
+| `props` | [`FieldProps`](components_Field_Field_types.md#fieldprops)<`Key`, `string`, `Element`\> |
 
 #### Returns
 
@@ -71,7 +99,7 @@ ___
 
 ### NumberField
 
-▸ **NumberField**<`Key`, `Element`, `Component`\>(`props`): `Element`
+▸ **NumberField**<`Key`, `Element`\>(`props`): `Element`
 
 An abstraction of `Field` that can be used for number field values. The default
 input type will be `number` but can be overriden.
@@ -82,13 +110,12 @@ input type will be `number` but can be overriden.
 | :------ | :------ |
 | `Key` | extends `string` |
 | `Element` | `HTMLInputElement` |
-| `Component` | extends `ComponentType`<{}\> = `ComponentType`<{}\> |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `props` | [`FieldProps`](components_Field_Field_types.md#fieldprops)<`Key`, `number`, `Element`, `Component`\> |
+| `props` | [`FieldProps`](components_Field_Field_types.md#fieldprops)<`Key`, `number`, `Element`\> |
 
 #### Returns
 
@@ -102,7 +129,7 @@ ___
 
 ### RadioField
 
-▸ **RadioField**<`Key`, `Element`, `Component`\>(`props`): `Element`
+▸ **RadioField**<`Key`, `Element`\>(`props`): `Element`
 
 An abstraction of `Field` that can be used for radio field values. The default
 input type will be `radio` but can be overriden.
@@ -113,13 +140,12 @@ input type will be `radio` but can be overriden.
 | :------ | :------ |
 | `Key` | extends `string` |
 | `Element` | `HTMLInputElement` |
-| `Component` | extends `ComponentType`<{}\> = `ComponentType`<{}\> |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `props` | [`FieldProps`](components_Field_Field_types.md#fieldprops)<`Key`, `string`, `Element`, `Component`\> |
+| `props` | [`FieldProps`](components_Field_Field_types.md#fieldprops)<`Key`, `string`, `Element`\> |
 
 #### Returns
 
@@ -133,7 +159,7 @@ ___
 
 ### SelectField
 
-▸ **SelectField**<`Key`, `Element`, `Component`\>(`props`): `Element`
+▸ **SelectField**<`Key`, `Element`\>(`props`): `Element`
 
 An abstraction of `Field` that can be used for select field values. The default
 input type will be `select` but can be overriden.
@@ -144,13 +170,12 @@ input type will be `select` but can be overriden.
 | :------ | :------ |
 | `Key` | extends `string` |
 | `Element` | `HTMLInputElement` |
-| `Component` | extends `ComponentType`<{}\> = `ComponentType`<{}\> |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `props` | [`FieldProps`](components_Field_Field_types.md#fieldprops)<`Key`, `string`, `Element`, `Component`\> |
+| `props` | [`FieldProps`](components_Field_Field_types.md#fieldprops)<`Key`, `string`, `Element`\> |
 
 #### Returns
 
@@ -164,7 +189,7 @@ ___
 
 ### TextField
 
-▸ **TextField**<`Key`, `Element`, `Component`\>(`props`): `Element`
+▸ **TextField**<`Key`, `Element`\>(`props`): `Element`
 
 An abstraction of `Field` that can be used for text field values. The default
 input type will be `text` but can be overriden.
@@ -175,13 +200,12 @@ input type will be `text` but can be overriden.
 | :------ | :------ |
 | `Key` | extends `string` |
 | `Element` | `HTMLInputElement` |
-| `Component` | extends `ComponentType`<{}\> = `ComponentType`<{}\> |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `props` | [`FieldProps`](components_Field_Field_types.md#fieldprops)<`Key`, `string`, `Element`, `Component`\> |
+| `props` | [`FieldProps`](components_Field_Field_types.md#fieldprops)<`Key`, `string`, `Element`\> |
 
 #### Returns
 

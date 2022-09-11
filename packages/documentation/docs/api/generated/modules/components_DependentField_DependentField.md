@@ -10,7 +10,7 @@ custom_edit_url: null
 
 ### DependentField
 
-▸ **DependentField**<`Values`, `Key`, `Value`, `Element`, `Component`, `DependentValues`\>(`props`): `Element`
+▸ **DependentField**<`Values`, `Key`, `Value`, `Element`, `DependentValues`\>(`props`): `Element`
 
 A `DependentField` is a field that depends on the value of another field or fields in
 its owner `Form`. The `DependentField` has the exact same interface except with the added
@@ -43,14 +43,13 @@ onDependenciesChange={(dependencies, actions) => {
 | `Key` | extends `string` = `string` |
 | `Value` | extends [`FieldValue`](types_field.md#fieldvalue) = [`FieldValue`](types_field.md#fieldvalue) |
 | `Element` | `HTMLInputElement` |
-| `Component` | extends `ComponentType`<{}\> = `ComponentType`<{}\> |
 | `DependentValues` | extends `Partial`<`Values`\> = `Partial`<`Values`\> |
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `props` | [`DependentFieldProps`](components_DependentField_DependentField_types.md#dependentfieldprops)<`Values`, `Key`, `Value`, `Element`, `Component`, `DependentValues`\> | FieldProps - The react props for the field component. |
+| `props` | [`DependentFieldProps`](components_DependentField_DependentField_types.md#dependentfieldprops)<`Values`, `Key`, `Value`, `Element`, `DependentValues`\> | FieldProps - The react props for the field component. |
 
 #### Returns
 
@@ -58,4 +57,4 @@ onDependenciesChange={(dependencies, actions) => {
 
 #### Defined in
 
-[packages/react-formz/src/components/DependentField/DependentField.tsx:103](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/DependentField/DependentField.tsx#L103)
+[packages/react-formz/src/components/DependentField/DependentField.tsx:100](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/DependentField/DependentField.tsx#L100)

@@ -20,6 +20,12 @@ Re-exports [CheckboxField](components_Field_Field_extras.md#checkboxfield)
 
 ___
 
+### DateField
+
+Re-exports [DateField](components_Field_Field_extras.md#datefield)
+
+___
+
 ### FieldComponentProps
 
 Re-exports [FieldComponentProps](components_Field_Field_types.md#fieldcomponentprops)

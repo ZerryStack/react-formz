@@ -15,6 +15,7 @@ export type FieldValue =
   | undefined
   | Array<any>
   | AnyObject
+  | Date
   | readonly string[];
 
 export type FieldElement =

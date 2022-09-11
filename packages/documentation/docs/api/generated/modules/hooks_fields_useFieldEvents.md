@@ -6,13 +6,23 @@ sidebar_position: 0
 custom_edit_url: null
 ---
 
+## Interfaces
+
+- [FieldEevents](../interfaces/hooks_fields_useFieldEvents.FieldEevents.md)
+
 ## Functions
 
 ### useFieldEvents
 
-▸ **useFieldEvents**(`formId`, `fieldName`, `validate`): `Object`
+▸ **useFieldEvents**<`Value`\>(`formId`, `fieldName`, `validate`): [`FieldEevents`](../interfaces/hooks_fields_useFieldEvents.FieldEevents.md)<`Value`\>
 
 Custom react hook that returns event handlers for a field.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `Value` | extends [`FieldValue`](types_field.md#fieldvalue) |
 
 #### Parameters
 
@@ -24,13 +34,8 @@ Custom react hook that returns event handlers for a field.
 
 #### Returns
 
-`Object`
-
-| Name | Type |
-| :------ | :------ |
-| `onBlur` | (`_`: `FocusEvent`<`any`, `Element`\>) => `void` |
-| `onChange` | (`event`: [`FormzChangeEvent`](../interfaces/types_events.FormzChangeEvent.md)<`any`\>) => `void` |
+[`FieldEevents`](../interfaces/hooks_fields_useFieldEvents.FieldEevents.md)<`Value`\>
 
 #### Defined in
 
-[packages/react-formz/src/hooks/fields/useFieldEvents.ts:11](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/fields/useFieldEvents.ts#L11)
+[packages/react-formz/src/hooks/fields/useFieldEvents.ts:30](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/fields/useFieldEvents.ts#L30)

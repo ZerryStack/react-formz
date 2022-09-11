@@ -35,7 +35,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/react-formz/src/components/Form/Form.types.ts:66](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L66)
+[packages/react-formz/src/components/Form/Form.types.ts:63](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L63)
 
 ___
 
@@ -45,4 +45,4 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/components/Form/Form.types.ts:67](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L67)
+[packages/react-formz/src/components/Form/Form.types.ts:64](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L64)

@@ -8,10 +8,8 @@ const FieldInner = <
   Key extends FieldId = FieldId,
   Value extends FieldValue = FieldValue,
   Element = HTMLInputElement,
-  Component extends React.ComponentType<{}> = React.ComponentType<{}>
 >(
-  props: FieldProps<Key, Value, Element, Component> &
-    React.ComponentProps<Component>,
+  props: FieldProps<Key, Value, Element>,
   ref: React.Ref<Element>
 ): JSX.Element | null => {
   const {
@@ -97,16 +95,14 @@ const FieldInner = <
  * @typeParam `Key` {@link FieldId} - The input/field `name` property. This value should correspond to a property in the form.
  * @typeParam `Value` {@link FieldValue} - The value of the input/field.
  * @typeParam `Element` - The underlying html element either "input", "select", or "textarea".
- * @typeParam `Component` - If rendering your own component via the `as` prop the `Component` type parameter applies to that component.
  */
 
 const Field = React.forwardRef<any, FieldProps>(FieldInner) as <
   Key extends FieldId = FieldId,
   Value extends FieldValue = FieldValue,
   Element = HTMLInputElement,
-  Component extends React.ComponentType<{}> = React.ComponentType<{}>
 >(
-  props: FieldProps<Key, Value, Element, Component>
+  props: FieldProps<Key, Value, Element>
 ) => JSX.Element;
 
 export default Field;

@@ -10,7 +10,7 @@ custom_edit_url: null
 
 ### Field
 
-▸ **Field**<`Key`, `Value`, `Element`, `Component`\>(`props`): `Element`
+▸ **Field**<`Key`, `Value`, `Element`\>(`props`): `Element`
 
 A `Field` is a consumer of some data in its' parent `Form`. The user interface of a `Field`
 is completely determined by you, the developer. This component abstracts away all of the
@@ -33,13 +33,12 @@ function UserProfile() {
 | `Key` | extends `string` = `string` |
 | `Value` | extends [`FieldValue`](types_field.md#fieldvalue) = [`FieldValue`](types_field.md#fieldvalue) |
 | `Element` | `HTMLInputElement` |
-| `Component` | extends `ComponentType`<{}\> = `ComponentType`<{}\> |
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `props` | [`FieldProps`](components_Field_Field_types.md#fieldprops)<`Key`, `Value`, `Element`, `Component`\> | FieldProps - The react props for the field component. |
+| `props` | [`FieldProps`](components_Field_Field_types.md#fieldprops)<`Key`, `Value`, `Element`\> | FieldProps - The react props for the field component. |
 
 #### Returns
 
@@ -47,4 +46,4 @@ function UserProfile() {
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.tsx:103](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.tsx#L103)
+[packages/react-formz/src/components/Field/Field.tsx:100](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.tsx#L100)

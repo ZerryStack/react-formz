@@ -34,6 +34,11 @@ const sidebars = {
       label: 'API',
       items: ['api/form', 'api/field', 'api/array-field', 'api/dependent-field'],
     },
+    {
+      type: 'category',
+      label: 'Integrations',
+      items: ['integrations/react-datepicker'],
+    },
   ],
 };
 

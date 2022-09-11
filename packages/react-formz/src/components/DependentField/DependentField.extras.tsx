@@ -26,7 +26,6 @@ function createField<Value extends FieldValue>(
     Values extends FormzValues,
     Key extends FieldId = FieldId,
     Element = HTMLInputElement,
-    Component extends React.ComponentType<{}> = React.ComponentType<{}>,
     DependentValues extends Partial<Values> = Partial<Values>
   >(
     props: DependentFieldProps<
@@ -34,7 +33,6 @@ function createField<Value extends FieldValue>(
       Key,
       Value,
       Element,
-      Component,
       DependentValues
     >
   ) => JSX.Element;
@@ -47,7 +45,6 @@ function createField<Value extends FieldValue>(
  * @typeParam `Values` {@link FormzValues} - The values of the parent form i.e. the data structure for your form.
  * @typeParam `Key` {@link FieldId} - The input/field `name` property. This value should correspond to a property in the form.
  * @typeParam `Element` - The underlying html element either "input", "select", or "textarea".
- * @typeParam `Component` - If rendering your own component via the `as` prop the `Component` type parameter applies to that component.
  * @typeParam `DependentValues` - The dependent values that this field will subscribe to.
  */
 export const DependentTextField = createField<string>("text");
@@ -59,7 +56,6 @@ export const DependentTextField = createField<string>("text");
  * @typeParam `Values` {@link FormzValues} - The values of the parent form i.e. the data structure for your form.
  * @typeParam `Key` {@link FieldId} - The input/field `name` property. This value should correspond to a property in the form.
  * @typeParam `Element` - The underlying html element either "input", "select", or "textarea".
- * @typeParam `Component` - If rendering your own component via the `as` prop the `Component` type parameter applies to that component.
  * @typeParam `DependentValues` - The dependent values that this field will subscribe to.
  */
 export const DependentNumberField = createField<number>("number");
@@ -71,7 +67,6 @@ export const DependentNumberField = createField<number>("number");
  * @typeParam `Values` {@link FormzValues} - The values of the parent form i.e. the data structure for your form.
  * @typeParam `Key` {@link FieldId} - The input/field `name` property. This value should correspond to a property in the form.
  * @typeParam `Element` - The underlying html element either "input", "select", or "textarea".
- * @typeParam `Component` - If rendering your own component via the `as` prop the `Component` type parameter applies to that component.
  * @typeParam `DependentValues` - The dependent values that this field will subscribe to.
  */
 export const DependentCheckboxField = createField<boolean>("checkbox");
@@ -83,7 +78,6 @@ export const DependentCheckboxField = createField<boolean>("checkbox");
  * @typeParam `Values` {@link FormzValues} - The values of the parent form i.e. the data structure for your form.
  * @typeParam `Key` {@link FieldId} - The input/field `name` property. This value should correspond to a property in the form.
  * @typeParam `Element` - The underlying html element either "input", "select", or "textarea".
- * @typeParam `Component` - If rendering your own component via the `as` prop the `Component` type parameter applies to that component.
  * @typeParam `DependentValues` - The dependent values that this field will subscribe to.
  */
 export const DependentRadioField = createField<string>("radio");
@@ -95,7 +89,6 @@ export const DependentRadioField = createField<string>("radio");
  * @typeParam `Values` {@link FormzValues} - The values of the parent form i.e. the data structure for your form.
  * @typeParam `Key` {@link FieldId} - The input/field `name` property. This value should correspond to a property in the form.
  * @typeParam `Element` - The underlying html element either "input", "select", or "textarea".
- * @typeParam `Component` - If rendering your own component via the `as` prop the `Component` type parameter applies to that component.
  * @typeParam `DependentValues` - The dependent values that this field will subscribe to.
  */
 export const DependentSelectField = createField<string>("select");
@@ -107,7 +100,6 @@ export const DependentSelectField = createField<string>("select");
  * @typeParam `Values` {@link FormzValues} - The values of the parent form i.e. the data structure for your form.
  * @typeParam `Key` {@link FieldId} - The input/field `name` property. This value should correspond to a property in the form.
  * @typeParam `Element` - The underlying html element either "input", "select", or "textarea".
- * @typeParam `Component` - If rendering your own component via the `as` prop the `Component` type parameter applies to that component.
  * @typeParam `DependentValues` - The dependent values that this field will subscribe to.
  */
 export const DependentMultiSelectField = createField<string>("select", {

@@ -1,3 +1,4 @@
+import { isObject } from "./is";
 
 export function remove<Value>(array: Array<Value>, index: number) {
     return array.splice(index, 1);
@@ -16,11 +17,15 @@ export function insert<Value>(array: Array<Value>, index: number, value: Value) 
 }
 
 export function insertFirst<Value>(array: Array<Value>, value: Value) {
-    return array.unshift(value);
+    array.unshift(value)
+    return [value];
 }
 
 export function add<Value>(array: Array<Value>, value: Value, index?: number) {
-    if (index) return insert(array, index, value)[0];
+    if (index !== undefined) {
+        insert(array, index, value)
+        return value;
+    };
 
     const length = array.length;
 
@@ -30,10 +35,15 @@ export function add<Value>(array: Array<Value>, value: Value, index?: number) {
 }
 
 export function update<Value>(array: Array<Value>, index: number, value: Partial<Value>) {
-    array[index] = {
-        ...array[index],
-        ...value
-    };
+    if (isObject(value)) {
+        array[index] = {
+            ...array[index],
+            ...value
+        };
+    }
+    else {
+        array[index] = value;
+    }
 
     return array[index];
 }

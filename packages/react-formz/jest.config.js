@@ -17,7 +17,15 @@ const config = {
     rootNodeModules,
     "src",
   ],
-  testEnvironment: "jsdom"
+  testEnvironment: "jsdom",
+  collectCoverageFrom: [
+    '<rootDir>/src/**/*.{js,jsx,ts,tsx}',
+    '!<rootDir>/src/**/index.{js,jsx,ts,tsx}',
+    '!<rootDir>/src/**/*.types.{ts,tsx}',
+    '!<rootDir>/src/types/**/*',
+    '!**/node_modules/**',
+    '!**/vendor/**',
+  ],
 };
 
 module.exports = config;

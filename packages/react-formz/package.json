@@ -73,7 +73,9 @@
     "build:documentation": "yarn workspace @zerry/react-formz-documentation build",
     "prepublishOnly": "yarn test && yarn build",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "test:generate-output": "jest --json --outputFile=.jest-test-results.json",
+    "test:coverage": "jest --coverage=true"
   },
   "dependencies": {
     "react-uuid": "^1.0.3",

@@ -65,7 +65,7 @@ export const RadioField = createField<string>("radio");
  * @typeParam `Key` {@link FieldId} - The input/field `name` property. This value should correspond to a property in the form.
  * @typeParam `Element` - The underlying html element either "input", "select", or "textarea".
  */
-export const SelectField = createField<string>("select");
+export const SelectField = createField<string | null | undefined>("select");
 
 /**
  * An abstraction of `Field` that can be used for date field values. The default

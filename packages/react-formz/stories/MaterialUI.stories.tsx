@@ -84,7 +84,7 @@ const MuiSelectFieldComponent = ({
   ref,
   storeValue,
   ...restProps
-}: FieldComponentProps<string, string, HTMLSelectElement>) => {
+}: FieldComponentProps<string, string | null | undefined, HTMLSelectElement>) => {
   return (
     <FormControl error={error !== undefined}>
       <InputLabel>{label}</InputLabel>

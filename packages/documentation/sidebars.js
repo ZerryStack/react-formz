@@ -37,7 +37,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'Integrations',
-      items: ['integrations/react-datepicker'],
+      items: ['integrations/react-datepicker', 'integrations/react-select'],
     },
   ],
 };

@@ -15,7 +15,14 @@ export interface FieldInputProps<
   Value extends FieldValue = FieldValue
 > extends FieldEevents<Value> {
   name: Key;
+  /**
+   * If the `value` is not a valid value that can be passed to the native html input
+   * the `value` will be undefined. You will then need to use `storeValue` instead.
+   */
   value?: Exclude<Value, boolean | null | AnyObject | Array<any>>;
+  /**
+   * This will be a boolean if the `value` type is checkbox.
+   */
   checked?: boolean;
   type?: React.HTMLInputTypeAttribute;
   required?: boolean;
@@ -68,7 +75,7 @@ export interface BaseFieldComponentProps<
 export type FieldComponentProps<
   Key extends FieldId = FieldId,
   Value extends FieldValue = FieldValue,
-  Element = HTMLInputElement,
+  Element = HTMLInputElement
 > = BaseFieldComponentProps<Key, Value, Element>;
 
 export interface BaseFieldProps<
@@ -116,5 +123,5 @@ export interface BaseFieldProps<
 export type FieldProps<
   Key extends FieldId = FieldId,
   Value extends FieldValue = FieldValue,
-  Element = HTMLInputElement,
+  Element = HTMLInputElement
 > = BaseFieldProps<Key, Value, Element>;

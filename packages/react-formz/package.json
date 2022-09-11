@@ -1,6 +1,6 @@
 {
   "name": "@zerry/react-formz",
-  "version": "0.0.15-beta",
+  "version": "0.0.16-beta",
   "packageManager": "yarn@3.2.3",
   "files": [
     "dist"

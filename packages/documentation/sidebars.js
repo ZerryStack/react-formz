@@ -27,7 +27,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'Components',
-      items: ['components/form', 'components/field', 'components/array-field'],
+      items: ['components/form', 'components/field', 'components/array-field', 'components/error-message'],
     },
     {
       type: 'category',

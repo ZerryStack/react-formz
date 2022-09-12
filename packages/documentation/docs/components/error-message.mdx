@@ -1,0 +1,47 @@
+---
+sidebar_position: 1
+---
+
+# Error Message
+
+The `ErrorMessage` component can be used to render the error message for a specific field in the form.
+
+An `ErrorMessage` must be rendered within a parent `Form`. By default, an error message will only be shown
+if a field has been `touched` i.e. a user has clicked it and then clicked away. You can override that 
+using the `onlyShowIfTouched` prop.
+
+```tsx
+import { Form, TextField, ErrorMessage } from "@zerry/react-formz";
+
+type FormState = {
+  name: string;
+};
+
+function MyForm() {
+  function handleSubmit(data) {
+    apiRequest(data);
+  }
+
+  return (
+    <Form<FormState>
+      initialValues={{ name: "" }}
+      name="SimpleForm"
+      onSubmit={handleSubmit}
+      resetOnSubmit
+    >
+      <TextField
+        name="name"
+        label="Name"
+        required
+        as={({ input: { label, ...input } }) => (
+          <div>
+            <label htmlFor={input.name}>{label}</label>
+            <input {...input} />
+            <ErrorMessage field={input.name} />
+          </div>
+        )}
+      />
+    </Form>
+  );
+}
+```

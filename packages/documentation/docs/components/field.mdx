@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Field
 
-A `Field` is responsible for consuming a slice of data from its' parent form's state. A `Field` essentially *owns* that slice of data
+A `Field` is responsible for consuming a slice of data from its' parent form's state. A `Field` essentially _owns_ that slice of data
 although other `Field`'s can subscribe and mutate that data if needed. The goal of the `Field` component is to abstract away all of the complexities of dealing with form inputs including:
 
 - Validation
@@ -76,4 +76,64 @@ function MyForm() {
     </Form>
   );
 }
+```
+
+## Helper Components
+
+A first principle of React Formz is to be declarative, that's the whole point of using React in the first place, right?
+Forms are no different, as a result we export a number of wrapper components like `NumberField` that come with defaults
+and type safety to make your forms easy to ready and type-safe.
+
+### TextField
+
+An abstraction of `Field` that can be used for text field values. The default input type will be `text` but can be overriden.
+
+The `value` of this field can only be a string.
+
+### NumberField
+
+An abstraction of `Field` that can be used for number field values. The default input type will be `number`.
+
+The `value` of this field can only be a number.
+
+### CheckboxField
+
+An abstraction of `Field` that can be used for boolean field values. The default input type will be `checkbox`.
+
+The `value` of this field can only be a boolean.
+
+### RadioField
+
+An abstraction of `Field` that can be used for radio field values. The default input type will be `radio`.
+
+The `value` of this field can only be a string.
+
+### SelectField
+
+An abstraction of `Field` that can be used for boolean field values. The default input type will be `select`.
+
+The `value` of this field can only be a boolean.
+
+### MultiSelectField
+
+An abstraction of `Field` that can be used for boolean field values. The default input type will be `select` with a `multiple` property
+added to the input.
+
+The `value` of this field can only be a string.
+
+### CustomField
+
+A custom field is a `Field` where the value is not your typical html input value like your usual string, number, date, etc.
+
+This field is great for integrating with third party libraries who's api's are not standard html input such as `react-select`.
+
+**Example Usage**:
+
+```tsx
+// The value of this custom field is a tuple of dates: [Date, Date].
+<CustomField<[Date, Date]>
+  as={({ input: { value, ...input } }) => (
+    <ReactDatePicker {...input} startDate={value[0]} endDate={value[1]} />
+  )}
+/>
 ```

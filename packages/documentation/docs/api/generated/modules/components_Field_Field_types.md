@@ -15,19 +15,19 @@ custom_edit_url: null
 
 ### FieldComponentProps
 
-Ƭ **FieldComponentProps**<`Key`, `Value`, `Element`\>: [`BaseFieldComponentProps`](../interfaces/components_Field_Field_types.BaseFieldComponentProps.md)<`Key`, `Value`, `Element`\>
+Ƭ **FieldComponentProps**<`Value`, `Key`, `Element`\>: [`BaseFieldComponentProps`](../interfaces/components_Field_Field_types.BaseFieldComponentProps.md)<`Value`, `Key`, `Element`\>
 
 #### Type parameters
 
 | Name | Type |
 | :------ | :------ |
-| `Key` | extends [`FieldId`](types_field.md#fieldid) = [`FieldId`](types_field.md#fieldid) |
 | `Value` | extends [`FieldValue`](types_field.md#fieldvalue) = [`FieldValue`](types_field.md#fieldvalue) |
+| `Key` | extends [`FieldId`](types_field.md#fieldid) = [`FieldId`](types_field.md#fieldid) |
 | `Element` | `HTMLInputElement` |
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:75](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L75)
+[packages/react-formz/src/components/Field/Field.types.ts:69](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L69)
 
 ___
 
@@ -45,4 +45,4 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:123](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L123)
+[packages/react-formz/src/components/Field/Field.types.ts:113](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L113)

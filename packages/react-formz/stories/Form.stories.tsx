@@ -14,7 +14,6 @@ import {
   SubmitButton,
   FormLastPersistedAt,
   CheckboxField,
-  FieldValue,
 } from "../src";
 import { FormControl, FormHelperText, InputLabel } from "@mui/material";
 import { FieldComponentProps } from "../src/components/Field";
@@ -44,7 +43,9 @@ const initialValues = {
   isOver21: false,
 };
 
-function Input<Key extends string, Value extends FieldValue>(props: Omit<FieldComponentProps<Key, Value> , "actions">) {
+function Input<Key extends string, Value extends string | boolean | number>(
+  props: Omit<FieldComponentProps<Value, Key>, "actions">
+) {
   const { input } = props;
 
   return (
@@ -146,10 +147,18 @@ const logProfiler: React.ProfilerOnRenderCallback = (
   );
 };
 
-const ReactFormzField = ({ error, input, ...restProps }: FieldComponentProps) => (
+const ReactFormzField = ({
+  error,
+  input,
+  ...restProps
+}: FieldComponentProps<string | number | boolean>) => (
   <FormControl error={error !== undefined}>
     <InputLabel htmlFor="my-input">Item {input.name}</InputLabel>
-    <Input {...restProps} input={input} aria-describedby="component-error-text"/>
+    <Input
+      {...restProps}
+      input={input}
+      aria-describedby="component-error-text"
+    />
     {error && (
       <FormHelperText id="component-error-text">{error.message}</FormHelperText>
     )}
@@ -187,7 +196,10 @@ const FormikFormsField = ({ field, form: { errors } }: FormikFieldProps) => {
   return (
     <FormControl error={errors[name] !== undefined}>
       <InputLabel htmlFor="my-input">Item {name}</InputLabel>
-      <Input input={{ ...field, "aria-describedby": `${name}-error`, id: name}} aria-describedby="component-error-text" />
+      <Input
+        input={{ ...field, "aria-describedby": `${name}-error`, id: name }}
+        aria-describedby="component-error-text"
+      />
       {errors[name] && (
         <FormHelperText id="component-error-text">
           {errors[name] as string}

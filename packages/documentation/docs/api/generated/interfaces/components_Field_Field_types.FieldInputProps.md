@@ -31,7 +31,7 @@ this id will automatically be applied.
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:46](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L46)
+[packages/react-formz/src/components/Field/Field.types.ts:45](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L45)
 
 ___
 
@@ -44,7 +44,7 @@ does not conform to the format expected by the application.
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:35](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L35)
+[packages/react-formz/src/components/Field/Field.types.ts:34](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L34)
 
 ___
 
@@ -58,7 +58,7 @@ users (as opposed to validating the input).
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:41](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L41)
+[packages/react-formz/src/components/Field/Field.types.ts:40](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L40)
 
 ___
 
@@ -70,7 +70,7 @@ This will be a boolean if the `value` type is checkbox.
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:26](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L26)
+[packages/react-formz/src/components/Field/Field.types.ts:25](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L25)
 
 ___
 
@@ -80,7 +80,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:30](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L30)
+[packages/react-formz/src/components/Field/Field.types.ts:29](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L29)
 
 ___
 
@@ -90,7 +90,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:29](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L29)
+[packages/react-formz/src/components/Field/Field.types.ts:28](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L28)
 
 ___
 
@@ -100,7 +100,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:17](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L17)
+[packages/react-formz/src/components/Field/Field.types.ts:16](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L16)
 
 ___
 
@@ -163,7 +163,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:28](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L28)
+[packages/react-formz/src/components/Field/Field.types.ts:27](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L27)
 
 ___
 
@@ -173,17 +173,17 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:27](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L27)
+[packages/react-formz/src/components/Field/Field.types.ts:26](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L26)
 
 ___
 
 ### value
 
-• `Optional` **value**: `Exclude`<`Value`, ``null`` \| `boolean` \| `any`[] \| [`AnyObject`](../modules/types_common.md#anyobject)\>
+• `Optional` **value**: `Value` extends `boolean` ? `undefined` : `Value`
 
 If the `value` is not a valid value that can be passed to the native html input
 the `value` will be undefined. You will then need to use `storeValue` instead.
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:22](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L22)
+[packages/react-formz/src/components/Field/Field.types.ts:21](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L21)

@@ -27,7 +27,7 @@ input type will be `checkbox` but can be overriden.
 
 | Name | Type |
 | :------ | :------ |
-| `props` | [`DependentFieldProps`](components_DependentField_DependentField_types.md#dependentfieldprops)<`Values`, `Key`, `boolean`, `Element`, `DependentValues`\> |
+| `props` | [`DependentFieldProps`](components_DependentField_DependentField_types.md#dependentfieldprops)<`Values`, `boolean`, `Key`, `Element`, `DependentValues`\> |
 
 #### Returns
 
@@ -59,7 +59,7 @@ input type will be `select` but can be overriden.
 
 | Name | Type |
 | :------ | :------ |
-| `props` | [`DependentFieldProps`](components_DependentField_DependentField_types.md#dependentfieldprops)<`Values`, `Key`, `string`, `Element`, `DependentValues`\> |
+| `props` | [`DependentFieldProps`](components_DependentField_DependentField_types.md#dependentfieldprops)<`Values`, `string`, `Key`, `Element`, `DependentValues`\> |
 
 #### Returns
 
@@ -91,7 +91,7 @@ input type will be `number` but can be overriden.
 
 | Name | Type |
 | :------ | :------ |
-| `props` | [`DependentFieldProps`](components_DependentField_DependentField_types.md#dependentfieldprops)<`Values`, `Key`, `number`, `Element`, `DependentValues`\> |
+| `props` | [`DependentFieldProps`](components_DependentField_DependentField_types.md#dependentfieldprops)<`Values`, `number`, `Key`, `Element`, `DependentValues`\> |
 
 #### Returns
 
@@ -123,7 +123,7 @@ input type will be `radio` but can be overriden.
 
 | Name | Type |
 | :------ | :------ |
-| `props` | [`DependentFieldProps`](components_DependentField_DependentField_types.md#dependentfieldprops)<`Values`, `Key`, `string`, `Element`, `DependentValues`\> |
+| `props` | [`DependentFieldProps`](components_DependentField_DependentField_types.md#dependentfieldprops)<`Values`, `string`, `Key`, `Element`, `DependentValues`\> |
 
 #### Returns
 
@@ -155,7 +155,7 @@ input type will be `select` but can be overriden.
 
 | Name | Type |
 | :------ | :------ |
-| `props` | [`DependentFieldProps`](components_DependentField_DependentField_types.md#dependentfieldprops)<`Values`, `Key`, `string`, `Element`, `DependentValues`\> |
+| `props` | [`DependentFieldProps`](components_DependentField_DependentField_types.md#dependentfieldprops)<`Values`, `string`, `Key`, `Element`, `DependentValues`\> |
 
 #### Returns
 
@@ -187,7 +187,7 @@ input type will be `text` but can be overriden.
 
 | Name | Type |
 | :------ | :------ |
-| `props` | [`DependentFieldProps`](components_DependentField_DependentField_types.md#dependentfieldprops)<`Values`, `Key`, `string`, `Element`, `DependentValues`\> |
+| `props` | [`DependentFieldProps`](components_DependentField_DependentField_types.md#dependentfieldprops)<`Values`, `string`, `Key`, `Element`, `DependentValues`\> |
 
 #### Returns
 

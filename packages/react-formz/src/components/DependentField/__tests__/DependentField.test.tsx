@@ -31,13 +31,13 @@ function TestField(props: FieldProps) {
   return <Field {...props} as={TestFieldComponent} />;
 }
 
-function TestDependentField(props: DependentFieldProps<FormState>) {
+function TestDependentField(props: DependentFieldProps<FormState, string | number | boolean>) {
   return <DependentField {...props} as={TestFieldComponent} />;
 }
 
 function renderTest(
   ui?: React.ReactElement<any, string | React.JSXElementConstructor<any>>,
-  options?: { favoriteDrink: Partial<DependentFieldProps> }
+  options?: { favoriteDrink: Partial<DependentFieldProps<FormState, string | number | boolean>> }
 ) {
   const result = render(
     ui ?? (

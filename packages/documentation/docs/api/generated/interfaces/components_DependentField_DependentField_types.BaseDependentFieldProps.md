@@ -1,6 +1,6 @@
 ---
 id: "components_DependentField_DependentField_types.BaseDependentFieldProps"
-title: "Interface: BaseDependentFieldProps<Values, Key, Value, Element, DependentValues>"
+title: "Interface: BaseDependentFieldProps<Values, Value, Key, Element, DependentValues>"
 sidebar_label: "BaseDependentFieldProps"
 custom_edit_url: null
 ---
@@ -12,8 +12,8 @@ custom_edit_url: null
 | Name | Type |
 | :------ | :------ |
 | `Values` | extends [`FormzValues`](../modules/types_form.md#formzvalues) = [`FormzValues`](../modules/types_form.md#formzvalues) |
-| `Key` | extends [`FieldId`](../modules/types_field.md#fieldid) = [`FieldId`](../modules/types_field.md#fieldid) |
 | `Value` | extends [`FieldValue`](../modules/types_field.md#fieldvalue) = [`FieldValue`](../modules/types_field.md#fieldvalue) |
+| `Key` | extends [`FieldId`](../modules/types_field.md#fieldid) = [`FieldId`](../modules/types_field.md#fieldid) |
 | `Element` | `HTMLInputElement` |
 | `DependentValues` | extends `Partial`<`Values`\> = `Partial`<`Values`\> |
 
@@ -27,7 +27,7 @@ custom_edit_url: null
 
 ### as
 
-• `Optional` **as**: ``"select"`` \| ``"input"`` \| ``"textarea"`` \| `ComponentType`<[`FieldComponentProps`](../modules/components_Field_Field_types.md#fieldcomponentprops)<`Key`, `Value`, `Element`\> & `NativeElementProps`<`Element`\>\>
+• `Optional` **as**: `ComponentType`<[`FieldComponentProps`](../modules/components_Field_Field_types.md#fieldcomponentprops)<`Value`, `Key`, `Element`\> & `NativeElementProps`<`Element`\>\>
 
 The component to render the ui of the field.
 
@@ -37,7 +37,7 @@ Omit.as
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:93](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L93)
+[packages/react-formz/src/components/Field/Field.types.ts:87](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L87)
 
 ___
 
@@ -51,7 +51,7 @@ Omit.children
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:100](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L100)
+[packages/react-formz/src/components/Field/Field.types.ts:90](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L90)
 
 ___
 
@@ -92,7 +92,7 @@ Omit.label
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:119](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L119)
+[packages/react-formz/src/components/Field/Field.types.ts:109](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L109)
 
 ___
 
@@ -106,7 +106,7 @@ Omit.max
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:115](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L115)
+[packages/react-formz/src/components/Field/Field.types.ts:105](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L105)
 
 ___
 
@@ -120,7 +120,7 @@ Omit.min
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:114](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L114)
+[packages/react-formz/src/components/Field/Field.types.ts:104](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L104)
 
 ___
 
@@ -134,7 +134,7 @@ Omit.multiple
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:118](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L118)
+[packages/react-formz/src/components/Field/Field.types.ts:108](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L108)
 
 ___
 
@@ -150,7 +150,7 @@ Omit.name
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:89](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L89)
+[packages/react-formz/src/components/Field/Field.types.ts:83](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L83)
 
 ___
 
@@ -179,7 +179,7 @@ Omit.pattern
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:116](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L116)
+[packages/react-formz/src/components/Field/Field.types.ts:106](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L106)
 
 ___
 
@@ -193,7 +193,7 @@ Omit.placeholder
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:117](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L117)
+[packages/react-formz/src/components/Field/Field.types.ts:107](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L107)
 
 ___
 
@@ -207,7 +207,7 @@ Omit.ref
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:120](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L120)
+[packages/react-formz/src/components/Field/Field.types.ts:110](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L110)
 
 ___
 
@@ -223,7 +223,7 @@ Omit.required
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:112](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L112)
+[packages/react-formz/src/components/Field/Field.types.ts:102](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L102)
 
 ___
 
@@ -239,7 +239,7 @@ Omit.style
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:104](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L104)
+[packages/react-formz/src/components/Field/Field.types.ts:94](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L94)
 
 ___
 
@@ -255,7 +255,7 @@ Omit.type
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:108](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L108)
+[packages/react-formz/src/components/Field/Field.types.ts:98](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L98)
 
 ___
 

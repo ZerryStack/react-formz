@@ -21,7 +21,7 @@ const style: React.CSSProperties = {
 };
 
 function Input<Key extends string>(
-  props: FieldComponentProps<Key> & { dude?: true }
+  props: FieldComponentProps<Key, string> & { dude?: true }
 ) {
   const { input } = props;
 
@@ -55,7 +55,7 @@ const ReactFormzField = ({
   error,
   input,
   ...restProps
-}: FieldComponentProps) => {
+}: FieldComponentProps<string, string>) => {
   return (
     <FormControl error={error !== undefined}>
       <InputLabel htmlFor="my-input">Item {input.name}</InputLabel>

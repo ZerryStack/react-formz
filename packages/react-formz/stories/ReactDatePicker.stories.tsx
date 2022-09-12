@@ -3,7 +3,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { ComponentStory } from "@storybook/react";
 import React from "react";
 import DatePicker from "react-datepicker";
-import { DateField, DependentTextField, ErrorMessage, Field, Form } from "../src";
+import { CustomField, DependentTextField, ErrorMessage, Form } from "../src";
 
 export default {
   title: "Integrations/React Date Picker",
@@ -22,7 +22,7 @@ const Template: ComponentStory<any> = () => {
     <Form<FormValues>
       initialValues={{ date: new Date("01/01/1970"), favoriteDrink: "" }}
     >
-      <DateField
+      <CustomField<Date | null>
         name="date"
         label="Date"
         required
@@ -85,20 +85,20 @@ const RangeTemplate: ComponentStory<any> = () => {
       <Form<RangeFormValues>
         initialValues={{ date: [new Date("01/01/1970"), new Date("01/01/1980")] }}
       >
-        <Field<"date", RangeFormValues["date"]>
+        <CustomField<RangeFormValues["date"]>
           name="date"
           label="Date"
           type="date"
           required
-          as={({ input: { label,  ...input }, storeValue = [] }) => {
+          as={({ input: { label, value = [],  ...input } }) => {
             return (
               <div style={{ display: "flex", alignItems: "center", gap: 5 }}>
                 <label htmlFor={input.name}>{label}</label>
                 <DatePicker
                   onChange={([start, end]) => input.onChange([start, end])}
                   onBlur={input.onBlur}
-                  startDate={storeValue[0]}
-                  endDate={storeValue[1]}
+                  startDate={value[0]}
+                  endDate={value[1]}
                   customInput={<input className="rf-input" style={{ width: 300 }} />}
                   selectsRange
                 />

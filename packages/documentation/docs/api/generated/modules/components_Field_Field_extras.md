@@ -175,7 +175,7 @@ input type will be `select` but can be overriden.
 
 | Name | Type |
 | :------ | :------ |
-| `props` | [`FieldProps`](components_Field_Field_types.md#fieldprops)<`Key`, `string`, `Element`\> |
+| `props` | [`FieldProps`](components_Field_Field_types.md#fieldprops)<`Key`, `undefined` \| ``null`` \| `string`, `Element`\> |
 
 #### Returns
 

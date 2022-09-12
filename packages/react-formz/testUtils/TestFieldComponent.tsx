@@ -10,7 +10,7 @@ import { ErrorMessage, FieldComponentProps } from "../src";
 const TestFieldComponent = ({
   input: { label, ...input },
   error,
-}: FieldComponentProps) => {
+}: FieldComponentProps<string | number | boolean>) => {
   const rerenders = useRef(0);
   rerenders.current++;
   return (

@@ -41,9 +41,8 @@ const MuiTextFieldComponent = <Key extends string>({
   error,
   input: { label, required, ...input },
   ref,
-  storeValue,
   ...restProps
-}: FieldComponentProps<Key, string, HTMLInputElement>) => (
+}: FieldComponentProps<string, Key, HTMLInputElement>) => (
   <MuiTextField
     error={error !== undefined}
     {...input}
@@ -61,9 +60,8 @@ const MuiNumberFieldComponent = <Key extends string>({
   error,
   input: { label, required, ...input },
   ref,
-  storeValue,
   ...restProps
-}: FieldComponentProps<Key, number, HTMLInputElement>) => (
+}: FieldComponentProps<number, Key, HTMLInputElement>) => (
   <MuiTextField
     error={error !== undefined}
     {...input}
@@ -82,9 +80,8 @@ const MuiSelectFieldComponent = ({
   input: { label, required, onChange, onBlur, value },
   children,
   ref,
-  storeValue,
   ...restProps
-}: FieldComponentProps<string, string | null | undefined, HTMLSelectElement>) => {
+}: FieldComponentProps<string | null | undefined, string, HTMLSelectElement>) => {
   return (
     <FormControl error={error !== undefined}>
       <InputLabel>{label}</InputLabel>
@@ -109,9 +106,8 @@ const MuiCheckboxFieldComponent = <Key extends string>({
   error,
   input: { label, onBlur, onChange, required, checked, ...input },
   ref,
-  storeValue,
   ...restProps
-}: FieldComponentProps<Key, boolean, HTMLInputElement>) => {
+}: FieldComponentProps<boolean, Key, HTMLInputElement>) => {
   return (
     <FormControl error={error !== undefined}>
       <FormControlLabel
@@ -137,7 +133,6 @@ const MuiRadioFieldComponent = <Key extends string>({
   error,
   input: { label, value, onBlur, onChange, name },
   children,
-  storeValue,
   actions,
   ...restProps
 }: FieldComponentProps<Key, string, HTMLInputElement>) => {

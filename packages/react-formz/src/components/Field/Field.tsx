@@ -1,5 +1,6 @@
 import React from "react";
 import useField from "../../hooks/fields/useField";
+import logger from "../../logger";
 import { FieldId, FieldValue } from "../../types/field";
 import { isValidInputValue } from "../../utils/is";
 import { FieldInputProps, FieldProps } from "./Field.types";
@@ -52,27 +53,20 @@ const FieldInner = <
   };
 
   if (Tag) {
-    if (typeof Tag === "function") {
-      return (
-        <Tag
-          {...restProps}
-          input={inputProps}
-          error={field.error}
-          storeValue={field.value}
-          ref={ref}
-          actions={field.actions}
-        >
-          {children}
-        </Tag>
-      );
-    } else {
-      return (
-        <Tag {...inputProps} ref={ref as any}>
-          {children}
-        </Tag>
-      );
-    }
+    return (
+      <Tag
+        {...restProps}
+        input={inputProps}
+        error={field.error}
+        ref={ref}
+        actions={field.actions}
+      >
+        {children}
+      </Tag>
+    );
   }
+
+  logger.warn(`You did not pass in a component to render using the "as" prop for your Field.`);
 
   return null;
 };

@@ -1,7 +1,6 @@
 import React from "react";
 import { FieldActions } from "../../hooks/fields/useFieldActions";
 import { FieldEevents } from "../../hooks/fields/useFieldEvents";
-import { AnyObject } from "../../types/common";
 import { FieldId, FieldValidator, FieldValue } from "../../types/field";
 import { FormzError } from "../../types/form";
 
@@ -19,7 +18,7 @@ export interface FieldInputProps<
    * If the `value` is not a valid value that can be passed to the native html input
    * the `value` will be undefined. You will then need to use `storeValue` instead.
    */
-  value?: Exclude<Value, boolean | null | AnyObject | Array<any>>;
+  value?: Value extends boolean ? undefined : Value;
   /**
    * This will be a boolean if the `value` type is checkbox.
    */
@@ -47,17 +46,12 @@ export interface FieldInputProps<
 }
 
 export interface BaseFieldComponentProps<
-  Key extends FieldId = FieldId,
   Value extends FieldValue = FieldValue,
+  Key extends FieldId = FieldId,
   Element = HTMLInputElement
 > {
   ref?: React.Ref<Element>;
   input: FieldInputProps<Key, Value>;
-  /**
-   * The value of the field in the form data store. This value is useful
-   * for non-native html input values like lists or objects.
-   */
-  storeValue?: Value;
   /**
    * The react formz error object.
    */
@@ -73,10 +67,10 @@ export interface BaseFieldComponentProps<
 }
 
 export type FieldComponentProps<
-  Key extends FieldId = FieldId,
   Value extends FieldValue = FieldValue,
+  Key extends FieldId = FieldId,
   Element = HTMLInputElement
-> = BaseFieldComponentProps<Key, Value, Element>;
+> = BaseFieldComponentProps<Value, Key, Element>;
 
 export interface BaseFieldProps<
   Key extends FieldId = FieldId,
@@ -90,12 +84,8 @@ export interface BaseFieldProps<
   /**
    * The component to render the ui of the field.
    */
-  as?:
-    | "input"
-    | "select"
-    | "textarea"
-    | React.ComponentType<
-        FieldComponentProps<Key, Value, Element> & NativeElementProps<Element>
+  as?: React.ComponentType<
+        FieldComponentProps<Value, Key, Element> & NativeElementProps<Element>
       >;
   children?: React.ReactNode;
   /**

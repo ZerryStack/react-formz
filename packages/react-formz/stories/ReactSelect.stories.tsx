@@ -1,6 +1,6 @@
 import { ComponentStory } from "@storybook/react";
 import React from "react";
-import { Field, Form, SubmitButton } from "../src";
+import { Form, SubmitButton, CustomField } from "../src";
 import Select, { MultiValue } from "react-select";
 
 export default {
@@ -26,7 +26,7 @@ const options = [
 const Template: ComponentStory<any> = () => {
   return (
     <Form<FormValues> initialValues={{ flavor: "chocolate" }}>
-      <Field<"flavor", Value>
+      <CustomField<Value>
         name="flavor"
         label="Favorite Flavor"
         as={({ input: { label, ...input } }) => {
@@ -55,17 +55,17 @@ BasicSelect.args = {};
 const MultiTemplate: ComponentStory<any> = (args) => {
   return (
     <Form<FormValues> initialValues={{ flavor: "chocolate" }} onSubmit={(value) => args.onSubmit(value)}>
-      <Field<"flavor", MultiValue<{ label: string, value: string }>>
+      <CustomField<MultiValue<{ label: string, value: string }>>
         name="flavor"
         label="Favorite Flavor"
-        as={({ input: { label, ...input }, storeValue }) => {
+        as={({ input: { label, value, ...input } }) => {
           return (
             <Select
               id={input.id}
               name={input.name}
               isClearable
               options={options}
-              value={storeValue}
+              value={value}
               onChange={(value) => {
                 input.onChange(value);
               }}

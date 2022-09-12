@@ -13,15 +13,15 @@ custom_edit_url: null
 
 ### DependentFieldProps
 
-Ƭ **DependentFieldProps**<`Values`, `Key`, `Value`, `Element`, `DependentValues`\>: [`BaseDependentFieldProps`](../interfaces/components_DependentField_DependentField_types.BaseDependentFieldProps.md)<`Values`, `Key`, `Value`, `Element`, `DependentValues`\>
+Ƭ **DependentFieldProps**<`Values`, `Value`, `Key`, `Element`, `DependentValues`\>: [`BaseDependentFieldProps`](../interfaces/components_DependentField_DependentField_types.BaseDependentFieldProps.md)<`Values`, `Value`, `Key`, `Element`, `DependentValues`\>
 
 #### Type parameters
 
 | Name | Type |
 | :------ | :------ |
 | `Values` | extends [`FormzValues`](types_form.md#formzvalues) = [`FormzValues`](types_form.md#formzvalues) |
-| `Key` | extends [`FieldId`](types_field.md#fieldid) = [`FieldId`](types_field.md#fieldid) |
 | `Value` | extends [`FieldValue`](types_field.md#fieldvalue) = [`FieldValue`](types_field.md#fieldvalue) |
+| `Key` | extends [`FieldId`](types_field.md#fieldid) = [`FieldId`](types_field.md#fieldid) |
 | `Element` | `HTMLInputElement` |
 | `DependentValues` | extends `Partial`<`Values`\> = `Partial`<`Values`\> |
 

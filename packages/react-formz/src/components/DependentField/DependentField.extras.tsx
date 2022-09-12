@@ -10,10 +10,10 @@ function createField<Value extends FieldValue>(
 ) {
   const component = React.forwardRef<
     HTMLInputElement,
-    DependentFieldProps<FormzValues, FieldId, Value, HTMLInputElement>
+    DependentFieldProps<FormzValues, Value, FieldId, HTMLInputElement>
   >(
     (
-      props: DependentFieldProps<FormzValues, FieldId, Value, HTMLInputElement>,
+      props: DependentFieldProps<FormzValues, Value, FieldId, HTMLInputElement>,
       ref
     ) => {
       return (
@@ -30,8 +30,8 @@ function createField<Value extends FieldValue>(
   >(
     props: DependentFieldProps<
       Values,
-      Key,
       Value,
+      Key,
       Element,
       DependentValues
     >

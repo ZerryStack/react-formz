@@ -7,7 +7,6 @@ import {
   SubmitButton,
   FormLastPersistedAt,
   CheckboxField,
-  FieldValue,
   DependentField,
 } from "../src";
 import { FieldComponentProps } from "../src/components/Field";
@@ -46,8 +45,8 @@ type SimpleFormState = {
   favoriteDrink: string;
 };
 
-function Input<Key extends string, Value extends FieldValue>(
-  props: Omit<FieldComponentProps<Key, Value>, "actions">
+function Input<Value extends string | boolean | number, Key extends string>(
+  props: Omit<FieldComponentProps<Value, Key>, "actions">
 ) {
   const { input } = props;
 
@@ -108,7 +107,7 @@ const SimpleTemplate: ComponentStory<typeof Form> = () => {
         placeholder="Age"
       />
       <Field as={Input} type="date" name="dob" label="Date of Birth" placeholder="Date of Birth" />
-      <DependentField<SimpleFormState>
+      <DependentField<SimpleFormState, string, "favoriteDrink">
         as={Input}
         type="text"
         name="favoriteDrink"

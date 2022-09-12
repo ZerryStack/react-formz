@@ -57,8 +57,8 @@ export function isKey(value: string) {
 
 export function isValidInputValue<Value extends FieldValue>(
   value: Value
-): value is Exclude<Value, boolean | null | AnyObject | Array<any>> {
-  return !isBoolean(value) && !isNull(value);
+): value is Exclude<Value, boolean> {
+  return !isBoolean(value);
 }
 
 export function isCheckboxInput(

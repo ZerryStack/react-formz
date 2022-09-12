@@ -11,15 +11,15 @@ import { DependentFieldProps } from "./DependentField.types";
 
 const DependentFieldInner = <
   Values extends FormzValues = FormzValues,
-  Key extends FieldId = FieldId,
   Value extends FieldValue = FieldValue,
+  Key extends FieldId = FieldId,
   Element = HTMLInputElement,
   DependentValues extends Partial<Values> = Partial<Values>
 >(
   props: DependentFieldProps<
     Values,
-    Key,
     Value,
+    Key,
     Element,
     DependentValues
   >,
@@ -99,15 +99,15 @@ const DependentField = React.forwardRef<any, DependentFieldProps>(
   DependentFieldInner
 ) as <
   Values extends FormzValues = FormzValues,
-  Key extends FieldId = FieldId,
   Value extends FieldValue = FieldValue,
+  Key extends FieldId = FieldId,
   Element = HTMLInputElement,
   DependentValues extends Partial<Values> = Partial<Values>
 >(
   props: DependentFieldProps<
     Values,
-    Key,
     Value,
+    Key,
     Element,
     DependentValues
   >

@@ -10,7 +10,7 @@ custom_edit_url: null
 
 ### DependentField
 
-▸ **DependentField**<`Values`, `Key`, `Value`, `Element`, `DependentValues`\>(`props`): `Element`
+▸ **DependentField**<`Values`, `Value`, `Key`, `Element`, `DependentValues`\>(`props`): `Element`
 
 A `DependentField` is a field that depends on the value of another field or fields in
 its owner `Form`. The `DependentField` has the exact same interface except with the added
@@ -40,8 +40,8 @@ onDependenciesChange={(dependencies, actions) => {
 | Name | Type |
 | :------ | :------ |
 | `Values` | extends [`FormzValues`](types_form.md#formzvalues) = [`FormzValues`](types_form.md#formzvalues) |
-| `Key` | extends `string` = `string` |
 | `Value` | extends [`FieldValue`](types_field.md#fieldvalue) = [`FieldValue`](types_field.md#fieldvalue) |
+| `Key` | extends `string` = `string` |
 | `Element` | `HTMLInputElement` |
 | `DependentValues` | extends `Partial`<`Values`\> = `Partial`<`Values`\> |
 
@@ -49,7 +49,7 @@ onDependenciesChange={(dependencies, actions) => {
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `props` | [`DependentFieldProps`](components_DependentField_DependentField_types.md#dependentfieldprops)<`Values`, `Key`, `Value`, `Element`, `DependentValues`\> | FieldProps - The react props for the field component. |
+| `props` | [`DependentFieldProps`](components_DependentField_DependentField_types.md#dependentfieldprops)<`Values`, `Value`, `Key`, `Element`, `DependentValues`\> | FieldProps - The react props for the field component. |
 
 #### Returns
 

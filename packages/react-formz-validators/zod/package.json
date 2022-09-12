@@ -1,0 +1,19 @@
+{
+  "name": "@zerry/react-formz-validators-zod",
+  "version": "0.1.0-beta",
+  "license": "MIT",
+  "description": "Zod validator for @zerry/react-formz to validate form data against a zod schema.",
+  "main": "dist/zod.js",
+  "module": "dist/zod.module.js",
+  "umd:main": "dist/zod.umd.js",
+  "exports": "./dist/zod.js",
+  "source": "index.ts",
+  "types": "dist/zod.d.ts",
+  "devDependencies": {
+    "zod": "^3.19.1"
+  },
+  "peerDependencies": {
+    "zod": ">=3.0.0",
+    "@zerry/react-formz": ">=0.1.0-beta"
+  }
+}

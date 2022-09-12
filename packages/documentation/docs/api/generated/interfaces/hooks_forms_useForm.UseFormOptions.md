@@ -27,7 +27,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/react-formz/src/hooks/forms/useForm.ts:12](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L12)
+[packages/react-formz/src/hooks/forms/useForm.ts:14](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L14)
 
 ___
 
@@ -39,7 +39,7 @@ The initial values of the form.
 
 #### Defined in
 
-[packages/react-formz/src/hooks/forms/useForm.ts:16](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L16)
+[packages/react-formz/src/hooks/forms/useForm.ts:18](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L18)
 
 ___
 
@@ -51,7 +51,7 @@ A unique name for the form. If `saveDrafts` is enabled, a name is required.
 
 #### Defined in
 
-[packages/react-formz/src/hooks/forms/useForm.ts:11](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L11)
+[packages/react-formz/src/hooks/forms/useForm.ts:13](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L13)
 
 ___
 
@@ -73,7 +73,7 @@ useForm({
 
 #### Defined in
 
-[packages/react-formz/src/hooks/forms/useForm.ts:34](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L34)
+[packages/react-formz/src/hooks/forms/useForm.ts:36](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L36)
 
 ___
 
@@ -85,4 +85,14 @@ If true, the form state will be saved to localstorage as the user updates values
 
 #### Defined in
 
-[packages/react-formz/src/hooks/forms/useForm.ts:20](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L20)
+[packages/react-formz/src/hooks/forms/useForm.ts:22](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L22)
+
+___
+
+### schemaValidator
+
+• `Optional` **schemaValidator**: `SchemaValidator`<`Values`\>
+
+#### Defined in
+
+[packages/react-formz/src/hooks/forms/useForm.ts:37](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L37)

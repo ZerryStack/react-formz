@@ -1,5 +1,6 @@
 import React from "react";
 import { UseFormOptions, UseFormResult } from "../../hooks/forms/useForm";
+import SchemaValidator from "../../models/SchemaValidator";
 import {
   FormRehydrationCallback,
   FormSubmitCallback,
@@ -57,6 +58,11 @@ export interface FormProps<Values extends FormzValues>
    * ```
    */
   onFormRehydrated?: FormRehydrationCallback<Values>;
+  /**
+   * Validates the form data against a schema. Could be `zod` or `yup` or any custom
+   * schema validator.
+   */
+  schemaValidator?: SchemaValidator<Values>;
 }
 
 export interface FormChildrenProps<Values extends FormzValues> {

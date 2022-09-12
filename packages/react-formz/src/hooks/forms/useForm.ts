@@ -1,8 +1,10 @@
-import { useFormz } from "../../store";
+import { useFormz, useRegisterSchemaValidator, useUnregisterSchemaValidator } from "../../store";
 import { FormRehydrationCallback, FormzErrors, FormzState, FormzValues } from "../../types/form";
 import useFormId from "./useFormId";
 import useFormEvents from "./useFormEvents";
 import { FormzChangeEvent } from "../../types/events";
+import SchemaValidator from "../../models/SchemaValidator";
+import useComponentDidMount from "../utils/useComponentDidMount";
 
 export interface UseFormOptions<Values extends FormzValues> {
   /**
@@ -32,6 +34,7 @@ export interface UseFormOptions<Values extends FormzValues> {
    * ```
    */
   onFormRehydrated?: FormRehydrationCallback<Values>;
+  schemaValidator?: SchemaValidator<Values>;
 }
 
 export interface UseFormResult<Values extends FormzValues> {
@@ -50,7 +53,19 @@ function useForm<Values extends FormzValues>(
   const formState = useFormz<FormzState<Values> | undefined>(
     (state) => state.forms[id]
   );
+  const registerSchema = useRegisterSchemaValidator();
+  const unregisterSchema = useUnregisterSchemaValidator();
   const { handleChange } = useFormEvents(id);
+
+  useComponentDidMount(() => {
+    if (options.schemaValidator) {
+      registerSchema(id, options.schemaValidator)
+    }
+
+    return function formUnregisterSchemaValidator() {
+      unregisterSchema(id);
+    }
+  });
 
   return {
     id,

@@ -16,11 +16,10 @@ const FormInner = <Values extends FormzValues>({
   component: Component = "form",
   resetOnSubmit = false,
   ...formProps
-}: Omit<FormProps<Values>, "initialValues">) => {
+}: Omit<FormProps<Values>, "initialValues" | "schemaValidator">) => {
   const id = useFormIdContext();
   const initialized = useFormStateInitialized(id);
-
-  const handleSubmit = useFormSubmission(id, onSubmit, resetOnSubmit)
+  const handleSubmit = useFormSubmission(id, onSubmit, resetOnSubmit);
 
   if (!initialized) return null;
 
@@ -57,6 +56,7 @@ const Form = <Values extends FormzValues>(props: FormProps<Values>) => {
     initialValues,
     saveDrafts,
     onFormRehydrated = () => {},
+    schemaValidator,
     ...formProps
   } = props;
   const memoizedInitialValues = useStableValue(initialValues);
@@ -76,6 +76,7 @@ const Form = <Values extends FormzValues>(props: FormProps<Values>) => {
       initialValues={memoizedInitialValues}
       saveDrafts={saveDrafts}
       onFormRehydrated={formRehydrationCallback}
+      schemaValidator={schemaValidator}
     >
       <FormInner name={name} {...formProps}>
         {children}

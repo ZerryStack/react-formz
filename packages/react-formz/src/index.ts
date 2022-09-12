@@ -28,6 +28,7 @@ export {
 } from "./components/Field";
 export type { FieldComponentProps, FieldProps } from "./components/Field";
 export type { FieldValue, TextFieldValue } from "./types/field";
+export type { FormzValues, FormzErrors, FormzError } from "./types/form";
 export { default as Form } from "./components/Form";
 export { default as FormLastPersistedAt } from "./components/FormLastPersistedAt";
 export {
@@ -36,3 +37,5 @@ export {
   useNumberField,
 } from "./hooks/fields/useField";
 export { default as useFormLastPersistedAt } from "./hooks/forms/useFormLastPersistedAt";
+export type { SchemaValidatorErrorResult, SchemaValidatorSuccessResult } from "./models/SchemaValidator"; 
+export { default as SchemaValidator } from "./models/SchemaValidator"; 

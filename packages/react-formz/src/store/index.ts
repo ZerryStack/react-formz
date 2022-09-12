@@ -8,4 +8,9 @@ export {
   useRegisterField,
   useUnregisterField,
   formzFieldsStore,
+  formzSchemaValidatorStore,
+  useFormSchemaValidator,
+  useFormzSchemaValidators,
+  useRegisterSchemaValidator,
+  useUnregisterSchemaValidator
 } from "./store";

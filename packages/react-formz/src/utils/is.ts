@@ -132,5 +132,8 @@ export function isIndex(value: any, length?: number) {
 }
 
 export function isChangeEvent(value: any): value is FormzChangeEvent {
-  return 'target' in value;
+  if (isObject(value)) {
+    return 'target' in value;
+  }
+  return false;
 }

@@ -29,7 +29,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/react-formz/src/components/Form/Form.types.ts:27](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L27)
+[packages/react-formz/src/components/Form/Form.types.ts:28](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L28)
 
 ___
 
@@ -48,7 +48,7 @@ Example Usage:
 
 #### Defined in
 
-[packages/react-formz/src/components/Form/Form.types.ts:43](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L43)
+[packages/react-formz/src/components/Form/Form.types.ts:44](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L44)
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/hooks/forms/useForm.ts:12](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L12)
+[packages/react-formz/src/hooks/forms/useForm.ts:14](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L14)
 
 ___
 
@@ -78,7 +78,7 @@ The initial values of the form.
 
 #### Defined in
 
-[packages/react-formz/src/hooks/forms/useForm.ts:16](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L16)
+[packages/react-formz/src/hooks/forms/useForm.ts:18](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L18)
 
 ___
 
@@ -94,7 +94,7 @@ A unique name for the form. If `saveDrafts` is enabled, a name is required.
 
 #### Defined in
 
-[packages/react-formz/src/hooks/forms/useForm.ts:11](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L11)
+[packages/react-formz/src/hooks/forms/useForm.ts:13](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L13)
 
 ___
 
@@ -118,7 +118,7 @@ Example Usage:
 
 #### Defined in
 
-[packages/react-formz/src/components/Form/Form.types.ts:59](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L59)
+[packages/react-formz/src/components/Form/Form.types.ts:60](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L60)
 
 ___
 
@@ -131,7 +131,7 @@ the form is not in an invalid state.
 
 #### Defined in
 
-[packages/react-formz/src/components/Form/Form.types.ts:32](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L32)
+[packages/react-formz/src/components/Form/Form.types.ts:33](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L33)
 
 ___
 
@@ -143,7 +143,7 @@ If true, the form state will reset after a successful submission.
 
 #### Defined in
 
-[packages/react-formz/src/components/Form/Form.types.ts:47](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L47)
+[packages/react-formz/src/components/Form/Form.types.ts:48](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L48)
 
 ___
 
@@ -159,4 +159,21 @@ If true, the form state will be saved to localstorage as the user updates values
 
 #### Defined in
 
-[packages/react-formz/src/hooks/forms/useForm.ts:20](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L20)
+[packages/react-formz/src/hooks/forms/useForm.ts:22](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L22)
+
+___
+
+### schemaValidator
+
+• `Optional` **schemaValidator**: `SchemaValidator`<`Values`\>
+
+Validates the form data against a schema. Could be `zod` or `yup` or any custom
+schema validator.
+
+#### Overrides
+
+[UseFormOptions](hooks_forms_useForm.UseFormOptions.md).[schemaValidator](hooks_forms_useForm.UseFormOptions.md#schemavalidator)
+
+#### Defined in
+
+[packages/react-formz/src/components/Form/Form.types.ts:65](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L65)

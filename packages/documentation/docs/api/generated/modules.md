@@ -53,6 +53,7 @@ custom_edit_url: null
 - [hooks/forms/useFormLastPersistedAt](modules/hooks_forms_useFormLastPersistedAt.md)
 - [hooks/forms/useFormStateInitialized](modules/hooks_forms_useFormStateInitialized.md)
 - [hooks/forms/useFormSubmission](modules/hooks_forms_useFormSubmission.md)
+- [hooks/forms/useValidateFormSchema](modules/hooks_forms_useValidateFormSchema.md)
 - [hooks/utils/useComponentDidMount](modules/hooks_utils_useComponentDidMount.md)
 - [hooks/utils/useIsomorphicLayoutEffect](modules/hooks_utils_useIsomorphicLayoutEffect.md)
 - [hooks/utils/useSelector](modules/hooks_utils_useSelector.md)

@@ -1,7 +1,8 @@
 {
   "name": "@zerry/react-formz",
-  "version": "0.1.0-beta",
+  "version": "0.1.1-beta",
   "packageManager": "yarn@3.2.3",
+  "license": "MIT",
   "files": [
     "dist"
   ],
@@ -70,7 +71,7 @@
   "scripts": {
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "typecheck": "tsc",
+    "typecheck": "tsc --noEmit",
     "build": "rm -rf ./dist && yarn typecheck && vite build && yarn build:types && yarn build:documentation",
     "build:types": "tsc -P tsconfig.build.json",
     "build:documentation": "yarn workspace @zerry/react-formz-documentation build",

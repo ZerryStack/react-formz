@@ -3,6 +3,7 @@ import { actions } from "../../store";
 import { FormSubmitCallback, FormzValues } from "../../types/form";
 import useStableCallback from "../utils/useStableCallback";
 import useExecuteFieldValidations from "./useExecuteFieldValidations";
+import useValidateFormSchema from "./useValidateFormSchema";
 
 /**
  * Custom hook that returns the submit callback for a form. The callback
@@ -14,9 +15,10 @@ import useExecuteFieldValidations from "./useExecuteFieldValidations";
 function useFormSubmission<Values extends FormzValues>(
   id: string,
   onSubmit?: FormSubmitCallback<Values>,
-  resetOnSubmit: boolean = false
+  resetOnSubmit: boolean = false,
 ) {
   const runFieldLevelValidations = useExecuteFieldValidations(id);
+  const validateFormAgainstSchema = useValidateFormSchema(id);
 
   const handleSubmit = useStableCallback(
     async (e: React.FormEvent<HTMLFormElement>) => {
@@ -25,12 +27,13 @@ function useFormSubmission<Values extends FormzValues>(
       if (onSubmit) {
         actions.setFormIsSubmitting(id, true);
 
-        const { values, errors } = actions.getFormState<Values>(id);
-
         try {
+          const schemaValid = await validateFormAgainstSchema();
           const fieldsValid = await runFieldLevelValidations();
 
-          if (fieldsValid) {
+          const { values, errors } = actions.getFormState<Values>(id);
+
+          if (fieldsValid && schemaValid) {
             await onSubmit(values, errors);
 
             if (resetOnSubmit) actions.resetFormState(id);

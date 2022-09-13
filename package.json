@@ -4,6 +4,7 @@
   "workspaces": [
     "packages/*",
     "packages/react-formz-validators/utils",
+    "packages/react-formz-validators/yup",
     "packages/react-formz-validators/zod"
   ],
   "scripts": {

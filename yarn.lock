@@ -6694,6 +6694,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@zerry/react-formz-validators-yup@workspace:packages/react-formz-validators/yup":
+  version: 0.0.0-use.local
+  resolution: "@zerry/react-formz-validators-yup@workspace:packages/react-formz-validators/yup"
+  dependencies:
+    "@zerry/react-formz-validators-utils": "workspace:^"
+    yup: ^0.32.11
+  peerDependencies:
+    "@zerry/react-formz": ">=0.1.5-beta"
+    yup: "*"
+  languageName: unknown
+  linkType: soft
+
 "@zerry/react-formz-validators-zod@workspace:^, @zerry/react-formz-validators-zod@workspace:packages/react-formz-validators/zod":
   version: 0.0.0-use.local
   resolution: "@zerry/react-formz-validators-zod@workspace:packages/react-formz-validators/zod"

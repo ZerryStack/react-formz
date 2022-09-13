@@ -1,0 +1,22 @@
+{
+  "name": "@zerry/react-formz-validators-yup",
+  "version": "0.2.2-beta",
+  "license": "MIT",
+  "description": "Up validator for @zerry/react-formz to validate form data against a zod schema.",
+  "main": "dist/yup.js",
+  "umd:main": "dist/yup.umd.js",
+  "exports": "./dist/yup.js",
+  "source": "index.ts",
+  "types": "dist/yup.d.ts",
+  "devDependencies": {
+    "@zerry/react-formz-validators-utils": "workspace:^",
+    "yup": "^0.32.11"
+  },
+  "peerDependencies": {
+    "@zerry/react-formz": ">=0.1.5-beta",
+    "yup": "*"
+  },
+  "files": [
+    "dist"
+  ]
+}

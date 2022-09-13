@@ -10,9 +10,10 @@
     "test:generate-output": "jest --json --outputFile=.jest-test-results.json",
     "test:coverage": "jest --coverage=true",
     "build": "yarn typecheck && yarn build:utils && yarn build:zod",
-    "build:utils": "LIB=utils vite build && tsc utils/index.ts --allowSyntheticDefaultImports --target es2016 --moduleResolution node --declaration --emitDeclarationOnly --declarationDir utils/dist/",
     "build:zod": "LIB=zod vite build && tsc zod/zod.ts --allowSyntheticDefaultImports --target es2016 --moduleResolution node --declaration --emitDeclarationOnly --declarationDir zod/dist/",
-    "publish:zod": "cd zod && npm publish --access public"
+    "publish:zod": "cd zod && npm publish --access public",
+    "build:yup": "LIB=yup vite build && tsc yup/yup.ts --allowSyntheticDefaultImports --target es2016 --moduleResolution node --declaration --emitDeclarationOnly --declarationDir yup/dist/",
+    "publish:yup": "cd yup && npm publish --access public"
   },
   "devDependencies": {
     "@babel/core": "^7.19.0",

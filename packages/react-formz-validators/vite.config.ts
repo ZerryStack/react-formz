@@ -1,4 +1,9 @@
-import { defineConfig, LibraryOptions, BuildOptions, LibraryFormats } from "vite";
+import {
+  defineConfig,
+  LibraryOptions,
+  BuildOptions,
+  LibraryFormats,
+} from "vite";
 import path from "path";
 
 type NonArray<T> = Exclude<T, Array<any>>;
@@ -9,16 +14,23 @@ type Globals = NonArray<
 
 const config: Record<
   string,
-  LibraryOptions & { library: string; globals?: Globals; external?: string[]; formats: LibraryFormats[] }
+  LibraryOptions & {
+    library: string;
+    globals?: Globals;
+    external?: string[];
+    formats: LibraryFormats[];
+  }
 > = {
-  utils: {
-    entry: path.resolve(__dirname, "utils", "index.ts"),
-    fileName: "index",
-    name: "utils",
-    library: "utils",
-    globals: {},
-    external: [],
-    formats: ["es"],
+  yup: {
+    entry: path.resolve(__dirname, "yup", "index.ts"),
+    fileName: "yup",
+    name: "yup",
+    library: "yup",
+    globals: {
+      yup: "yup",
+    },
+    external: ["yup"],
+    formats: ["es", "cjs", "umd"],
   },
   zod: {
     entry: path.resolve(__dirname, "zod", "index.ts"),
@@ -26,7 +38,7 @@ const config: Record<
     name: "zod",
     library: "zod",
     globals: {
-        "zod": "zod"
+      zod: "zod",
     },
     external: ["zod"],
     formats: ["es", "cjs", "umd"],
@@ -58,9 +70,9 @@ export default defineConfig({
       external: ["@zerry/react-formz"].concat(external ?? []),
       output: {
         globals: {
-            "@zerry/react-formz": "@zerry/react-formz",
-            ...globals,
-          },
+          "@zerry/react-formz": "@zerry/react-formz",
+          ...globals,
+        },
       },
     },
   },

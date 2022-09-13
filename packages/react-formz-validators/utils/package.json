@@ -3,10 +3,11 @@
   "version": "0.0.1-beta",
   "license": "MIT",
   "description": "Shared utilitity functions for zod validators.",
-  "exports": "./dist/index.mjs",
-  "source": "index.ts",
-  "types": "dist/index.d.ts",
+  "main": "index.ts",
   "peerDependencies": {
     "@zerry/react-formz": ">=0.1.5-beta"
-  }
+  },
+  "files": [
+    "dist"
+  ]
 }

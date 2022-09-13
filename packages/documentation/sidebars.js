@@ -31,6 +31,11 @@ const sidebars = {
     },
     {
       type: 'category',
+      label: 'Hooks',
+      items: ['hooks/use-field'],
+    },
+    {
+      type: 'category',
       label: 'API',
       items: ['api/form', 'api/field', 'api/array-field', 'api/dependent-field'],
     },

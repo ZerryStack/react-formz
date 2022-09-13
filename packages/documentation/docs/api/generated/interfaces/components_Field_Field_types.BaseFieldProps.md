@@ -1,6 +1,6 @@
 ---
 id: "components_Field_Field_types.BaseFieldProps"
-title: "Interface: BaseFieldProps<Key, Value, Element>"
+title: "Interface: BaseFieldProps<Value, Key, Element>"
 sidebar_label: "BaseFieldProps"
 custom_edit_url: null
 ---
@@ -11,8 +11,8 @@ custom_edit_url: null
 
 | Name | Type |
 | :------ | :------ |
-| `Key` | extends [`FieldId`](../modules/types_field.md#fieldid) = [`FieldId`](../modules/types_field.md#fieldid) |
 | `Value` | extends [`FieldValue`](../modules/types_field.md#fieldvalue) = [`FieldValue`](../modules/types_field.md#fieldvalue) |
+| `Key` | extends [`FieldId`](../modules/types_field.md#fieldid) = [`FieldId`](../modules/types_field.md#fieldid) |
 | `Element` | `HTMLInputElement` |
 
 ## Properties

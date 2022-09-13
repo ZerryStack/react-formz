@@ -42,7 +42,7 @@ describe("hooks/forms/useFormHydration", () => {
     });
   });
 
-  it.only("should not save draft if form is invalid", async () => {
+  it("should not save draft if form is invalid", async () => {
     const cachedFormState = createDefaultFormzState({
       initialValues: {
         name: "",

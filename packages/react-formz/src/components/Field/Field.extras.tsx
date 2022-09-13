@@ -9,8 +9,8 @@ function createField<Value extends FieldValue>(
 ) {
   const component = React.forwardRef<
     HTMLInputElement,
-    FieldProps<FieldId, Value, HTMLInputElement>
-  >((props: FieldProps<FieldId, Value, HTMLInputElement>, ref) => {
+    FieldProps<Value, FieldId, HTMLInputElement>
+  >((props: FieldProps<Value, FieldId, HTMLInputElement>, ref) => {
     return <Field type={type} {...additionalProps} {...props} ref={ref} />;
   });
 
@@ -18,7 +18,7 @@ function createField<Value extends FieldValue>(
     Key extends FieldId,
     Element = HTMLInputElement,
   >(
-    props: FieldProps<Key, Value, Element>
+    props: FieldProps<Value, Key, Element>
   ) => JSX.Element;
 }
 

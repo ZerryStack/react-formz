@@ -6,11 +6,11 @@ import { isValidInputValue } from "../../utils/is";
 import { FieldInputProps, FieldProps } from "./Field.types";
 
 const FieldInner = <
+Value extends FieldValue = FieldValue,
   Key extends FieldId = FieldId,
-  Value extends FieldValue = FieldValue,
   Element = HTMLInputElement,
 >(
-  props: FieldProps<Key, Value, Element>,
+  props: FieldProps<Value, Key, Element>,
   ref: React.Ref<Element>
 ): JSX.Element | null => {
   const {
@@ -92,11 +92,11 @@ const FieldInner = <
  */
 
 const Field = React.forwardRef<any, FieldProps>(FieldInner) as <
-  Key extends FieldId = FieldId,
   Value extends FieldValue = FieldValue,
+  Key extends FieldId = FieldId,
   Element = HTMLInputElement,
 >(
-  props: FieldProps<Key, Value, Element>
+  props: FieldProps<Value, Key, Element>
 ) => JSX.Element;
 
 export default Field;

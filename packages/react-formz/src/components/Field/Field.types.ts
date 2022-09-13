@@ -73,8 +73,8 @@ export type FieldComponentProps<
 > = BaseFieldComponentProps<Value, Key, Element>;
 
 export interface BaseFieldProps<
+Value extends FieldValue = FieldValue,
   Key extends FieldId = FieldId,
-  Value extends FieldValue = FieldValue,
   Element = HTMLInputElement
 > {
   /**
@@ -111,7 +111,7 @@ export interface BaseFieldProps<
 }
 
 export type FieldProps<
+Value extends FieldValue = FieldValue,
   Key extends FieldId = FieldId,
-  Value extends FieldValue = FieldValue,
   Element = HTMLInputElement
-> = BaseFieldProps<Key, Value, Element>;
+> = BaseFieldProps<Value, Key, Element>;

@@ -19,7 +19,9 @@ custom_edit_url: null
 
 ## Hierarchy
 
-- `Omit`<[`BaseFieldProps`](components_Field_Field_types.BaseFieldProps.md)<`Key`, `Value`, `Element`\>, ``"validate"``\>
+- `Omit`<[`BaseFieldProps`](components_Field_Field_types.BaseFieldProps.md)<`Value`, `Key`, `Element`\>, ``"validate"``\>
+
+- [`UseDependentFieldEventsOptions`](hooks_fields_useDependentFieldEvents.UseDependentFieldEventsOptions.md)<`Values`, `Value`, `DependentValues`\>
 
   ↳ **`BaseDependentFieldProps`**
 
@@ -63,7 +65,7 @@ ___
 
 ▸ (`values`): `DependentValues`
 
-A selector function for selecting the dependent values to watch. 
+A selector function for selecting the dependent values to watch.
 The returned value should be an object.
 
 ##### Parameters
@@ -76,9 +78,13 @@ The returned value should be an object.
 
 `DependentValues`
 
+#### Inherited from
+
+[UseDependentFieldEventsOptions](hooks_fields_useDependentFieldEvents.UseDependentFieldEventsOptions.md).[dependencies](hooks_fields_useDependentFieldEvents.UseDependentFieldEventsOptions.md#dependencies)
+
 #### Defined in
 
-[packages/react-formz/src/components/DependentField/DependentField.types.ts:16](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/DependentField/DependentField.types.ts#L16)
+[packages/react-formz/src/hooks/fields/useDependentFieldEvents.ts:25](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/fields/useDependentFieldEvents.ts#L25)
 
 ___
 
@@ -163,9 +169,13 @@ dependencies changes. This function will recieve the dependencies object and
 the field actions object so that you can take actions on the field whenever
 its' dependencies change.
 
+#### Inherited from
+
+[UseDependentFieldEventsOptions](hooks_fields_useDependentFieldEvents.UseDependentFieldEventsOptions.md).[onDependenciesChange](hooks_fields_useDependentFieldEvents.UseDependentFieldEventsOptions.md#ondependencieschange)
+
 #### Defined in
 
-[packages/react-formz/src/components/DependentField/DependentField.types.ts:29](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/DependentField/DependentField.types.ts#L29)
+[packages/react-formz/src/hooks/fields/useDependentFieldEvents.ts:38](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/fields/useDependentFieldEvents.ts#L38)
 
 ___
 
@@ -267,6 +277,10 @@ Validation function that will recieve the field value in addition to
 the values of its' dependencies. You can use both arguments in conjuction
 to validate the field.
 
+#### Inherited from
+
+[UseDependentFieldEventsOptions](hooks_fields_useDependentFieldEvents.UseDependentFieldEventsOptions.md).[validate](hooks_fields_useDependentFieldEvents.UseDependentFieldEventsOptions.md#validate)
+
 #### Defined in
 
-[packages/react-formz/src/components/DependentField/DependentField.types.ts:22](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/DependentField/DependentField.types.ts#L22)
+[packages/react-formz/src/hooks/fields/useDependentFieldEvents.ts:31](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/fields/useDependentFieldEvents.ts#L31)

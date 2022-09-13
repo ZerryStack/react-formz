@@ -5,8 +5,8 @@ import Field, { FieldProps } from "../Field";
 function createCustomField() {
   const component = React.forwardRef<
     HTMLInputElement,
-    FieldProps<FieldId, FieldValue, HTMLInputElement>
-  >((props: FieldProps<FieldId, FieldValue, HTMLInputElement>, ref) => {
+    FieldProps<FieldValue, FieldId, HTMLInputElement>
+  >((props: FieldProps<FieldValue, FieldId, HTMLInputElement>, ref) => {
     return <Field {...props} ref={ref} />;
   });
 
@@ -15,7 +15,7 @@ function createCustomField() {
     Key extends FieldId = FieldId,
     Element = HTMLInputElement
   >(
-    props: FieldProps<Key, Value, Element>
+    props: FieldProps<Value, Key, Element>
   ) => JSX.Element;
 }
 

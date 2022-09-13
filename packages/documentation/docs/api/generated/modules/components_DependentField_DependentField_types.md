@@ -27,4 +27,4 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/react-formz/src/components/DependentField/DependentField.types.ts:32](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/DependentField/DependentField.types.ts#L32)
+[packages/react-formz/src/components/DependentField/DependentField.types.ts:15](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/DependentField/DependentField.types.ts#L15)

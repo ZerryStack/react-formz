@@ -37,6 +37,8 @@ custom_edit_url: null
 - [components/SubmitButton](modules/components_SubmitButton.md)
 - [components/SubmitButton/SubmitButton](modules/components_SubmitButton_SubmitButton.md)
 - [components/SubmitButton/SubmitButton.types](modules/components_SubmitButton_SubmitButton_types.md)
+- [hooks/fields/useDependentField](modules/hooks_fields_useDependentField.md)
+- [hooks/fields/useDependentFieldEvents](modules/hooks_fields_useDependentFieldEvents.md)
 - [hooks/fields/useErrorMessage](modules/hooks_fields_useErrorMessage.md)
 - [hooks/fields/useField](modules/hooks_fields_useField.md)
 - [hooks/fields/useFieldActions](modules/hooks_fields_useFieldActions.md)

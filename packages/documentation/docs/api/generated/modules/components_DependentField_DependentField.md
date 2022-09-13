@@ -57,4 +57,4 @@ onDependenciesChange={(dependencies, actions) => {
 
 #### Defined in
 
-[packages/react-formz/src/components/DependentField/DependentField.tsx:100](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/DependentField/DependentField.tsx#L100)
+[packages/react-formz/src/components/DependentField/DependentField.tsx:62](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/DependentField/DependentField.tsx#L62)

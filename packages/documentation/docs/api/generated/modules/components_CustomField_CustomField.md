@@ -40,7 +40,7 @@ Example Usage:
 
 | Name | Type |
 | :------ | :------ |
-| `props` | [`FieldProps`](components_Field_Field_types.md#fieldprops)<`Key`, `Value`, `Element`\> |
+| `props` | [`FieldProps`](components_Field_Field_types.md#fieldprops)<`Value`, `Key`, `Element`\> |
 
 #### Returns
 

@@ -64,12 +64,32 @@ function useField<
   };
 }
 
-export function useNumberField<Key extends FieldId = FieldId>(name: Key, options: UseFieldOptions<number>) {
-  return useField<Key, number>(name, options);
+export function useTextField<Key extends FieldId = FieldId>(name: Key, options: UseFieldOptions<string | undefined>) {
+  return useField<Key, string | undefined>(name, { type: "text", ...options});
 }
 
-export function useBooleanField<Key extends FieldId = FieldId>(name: Key, options: UseFieldOptions<boolean>) {
-  return useField<Key, boolean>(name, options);
+export function useNumberField<Key extends FieldId = FieldId>(name: Key, options: UseFieldOptions<number | undefined>) {
+  return useField<Key, number | undefined>(name, { ...options, type: "number" });
+}
+
+export function useBooleanField<Key extends FieldId = FieldId>(name: Key, options: UseFieldOptions<boolean | undefined>) {
+  return useField<Key, boolean | undefined>(name, { ...options, type: "checkbox"});
+}
+
+export function useRadioField<Key extends FieldId = FieldId>(name: Key, options: UseFieldOptions<string | undefined>) {
+  return useField<Key, string | undefined>(name, { ...options, type: "radio"});
+}
+
+export function useSelectField<Key extends FieldId = FieldId>(name: Key, options: UseFieldOptions<string | undefined>) {
+  return useField<Key, string | undefined>(name, { ...options, type: "select"});
+}
+
+export function useDateField<Key extends FieldId = FieldId>(name: Key, options: UseFieldOptions<string | undefined>) {
+  return useField<Key, string | undefined>(name, { ...options, type: "date"});
+}
+
+export function useCustomField<Value extends FieldValue, Key extends FieldId = FieldId>(name: Key, options: UseFieldOptions<Value>) {
+  return useField<Key, Value>(name, options);
 }
 
 export default useField;

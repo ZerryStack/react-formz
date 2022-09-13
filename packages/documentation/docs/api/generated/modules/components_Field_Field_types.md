@@ -33,14 +33,14 @@ ___
 
 ### FieldProps
 
-Ƭ **FieldProps**<`Key`, `Value`, `Element`\>: [`BaseFieldProps`](../interfaces/components_Field_Field_types.BaseFieldProps.md)<`Key`, `Value`, `Element`\>
+Ƭ **FieldProps**<`Value`, `Key`, `Element`\>: [`BaseFieldProps`](../interfaces/components_Field_Field_types.BaseFieldProps.md)<`Value`, `Key`, `Element`\>
 
 #### Type parameters
 
 | Name | Type |
 | :------ | :------ |
-| `Key` | extends [`FieldId`](types_field.md#fieldid) = [`FieldId`](types_field.md#fieldid) |
 | `Value` | extends [`FieldValue`](types_field.md#fieldvalue) = [`FieldValue`](types_field.md#fieldvalue) |
+| `Key` | extends [`FieldId`](types_field.md#fieldid) = [`FieldId`](types_field.md#fieldid) |
 | `Element` | `HTMLInputElement` |
 
 #### Defined in

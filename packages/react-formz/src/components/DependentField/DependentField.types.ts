@@ -9,7 +9,7 @@ export interface BaseDependentFieldProps<
   Key extends FieldId = FieldId,
   Element = HTMLInputElement,
   DependentValues extends Partial<Values> = Partial<Values>
-> extends Omit<BaseFieldProps<Key, Value, Element>, "validate">,
+> extends Omit<BaseFieldProps<Value, Key, Element>, "validate">,
     UseDependentFieldEventsOptions<Values, Value, DependentValues> {}
 
 export type DependentFieldProps<

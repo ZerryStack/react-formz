@@ -10,7 +10,7 @@ custom_edit_url: null
 
 ### Field
 
-▸ **Field**<`Key`, `Value`, `Element`\>(`props`): `Element`
+▸ **Field**<`Value`, `Key`, `Element`\>(`props`): `Element`
 
 A `Field` is a consumer of some data in its' parent `Form`. The user interface of a `Field`
 is completely determined by you, the developer. This component abstracts away all of the
@@ -30,15 +30,15 @@ function UserProfile() {
 
 | Name | Type |
 | :------ | :------ |
-| `Key` | extends `string` = `string` |
 | `Value` | extends [`FieldValue`](types_field.md#fieldvalue) = [`FieldValue`](types_field.md#fieldvalue) |
+| `Key` | extends `string` = `string` |
 | `Element` | `HTMLInputElement` |
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `props` | [`FieldProps`](components_Field_Field_types.md#fieldprops)<`Key`, `Value`, `Element`\> | FieldProps - The react props for the field component. |
+| `props` | [`FieldProps`](components_Field_Field_types.md#fieldprops)<`Value`, `Key`, `Element`\> | FieldProps - The react props for the field component. |
 
 #### Returns
 

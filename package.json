@@ -2,7 +2,8 @@
   "name": "react-formz",
   "packageManager": "yarn@3.2.3",
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "packages/react-formz-validators/zod"
   ],
   "scripts": {
     "test": "yarn workspace @zerry/react-formz test",

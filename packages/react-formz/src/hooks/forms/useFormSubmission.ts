@@ -28,8 +28,8 @@ function useFormSubmission<Values extends FormzValues>(
         actions.setFormIsSubmitting(id, true);
 
         try {
-          const schemaValid = await validateFormAgainstSchema();
           const fieldsValid = await runFieldLevelValidations();
+          const schemaValid = await validateFormAgainstSchema();
 
           const { values, errors } = actions.getFormState<Values>(id);
 

@@ -2,6 +2,7 @@ import React, { createContext, useContext } from "react";
 import { UseFormOptions } from "../../hooks/forms/useForm";
 import useFormHydration from "../../hooks/forms/useFormHydration";
 import useFormId from "../../hooks/forms/useFormId";
+import useRegisterFormSchema from "../../hooks/forms/useRegisterFormSchema";
 import { FormzValues } from "../../types/form";
 
 const Context = createContext<string | null>(null);
@@ -19,11 +20,14 @@ const FormIdProvider = <Values extends FormzValues>({
   name,
   initialValues,
   saveDrafts,
-  onFormRehydrated
+  onFormRehydrated,
+  schemaValidator
 }: React.PropsWithChildren<UseFormOptions<Values>>) => {
   const id = useFormId(name, initialValues, undefined, saveDrafts);
 
   useFormHydration(id, saveDrafts ?? false, onFormRehydrated);
+
+  useRegisterFormSchema(id, schemaValidator);
 
   return <Context.Provider value={id}>{children}</Context.Provider>;
 };

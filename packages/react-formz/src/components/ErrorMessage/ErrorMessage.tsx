@@ -11,7 +11,7 @@ const ErrorMessage = ({
 }: ErrorMessageProps) => {
   const error = useErrorMessage(field);
   const touched = useFieldTouched(field);
-
+  
   if (error && (onlyShowIfTouched ? touched !== false : true)) {
     if (Component) {
       <Component id={`${field}-error`} {...spanProps} aria-live="polite" field={field} error={error}>

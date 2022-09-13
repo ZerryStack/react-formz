@@ -18,6 +18,8 @@ function useValidateFormSchema<Values extends FormzValues>(formId: string) {
             if (form) {
                 const { errors } = await schemaValidator.validate(form.values);
 
+                if (!errors) return true;
+                
                 formzStore.setState((state) => {
                     const form = state.forms[formId];
 

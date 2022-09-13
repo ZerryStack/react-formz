@@ -14,22 +14,34 @@ const FormProvider = <Values extends FormzValues>({
   initialValues,
   saveDrafts,
   onFormRehydrated,
-  schemaValidator
+  schemaValidator,
 }: React.PropsWithChildren<UseFormOptions<Values>>) => {
   const options = useMemo(() => {
-    return { name, initialValues, saveDrafts, onFormRehydrated, schemaValidator };
+    return {
+      name,
+      initialValues,
+      saveDrafts,
+      onFormRehydrated,
+      schemaValidator,
+    };
   }, []);
 
   return (
-    <FormIdProvider name={name} initialValues={initialValues} saveDrafts={saveDrafts} onFormRehydrated={onFormRehydrated}>
+    <FormIdProvider
+      name={name}
+      initialValues={initialValues}
+      saveDrafts={saveDrafts}
+      onFormRehydrated={onFormRehydrated}
+      schemaValidator={schemaValidator}
+    >
       <Context.Provider value={options}>{children}</Context.Provider>
     </FormIdProvider>
   );
 };
 
-/** 
+/**
  * Creates a form api for interacting with a form.
-*/
+ */
 export function useFormContext<Values extends FormzValues>() {
   const id = useFormIdContext();
   const options = useContext(Context);

@@ -8,6 +8,9 @@ export interface SchemaValidatorErrorResult<Values extends FormzValues> {
   errors: FormzErrors<Values>;
 }
 
+export interface SchemaValidatorValidate<Values extends FormzValues> {
+    (values: Values): Promise<SchemaValidatorErrorResult<Values> | SchemaValidatorSuccessResult>;
+}
 class SchemaValidator<Values extends FormzValues> {
   public validate = async (
     _: Values

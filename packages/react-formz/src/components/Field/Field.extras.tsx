@@ -74,7 +74,7 @@ export const SelectField = createField<string | null | undefined>("select");
  * @typeParam `Key` {@link FieldId} - The input/field `name` property. This value should correspond to a property in the form.
  * @typeParam `Element` - The underlying html element either "input", "select", or "textarea".
  */
- export const DateField = createField<Date | null | undefined>("date");
+ export const DateField = createField<string | null | undefined>("date");
 
 /**
  * An abstraction of `Field` that can be used for multi select field values. The default

@@ -14,12 +14,13 @@ import {
   SubmitButton,
   FormLastPersistedAt,
   CheckboxField,
-} from "../src";
+  FieldComponentProps
+} from "@zerry/react-formz";
 import { FormControl, FormHelperText, InputLabel } from "@mui/material";
-import { FieldComponentProps } from "../src/components/Field";
-import logger from "../src/logger";
 import { useSnackbar } from "notistack";
 import format from "date-fns/format";
+
+const logger = console;
 
 export default {
   title: "Components/Form",

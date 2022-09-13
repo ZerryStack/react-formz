@@ -2,7 +2,7 @@ import { FormzChangeEvent } from "../types/events";
 import { PossibleHTMLInputElement } from "../types/input";
 import { isCheckboxInput, isNumberInput, isString } from "./is";
 
-function getFieldValue(eventOrTextValue: string | FormzChangeEvent<any>): string | number | boolean | Date {
+function getFieldValue(eventOrTextValue: string | FormzChangeEvent<any>): string | number | boolean | Date | null {
     if (!isString(eventOrTextValue)) {
 
         const target = eventOrTextValue.target as PossibleHTMLInputElement;

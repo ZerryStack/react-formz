@@ -1,4 +1,4 @@
-import { useFormz, actions } from "../../store";
+import { useFormz, actions, useFormSchemaValidator } from "../../store";
 import makeSelectFieldError from "../../store/selectors/makeSelectFieldError";
 import { FieldId, FieldValidator, FieldValue } from "../../types/field";
 import { FormzError } from "../../types/form";
@@ -32,12 +32,24 @@ function useFieldValidation<
 >(formId: string, name: Key, options: UseFieldValidationOptions<Value>) {
   const { label = name } = options;
 
+  const schemaValidator = useFormSchemaValidator(formId);
+
   const selectFieldError = useSelector(makeSelectFieldError(formId, name));
 
   const error = useFormz(selectFieldError);
 
   const getErrorMessage = async (): Promise<FormzError | null> => {
     const value = actions.getFieldStoreValue<Value>(formId, name);
+
+    if (isDefined(schemaValidator)) {
+      const { errors } = await schemaValidator.validate(actions.getFormState(formId).values);
+
+      if (errors && errors[name]) {
+        const error = errors[name];
+
+        if (error) return error;
+      }
+    }
 
     if (options.required && isEmpty(value)) {
       return {

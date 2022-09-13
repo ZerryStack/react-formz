@@ -1,9 +1,8 @@
 import "react-datepicker/dist/react-datepicker.css";
-
 import { ComponentStory } from "@storybook/react";
 import React from "react";
 import DatePicker from "react-datepicker";
-import { CustomField, DependentTextField, ErrorMessage, Form } from "../src";
+import { CustomField, DependentTextField, ErrorMessage, Form } from "@zerry/react-formz";
 
 export default {
   title: "Integrations/React Date Picker",

@@ -38,4 +38,4 @@ Custom hook to return a function that validates a form using an instance of a sc
 
 #### Defined in
 
-packages/react-formz/src/hooks/forms/useValidateFormSchema.ts:9
+[packages/react-formz/src/hooks/forms/useValidateFormSchema.ts:9](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useValidateFormSchema.ts#L9)

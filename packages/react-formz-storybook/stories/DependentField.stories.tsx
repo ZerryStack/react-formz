@@ -8,8 +8,8 @@ import {
   FormLastPersistedAt,
   CheckboxField,
   DependentField,
-} from "../src";
-import { FieldComponentProps } from "../src/components/Field";
+  FieldComponentProps
+} from "@zerry/react-formz";
 import { useSnackbar } from "notistack";
 import format from "date-fns/format";
 

@@ -55,7 +55,7 @@ input type will be `date` but can be overriden.
 
 | Name | Type |
 | :------ | :------ |
-| `props` | [`FieldProps`](components_Field_Field_types.md#fieldprops)<`Key`, `undefined` \| ``null`` \| `Date`, `Element`\> |
+| `props` | [`FieldProps`](components_Field_Field_types.md#fieldprops)<`Key`, `undefined` \| ``null`` \| `string`, `Element`\> |
 
 #### Returns
 

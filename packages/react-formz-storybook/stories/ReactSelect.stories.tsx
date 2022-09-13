@@ -1,6 +1,6 @@
 import { ComponentStory } from "@storybook/react";
 import React from "react";
-import { Form, SubmitButton, CustomField } from "../src";
+import { Form, SubmitButton, CustomField } from "@zerry/react-formz";
 import Select, { MultiValue } from "react-select";
 
 export default {

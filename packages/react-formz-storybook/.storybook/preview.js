@@ -1,10 +1,8 @@
 import "./wdyr";
-import { Profiler } from "react";
-import uuid from "react-uuid";
 import "antd/dist/antd.css";
 import "./preview.css";
 import { SnackbarProvider } from "notistack";
-import { FormzDateProvider } from "../src";
+import { FormzDateProvider } from "@zerry/react-formz";
 import formatDate from "date-fns/format";
 
 export const parameters = {

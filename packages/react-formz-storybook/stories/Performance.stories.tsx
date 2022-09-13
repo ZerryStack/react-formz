@@ -1,8 +1,7 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { Form, Field, ErrorMessage } from "../src";
+import { Form, Field, ErrorMessage, FieldComponentProps } from "@zerry/react-formz";
 import { FormControl, FormHelperText, InputLabel } from "@mui/material";
-import { FieldComponentProps } from "../src/components/Field";
 
 export default {
   title: "Performance",

@@ -14,6 +14,9 @@ custom_edit_url: null
 An abstraction of `Field` that can be used for boolean field values. The default
 input type will be `checkbox` but can be overriden.
 
+- `type` - checkbox
+- `value` - boolean
+
 #### Type parameters
 
 | Name | Type |
@@ -42,7 +45,10 @@ ___
 ▸ **DateField**<`Key`, `Element`\>(`props`): `Element`
 
 An abstraction of `Field` that can be used for date field values. The default
-input type will be `date` but can be overriden.
+input type will be `date` but can be overriden. The value will be a string.
+
+- `type` - date
+- `value` - string | undefined
 
 #### Type parameters
 
@@ -55,7 +61,7 @@ input type will be `date` but can be overriden.
 
 | Name | Type |
 | :------ | :------ |
-| `props` | [`FieldProps`](components_Field_Field_types.md#fieldprops)<`Key`, `undefined` \| ``null`` \| `string`, `Element`\> |
+| `props` | [`FieldProps`](components_Field_Field_types.md#fieldprops)<`Key`, `undefined` \| `string`, `Element`\> |
 
 #### Returns
 
@@ -73,6 +79,9 @@ ___
 
 An abstraction of `Field` that can be used for multi select field values. The default
 input type will be `select` but can be overriden.
+
+- `type` - select
+- `value` - string
 
 #### Type parameters
 
@@ -104,6 +113,9 @@ ___
 An abstraction of `Field` that can be used for number field values. The default
 input type will be `number` but can be overriden.
 
+- `type` - number
+- `value` - number
+
 #### Type parameters
 
 | Name | Type |
@@ -134,6 +146,9 @@ ___
 An abstraction of `Field` that can be used for radio field values. The default
 input type will be `radio` but can be overriden.
 
+- `type` - radio
+- `value` - string | undefined
+
 #### Type parameters
 
 | Name | Type |
@@ -145,7 +160,7 @@ input type will be `radio` but can be overriden.
 
 | Name | Type |
 | :------ | :------ |
-| `props` | [`FieldProps`](components_Field_Field_types.md#fieldprops)<`Key`, `string`, `Element`\> |
+| `props` | [`FieldProps`](components_Field_Field_types.md#fieldprops)<`Key`, `undefined` \| `string`, `Element`\> |
 
 #### Returns
 
@@ -164,6 +179,9 @@ ___
 An abstraction of `Field` that can be used for select field values. The default
 input type will be `select` but can be overriden.
 
+- `type` - select
+- `value` - string | undefined
+
 #### Type parameters
 
 | Name | Type |
@@ -175,7 +193,7 @@ input type will be `select` but can be overriden.
 
 | Name | Type |
 | :------ | :------ |
-| `props` | [`FieldProps`](components_Field_Field_types.md#fieldprops)<`Key`, `undefined` \| ``null`` \| `string`, `Element`\> |
+| `props` | [`FieldProps`](components_Field_Field_types.md#fieldprops)<`Key`, `undefined` \| `string`, `Element`\> |
 
 #### Returns
 
@@ -194,6 +212,9 @@ ___
 An abstraction of `Field` that can be used for text field values. The default
 input type will be `text` but can be overriden.
 
+- `type` - text
+- `value` - string | undefined
+
 #### Type parameters
 
 | Name | Type |
@@ -205,7 +226,7 @@ input type will be `text` but can be overriden.
 
 | Name | Type |
 | :------ | :------ |
-| `props` | [`FieldProps`](components_Field_Field_types.md#fieldprops)<`Key`, `string`, `Element`\> |
+| `props` | [`FieldProps`](components_Field_Field_types.md#fieldprops)<`Key`, `undefined` \| `string`, `Element`\> |
 
 #### Returns
 

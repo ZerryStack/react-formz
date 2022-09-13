@@ -10,25 +10,27 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import {
   Form,
   Field,
-  ErrorMessage,
   SubmitButton,
-  FormLastPersistedAt,
-  CheckboxField,
   FieldComponentProps,
 } from "@zerry/react-formz";
 import {
   useForm as useReactHookForm,
   FormProvider as ReactHookFormProvider,
   useFormContext as useReactHookFormContext,
+  UseFormReturn,
+  Controller,
 } from "react-hook-form";
-import { FormControl, FormHelperText, InputLabel, Input as MuiInput } from "@mui/material";
-import { useSnackbar } from "notistack";
-import format from "date-fns/format";
+import {
+  FormControl,
+  FormHelperText,
+  InputLabel,
+  Input as MuiInput,
+} from "@mui/material";
 
 const logger = console;
 
 export default {
-  title: "Components/Form",
+  title: "Comparison/Many Inputs",
   component: Form,
   parameters: {
     layout: "fullscreen",
@@ -43,83 +45,7 @@ const style: React.CSSProperties = {
   width: 400,
 };
 
-const initialValues = {
-  firstName: "",
-  lastName: "",
-  isOver21: false,
-};
-
-function Input<Value extends string | boolean | number, Key extends string>(
-  props: Omit<FieldComponentProps<Value, Key>, "actions">
-) {
-  const { input } = props;
-
-  return (
-    <>
-      <input {...input} className="rf-input" />
-      <ErrorMessage field={input.name} />
-    </>
-  );
-}
-
-const FieldTemplate: ComponentStory<typeof Form> = () => {
-  const { enqueueSnackbar } = useSnackbar();
-
-  return (
-    <Form
-      style={style}
-      name="WithFields"
-      initialValues={{ ...initialValues, age: 0, dob: "1970-01-01" }}
-      onSubmit={() => new Promise((resolve) => setTimeout(resolve, 2000))}
-      saveDrafts
-      onFormRehydrated={(state) => {
-        if (state.restoredFromDate) {
-          enqueueSnackbar(
-            `We've restored your form from ${format(
-              new Date(state.restoredFromDate),
-              "Pp"
-            )}.`,
-            {
-              variant: "success",
-            }
-          );
-        } else {
-          enqueueSnackbar(`We've restored your form.`, {
-            variant: "success",
-          });
-        }
-      }}
-    >
-      <Field as={Input} required name="firstName" placeholder="First Name" />
-      <Field
-        as={Input}
-        name="lastName"
-        validate={(value) =>
-          value !== "Hogan" ? "Last name should be Hogan" : undefined
-        }
-        placeholder="Last Name"
-      />
-      <Field
-        as={Input}
-        type="number"
-        name="age"
-        min={3}
-        max={40}
-        placeholder="Age"
-      />
-      <Field as={Input} type="date" name="dob" placeholder="Date of Birth" />
-      <CheckboxField as={Input} name="isOver21" />
-      <FormLastPersistedAt />
-      <SubmitButton className="rf-button">Submit</SubmitButton>
-    </Form>
-  );
-};
-
-export const WithFields = FieldTemplate.bind({});
-
-WithFields.args = {};
-
-const array = new Array(50).fill(null).map((_, index) => index);
+const array = new Array(150).fill(null).map((_, index) => index);
 const initialValuesPerformance: Record<string, string> = array.reduce(
   (acc, current) => {
     return {
@@ -167,10 +93,12 @@ const ReactFormzField = ({
         aria-describedby="component-error-text"
       />
       {error && (
-        <FormHelperText id="component-error-text">{error.message}</FormHelperText>
+        <FormHelperText id="component-error-text">
+          {error.message}
+        </FormHelperText>
       )}
     </FormControl>
-  )
+  );
 };
 
 const NestedReactFormzFields = () => {
@@ -189,6 +117,7 @@ const NestedReactFormzFields = () => {
     </>
   );
 };
+
 const ReactFormz = () => {
   const Profile =
     process.env.NODE_ENV === "development" ? Profiler : React.Fragment;
@@ -213,7 +142,7 @@ const FormikFormsField = ({ field, form: { errors } }: FormikFieldProps) => {
   return (
     <FormControl error={errors[name] !== undefined}>
       <InputLabel htmlFor="my-input">Item {name}</InputLabel>
-      <input {...field} id={name} aria-describedby={`${name}-error`} />
+      <MuiInput {...field} id={name} aria-describedby={`${name}-error`} />
       {errors[name] && (
         <FormHelperText id="component-error-text">
           {errors[name] as string}
@@ -252,26 +181,41 @@ const FormikForms = () => {
   );
 };
 
+const ConnectForm = ({
+  children,
+}: {
+  children: (methods: UseFormReturn) => JSX.Element;
+}) => {
+  const methods = useReactHookFormContext();
+
+  return children({ ...methods });
+};
+
 const ReactHookFormField = ({ name }: { name: string }) => {
-  const {
-    register,
-    formState: { errors },
-  } = useReactHookFormContext();
-
-  const error = errors[name];
-
-  console.log(error);
-
   return (
-    <FormControl error={errors[name] !== undefined}>
-      <InputLabel htmlFor="my-input">Item {name}</InputLabel>
-      <MuiInput {...register(name, { required: true })}  />
-      {error && (
-        <span id="component-error-text">
-          {error.message as string}
-        </span>
-      )}
-    </FormControl>
+    <ConnectForm>
+      {({ formState: { errors }, control }) => {
+        const error = errors[name];
+
+        return (
+          <Controller
+            name={name}
+            control={control}
+            render={({ field: { onChange, value }}) => (
+              <FormControl error={errors[name] !== undefined}>
+                <InputLabel htmlFor="my-input">Item {name}</InputLabel>
+                <MuiInput onChange={onChange} value={value} />
+                {error && (
+                  <span id="component-error-text">
+                    {error.message as string}
+                  </span>
+                )}
+              </FormControl>
+            )}
+          />
+        );
+      }}
+    </ConnectForm>
   );
 };
 
@@ -288,14 +232,16 @@ const NestedReactHookFormFields = () => {
 const ReactHookForm = () => {
   const Profile =
     process.env.NODE_ENV === "development" ? Profiler : React.Fragment;
-    
-  const methods = useReactHookForm();
+
+  const methods = useReactHookForm({
+    defaultValues: initialValuesPerformance
+  });
 
   const { handleSubmit } = methods;
 
   return (
     <Profile id="React Hook Form" onRender={logProfiler}>
-      <form onSubmit={handleSubmit(console.log)}>
+      <form onSubmit={handleSubmit(console.log)} style={performanceStyle}>
         <ReactHookFormProvider {...methods}>
           <NestedReactHookFormFields />
           <button type="submit">Submit</button>

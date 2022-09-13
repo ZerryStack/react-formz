@@ -6678,6 +6678,7 @@ __metadata:
     react: ^18.2.0
     react-datepicker: ^4.8.0
     react-dom: ^18.2.0
+    react-hook-form: ^7.35.0
     react-select: ^5.4.0
     react-uuid: ^1.0.3
     typescript: ^4.8.2
@@ -18815,6 +18816,15 @@ __metadata:
     react: ^16.6.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.6.0 || ^17.0.0 || ^18.0.0
   checksum: 7ca7e47f8af14ea186688b512a87ab912bf6041312b297f92516341b140b3f0f8aedf5a44d226d99e69ed067b0cc106e38aeb9c9b738ffcc63d10721c844db90
+  languageName: node
+  linkType: hard
+
+"react-hook-form@npm:^7.35.0":
+  version: 7.35.0
+  resolution: "react-hook-form@npm:7.35.0"
+  peerDependencies:
+    react: ^16.8.0 || ^17 || ^18
+  checksum: e0e78de4a08fdae9eebf248ddefd99ff35d4964ef2815006704ae4a43972786f62dede3847b41e29d3e89ea6cb16c8f5837b1e00238aa65f7c38cb52aabcaf5b
   languageName: node
   linkType: hard
 

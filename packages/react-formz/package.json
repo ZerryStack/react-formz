@@ -1,6 +1,6 @@
 {
   "name": "@zerry/react-formz",
-  "version": "0.1.5-beta",
+  "version": "0.1.6-beta",
   "packageManager": "yarn@3.2.3",
   "license": "MIT",
   "files": [

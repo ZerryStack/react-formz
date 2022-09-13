@@ -1,10 +1,6 @@
-import React, { useEffect } from "react";
-import useFieldActions from "../../hooks/fields/useFieldActions";
-import useFieldValidation from "../../hooks/fields/useFieldValidation";
-import useStableCallback from "../../hooks/utils/useStableCallback";
-import { useFormIdContext } from "../../providers/FormIdProvider";
-import useMemoizedSelector from "../../store/hooks/useMemoizedSelector";
-import { FieldId, FieldValidator, FieldValue } from "../../types/field";
+import React from "react";
+import useDependentFieldEvents from "../../hooks/fields/useDependentFieldEvents";
+import { FieldId, FieldValue } from "../../types/field";
 import { FormzValues } from "../../types/form";
 import Field from "../Field";
 import { DependentFieldProps } from "./DependentField.types";
@@ -16,52 +12,18 @@ const DependentFieldInner = <
   Element = HTMLInputElement,
   DependentValues extends Partial<Values> = Partial<Values>
 >(
-  props: DependentFieldProps<
-    Values,
-    Value,
-    Key,
-    Element,
-    DependentValues
-  >,
+  props: DependentFieldProps<Values, Value, Key, Element, DependentValues>,
   ref: React.Ref<Element>
 ) => {
-  const { dependencies, onDependenciesChange, ...restProps } = props;
+  const { dependencies, onDependenciesChange, name, validate, ...restProps } = props;
 
-  const formId = useFormIdContext();
-
-  const fieldActions = useFieldActions(formId, props.name);
-
-  const dependentFields = useMemoizedSelector<DependentValues>((state) =>
-    dependencies(state.forms[formId].values)
-  );
-
-  const handleDependenciesChange = useStableCallback(() => {
-    if (onDependenciesChange) {
-      onDependenciesChange(dependentFields, fieldActions);
-    }
+  const { validate: dependentValidate } = useDependentFieldEvents(name, {
+    dependencies,
+    onDependenciesChange,
+    validate
   });
 
-  const dependentValidate = useStableCallback<FieldValidator<Value>>(
-    (value) => {
-      if (props.validate) {
-        return props.validate(value, dependentFields);
-      }
-      return null;
-    }
-  );
-
-  const { validate } = useFieldValidation(formId, props.name, {
-    validate: dependentValidate,
-  });
-
-  useEffect(() => {
-    (async () => {
-      handleDependenciesChange();
-      await validate();
-    })();
-  }, [dependentFields]);
-
-  return <Field {...restProps} ref={ref} validate={dependentValidate} />;
+  return <Field {...restProps} name={name} ref={ref} validate={dependentValidate} />;
 };
 
 /**
@@ -104,13 +66,7 @@ const DependentField = React.forwardRef<any, DependentFieldProps>(
   Element = HTMLInputElement,
   DependentValues extends Partial<Values> = Partial<Values>
 >(
-  props: DependentFieldProps<
-    Values,
-    Value,
-    Key,
-    Element,
-    DependentValues
-  >
+  props: DependentFieldProps<Values, Value, Key, Element, DependentValues>
 ) => JSX.Element;
 
 export default DependentField;

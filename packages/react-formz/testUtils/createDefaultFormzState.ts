@@ -1,6 +1,6 @@
 import { FormzState, FormzValues } from "../src/types/form";
 
-function createDefaultFormzState<Values extends FormzValues>(partial?: FormzState<Values>  ): FormzState<Values> {
+function createDefaultFormzState<Values extends FormzValues>(partial?: Partial<FormzState<Values>>  ): FormzState<Values> {
     const state: FormzState<Values> = {
         values: {} as Values,
         errors: {},

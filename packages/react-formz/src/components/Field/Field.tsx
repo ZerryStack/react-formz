@@ -86,8 +86,8 @@ Value extends FieldValue = FieldValue,
  * }
  * ```
  * @param props {@link FieldProps} - The react props for the field component.
- * @typeParam `Key` {@link FieldId} - The input/field `name` property. This value should correspond to a property in the form.
  * @typeParam `Value` {@link FieldValue} - The value of the input/field.
+ * @typeParam `Key` {@link FieldId} - The input/field `name` property. This value should correspond to a property in the form.
  * @typeParam `Element` - The underlying html element either "input", "select", or "textarea".
  */
 

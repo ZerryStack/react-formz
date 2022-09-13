@@ -44,7 +44,7 @@ const initialValues = {
   isOver21: false,
 };
 
-function Input<Key extends string, Value extends string | boolean | number>(
+function Input<Value extends string | boolean | number, Key extends string>(
   props: Omit<FieldComponentProps<Value, Key>, "actions">
 ) {
   const { input } = props;

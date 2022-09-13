@@ -6689,7 +6689,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zerry/react-formz-validators-utils@workspace:packages/react-formz-validators/utils"
   peerDependencies:
-    "@zerry/react-formz": ">=0.1.0-beta"
+    "@zerry/react-formz": ">=0.1.5-beta"
   languageName: unknown
   linkType: soft
 
@@ -6700,7 +6700,7 @@ __metadata:
     "@zerry/react-formz-validators-utils": "workspace:^"
     zod: ^3.19.1
   peerDependencies:
-    "@zerry/react-formz": ">=0.1.0-beta"
+    "@zerry/react-formz": ">=0.1.5-beta"
     zod: ">=3.0.0"
   languageName: unknown
   linkType: soft

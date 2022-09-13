@@ -73,7 +73,7 @@ export type FieldComponentProps<
 > = BaseFieldComponentProps<Value, Key, Element>;
 
 export interface BaseFieldProps<
-Value extends FieldValue = FieldValue,
+  Value extends FieldValue = FieldValue,
   Key extends FieldId = FieldId,
   Element = HTMLInputElement
 > {
@@ -85,8 +85,8 @@ Value extends FieldValue = FieldValue,
    * The component to render the ui of the field.
    */
   as?: React.ComponentType<
-        FieldComponentProps<Value, Key, Element> & NativeElementProps<Element>
-      >;
+    FieldComponentProps<Value, Key, Element> & NativeElementProps<Element>
+  >;
   children?: React.ReactNode;
   /**
    * CSS Styles to pass to the rendered component.
@@ -111,7 +111,7 @@ Value extends FieldValue = FieldValue,
 }
 
 export type FieldProps<
-Value extends FieldValue = FieldValue,
+  Value extends FieldValue = FieldValue,
   Key extends FieldId = FieldId,
   Element = HTMLInputElement
 > = BaseFieldProps<Value, Key, Element>;

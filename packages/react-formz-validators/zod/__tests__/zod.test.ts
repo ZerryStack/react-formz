@@ -24,13 +24,15 @@ describe("zod", () => {
           message: expect.any(String),
           type: expect.any(String),
         },
-        "values.name": {
-          message: expect.any(String),
-          type: expect.any(String),
-        },
-        "values.id": {
-          message: expect.any(String),
-          type: expect.any(String),
+        values: {
+          name: {
+            message: expect.any(String),
+            type: expect.any(String),
+          },
+          id: {
+            message: expect.any(String),
+            type: expect.any(String),
+          },
         },
       },
     });

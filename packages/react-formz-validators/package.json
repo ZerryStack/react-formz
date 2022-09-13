@@ -5,13 +5,14 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "typecheck": "tsc --noEmit",
-    "build": "yarn typecheck && yarn build:zod",
-    "build:zod": "LIB=zod vite build && tsc zod/zod.ts --allowSyntheticDefaultImports --target es2016 --moduleResolution node --declaration --emitDeclarationOnly --declarationDir zod/dist/",
-    "prepublishOnly": "yarn test && yarn build",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:generate-output": "jest --json --outputFile=.jest-test-results.json",
-    "test:coverage": "jest --coverage=true"
+    "test:coverage": "jest --coverage=true",
+    "build": "yarn typecheck && yarn build:utils && yarn build:zod",
+    "build:utils": "LIB=utils vite build && tsc utils/index.ts --allowSyntheticDefaultImports --target es2016 --moduleResolution node --declaration --emitDeclarationOnly --declarationDir utils/dist/",
+    "build:zod": "LIB=zod vite build && tsc zod/zod.ts --allowSyntheticDefaultImports --target es2016 --moduleResolution node --declaration --emitDeclarationOnly --declarationDir zod/dist/",
+    "publish:zod": "cd zod && npm publish --access public"
   },
   "devDependencies": {
     "@babel/core": "^7.19.0",

@@ -3,6 +3,7 @@
   "packageManager": "yarn@3.2.3",
   "workspaces": [
     "packages/*",
+    "packages/react-formz-validators/utils",
     "packages/react-formz-validators/zod"
   ],
   "scripts": {

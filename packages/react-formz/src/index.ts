@@ -39,3 +39,6 @@ export {
 export { default as useFormLastPersistedAt } from "./hooks/forms/useFormLastPersistedAt";
 export type { SchemaValidatorErrorResult, SchemaValidatorSuccessResult } from "./models/SchemaValidator"; 
 export { default as SchemaValidator } from "./models/SchemaValidator"; 
+export { default as set } from "./utils/set";
+export { default as get } from "./utils/get";
+

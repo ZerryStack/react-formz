@@ -6685,10 +6685,19 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@zerry/react-formz-validators-utils@workspace:^, @zerry/react-formz-validators-utils@workspace:packages/react-formz-validators/utils":
+  version: 0.0.0-use.local
+  resolution: "@zerry/react-formz-validators-utils@workspace:packages/react-formz-validators/utils"
+  peerDependencies:
+    "@zerry/react-formz": ">=0.1.0-beta"
+  languageName: unknown
+  linkType: soft
+
 "@zerry/react-formz-validators-zod@workspace:^, @zerry/react-formz-validators-zod@workspace:packages/react-formz-validators/zod":
   version: 0.0.0-use.local
   resolution: "@zerry/react-formz-validators-zod@workspace:packages/react-formz-validators/zod"
   dependencies:
+    "@zerry/react-formz-validators-utils": "workspace:^"
     zod: ^3.19.1
   peerDependencies:
     "@zerry/react-formz": ">=0.1.0-beta"

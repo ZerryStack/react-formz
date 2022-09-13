@@ -1,4 +1,5 @@
 import { SchemaValidator, FormzValues, FormzErrors } from "@zerry/react-formz";
+import { toNestedErrors } from "@zerry/react-formz-validators-utils";
 import zod from "zod";
 
 class ZodSchemaValidator<
@@ -52,7 +53,7 @@ class ZodSchemaValidator<
       }
     }
 
-    return errors;
+    return toNestedErrors(errors);
   };
 }
 

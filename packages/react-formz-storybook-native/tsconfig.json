@@ -1,0 +1,15 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "paths": {
+      "@zerry/react-formz": ["../react-formz/src/index.ts"],
+      "@zerry/react-formz-native": ["../react-formz-native/src/index.ts"]
+    }
+  },
+  "include": [
+    "./src",
+    "../packages",
+    "../packages/**/package.json",
+  ]
+}

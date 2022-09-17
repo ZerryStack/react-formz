@@ -1,0 +1,7 @@
+{
+    "name": "@zerry/react-formz-native",
+    "version": "0.0.1-beta",
+    "dependencies": {
+        "@zerry/react-formz": "workspace:^"
+    }
+}

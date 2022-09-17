@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Field } from "@zerry/react-formz-native";
+import { Form, Field, ErrorMessage } from "@zerry/react-formz-native";
 import {
   TextInput,
   View,
@@ -49,23 +49,31 @@ function App() {
             name="firstName"
             required
             type="default"
+            label="First Name"
             as={({ input }) => (
-              <TextInput
-                {...input}
-                style={styles.input}
-                placeholder="First Name"
-              />
+              <>
+                <TextInput
+                  {...input}
+                  style={styles.input}
+                  placeholder="First Name"
+                />
+                <ErrorMessage field={input.name} />
+              </>
             )}
           />
           <Field<string>
             name="email"
             type="email-address"
+            label="Email"
             as={({ input }) => (
-              <TextInput
-                {...input}
-                style={styles.input}
-                placeholder="Email Address"
-              />
+              <>
+                <TextInput
+                  {...input}
+                  style={styles.input}
+                  placeholder="Email Address"
+                />
+                <ErrorMessage field={input.name} />
+              </>
             )}
           />
         </Form>

@@ -64,3 +64,5 @@ export { default as get } from "./utils/get";
 export { default as useStableValue } from "./hooks/utils/useStableValue";
 export { default as useStableCallback } from "./hooks/utils/useStableCallback";
 export { default as useFormStateInitialized } from "./hooks/forms/useFormStateInitialized";
+export { default as useFieldErrorMessage } from "./hooks/fields/useErrorMessage";
+export { default as useFieldTouched } from "./hooks/fields/useFieldTouched";

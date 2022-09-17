@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react-native";
-import { Form, Field } from "@zerry/react-formz-native";
+import { Form, Field, ErrorMessage } from "@zerry/react-formz-native";
 import { StyleSheet, TextInput, View } from "react-native";
 
 export default {
@@ -42,25 +42,29 @@ const FieldTemplate: ComponentStory<typeof Form> = () => {
         name="firstName"
         required
         type="default"
-        as={({ input: { onChangeText, value } }) => (
-          <TextInput
-            onChangeText={onChangeText}
-            value={value}
-            style={styles.input}
-            placeholder="First Name"
-          />
+        as={({ input }) => (
+          <>
+            <TextInput
+              {...input}
+              style={styles.input}
+              placeholder="First Name"
+            />
+            <ErrorMessage field={input.name} />
+          </>
         )}
       />
       <Field<string>
         name="email"
         type="email-address"
-        as={({ input: { onChangeText, value } }) => (
-          <TextInput
-            onChangeText={onChangeText}
-            value={value}
-            style={styles.input}
-            placeholder="Email Address"
-          />
+        as={({ input }) => (
+          <>
+            <TextInput
+              {...input}
+              style={styles.input}
+              placeholder="Email Address"
+            />
+            <ErrorMessage field={input.name} />
+          </>
         )}
       />
     </Form>

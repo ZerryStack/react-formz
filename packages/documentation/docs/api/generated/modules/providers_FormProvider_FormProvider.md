@@ -32,7 +32,7 @@ Context provider for a forms configuration.
 
 #### Defined in
 
-[packages/react-formz/src/providers/FormProvider/FormProvider.tsx:11](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/providers/FormProvider/FormProvider.tsx#L11)
+[packages/react-formz/src/providers/FormProvider/FormProvider.tsx:12](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/providers/FormProvider/FormProvider.tsx#L12)
 
 ___
 
@@ -54,4 +54,4 @@ Creates a form api for interacting with a form.
 
 #### Defined in
 
-[packages/react-formz/src/providers/FormProvider/FormProvider.tsx:45](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/providers/FormProvider/FormProvider.tsx#L45)
+[packages/react-formz/src/providers/FormProvider/FormProvider.tsx:44](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/providers/FormProvider/FormProvider.tsx#L44)

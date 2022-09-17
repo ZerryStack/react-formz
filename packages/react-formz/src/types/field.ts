@@ -18,11 +18,6 @@ export type FieldValue =
   | Date
   | readonly string[];
 
-export type FieldElement =
-  | HTMLInputElement
-  | HTMLSelectElement
-  | HTMLTextAreaElement;
-
 /**
  * The validate function for a field. Always returns a boolean
  * but the validator can be async/return a Promise.

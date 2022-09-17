@@ -8,17 +8,17 @@ function createField<Value extends FieldValue>(
   additionalProps?: { multiple?: boolean }
 ) {
   const component = React.forwardRef<
-    HTMLInputElement,
-    FieldProps<Value, FieldId, HTMLInputElement>
-  >((props: FieldProps<Value, FieldId, HTMLInputElement>, ref) => {
+    unknown,
+    FieldProps<Value, FieldId, unknown>
+  >((props: FieldProps<Value, FieldId, unknown>, ref) => {
     return <Field type={type} {...additionalProps} {...props} ref={ref} />;
   });
 
   return component as <
     Key extends FieldId,
-    Element = HTMLInputElement,
+    Ref = unknown,
   >(
-    props: FieldProps<Value, Key, Element>
+    props: FieldProps<Value, Key, Ref>
   ) => JSX.Element;
 }
 

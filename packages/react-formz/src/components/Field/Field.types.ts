@@ -4,11 +4,6 @@ import { FieldEevents } from "../../hooks/fields/useFieldEvents";
 import { FieldId, FieldValidator, FieldValue } from "../../types/field";
 import { FormzError } from "../../types/form";
 
-type NativeElementProps<T> = Omit<
-  React.DetailedHTMLProps<React.HTMLAttributes<T>, T>,
-  "color" | "ref"
->;
-
 export interface FieldInputProps<
   Key extends FieldId = FieldId,
   Value extends FieldValue = FieldValue
@@ -48,9 +43,9 @@ export interface FieldInputProps<
 export interface BaseFieldComponentProps<
   Value extends FieldValue = FieldValue,
   Key extends FieldId = FieldId,
-  Element = HTMLInputElement
+  Ref = unknown
 > {
-  ref?: React.Ref<Element>;
+  ref?: React.Ref<Ref>;
   input: FieldInputProps<Key, Value>;
   /**
    * The react formz error object.
@@ -69,13 +64,13 @@ export interface BaseFieldComponentProps<
 export type FieldComponentProps<
   Value extends FieldValue = FieldValue,
   Key extends FieldId = FieldId,
-  Element = HTMLInputElement
-> = BaseFieldComponentProps<Value, Key, Element>;
+  Ref = unknown
+> = BaseFieldComponentProps<Value, Key, Ref>;
 
 export interface BaseFieldProps<
   Value extends FieldValue = FieldValue,
   Key extends FieldId = FieldId,
-  Element = HTMLInputElement
+  Ref = unknown
 > {
   /**
    * The unique name/id of the field.
@@ -85,7 +80,7 @@ export interface BaseFieldProps<
    * The component to render the ui of the field.
    */
   as?: React.ComponentType<
-    FieldComponentProps<Value, Key, Element> & NativeElementProps<Element>
+    FieldComponentProps<Value, Key, Ref>
   >;
   children?: React.ReactNode;
   /**
@@ -107,11 +102,11 @@ export interface BaseFieldProps<
   placeholder?: string;
   multiple?: boolean;
   label?: string;
-  ref?: React.Ref<Element>;
+  ref?: React.Ref<Ref>;
 }
 
 export type FieldProps<
   Value extends FieldValue = FieldValue,
   Key extends FieldId = FieldId,
-  Element = HTMLInputElement
-> = BaseFieldProps<Value, Key, Element>;
+  Ref = unknown
+> = BaseFieldProps<Value, Key, Ref>;

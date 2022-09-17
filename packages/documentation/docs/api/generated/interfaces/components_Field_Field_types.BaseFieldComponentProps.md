@@ -1,6 +1,6 @@
 ---
 id: "components_Field_Field_types.BaseFieldComponentProps"
-title: "Interface: BaseFieldComponentProps<Value, Key, Element>"
+title: "Interface: BaseFieldComponentProps<Value, Key, Ref>"
 sidebar_label: "BaseFieldComponentProps"
 custom_edit_url: null
 ---
@@ -13,7 +13,7 @@ custom_edit_url: null
 | :------ | :------ |
 | `Value` | extends [`FieldValue`](../modules/types_field.md#fieldvalue) = [`FieldValue`](../modules/types_field.md#fieldvalue) |
 | `Key` | extends [`FieldId`](../modules/types_field.md#fieldid) = [`FieldId`](../modules/types_field.md#fieldid) |
-| `Element` | `HTMLInputElement` |
+| `Ref` | `unknown` |
 
 ## Indexable
 
@@ -27,7 +27,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:66](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L66)
+[packages/react-formz/src/components/Field/Field.types.ts:61](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L61)
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:64](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L64)
+[packages/react-formz/src/components/Field/Field.types.ts:59](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L59)
 
 ___
 
@@ -49,7 +49,7 @@ The react formz error object.
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:58](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L58)
+[packages/react-formz/src/components/Field/Field.types.ts:53](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L53)
 
 ___
 
@@ -59,7 +59,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:54](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L54)
+[packages/react-formz/src/components/Field/Field.types.ts:49](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L49)
 
 ___
 
@@ -69,14 +69,14 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:65](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L65)
+[packages/react-formz/src/components/Field/Field.types.ts:60](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L60)
 
 ___
 
 ### ref
 
-• `Optional` **ref**: `Ref`<`Element`\>
+• `Optional` **ref**: `Ref`<`Ref`\>
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:53](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L53)
+[packages/react-formz/src/components/Field/Field.types.ts:48](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L48)

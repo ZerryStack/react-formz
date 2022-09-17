@@ -7,15 +7,15 @@ export interface BaseDependentFieldProps<
   Values extends FormzValues = FormzValues,
   Value extends FieldValue = FieldValue,
   Key extends FieldId = FieldId,
-  Element = HTMLInputElement,
+  Ref = unknown,
   DependentValues extends Partial<Values> = Partial<Values>
-> extends Omit<BaseFieldProps<Value, Key, Element>, "validate">,
+> extends Omit<BaseFieldProps<Value, Key, Ref>, "validate">,
     UseDependentFieldEventsOptions<Values, Value, DependentValues> {}
 
 export type DependentFieldProps<
   Values extends FormzValues = FormzValues,
   Value extends FieldValue = FieldValue,
   Key extends FieldId = FieldId,
-  Element = HTMLInputElement,
+  Ref = unknown,
   DependentValues extends Partial<Values> = Partial<Values>
-> = BaseDependentFieldProps<Values, Value, Key, Element, DependentValues>;
+> = BaseDependentFieldProps<Values, Value, Key, Ref, DependentValues>;

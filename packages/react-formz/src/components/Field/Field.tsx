@@ -8,10 +8,10 @@ import { FieldInputProps, FieldProps } from "./Field.types";
 const FieldInner = <
 Value extends FieldValue = FieldValue,
   Key extends FieldId = FieldId,
-  Element = HTMLInputElement,
+  Ref = unknown,
 >(
-  props: FieldProps<Value, Key, Element>,
-  ref: React.Ref<Element>
+  props: FieldProps<Value, Key, Ref>,
+  ref: React.Ref<Ref>
 ): JSX.Element | null => {
   const {
     as: Tag,
@@ -88,15 +88,15 @@ Value extends FieldValue = FieldValue,
  * @param props {@link FieldProps} - The react props for the field component.
  * @typeParam `Value` {@link FieldValue} - The value of the input/field.
  * @typeParam `Key` {@link FieldId} - The input/field `name` property. This value should correspond to a property in the form.
- * @typeParam `Element` - The underlying html element either "input", "select", or "textarea".
+ * @typeParam `Ref` - The type of react ref that will be passed to the underlying element.
  */
 
-const Field = React.forwardRef<any, FieldProps>(FieldInner) as <
+const Field = React.forwardRef<unknown, FieldProps>(FieldInner) as <
   Value extends FieldValue = FieldValue,
   Key extends FieldId = FieldId,
-  Element = HTMLInputElement,
+  Ref = unknown,
 >(
-  props: FieldProps<Value, Key, Element>
+  props: FieldProps<Value, Key, Ref>
 ) => JSX.Element;
 
 export default Field;

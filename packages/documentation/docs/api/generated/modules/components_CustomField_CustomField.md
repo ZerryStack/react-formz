@@ -10,7 +10,7 @@ custom_edit_url: null
 
 ### CustomField
 
-▸ **CustomField**<`Value`, `Key`, `Element`\>(`props`): `Element`
+▸ **CustomField**<`Value`, `Key`, `Ref`\>(`props`): `Element`
 
 A custom field is a `Field` where the value is not your typical html input value like
 your usual string, number, date, etc.
@@ -34,13 +34,13 @@ Example Usage:
 | :------ | :------ |
 | `Value` | extends [`FieldValue`](types_field.md#fieldvalue) |
 | `Key` | extends `string` = `string` |
-| `Element` | `HTMLInputElement` |
+| `Ref` | `unknown` |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `props` | [`FieldProps`](components_Field_Field_types.md#fieldprops)<`Value`, `Key`, `Element`\> |
+| `props` | [`FieldProps`](components_Field_Field_types.md#fieldprops)<`Value`, `Key`, `Ref`\> |
 
 #### Returns
 

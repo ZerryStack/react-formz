@@ -9,11 +9,11 @@ const DependentFieldInner = <
   Values extends FormzValues = FormzValues,
   Value extends FieldValue = FieldValue,
   Key extends FieldId = FieldId,
-  Element = HTMLInputElement,
+  Ref = unknown,
   DependentValues extends Partial<Values> = Partial<Values>
 >(
-  props: DependentFieldProps<Values, Value, Key, Element, DependentValues>,
-  ref: React.Ref<Element>
+  props: DependentFieldProps<Values, Value, Key, Ref, DependentValues>,
+  ref: React.Ref<Ref>
 ) => {
   const { dependencies, onDependenciesChange, name, validate, ...restProps } = props;
 
@@ -23,7 +23,7 @@ const DependentFieldInner = <
     validate
   });
 
-  return <Field {...restProps} name={name} ref={ref} validate={dependentValidate} />;
+  return <Field<Value, Key, Ref> {...restProps} name={name} ref={ref} validate={dependentValidate} />;
 };
 
 /**
@@ -53,7 +53,7 @@ const DependentFieldInner = <
  * @typeParam `Values` {@link FormzValues} - The values of the parent form i.e. the data structure for your form.
  * @typeParam `Key` {@link FieldId} - The input/field `name` property. This value should correspond to a property in the form.
  * @typeParam `Value` {@link FieldValue} - The value of the input/field.
- * @typeParam `Element` - The underlying html element either "input", "select", or "textarea".
+ * @typeParam `Ref` - The react ref.
  * @typeParam `DependentValues` - The dependent values that this field will subscribe to.
  *
  */
@@ -63,10 +63,10 @@ const DependentField = React.forwardRef<any, DependentFieldProps>(
   Values extends FormzValues = FormzValues,
   Value extends FieldValue = FieldValue,
   Key extends FieldId = FieldId,
-  Element = HTMLInputElement,
+  Ref = unknown,
   DependentValues extends Partial<Values> = Partial<Values>
 >(
-  props: DependentFieldProps<Values, Value, Key, Element, DependentValues>
+  props: DependentFieldProps<Values, Value, Key, Ref, DependentValues>
 ) => JSX.Element;
 
 export default DependentField;

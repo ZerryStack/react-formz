@@ -15,7 +15,7 @@ custom_edit_url: null
 
 ### FieldComponentProps
 
-Ƭ **FieldComponentProps**<`Value`, `Key`, `Element`\>: [`BaseFieldComponentProps`](../interfaces/components_Field_Field_types.BaseFieldComponentProps.md)<`Value`, `Key`, `Element`\>
+Ƭ **FieldComponentProps**<`Value`, `Key`, `Ref`\>: [`BaseFieldComponentProps`](../interfaces/components_Field_Field_types.BaseFieldComponentProps.md)<`Value`, `Key`, `Ref`\>
 
 #### Type parameters
 
@@ -23,17 +23,17 @@ custom_edit_url: null
 | :------ | :------ |
 | `Value` | extends [`FieldValue`](types_field.md#fieldvalue) = [`FieldValue`](types_field.md#fieldvalue) |
 | `Key` | extends [`FieldId`](types_field.md#fieldid) = [`FieldId`](types_field.md#fieldid) |
-| `Element` | `HTMLInputElement` |
+| `Ref` | `unknown` |
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:69](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L69)
+[packages/react-formz/src/components/Field/Field.types.ts:64](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L64)
 
 ___
 
 ### FieldProps
 
-Ƭ **FieldProps**<`Value`, `Key`, `Element`\>: [`BaseFieldProps`](../interfaces/components_Field_Field_types.BaseFieldProps.md)<`Value`, `Key`, `Element`\>
+Ƭ **FieldProps**<`Value`, `Key`, `Ref`\>: [`BaseFieldProps`](../interfaces/components_Field_Field_types.BaseFieldProps.md)<`Value`, `Key`, `Ref`\>
 
 #### Type parameters
 
@@ -41,8 +41,8 @@ ___
 | :------ | :------ |
 | `Value` | extends [`FieldValue`](types_field.md#fieldvalue) = [`FieldValue`](types_field.md#fieldvalue) |
 | `Key` | extends [`FieldId`](types_field.md#fieldid) = [`FieldId`](types_field.md#fieldid) |
-| `Element` | `HTMLInputElement` |
+| `Ref` | `unknown` |
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:113](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L113)
+[packages/react-formz/src/components/Field/Field.types.ts:108](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L108)

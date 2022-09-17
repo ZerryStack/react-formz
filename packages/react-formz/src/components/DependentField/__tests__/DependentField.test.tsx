@@ -43,7 +43,6 @@ function renderTest(
     ui ?? (
       <Form<FormState>
         initialValues={{ name: "", dob: "", favoriteDrink: "" }}
-        noValidate
       >
         <TestField name="name" type="text" label="Name" />
         <TestField name="dob" type="date" label="Date of Birth" />

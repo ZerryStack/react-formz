@@ -18,7 +18,7 @@ export interface FieldEevents<Value extends FieldValue> {
    * The `onBlur` callback should be called when the field loses focuses
    * i.e. the `onBlur` event is called.
    */
-  onBlur: (event: React.FocusEvent<any>) => void;
+  onBlur: () => void;
 }
 
 /**
@@ -38,7 +38,7 @@ function useFieldEvents<Value extends FieldValue>(
     validate();
   });
 
-  const handleBlur = useStableCallback((_: React.FocusEvent<any>) => {
+  const handleBlur = useStableCallback(() => {
     actions.setFieldTouched(formId, fieldName, true);
     validate();
   });

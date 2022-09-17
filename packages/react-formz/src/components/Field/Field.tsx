@@ -56,6 +56,7 @@ Value extends FieldValue = FieldValue,
     return (
       <Tag
         {...restProps}
+        key={name}
         input={inputProps}
         error={field.error}
         ref={ref}

@@ -1,5 +1,4 @@
 import { renderHook } from "@testing-library/react-hooks";
-import React from "react";
 import { defaultTestFormName } from "../../../../testUtils/constants";
 import createDefaultFormzState from "../../../../testUtils/createDefaultFormzState";
 import { formzStore } from "../../../store";
@@ -63,7 +62,7 @@ describe("hooks/fields/useFieldEvents", () => {
     it("should mark field as touched when called", () => {
         const { result } = runTest();
   
-        result.current.onBlur({} as React.FocusEvent);
+        result.current.onBlur();
   
         const touched = formzStore.getState().forms[defaultTestFormName].touched["test-field"];
 
@@ -73,7 +72,7 @@ describe("hooks/fields/useFieldEvents", () => {
     it("should call validate function after change", () => {
         const { result, validate } = runTest();
   
-        result.current.onBlur({} as React.FocusEvent);
+        result.current.onBlur();
   
         expect(validate).toHaveBeenCalledTimes(1);
       });

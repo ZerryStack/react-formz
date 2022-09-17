@@ -17,8 +17,6 @@ custom_edit_url: null
 
 - [`UseFormOptions`](hooks_forms_useForm.UseFormOptions.md)<`Values`\>
 
-- `HtmlFormProps`
-
   ↳ **`FormProps`**
 
 ## Properties
@@ -29,13 +27,13 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/react-formz/src/components/Form/Form.types.ts:28](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L28)
+[packages/react-formz/src/components/Form/Form.types.ts:12](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L12)
 
 ___
 
 ### component
 
-• `Optional` **component**: ``"form"`` \| `ComponentType`<`FormComponentProps`\>
+• `Optional` **component**: ``"form"`` \| `ComponentType`<{}\>
 
 If the value is a component then that component will be rendered
 instead of the native html `form` element. 
@@ -48,7 +46,7 @@ Example Usage:
 
 #### Defined in
 
-[packages/react-formz/src/components/Form/Form.types.ts:44](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L44)
+[packages/react-formz/src/components/Form/Form.types.ts:28](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L28)
 
 ___
 
@@ -118,7 +116,7 @@ Example Usage:
 
 #### Defined in
 
-[packages/react-formz/src/components/Form/Form.types.ts:60](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L60)
+[packages/react-formz/src/components/Form/Form.types.ts:44](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L44)
 
 ___
 
@@ -131,7 +129,7 @@ the form is not in an invalid state.
 
 #### Defined in
 
-[packages/react-formz/src/components/Form/Form.types.ts:33](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L33)
+[packages/react-formz/src/components/Form/Form.types.ts:17](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L17)
 
 ___
 
@@ -143,7 +141,7 @@ If true, the form state will reset after a successful submission.
 
 #### Defined in
 
-[packages/react-formz/src/components/Form/Form.types.ts:48](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L48)
+[packages/react-formz/src/components/Form/Form.types.ts:32](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L32)
 
 ___
 
@@ -176,4 +174,4 @@ schema validator.
 
 #### Defined in
 
-[packages/react-formz/src/components/Form/Form.types.ts:65](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L65)
+[packages/react-formz/src/components/Form/Form.types.ts:49](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Form/Form.types.ts#L49)

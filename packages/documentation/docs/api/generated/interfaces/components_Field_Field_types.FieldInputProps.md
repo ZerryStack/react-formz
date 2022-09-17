@@ -31,7 +31,7 @@ this id will automatically be applied.
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:40](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L40)
+[packages/react-formz/src/components/Field/Field.types.ts:41](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L41)
 
 ___
 
@@ -44,7 +44,7 @@ does not conform to the format expected by the application.
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:29](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L29)
+[packages/react-formz/src/components/Field/Field.types.ts:30](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L30)
 
 ___
 
@@ -58,7 +58,7 @@ users (as opposed to validating the input).
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:35](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L35)
+[packages/react-formz/src/components/Field/Field.types.ts:36](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L36)
 
 ___
 
@@ -70,7 +70,7 @@ This will be a boolean if the `value` type is checkbox.
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:20](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L20)
+[packages/react-formz/src/components/Field/Field.types.ts:21](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L21)
 
 ___
 
@@ -80,7 +80,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:24](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L24)
+[packages/react-formz/src/components/Field/Field.types.ts:25](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L25)
 
 ___
 
@@ -90,7 +90,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:23](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L23)
+[packages/react-formz/src/components/Field/Field.types.ts:24](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L24)
 
 ___
 
@@ -100,26 +100,20 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:11](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L11)
+[packages/react-formz/src/components/Field/Field.types.ts:12](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L12)
 
 ___
 
 ### onBlur
 
-• **onBlur**: (`event`: `FocusEvent`<`any`, `Element`\>) => `void`
+• **onBlur**: () => `void`
 
 #### Type declaration
 
-▸ (`event`): `void`
+▸ (): `void`
 
 The `onBlur` callback should be called when the field loses focuses
 i.e. the `onBlur` event is called.
-
-##### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `event` | `FocusEvent`<`any`, `Element`\> |
 
 ##### Returns
 
@@ -163,7 +157,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:22](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L22)
+[packages/react-formz/src/components/Field/Field.types.ts:23](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L23)
 
 ___
 
@@ -173,7 +167,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:21](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L21)
+[packages/react-formz/src/components/Field/Field.types.ts:22](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L22)
 
 ___
 
@@ -186,4 +180,4 @@ the `value` will be undefined. You will then need to use `storeValue` instead.
 
 #### Defined in
 
-[packages/react-formz/src/components/Field/Field.types.ts:16](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L16)
+[packages/react-formz/src/components/Field/Field.types.ts:17](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/components/Field/Field.types.ts#L17)

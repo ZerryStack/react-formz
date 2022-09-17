@@ -1,5 +1,6 @@
-import React, { createContext, useContext, useMemo } from "react";
+import React, { createContext, useContext } from "react";
 import useForm, { UseFormOptions } from "../../hooks/forms/useForm";
+import useStableValue from "../../hooks/utils/useStableValue";
 import { FormzValues } from "../../types/form";
 import FormIdProvider, { useFormIdContext } from "../FormIdProvider";
 
@@ -16,15 +17,13 @@ const FormProvider = <Values extends FormzValues>({
   onFormRehydrated,
   schemaValidator,
 }: React.PropsWithChildren<UseFormOptions<Values>>) => {
-  const options = useMemo(() => {
-    return {
-      name,
-      initialValues,
-      saveDrafts,
-      onFormRehydrated,
-      schemaValidator,
-    };
-  }, []);
+  const options = useStableValue({
+    name,
+    initialValues,
+    saveDrafts,
+    onFormRehydrated,
+    schemaValidator,
+  });
 
   return (
     <FormIdProvider

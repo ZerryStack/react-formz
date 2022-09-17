@@ -42,7 +42,6 @@ function renderTest(
       <Form<FormState>
         name="ArrayFieldTest"
         initialValues={{ name: "", friends: [{ name: "John" }] }}
-        noValidate
       >
         <TestField name="name" type="text" label="Name" />
         <TestArrayField

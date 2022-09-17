@@ -27,7 +27,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/react-formz/src/hooks/fields/useField.ts:24](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/fields/useField.ts#L24)
+[packages/react-formz/src/hooks/fields/useField.ts:25](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/fields/useField.ts#L25)
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/hooks/fields/useField.ts:22](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/fields/useField.ts#L22)
+[packages/react-formz/src/hooks/fields/useField.ts:23](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/fields/useField.ts#L23)
 
 ___
 
@@ -47,7 +47,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/hooks/fields/useField.ts:21](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/fields/useField.ts#L21)
+[packages/react-formz/src/hooks/fields/useField.ts:22](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/fields/useField.ts#L22)
 
 ___
 
@@ -57,26 +57,20 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/hooks/fields/useField.ts:23](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/fields/useField.ts#L23)
+[packages/react-formz/src/hooks/fields/useField.ts:24](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/fields/useField.ts#L24)
 
 ___
 
 ### onBlur
 
-• **onBlur**: (`event`: `FocusEvent`<`any`, `Element`\>) => `void`
+• **onBlur**: () => `void`
 
 #### Type declaration
 
-▸ (`event`): `void`
+▸ (): `void`
 
 The `onBlur` callback should be called when the field loses focuses
 i.e. the `onBlur` event is called.
-
-##### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `event` | `FocusEvent`<`any`, `Element`\> |
 
 ##### Returns
 
@@ -120,4 +114,4 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/hooks/fields/useField.ts:20](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/fields/useField.ts#L20)
+[packages/react-formz/src/hooks/fields/useField.ts:21](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/fields/useField.ts#L21)

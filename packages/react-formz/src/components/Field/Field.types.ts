@@ -3,6 +3,7 @@ import { FieldActions } from "../../hooks/fields/useFieldActions";
 import { FieldEevents } from "../../hooks/fields/useFieldEvents";
 import { FieldId, FieldValidator, FieldValue } from "../../types/field";
 import { FormzError } from "../../types/form";
+import { LiteralUnion } from "../../types/utils";
 
 export interface FieldInputProps<
   Key extends FieldId = FieldId,
@@ -90,7 +91,7 @@ export interface BaseFieldProps<
   /**
    * HTML input type.
    */
-  type?: React.HTMLInputTypeAttribute;
+  type?: LiteralUnion<React.HTMLInputTypeAttribute>;
   /**
    * If true, the field must have a value to not be in an error state.
    */

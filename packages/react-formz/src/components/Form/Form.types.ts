@@ -7,24 +7,8 @@ import {
   FormzValues,
 } from "../../types/form";
 
-type HtmlFormProps = Omit<
-  React.DetailedHTMLProps<
-    React.FormHTMLAttributes<HTMLFormElement>,
-    HTMLFormElement
-  >,
-  "children" | "onSubmit"
->;
-
-type FormComponentProps = Omit<
-  React.DetailedHTMLProps<
-    React.FormHTMLAttributes<HTMLFormElement>,
-    HTMLFormElement
-  >,
-  "ref"
->;
 export interface FormProps<Values extends FormzValues>
-  extends UseFormOptions<Values>,
-    HtmlFormProps {
+  extends UseFormOptions<Values> {
   children?: React.ReactNode;
   /**
    * A callback that will be called if and when a form is submitted and 
@@ -41,7 +25,7 @@ export interface FormProps<Values extends FormzValues>
    * <Form component={MaterialUIForm} />
    * ```
    */
-  component?: "form" | React.ComponentType<FormComponentProps>;
+  component?: "form" | React.ComponentType<{}>;
   /**
    * If true, the form state will reset after a successful submission.
    */

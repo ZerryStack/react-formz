@@ -36,7 +36,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/react-formz/src/types/field.ts:42](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/field.ts#L42)
+[packages/react-formz/src/types/field.ts:37](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/field.ts#L37)
 
 ___
 
@@ -68,17 +68,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/types/field.ts:34](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/field.ts#L34)
-
-___
-
-### FieldElement
-
-Ƭ **FieldElement**: `HTMLInputElement` \| `HTMLSelectElement` \| `HTMLTextAreaElement`
-
-#### Defined in
-
-[packages/react-formz/src/types/field.ts:21](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/field.ts#L21)
+[packages/react-formz/src/types/field.ts:29](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/field.ts#L29)
 
 ___
 
@@ -121,7 +111,7 @@ but the validator can be async/return a Promise.
 
 #### Defined in
 
-[packages/react-formz/src/types/field.ts:30](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/field.ts#L30)
+[packages/react-formz/src/types/field.ts:25](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/field.ts#L25)
 
 ___
 
@@ -164,7 +154,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/types/field.ts:47](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/field.ts#L47)
+[packages/react-formz/src/types/field.ts:42](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/field.ts#L42)
 
 ___
 

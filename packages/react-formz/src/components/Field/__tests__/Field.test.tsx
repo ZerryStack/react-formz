@@ -28,7 +28,7 @@ function renderTest(
 ) {
   const result = render(
     ui ?? (
-      <Form initialValues={{ firstName: "", lastName: "" }} noValidate>
+      <Form initialValues={{ firstName: "", lastName: "" }}>
         <TestField name="firstName" label="First Name" />
         <TestField
           name="lastName"

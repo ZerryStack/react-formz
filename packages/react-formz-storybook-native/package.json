@@ -13,7 +13,8 @@
     "prestart": "yarn update-stories",
     "storybook-watcher": "sb-rn-watcher --config-path .ondevice",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "publish:dev": "npx expo publish --release-channel development"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "~1.17.3",
@@ -22,9 +23,13 @@
     "@zerry/react-formz-native": "workspace:^",
     "expo": "^46.0.0",
     "expo-status-bar": "~1.4.0",
+    "expo-updates": "~0.14.5",
     "react": "18.0.0",
     "react-dom": "18.0.0",
-    "react-native": "0.69.3",
+    "react-native": "0.69.5",
+    "react-native-gesture-handler": "~2.5.0",
+    "react-native-reanimated": "~2.9.1",
+    "react-native-safe-area-context": "4.3.1",
     "react-native-web": "~0.18.7"
   },
   "devDependencies": {
@@ -41,6 +46,7 @@
     "@storybook/react": "~6.3",
     "@storybook/react-native": "next",
     "@types/react": "~18.0.0",
+    "@types/react-dom": "~18.0.0",
     "@types/react-native": "~0.69.1",
     "babel-loader": "^8.2.3",
     "babel-plugin-react-native-web": "~0.18.7",

@@ -19,12 +19,12 @@ const plugins =
   process.env.APP === "web"
     ? [
         ["module-resolver", moduleResolverConfig],
-        // ["react-native-reanimated/plugin"],
+        ["react-native-reanimated/plugin"],
         // ["babel-plugin-styled-components", { "ssr": false }]
       ]
     : [
         ["module-resolver", moduleResolverConfig],
-        // ["react-native-reanimated/plugin"],
+        ["react-native-reanimated/plugin"],
         // ["babel-plugin-styled-components", { "ssr": false }]
       ];
 

@@ -25,20 +25,14 @@ custom_edit_url: null
 
 ### onBlur
 
-• **onBlur**: (`event`: `FocusEvent`<`any`, `Element`\>) => `void`
+• **onBlur**: () => `void`
 
 #### Type declaration
 
-▸ (`event`): `void`
+▸ (): `void`
 
 The `onBlur` callback should be called when the field loses focuses
 i.e. the `onBlur` event is called.
-
-##### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `event` | `FocusEvent`<`any`, `Element`\> |
 
 ##### Returns
 

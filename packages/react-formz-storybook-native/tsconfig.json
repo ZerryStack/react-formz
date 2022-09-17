@@ -1,6 +1,7 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
+    "baseUrl": "./",
     "strict": true,
     "paths": {
       "@zerry/react-formz": ["../react-formz/src/index.ts"],
@@ -8,7 +9,9 @@
     }
   },
   "include": [
-    "./src",
+    "./App2.tsx",
+    "./stories",
+    "./.ondevice",
     "../packages",
     "../packages/**/package.json",
   ]

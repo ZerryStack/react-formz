@@ -17,9 +17,9 @@ custom_edit_url: null
 
 - **`FieldEevents`**
 
-  ↳ [`FieldInputProps`](components_Field_Field_types.FieldInputProps.md)
-
   ↳ [`UseFieldResult`](hooks_fields_useField.UseFieldResult.md)
+
+  ↳ [`FieldInputProps`](types_field.FieldInputProps.md)
 
 ## Properties
 

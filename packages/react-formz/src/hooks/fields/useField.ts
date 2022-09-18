@@ -2,7 +2,6 @@ import { useFormIdContext } from "../../providers/FormIdProvider";
 import useFieldValue from "../../store/hooks/useFieldValue";
 import { FieldId, FieldValue } from "../../types/field";
 import { FormzError } from "../../types/form";
-import { LiteralUnion } from "../../types/utils";
 import { isBoolean } from "../../utils/is";
 import useFieldActions, { FieldActions } from "./useFieldActions";
 import useFieldEvents, { FieldEevents } from "./useFieldEvents";
@@ -13,7 +12,7 @@ import useFieldValidation, {
 
 export interface UseFieldOptions<Value extends FieldValue>
   extends UseFieldValidationOptions<Value> {
-  type?: LiteralUnion<React.HTMLInputTypeAttribute>;
+  type?: string;
   label?: string;
 }
 

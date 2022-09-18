@@ -13,12 +13,6 @@ custom_edit_url: null
 | :------ | :------ |
 | `Values` | extends [`FormzValues`](../modules/types_form.md#formzvalues) |
 
-## Hierarchy
-
-- **`UseFormOptions`**
-
-  ↳ [`FormProps`](components_Form_Form_types.FormProps.md)
-
 ## Properties
 
 ### id

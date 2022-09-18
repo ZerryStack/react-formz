@@ -1,4 +1,4 @@
-import { FormzValues, SchemaValidator } from "@zerry/react-formz";
+import { FormzValues, SchemaValidator } from "../../../../react-formz";
 
 export interface FormProps<Values extends FormzValues> {
   /**

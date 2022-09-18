@@ -19,8 +19,6 @@ custom_edit_url: null
 
 - **`UseDependentFieldEventsOptions`**
 
-  ↳ [`BaseDependentFieldProps`](components_DependentField_DependentField_types.BaseDependentFieldProps.md)
-
   ↳ [`UseDependentFieldOptions`](hooks_fields_useDependentField.UseDependentFieldOptions.md)
 
 ## Properties

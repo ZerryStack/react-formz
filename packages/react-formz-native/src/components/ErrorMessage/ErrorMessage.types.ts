@@ -1,4 +1,4 @@
-import { FormzError } from "@zerry/react-formz";
+import { FormzError } from "../../../../react-formz";
 import React from "react";
 
 export interface ErrorMessageBaseProps {

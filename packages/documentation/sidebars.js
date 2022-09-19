@@ -27,7 +27,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'React Native',
-      items: ['react-native/basic-usage'],
+      items: ['react-native/basic-usage', 'react-native/array-field'],
     },
     {
       type: 'category',

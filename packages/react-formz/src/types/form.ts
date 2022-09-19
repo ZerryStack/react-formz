@@ -109,4 +109,10 @@ export interface FormProps<Values extends FormzValues> extends UseFormOptions<Va
    * schema validator.
    */
   schemaValidator?: SchemaValidator<Values>;
+  /**
+   * If true, a forms state will not be deleted from the store when the form is unmounted.
+   * This is useful for forms that might span multiple pages or tabs like a wizard
+   * or a signup form on a mobile device.
+   */
+  persist?: boolean;
 }

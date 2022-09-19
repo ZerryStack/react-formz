@@ -39,8 +39,23 @@ export interface FieldInputProps<
   /**
    * The `onBlur` callback should be called when the field loses focuses
    * i.e. the `onBlur` event is called.
+   * 
+   * If using a `Field` within an `ArrayField` this calback must be called to synchornize
+   * the values.
    */
   onBlur: () => void;
+  /**
+   * The `onEndEditing` should be called when the text editing is ended by the user.
+   * If using a `Field` within an `ArrayField` this calback must be called to synchornize
+   * the values.
+   */
+  onEndEditing: () => void;
+  /**
+   * The `onSubmitEditing` should be called when the text editing is ended by the user.
+   * If using a `Field` within an `ArrayField` this calback must be called to synchornize
+   * the values.
+   */
+  onSubmitEditing: () => void;
   /**
    * The current value of the input.
    */

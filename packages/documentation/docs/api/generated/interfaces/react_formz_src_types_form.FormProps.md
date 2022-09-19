@@ -45,7 +45,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/hooks/forms/useForm.ts:12](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L12)
+[packages/react-formz/src/hooks/forms/useForm.ts:17](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L17)
 
 ___
 
@@ -61,7 +61,7 @@ The initial values of the form.
 
 #### Defined in
 
-[packages/react-formz/src/hooks/forms/useForm.ts:16](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L16)
+[packages/react-formz/src/hooks/forms/useForm.ts:21](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L21)
 
 ___
 
@@ -77,7 +77,7 @@ A unique name for the form. If `saveDrafts` is enabled, a name is required.
 
 #### Defined in
 
-[packages/react-formz/src/hooks/forms/useForm.ts:11](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L11)
+[packages/react-formz/src/hooks/forms/useForm.ts:16](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L16)
 
 ___
 
@@ -118,6 +118,24 @@ the form is not in an invalid state.
 
 ___
 
+### persist
+
+• `Optional` **persist**: `boolean`
+
+If true, a forms state will not be deleted from the store when the form is unmounted.
+This is useful for forms that might span multiple pages or tabs like a wizard
+or a signup form on a mobile device.
+
+#### Overrides
+
+[UseFormOptions](react_formz_src_hooks_forms_useForm.UseFormOptions.md).[persist](react_formz_src_hooks_forms_useForm.UseFormOptions.md#persist)
+
+#### Defined in
+
+[packages/react-formz/src/types/form.ts:117](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/form.ts#L117)
+
+___
+
 ### resetOnSubmit
 
 • `Optional` **resetOnSubmit**: `boolean`
@@ -142,7 +160,7 @@ If true, the form state will be saved to localstorage as the user updates values
 
 #### Defined in
 
-[packages/react-formz/src/hooks/forms/useForm.ts:20](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L20)
+[packages/react-formz/src/hooks/forms/useForm.ts:25](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L25)
 
 ___
 

@@ -158,6 +158,12 @@ Re-exports [NumericField](react_formz_native_src_components_Field_Field_extras.m
 
 ___
 
+### PersistedForm
+
+Renames and re-exports [ReactNativePersistedForm](react_formz_native_src_components_Form_Form.md#reactnativepersistedform)
+
+___
+
 ### SchemaValidator
 
 Re-exports [SchemaValidator](../classes/react_formz_src_models_SchemaValidator.SchemaValidator.md)

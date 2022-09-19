@@ -23,6 +23,8 @@ export { default as useStableValue } from "./hooks/utils/useStableValue";
 export { default as useFormStateInitialized } from "./hooks/forms/useFormStateInitialized";
 export { default as useFormSubmission } from "./hooks/forms/useFormSubmission";
 export { default as useFormLastPersistedAt } from "./hooks/forms/useFormLastPersistedAt";
+export { default as useFieldActions } from "./hooks/fields/useFieldActions";
+export { default as useFieldValidation } from "./hooks/fields/useFieldValidation";
 
 // -------------------------------- Logger --------------------------------
 

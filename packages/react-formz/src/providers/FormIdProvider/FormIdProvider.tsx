@@ -21,13 +21,14 @@ const FormIdProvider = <Values extends FormzValues>({
   initialValues,
   saveDrafts,
   onFormRehydrated,
-  schemaValidator
+  schemaValidator,
+  persist = false
 }: React.PropsWithChildren<UseFormOptions<Values>>) => {
-  const id = useFormId(name, initialValues, undefined, saveDrafts);
+  const id = useFormId(name, initialValues, undefined, saveDrafts, persist);
 
   useFormHydration(id, saveDrafts ?? false, onFormRehydrated);
 
-  useRegisterFormSchema(id, schemaValidator);
+  useRegisterFormSchema(id, schemaValidator, persist);
 
   return <Context.Provider value={id}>{children}</Context.Provider>;
 };

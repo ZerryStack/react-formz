@@ -27,7 +27,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/react-formz/src/hooks/forms/useForm.ts:12](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L12)
+[packages/react-formz/src/hooks/forms/useForm.ts:17](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L17)
 
 ___
 
@@ -39,7 +39,7 @@ The initial values of the form.
 
 #### Defined in
 
-[packages/react-formz/src/hooks/forms/useForm.ts:16](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L16)
+[packages/react-formz/src/hooks/forms/useForm.ts:21](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L21)
 
 ___
 
@@ -51,7 +51,7 @@ A unique name for the form. If `saveDrafts` is enabled, a name is required.
 
 #### Defined in
 
-[packages/react-formz/src/hooks/forms/useForm.ts:11](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L11)
+[packages/react-formz/src/hooks/forms/useForm.ts:16](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L16)
 
 ___
 
@@ -73,7 +73,17 @@ useForm({
 
 #### Defined in
 
-[packages/react-formz/src/hooks/forms/useForm.ts:34](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L34)
+[packages/react-formz/src/hooks/forms/useForm.ts:39](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L39)
+
+___
+
+### persist
+
+• `Optional` **persist**: `boolean`
+
+#### Defined in
+
+[packages/react-formz/src/hooks/forms/useForm.ts:41](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L41)
 
 ___
 
@@ -85,7 +95,7 @@ If true, the form state will be saved to localstorage as the user updates values
 
 #### Defined in
 
-[packages/react-formz/src/hooks/forms/useForm.ts:20](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L20)
+[packages/react-formz/src/hooks/forms/useForm.ts:25](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L25)
 
 ___
 
@@ -95,4 +105,4 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/hooks/forms/useForm.ts:35](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L35)
+[packages/react-formz/src/hooks/forms/useForm.ts:40](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L40)

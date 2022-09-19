@@ -5,14 +5,15 @@ import { ErrorMessageProps } from "./ErrorMessage.types";
 
 const ErrorMessage = ({
   field,
-  onlyShowIfTouched = true,
+  onlyShowIfTouched = false,
   component: Component,
   ...textProps
 }: ErrorMessageProps) => {
   const error = useFieldErrorMessage(field);
   const touched = useFieldTouched(field);
+  const show = (onlyShowIfTouched ? touched !== false : true);
   
-  if (error && (onlyShowIfTouched ? touched !== false : true)) {
+  if (error !== undefined && show) {
     if (Component) {
       <Component nativeID={`${field}-error`} {...textProps} accessibilityLiveRegion="polite" field={field} error={error}>
         {error.message}

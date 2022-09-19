@@ -59,6 +59,7 @@ const Form = <Values extends FormzValues>(props: WebFormProps<Values>) => {
     saveDrafts,
     onFormRehydrated = () => {},
     schemaValidator,
+    persist = false,
     ...formProps
   } = props;
   const memoizedInitialValues = useStableValue(initialValues);
@@ -79,12 +80,25 @@ const Form = <Values extends FormzValues>(props: WebFormProps<Values>) => {
       saveDrafts={saveDrafts}
       onFormRehydrated={formRehydrationCallback}
       schemaValidator={schemaValidator}
+      persist={persist}
     >
       <FormInner name={name} {...formProps}>
         {children}
       </FormInner>
     </FormProvider>
   );
+};
+
+/**
+ * A form whose state will not be deleted from the store when unmounted.
+ * 
+ * This is useful for forms that may span multiple pages like wizards
+ * or signup forms on mobile devices that might span multiple navigation routes.
+ */
+ export const PersistedForm = <Values extends FormzValues>({
+  ...props
+}: React.PropsWithChildren<WebFormProps<Values>>) => {
+  return <Form {...props} persist />;
 };
 
 export default Form;

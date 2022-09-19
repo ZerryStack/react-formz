@@ -164,6 +164,12 @@ Re-exports [NumberField](react_formz_web_src_components_Field_Field_extras.md#nu
 
 ___
 
+### PersistedForm
+
+Re-exports [PersistedForm](react_formz_web_src_components_Form_Form.md#persistedform)
+
+___
+
 ### RadioField
 
 Re-exports [RadioField](react_formz_web_src_components_Field_Field_extras.md#radiofield)

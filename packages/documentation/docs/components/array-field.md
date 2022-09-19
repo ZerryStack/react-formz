@@ -36,10 +36,10 @@ function MyForm() {
     >
       <ArrayField<{ name: string }>
         name="friends"
-        render={({ values, actions }) => {
+        render={({ values, arrayHelpers }) => {
           return (
             <div>
-              <button onClick={() => actions.add({ name: "" })}>
+              <button onClick={() => arrayHelpers.add({ name: "" })}>
                 Add New User
               </button>
               {values.map((_, index) => {

@@ -3,12 +3,12 @@ import {
   FieldId,
   isValidInputValue,
   logger,
-  useStableCallback,
 } from "../../../../react-formz";
 import React from "react";
 import { NativeFieldProps } from "./Field.types";
 import useNativeField from "../../hooks/fields/useField";
 import { TextInput } from "react-native";
+import useInternalFieldValue from "../../hooks/fields/useInternalFieldValue";
 
 const FieldInner = <
   Value extends FieldValue = FieldValue,
@@ -42,22 +42,27 @@ const FieldInner = <
     label,
   });
 
-  const handleChange = useStableCallback((value: Value) => {
-    field.onChange(value)
-  });
+  const {
+    handleBlur,
+    handleChange,
+    handleFinishEditing,
+    value,
+  } = useInternalFieldValue(name, field);
 
   const inputProps = {
     label,
     name,
     required,
     type,
-    onBlur: field.onBlur,
+    onBlur: handleBlur,
     onChangeText: handleChange,
     "aria-invalid": field.error !== undefined || undefined,
     "aria-required": required ?? undefined,
     "aria-describedby": `${name}-error`,
     nativeID: name,
-    value: isValidInputValue(field.value) ? field.value : undefined,
+    value: isValidInputValue(value) ? value : undefined,
+    onEndEditing: handleFinishEditing,
+    onSubmitEditing: handleFinishEditing,
   };
 
   if (Tag) {

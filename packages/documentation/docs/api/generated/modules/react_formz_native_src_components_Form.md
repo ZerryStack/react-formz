@@ -14,6 +14,12 @@ Re-exports [NativeFormProps](../interfaces/react_formz_native_src_components_For
 
 ___
 
+### PersistedForm
+
+Renames and re-exports [ReactNativePersistedForm](react_formz_native_src_components_Form_Form.md#reactnativepersistedform)
+
+___
+
 ### default
 
 Renames and re-exports [ReactNativeForm](react_formz_native_src_components_Form_Form.md#reactnativeform)

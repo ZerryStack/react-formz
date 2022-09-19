@@ -1,2 +1,2 @@
 export { NativeFormProps } from "./Form.types";
-export { default } from "./Form";
+export { default, ReactNativePersistedForm as PersistedForm } from "./Form";

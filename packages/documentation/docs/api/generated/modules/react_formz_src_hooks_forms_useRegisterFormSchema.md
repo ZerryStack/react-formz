@@ -10,14 +10,15 @@ custom_edit_url: null
 
 ### useRegisterFormSchema
 
-▸ **useRegisterFormSchema**(`id`, `schemaValidator?`): `void`
+▸ **useRegisterFormSchema**(`id`, `schemaValidator?`, `persist?`): `void`
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `id` | `string` |
-| `schemaValidator?` | [`SchemaValidator`](../classes/react_formz_src_models_SchemaValidator.SchemaValidator.md)<`any`\> |
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `id` | `string` | `undefined` |
+| `schemaValidator?` | [`SchemaValidator`](../classes/react_formz_src_models_SchemaValidator.SchemaValidator.md)<`any`\> | `undefined` |
+| `persist` | `boolean` | `false` |
 
 #### Returns
 

@@ -8,7 +8,8 @@ import useComponentDidMount from "../utils/useComponentDidMount";
 
 function useRegisterFormSchema(
   id: FormId,
-  schemaValidator?: SchemaValidator<any>
+  schemaValidator?: SchemaValidator<any>,
+  persist: boolean = false
 ) {
   const registerSchema = useRegisterSchemaValidator();
   const unregisterSchema = useUnregisterSchemaValidator();
@@ -19,7 +20,7 @@ function useRegisterFormSchema(
     }
 
     return function formUnregisterSchemaValidator() {
-      unregisterSchema(id);
+      if (!persist) unregisterSchema(id);
     };
   });
 }

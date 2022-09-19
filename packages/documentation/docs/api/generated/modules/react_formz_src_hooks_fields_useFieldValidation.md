@@ -41,6 +41,7 @@ Custom hook that creates a validation api for an input field.
 | :------ | :------ |
 | `error` | `undefined` \| [`FormzError`](react_formz_src_types_form.md#formzerror) |
 | `validate` | () => `Promise`<`boolean`\> |
+| `validateValue` | (`value`: `Value`) => `Promise`<``null`` \| { `message`: `string` ; `type`: `string` = "required" }\> |
 
 #### Defined in
 

@@ -1,5 +1,10 @@
 import { useFormz } from "../../store";
-import { FormRehydrationCallback, FormzErrors, FormzState, FormzValues } from "../../types/form";
+import {
+  FormRehydrationCallback,
+  FormzErrors,
+  FormzState,
+  FormzValues,
+} from "../../types/form";
 import useFormId from "./useFormId";
 import SchemaValidator from "../../models/SchemaValidator";
 import useRegisterFormSchema from "./useRegisterFormSchema";
@@ -22,9 +27,9 @@ export interface UseFormOptions<Values extends FormzValues> {
    * A callback that will be called after a form has successfully been rehydrated with
    * the locally cached form state from a previous session. You can use this event
    * callback to notify users that the form has been rehydrated.
-   * 
+   *
    * Example Usage:
-   * 
+   *
    * ```tsx
    * useForm({
    *  onFormRehydrated: () => notifyUser("We've restore your form!")
@@ -33,6 +38,7 @@ export interface UseFormOptions<Values extends FormzValues> {
    */
   onFormRehydrated?: FormRehydrationCallback<Values>;
   schemaValidator?: SchemaValidator<Values>;
+  persist?: boolean;
 }
 
 export interface UseFormResult<Values extends FormzValues> {
@@ -46,19 +52,25 @@ export interface UseFormResult<Values extends FormzValues> {
 function useForm<Values extends FormzValues>(
   options: UseFormOptions<Values>
 ): UseFormResult<Values> {
-  const id = useFormId(options.name, options.initialValues, options.id, options.saveDrafts ?? false);
+  const id = useFormId(
+    options.name,
+    options.initialValues,
+    options.id,
+    options.saveDrafts ?? false,
+    options.persist ?? false
+  );
   const formState = useFormz<FormzState<Values> | undefined>(
     (state) => state.forms[id]
   );
 
-  useRegisterFormSchema(id, options.schemaValidator)
+  useRegisterFormSchema(id, options.schemaValidator, options.persist ?? false);
 
   return {
     id,
     initialValues: options.initialValues,
     values: formState?.values ?? options.initialValues,
     initialized: formState?.initialized ?? false,
-    errors: formState?.errors ?? {}
+    errors: formState?.errors ?? {},
   };
 }
 

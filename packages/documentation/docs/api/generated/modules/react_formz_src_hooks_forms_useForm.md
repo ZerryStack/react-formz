@@ -35,4 +35,4 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/react-formz/src/hooks/forms/useForm.ts:46](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L46)
+[packages/react-formz/src/hooks/forms/useForm.ts:52](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/forms/useForm.ts#L52)

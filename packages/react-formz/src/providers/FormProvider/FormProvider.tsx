@@ -16,6 +16,7 @@ const FormProvider = <Values extends FormzValues>({
   saveDrafts,
   onFormRehydrated,
   schemaValidator,
+  persist = false
 }: React.PropsWithChildren<UseFormOptions<Values>>) => {
   const options = useStableValue({
     name,
@@ -32,6 +33,7 @@ const FormProvider = <Values extends FormzValues>({
       saveDrafts={saveDrafts}
       onFormRehydrated={onFormRehydrated}
       schemaValidator={schemaValidator}
+      persist={persist}
     >
       <Context.Provider value={options}>{children}</Context.Provider>
     </FormIdProvider>

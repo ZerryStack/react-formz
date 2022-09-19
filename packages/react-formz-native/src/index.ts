@@ -28,7 +28,7 @@ export {
   EmailField,
 } from "./components/Field";
 export type { NativeFormProps as FormProps } from "./components/Form";
-export { default as Form } from "./components/Form";
+export { default as Form, PersistedForm } from "./components/Form";
 export { default as FormLastPersistedAt } from "./components/FormLastPersistedAt";
 
 // -------------------------------- Hooks --------------------------------

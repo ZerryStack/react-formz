@@ -18,7 +18,10 @@ if (parameters) {
 }
 
 const getStories = () => {
-  return [require("../stories/Form.stories.tsx")];
+  return [
+    require("../stories/ArrayField.stories.tsx"),
+    require("../stories/Form.stories.tsx"),
+  ];
 };
 
 configure(getStories, module, false);

@@ -2,7 +2,7 @@ import { useFormz, actions, useFormSchemaValidator } from "../../store";
 import makeSelectFieldError from "../../store/selectors/makeSelectFieldError";
 import { FieldId, FieldValidator, FieldValue } from "../../types/field";
 import { FormzError } from "../../types/form";
-import { isEmpty, isNotEmpty as isDefined, isNumber, isString } from "../../utils/is";
+import { isArray, isEmpty, isNotEmpty as isDefined, isNumber, isString } from "../../utils/is";
 import doesNotMatchPattern from "../../validations/doesNotMatchPattern";
 import isAboveMax from "../../validations/isAboveMax";
 import isBelowMin from "../../validations/isBelowMin";
@@ -38,19 +38,7 @@ function useFieldValidation<
 
   const error = useFormz(selectFieldError);
 
-  const getErrorMessage = async (): Promise<FormzError | null> => {
-    const value = actions.getFieldStoreValue<Value>(formId, name);
-
-    if (isDefined(schemaValidator)) {
-      const { errors } = await schemaValidator.validate(actions.getFormState(formId).values);
-
-      if (errors && errors[name]) {
-        const error = errors[name];
-
-        if (error) return error;
-      }
-    }
-
+  const validateValue = useStableCallback(async (value: Value) => {
     if (options.required && isEmpty(value)) {
       return {
         type: "required",
@@ -104,9 +92,31 @@ function useFieldValidation<
     }
 
     return null;
+  });
+
+  const getErrorMessage = async (): Promise<FormzError | null> => {
+    const value = actions.getFieldStoreValue<Value>(formId, name);
+
+    if (isDefined(schemaValidator)) {
+      const { errors } = await schemaValidator.validate(actions.getFormState(formId).values);
+
+      if (errors && errors[name]) {
+        const error = errors[name];
+
+        if (error) return error;
+      }
+    }
+
+    return validateValue(value);
   };
 
   const validate = useStableCallback(async () => {
+    const value = actions.getFieldStoreValue<Value>(formId, name);
+
+    if (isArray(value) && !isDefined(options.validate)) {
+      return true;
+    }
+
     const message = await getErrorMessage();
 
     if (message) {
@@ -118,7 +128,7 @@ function useFieldValidation<
     }
   });
 
-  return { validate, error };
+  return { validate, error, validateValue };
 }
 
 export default useFieldValidation;

@@ -47,3 +47,34 @@ function UserProfile() {
 #### Defined in
 
 [packages/react-formz-web/src/components/Form/Form.tsx:54](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz-web/src/components/Form/Form.tsx#L54)
+
+___
+
+### PersistedForm
+
+▸ **PersistedForm**<`Values`\>(`__namedParameters`): `Element`
+
+A form whose state will not be deleted from the store when unmounted.
+
+This is useful for forms that may span multiple pages like wizards
+or signup forms on mobile devices that might span multiple navigation routes.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `Values` | extends [`FormzValues`](react_formz_src_types_form.md#formzvalues) |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `__namedParameters` | `PropsWithChildren`<[`WebFormProps`](../interfaces/react_formz_web_src_components_Form_Form_types.WebFormProps.md)<`Values`\>\> |
+
+#### Returns
+
+`Element`
+
+#### Defined in
+
+[packages/react-formz-web/src/components/Form/Form.tsx:98](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz-web/src/components/Form/Form.tsx#L98)

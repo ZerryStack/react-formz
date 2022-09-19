@@ -97,13 +97,16 @@ ___
 The `onBlur` callback should be called when the field loses focuses
 i.e. the `onBlur` event is called.
 
+If using a `Field` within an `ArrayField` this calback must be called to synchornize
+the values.
+
 ##### Returns
 
 `void`
 
 #### Defined in
 
-[packages/react-formz-native/src/components/Field/Field.types.ts:43](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz-native/src/components/Field/Field.types.ts#L43)
+[packages/react-formz-native/src/components/Field/Field.types.ts:46](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz-native/src/components/Field/Field.types.ts#L46)
 
 ___
 
@@ -131,6 +134,50 @@ changes. This will update the form state.
 #### Defined in
 
 [packages/react-formz-native/src/components/Field/Field.types.ts:38](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz-native/src/components/Field/Field.types.ts#L38)
+
+___
+
+### onEndEditing
+
+• **onEndEditing**: () => `void`
+
+#### Type declaration
+
+▸ (): `void`
+
+The `onEndEditing` should be called when the text editing is ended by the user.
+If using a `Field` within an `ArrayField` this calback must be called to synchornize
+the values.
+
+##### Returns
+
+`void`
+
+#### Defined in
+
+[packages/react-formz-native/src/components/Field/Field.types.ts:52](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz-native/src/components/Field/Field.types.ts#L52)
+
+___
+
+### onSubmitEditing
+
+• **onSubmitEditing**: () => `void`
+
+#### Type declaration
+
+▸ (): `void`
+
+The `onSubmitEditing` should be called when the text editing is ended by the user.
+If using a `Field` within an `ArrayField` this calback must be called to synchornize
+the values.
+
+##### Returns
+
+`void`
+
+#### Defined in
+
+[packages/react-formz-native/src/components/Field/Field.types.ts:58](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz-native/src/components/Field/Field.types.ts#L58)
 
 ___
 
@@ -162,4 +209,4 @@ The current value of the input.
 
 #### Defined in
 
-[packages/react-formz-native/src/components/Field/Field.types.ts:47](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz-native/src/components/Field/Field.types.ts#L47)
+[packages/react-formz-native/src/components/Field/Field.types.ts:62](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz-native/src/components/Field/Field.types.ts#L62)

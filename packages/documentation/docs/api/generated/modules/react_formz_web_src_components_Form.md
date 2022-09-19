@@ -14,6 +14,12 @@ Renames and re-exports [WebFormProps](../interfaces/react_formz_web_src_componen
 
 ___
 
+### PersistedForm
+
+Re-exports [PersistedForm](react_formz_web_src_components_Form_Form.md#persistedform)
+
+___
+
 ### default
 
 Renames and re-exports [Form](react_formz_web_src_components_Form_Form.md#form)

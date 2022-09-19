@@ -35,7 +35,6 @@
     "zustand": "^4.1.1"
   },
   "peerDependencies": {
-    "react": "*",
     "immer": ">=7.0.0"
   },
   "devDependencies": {

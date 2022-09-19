@@ -12,14 +12,7 @@ custom_edit_url: null
 
 ▸ **useIsomorphicLayoutEffect**(`effect`, `deps?`): `void`
 
-The signature is identical to `useEffect`, but it fires synchronously after all DOM mutations.
-Use this to read layout from the DOM and synchronously re-render. Updates scheduled inside
-`useLayoutEffect` will be flushed synchronously, before the browser has a chance to paint.
-
-Prefer the standard `useEffect` when possible to avoid blocking visual updates.
-
-If you’re migrating code from a class component, `useLayoutEffect` fires in the same phase as
-`componentDidMount` and `componentDidUpdate`.
+Accepts a function that contains imperative, possibly effectful code.
 
 **`Version`**
 
@@ -27,14 +20,14 @@ If you’re migrating code from a class component, `useLayoutEffect` fires in th
 
 **`See`**
 
-https://reactjs.org/docs/hooks-reference.html#uselayouteffect
+https://reactjs.org/docs/hooks-reference.html#useeffect
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `effect` | `EffectCallback` |
-| `deps?` | `DependencyList` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `effect` | `EffectCallback` | Imperative function that can return a cleanup function |
+| `deps?` | `DependencyList` | If present, effect will only activate if the values in the list change. |
 
 #### Returns
 
@@ -42,4 +35,4 @@ https://reactjs.org/docs/hooks-reference.html#uselayouteffect
 
 #### Defined in
 
-node_modules/@types/react/index.d.ts:1049
+node_modules/@types/react/index.d.ts:1059

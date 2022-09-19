@@ -10,7 +10,7 @@ custom_edit_url: null
 
 ### FormProps
 
-Re-exports [FormProps](../interfaces/react_formz_web_src_components_Form_Form_types.FormProps.md)
+Renames and re-exports [WebFormProps](../interfaces/react_formz_web_src_components_Form_Form_types.WebFormProps.md)
 
 ___
 

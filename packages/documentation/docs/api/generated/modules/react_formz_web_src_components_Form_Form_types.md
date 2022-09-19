@@ -8,4 +8,4 @@ custom_edit_url: null
 ## Interfaces
 
 - [FormChildrenProps](../interfaces/react_formz_web_src_components_Form_Form_types.FormChildrenProps.md)
-- [FormProps](../interfaces/react_formz_web_src_components_Form_Form_types.FormProps.md)
+- [WebFormProps](../interfaces/react_formz_web_src_components_Form_Form_types.WebFormProps.md)

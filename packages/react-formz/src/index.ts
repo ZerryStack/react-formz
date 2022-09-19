@@ -73,6 +73,7 @@ export {
   FormzValues,
   FormRehydrationCallback,
   FormSubmitCallback,
+  FormProps
 } from "./types/form";
 export { LiteralUnion } from "./types/utils";
 

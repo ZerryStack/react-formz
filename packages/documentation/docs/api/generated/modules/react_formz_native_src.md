@@ -56,6 +56,12 @@ Re-exports [NumericField](react_formz_native_src_components_Field_Field_extras.m
 
 ___
 
+### SubmitButton
+
+Re-exports [SubmitButton](react_formz_native_src_components_SubmitButton_SubmitButton.md#submitbutton)
+
+___
+
 ### TextField
 
 Re-exports [TextField](react_formz_native_src_components_Field_Field_extras.md#textfield)

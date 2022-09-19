@@ -80,6 +80,12 @@ Re-exports [FormIdProvider](react_formz_src_providers_FormIdProvider_FormIdProvi
 
 ___
 
+### FormProps
+
+Re-exports [FormProps](../interfaces/react_formz_src_types_form.FormProps.md)
+
+___
+
 ### FormProvider
 
 Re-exports [FormProvider](react_formz_src_providers_FormProvider_FormProvider.md#formprovider)

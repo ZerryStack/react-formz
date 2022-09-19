@@ -1,5 +1,5 @@
 import React from "react";
-import { FormProps } from "./Form.types";
+import { WebFormProps } from "./Form.types";
 import {
   FormProvider,
   FormzValues,
@@ -18,7 +18,7 @@ const FormInner = <Values extends FormzValues>({
   component: Component = "form",
   resetOnSubmit = false,
   ...formProps
-}: Omit<FormProps<Values>, "initialValues" | "schemaValidator">) => {
+}: Omit<WebFormProps<Values>, "initialValues" | "schemaValidator">) => {
   const id = useFormIdContext();
   const initialized = useFormStateInitialized(id);
   const handleSubmit = useFormSubmission(id, onSubmit, resetOnSubmit);
@@ -51,7 +51,7 @@ const FormInner = <Values extends FormzValues>({
  * @param props {@link FormProps} - The react props for the form component.
  * @typeParam Values {@link FormzValues} - The shape of the forms state i.e. the form data.
  */
-const Form = <Values extends FormzValues>(props: FormProps<Values>) => {
+const Form = <Values extends FormzValues>(props: WebFormProps<Values>) => {
   const {
     children,
     name,

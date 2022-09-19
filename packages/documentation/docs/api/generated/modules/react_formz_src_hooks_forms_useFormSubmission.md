@@ -10,7 +10,7 @@ custom_edit_url: null
 
 ### useFormSubmission
 
-▸ **useFormSubmission**<`Values`\>(`id`, `onSubmit?`, `resetOnSubmit?`): (`e`: `FormEvent`<`HTMLFormElement`\>) => `Promise`<`void`\>
+▸ **useFormSubmission**<`Values`\>(`id`, `onSubmit?`, `resetOnSubmit?`): (`e?`: `FormEvent`<`HTMLFormElement`\>) => `Promise`<`void`\>
 
 Custom hook that returns the submit callback for a form. The callback
 will handle running validations, error catching and state management.
@@ -33,13 +33,13 @@ will handle running validations, error catching and state management.
 
 `fn`
 
-▸ (`e`): `Promise`<`void`\>
+▸ (`e?`): `Promise`<`void`\>
 
 ##### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `e` | `FormEvent`<`HTMLFormElement`\> |
+| `e?` | `FormEvent`<`HTMLFormElement`\> |
 
 ##### Returns
 

@@ -36,7 +36,7 @@ input type will be `decimal-pad` but can be overriden.
 
 #### Defined in
 
-packages/react-formz-native/src/components/Field/Field.extras.tsx:18
+[packages/react-formz-native/src/components/Field/Field.extras.tsx:18](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz-native/src/components/Field/Field.extras.tsx#L18)
 
 ___
 
@@ -69,7 +69,7 @@ input type will be `email-address` but can be overriden.
 
 #### Defined in
 
-packages/react-formz-native/src/components/Field/Field.extras.tsx:18
+[packages/react-formz-native/src/components/Field/Field.extras.tsx:18](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz-native/src/components/Field/Field.extras.tsx#L18)
 
 ___
 
@@ -102,7 +102,7 @@ input type will be `numeric` but can be overriden.
 
 #### Defined in
 
-packages/react-formz-native/src/components/Field/Field.extras.tsx:18
+[packages/react-formz-native/src/components/Field/Field.extras.tsx:18](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz-native/src/components/Field/Field.extras.tsx#L18)
 
 ___
 
@@ -135,4 +135,4 @@ input type will be `default` but can be overriden.
 
 #### Defined in
 
-packages/react-formz-native/src/components/Field/Field.extras.tsx:18
+[packages/react-formz-native/src/components/Field/Field.extras.tsx:18](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz-native/src/components/Field/Field.extras.tsx#L18)

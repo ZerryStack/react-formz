@@ -21,8 +21,8 @@ function useFormSubmission<Values extends FormzValues>(
   const validateFormAgainstSchema = useValidateFormSchema(id);
 
   const handleSubmit = useStableCallback(
-    async (e: React.FormEvent<HTMLFormElement>) => {
-      e.preventDefault();
+    async (e?: React.FormEvent<HTMLFormElement>) => {
+      e?.preventDefault();
 
       if (onSubmit) {
         actions.setFormIsSubmitting(id, true);

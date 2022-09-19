@@ -17,7 +17,7 @@ custom_edit_url: null
 
 - **`UseFormOptions`**
 
-  ↳ [`FormProps`](react_formz_web_src_components_Form_Form_types.FormProps.md)
+  ↳ [`FormProps`](react_formz_src_types_form.FormProps.md)
 
 ## Properties
 

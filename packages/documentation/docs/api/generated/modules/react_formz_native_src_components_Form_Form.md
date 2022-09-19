@@ -22,7 +22,7 @@ custom_edit_url: null
 
 | Name | Type |
 | :------ | :------ |
-| `__namedParameters` | `PropsWithChildren`<[`FormProps`](../interfaces/react_formz_native_src_components_Form_Form_types.FormProps.md)<`Values`\>\> |
+| `__namedParameters` | `PropsWithChildren`<[`NativeFormProps`](../interfaces/react_formz_native_src_components_Form_Form_types.NativeFormProps.md)<`Values`\>\> |
 
 #### Returns
 
@@ -30,4 +30,4 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/react-formz-native/src/components/Form/Form.tsx:24](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz-native/src/components/Form/Form.tsx#L24)
+[packages/react-formz-native/src/components/Form/Form.tsx:25](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz-native/src/components/Form/Form.tsx#L25)

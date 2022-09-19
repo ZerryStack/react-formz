@@ -38,7 +38,7 @@ function UserProfile() {
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `props` | [`FormProps`](../interfaces/react_formz_web_src_components_Form_Form_types.FormProps.md)<`Values`\> | FormProps - The react props for the form component. |
+| `props` | [`WebFormProps`](../interfaces/react_formz_web_src_components_Form_Form_types.WebFormProps.md)<`Values`\> | FormProps - The react props for the form component. |
 
 #### Returns
 

@@ -7,4 +7,4 @@ custom_edit_url: null
 
 ## Interfaces
 
-- [FormProps](../interfaces/react_formz_native_src_components_Form_Form_types.FormProps.md)
+- [NativeFormProps](../interfaces/react_formz_native_src_components_Form_Form_types.NativeFormProps.md)

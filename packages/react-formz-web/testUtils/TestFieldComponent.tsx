@@ -1,6 +1,5 @@
-import { FieldComponentProps } from "../../react-formz/src";
 import React, { useRef } from "react";
-import { ErrorMessage } from "../src";
+import { ErrorMessage, FieldComponentProps } from "../src";
 
 /**
  * A common ui component used as the component in `Field`'s when testing.

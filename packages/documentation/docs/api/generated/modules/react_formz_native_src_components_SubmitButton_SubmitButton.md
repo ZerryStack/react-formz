@@ -24,4 +24,4 @@ custom_edit_url: null
 
 #### Defined in
 
-packages/react-formz-native/src/components/SubmitButton/SubmitButton.tsx:7
+[packages/react-formz-native/src/components/SubmitButton/SubmitButton.tsx:7](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz-native/src/components/SubmitButton/SubmitButton.tsx#L7)

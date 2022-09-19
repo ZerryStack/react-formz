@@ -15,10 +15,20 @@ custom_edit_url: null
 
 ## Properties
 
+### arrayHelpers
+
+• **arrayHelpers**: [`ArrayHelpers`](react_formz_src_hooks_fields_useFieldArrayHelpers.ArrayHelpers.md)<`Value`\>
+
+#### Defined in
+
+[packages/react-formz-web/src/components/ArrayField/ArrayField.types.ts:6](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz-web/src/components/ArrayField/ArrayField.types.ts#L6)
+
+___
+
 ### values
 
 • **values**: `Value`[]
 
 #### Defined in
 
-[packages/react-formz-web/src/components/ArrayField/ArrayField.types.ts:10](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz-web/src/components/ArrayField/ArrayField.types.ts#L10)
+[packages/react-formz-web/src/components/ArrayField/ArrayField.types.ts:5](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz-web/src/components/ArrayField/ArrayField.types.ts#L5)

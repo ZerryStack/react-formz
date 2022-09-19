@@ -23,6 +23,8 @@ custom_edit_url: null
 
   ↳ [`DependentFieldProps`](react_formz_web_src_components_DependentField_DependentField_types.DependentFieldProps.md)
 
+  ↳ [`DependentFieldProps`](react_formz_native_src_components_DependentField_DependentField_types.DependentFieldProps.md)
+
 ## Properties
 
 ### dependencies

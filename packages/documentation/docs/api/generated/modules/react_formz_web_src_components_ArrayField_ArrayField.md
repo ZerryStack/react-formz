@@ -10,7 +10,7 @@ custom_edit_url: null
 
 ### ArrayField
 
-▸ **ArrayField**<`Value`, `Key`, `Props`\>(`props`): `Element`
+▸ **ArrayField**<`Value`, `Key`\>(`props`): `Element`
 
 #### Type parameters
 
@@ -18,13 +18,12 @@ custom_edit_url: null
 | :------ | :------ |
 | `Value` | `Value` |
 | `Key` | extends `string` = `string` |
-| `Props` | extends `Record`<`string`, `any`\> = `Record`<`string`, `any`\> |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `props` | [`ArrayFieldProps`](react_formz_web_src_components_ArrayField_ArrayField_types.md#arrayfieldprops)<`Value`, `Key`, `Props`\> |
+| `props` | [`ArrayFieldProps`](../interfaces/react_formz_web_src_components_ArrayField_ArrayField_types.ArrayFieldProps.md)<`Value`, `Key`\> |
 
 #### Returns
 

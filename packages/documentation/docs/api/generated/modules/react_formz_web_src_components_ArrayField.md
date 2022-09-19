@@ -16,7 +16,7 @@ ___
 
 ### ArrayFieldProps
 
-Re-exports [ArrayFieldProps](react_formz_web_src_components_ArrayField_ArrayField_types.md#arrayfieldprops)
+Re-exports [ArrayFieldProps](../interfaces/react_formz_web_src_components_ArrayField_ArrayField_types.ArrayFieldProps.md)
 
 ___
 

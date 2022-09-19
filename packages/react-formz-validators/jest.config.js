@@ -9,7 +9,7 @@ const config = {
   testMatch: ["<rootDir>/**/__tests__/**/*.[jt]s?(x)"],
   verbose: true,
   transform: {
-    "\\.[jt]sx?$": path.resolve(workspaceNodeModules, "babel-jest"),
+    "\\.[jt]sx?$": "babel-jest",
   },
   moduleDirectories: [
     workspaceNodeModules,

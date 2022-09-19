@@ -7,6 +7,6 @@
     "declarationMap": true,
     "baseUrl": "./src",
   },
-  "include": ["./index.ts", "./src/index.ts", "../react-formz/src/index.ts"],
+  "include": ["./index.ts", "./src/index.ts", "../react-formz/index.ts", "../react-formz/src/index.ts"],
   "exclude": ["./src/**/*.test.ts", "./src/**/*.test.tsx"]
 }

@@ -59,6 +59,11 @@ const { library, globals, external, formats, ...lib } = currentConfig;
 
 export default defineConfig({
   mode: "production",
+  resolve: {
+    alias: {
+      "@zerry/react-formz": path.resolve(__dirname, "../", "react-formz", "src", "index.ts")
+    }
+  },
   build: {
     outDir: path.resolve(__dirname, library, "dist"),
     lib: {

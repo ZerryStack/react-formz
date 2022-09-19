@@ -79,6 +79,9 @@ export { LiteralUnion } from "./types/utils";
 
 // -------------------------------- Utils --------------------------------
 
+export { default as get } from "./utils/get";
+export { default as set } from "./utils/set";
+
 export {
   isArray,
   isBoolean,

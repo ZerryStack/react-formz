@@ -188,6 +188,12 @@ Re-exports [formzStore](react_formz_src_store_store.md#formzstore)
 
 ___
 
+### get
+
+Re-exports [get](react_formz_src_utils_get.md#get)
+
+___
+
 ### isArray
 
 Re-exports [isArray](react_formz_src_utils_is.md#isarray)
@@ -227,6 +233,12 @@ ___
 ### logger
 
 Re-exports [logger](react_formz_src_logger_logger.md#logger)
+
+___
+
+### set
+
+Re-exports [set](react_formz_src_utils_set.md#set)
 
 ___
 

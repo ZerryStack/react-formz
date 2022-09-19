@@ -1,0 +1,12 @@
+{
+    "extends": "../tsconfig.json",
+    "compilerOptions": {
+        "outDir": "./dist",
+        "declaration": true,
+        "emitDeclarationOnly": true,
+        "moduleResolution": "node"
+    },
+    "include": [
+        "./yup.ts"
+    ]
+}

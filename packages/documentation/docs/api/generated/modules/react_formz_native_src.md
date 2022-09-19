@@ -158,6 +158,12 @@ Re-exports [NumericField](react_formz_native_src_components_Field_Field_extras.m
 
 ___
 
+### SchemaValidator
+
+Re-exports [SchemaValidator](../classes/react_formz_src_models_SchemaValidator.SchemaValidator.md)
+
+___
+
 ### SubmitButton
 
 Re-exports [SubmitButton](react_formz_native_src_components_SubmitButton_SubmitButton.md#submitbutton)
@@ -173,6 +179,12 @@ ___
 ### UseFieldOptions
 
 Renames and re-exports [UseNativeFieldOptions](../interfaces/react_formz_native_src_hooks_fields_useField.UseNativeFieldOptions.md)
+
+___
+
+### get
+
+Re-exports [get](react_formz_src_utils_get.md#get)
 
 ___
 
@@ -203,6 +215,12 @@ ___
 ### isNumber
 
 Re-exports [isNumber](react_formz_src_utils_is.md#isnumber)
+
+___
+
+### set
+
+Re-exports [set](react_formz_src_utils_set.md#set)
 
 ___
 

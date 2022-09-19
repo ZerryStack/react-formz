@@ -36,6 +36,10 @@ export { default as FormLastPersistedAt } from "./components/FormLastPersistedAt
 export type { UseNativeFieldOptions as UseFieldOptions } from "./hooks/fields/useField";
 export { default as useField } from "./hooks/fields/useField";
 
+// -------------------------------- Models --------------------------------
+
+export { SchemaValidator } from "../../react-formz";
+
 // -------------------------------- Types --------------------------------
 
 export type {
@@ -54,4 +58,6 @@ export {
   isFunction,
   isNull,
   isNumber,
+  set,
+  get
 } from "../../react-formz/src";

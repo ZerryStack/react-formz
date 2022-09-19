@@ -10,7 +10,7 @@ custom_edit_url: null
 
 ### useErrorMessage
 
-▸ **useErrorMessage**(`field`): `undefined` \| [`FormzError`](react_formz_src_types_form.md#formzerror)
+▸ **useErrorMessage**(`field`): [`FormzError`](react_formz_src_types_form.md#formzerror) \| `undefined`
 
 Returns the error object for a form field.
 
@@ -22,8 +22,8 @@ Returns the error object for a form field.
 
 #### Returns
 
-`undefined` \| [`FormzError`](react_formz_src_types_form.md#formzerror)
+[`FormzError`](react_formz_src_types_form.md#formzerror) \| `undefined`
 
 #### Defined in
 
-[packages/react-formz/src/hooks/fields/useErrorMessage.ts:10](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/fields/useErrorMessage.ts#L10)
+[packages/react-formz/src/hooks/fields/useErrorMessage.ts:11](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/hooks/fields/useErrorMessage.ts#L11)

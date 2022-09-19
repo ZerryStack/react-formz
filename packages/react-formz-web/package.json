@@ -1,6 +1,6 @@
 {
   "name": "@zerry/react-formz",
-  "version": "0.3.0-beta",
+  "version": "0.3.5-beta",
   "files": [
     "dist"
   ],
@@ -30,11 +30,13 @@
     "build:src": "vite build",
     "build:types": "tsc -P tsconfig.build.json",
     "build:documentation": "yarn workspace @zerry/react-formz-documentation build",
-    "prepublishOnly": "yarn test && yarn build",
+    "prepublishOnly": "yarn test && yarn core:test && yarn build",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:generate-output": "jest --json --outputFile=.jest-test-results.json",
-    "test:coverage": "jest --coverage=true"
+    "test:coverage": "jest --coverage=true",
+    "core:test": "yarn workspace @zerry/react-formz-core test",
+    "native:test": "yarn workspace @zerry/react-formz-native test"
   },
   "dependencies": {
     "react-uuid": "^1.0.3",

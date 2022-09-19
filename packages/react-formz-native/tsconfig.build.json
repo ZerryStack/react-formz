@@ -1,11 +1,17 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "target": "ESNext",
+    "target": "ES2015",
+    "module": "CommonJS",
     "outDir": "./dist",
     "declaration": true,
     "declarationMap": true,
     "baseUrl": "./src",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "jsx": "react",
+    "experimentalDecorators": true,
+    "moduleResolution": "node"
   },
   "include": ["./index.ts", "./src/index.ts", "../react-formz/index.ts", "../react-formz/src/index.ts"],
   "exclude": ["./src/**/*.test.ts", "./src/**/*.test.tsx"]

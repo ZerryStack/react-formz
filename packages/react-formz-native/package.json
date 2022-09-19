@@ -1,6 +1,6 @@
 {
   "name": "@zerry/react-formz-native",
-  "version": "0.0.5-beta",
+  "version": "0.0.6-beta",
   "repository": {
     "type": "git",
     "url": "https://github.com/ZerryStack/react-formz.git"
@@ -19,14 +19,15 @@
     "core:test": "yarn workspace @zerry/react-formz-core test",
     "web:test": "yarn workspace @zerry/react-formz test",
     "prepublishOnly": "yarn core:test && yarn web:test && yarn build",
-    "build": "rm -rf lib && tsc -p tsconfig.build.json"
+    "build": "rm -rf dist && tsc -p tsconfig.build.json"
   },
   "dependencies": {
     "react-uuid": "^1.0.3",
     "zustand": "^4.1.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.19.0",
+    "@babel/cli": "^7.18.10",
+    "@babel/core": "^7.19.1",
     "@babel/preset-env": "^7.19.0",
     "@types/jest": "^29.0.0",
     "babel-jest": "^29.0.2",

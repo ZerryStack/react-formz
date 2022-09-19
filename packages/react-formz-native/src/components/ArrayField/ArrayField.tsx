@@ -1,6 +1,6 @@
 import { FieldId, useFieldArrayHelpers } from "../../../../react-formz";
 import React from "react";
-import useWebField from "../../hooks/fields/useField";
+import useNativeField from "../../hooks/fields/useField";
 import { ArrayFieldProps } from "./ArrayField.types";
 
 const ArrayField = <
@@ -11,7 +11,7 @@ const ArrayField = <
 ) => {
   const { render: Component, name, validate, ...restProps } = props;
     
-  const field = useWebField<Key, Value[]>(name, {});
+  const field = useNativeField<Key, Value[]>(name, {});
 
   const arrayHelpers = useFieldArrayHelpers<Value>(field.formId, name, validate);
   

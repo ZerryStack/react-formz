@@ -1,11 +1,18 @@
 {
   "name": "@zerry/react-formz-native",
   "version": "0.0.1-beta",
-  "dependencies": {
-    "@zerry/react-formz": "workspace:^"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/ZerryStack/react-formz.git"
+  },
+  "scripts": {
+    "build": "rm -rf lib && tsc -p tsconfig.build.json"
+  },
+  "dependencies": {
+    "react-uuid": "^1.0.3",
+    "zustand": "^4.1.1"
+  },
+  "peerDependencies": {
+    "immer": ">=7.0.0"
   }
 }

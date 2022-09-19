@@ -9229,6 +9229,7 @@ __metadata:
     zustand: ^4.1.1
   peerDependencies:
     immer: ">=7.0.0"
+    react-native: "*"
   languageName: unknown
   linkType: soft
 

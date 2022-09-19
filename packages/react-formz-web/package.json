@@ -14,7 +14,13 @@
     }
   },
   "source": "./src/index.ts",
-  "keywords": ["react", "forms", "javascript", "typescript", "form-builder"],
+  "keywords": [
+    "react",
+    "forms",
+    "javascript",
+    "typescript",
+    "form-builder"
+  ],
   "scripts": {
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",

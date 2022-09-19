@@ -1,8 +1,7 @@
 import React from "react";
-import { Form, Field, ErrorMessage } from "@zerry/react-formz-native";
+import { Form, TextField, ErrorMessage } from "@zerry/react-formz-native";
 import {
   TextInput,
-  View,
   StyleSheet,
   KeyboardAvoidingView,
 } from "react-native";
@@ -45,7 +44,7 @@ function App() {
             </KeyboardAvoidingView>
           )}
         >
-          <Field<string>
+          <TextField
             name="firstName"
             required
             type="default"
@@ -61,7 +60,7 @@ function App() {
               </>
             )}
           />
-          <Field<string>
+          <TextField
             name="email"
             type="email-address"
             label="Email"

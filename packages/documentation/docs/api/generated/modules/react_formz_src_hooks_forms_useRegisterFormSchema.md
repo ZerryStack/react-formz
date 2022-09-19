@@ -17,7 +17,7 @@ custom_edit_url: null
 | Name | Type |
 | :------ | :------ |
 | `id` | `string` |
-| `schemaValidator?` | `SchemaValidator`<`any`\> |
+| `schemaValidator?` | [`SchemaValidator`](../classes/react_formz_src_models_SchemaValidator.SchemaValidator.md)<`any`\> |
 
 #### Returns
 

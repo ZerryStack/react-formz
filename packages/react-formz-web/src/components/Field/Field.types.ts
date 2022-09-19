@@ -69,6 +69,9 @@ export interface WebFieldProps<
   Key extends string = string,
   Ref = HTMLInputElement
 > extends Omit<FieldProps<Value, Key, Ref>, "type"> {
+  /**
+   * The type of input
+   */
   type?: LiteralUnion<React.HTMLInputTypeAttribute>;
   /**
    * The component to render the ui of the field.

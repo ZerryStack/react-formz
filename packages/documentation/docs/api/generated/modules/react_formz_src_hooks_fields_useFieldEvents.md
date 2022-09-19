@@ -8,13 +8,13 @@ custom_edit_url: null
 
 ## Interfaces
 
-- [FieldEevents](../interfaces/react_formz_src_hooks_fields_useFieldEvents.FieldEevents.md)
+- [FieldEvents](../interfaces/react_formz_src_hooks_fields_useFieldEvents.FieldEvents.md)
 
 ## Functions
 
 ### useFieldEvents
 
-▸ **useFieldEvents**<`Value`\>(`formId`, `fieldName`, `validate`): [`FieldEevents`](../interfaces/react_formz_src_hooks_fields_useFieldEvents.FieldEevents.md)<`Value`\>
+▸ **useFieldEvents**<`Value`\>(`formId`, `fieldName`, `validate`): [`FieldEvents`](../interfaces/react_formz_src_hooks_fields_useFieldEvents.FieldEvents.md)<`Value`\>
 
 Custom react hook that returns event handlers for a field.
 
@@ -34,7 +34,7 @@ Custom react hook that returns event handlers for a field.
 
 #### Returns
 
-[`FieldEevents`](../interfaces/react_formz_src_hooks_fields_useFieldEvents.FieldEevents.md)<`Value`\>
+[`FieldEvents`](../interfaces/react_formz_src_hooks_fields_useFieldEvents.FieldEvents.md)<`Value`\>
 
 #### Defined in
 

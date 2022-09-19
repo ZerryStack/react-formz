@@ -1,5 +1,6 @@
 import { FormzError } from "../../../../react-formz";
 import React from "react";
+import { TextProps } from "react-native";
 
 export interface ErrorMessageBaseProps {
     field: string;
@@ -13,6 +14,6 @@ export interface ErrorMessageComponentProps extends ErrorMessageBaseProps {
     children?: React.ReactNode;
 }
 
-export interface ErrorMessageProps extends ErrorMessageBaseProps {
+export interface ErrorMessageProps extends ErrorMessageBaseProps, TextProps {
     component?: React.ComponentType<ErrorMessageComponentProps>
 }

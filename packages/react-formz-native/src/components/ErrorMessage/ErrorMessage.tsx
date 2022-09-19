@@ -7,20 +7,20 @@ const ErrorMessage = ({
   field,
   onlyShowIfTouched = true,
   component: Component,
-  ...spanProps
+  ...textProps
 }: ErrorMessageProps) => {
   const error = useFieldErrorMessage(field);
   const touched = useFieldTouched(field);
   
   if (error && (onlyShowIfTouched ? touched !== false : true)) {
     if (Component) {
-      <Component nativeID={`${field}-error`} {...spanProps} accessibilityLiveRegion="polite" field={field} error={error}>
+      <Component nativeID={`${field}-error`} {...textProps} accessibilityLiveRegion="polite" field={field} error={error}>
         {error.message}
       </Component>;
     }
 
     return (
-      <Text accessibilityLiveRegion="polite" nativeID={`${field}-error`} {...spanProps}>
+      <Text accessibilityLiveRegion="polite" nativeID={`${field}-error`} {...textProps}>
         {error.message}
       </Text>
     );

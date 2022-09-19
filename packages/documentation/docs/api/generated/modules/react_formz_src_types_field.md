@@ -8,9 +8,7 @@ custom_edit_url: null
 
 ## Interfaces
 
-- [BaseFieldComponentProps](../interfaces/react_formz_src_types_field.BaseFieldComponentProps.md)
-- [BaseFieldProps](../interfaces/react_formz_src_types_field.BaseFieldProps.md)
-- [FieldInputProps](../interfaces/react_formz_src_types_field.FieldInputProps.md)
+- [FieldProps](../interfaces/react_formz_src_types_field.FieldProps.md)
 
 ## Type Aliases
 
@@ -42,7 +40,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/react-formz/src/types/field.ts:38](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/field.ts#L38)
+[packages/react-formz/src/types/field.ts:37](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/field.ts#L37)
 
 ___
 
@@ -74,25 +72,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/types/field.ts:30](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/field.ts#L30)
-
-___
-
-### FieldComponentProps
-
-Ƭ **FieldComponentProps**<`Value`, `Key`, `Ref`\>: [`BaseFieldComponentProps`](../interfaces/react_formz_src_types_field.BaseFieldComponentProps.md)<`Value`, `Key`, `Ref`\>
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `Value` | extends [`FieldValue`](react_formz_src_types_field.md#fieldvalue) = [`FieldValue`](react_formz_src_types_field.md#fieldvalue) |
-| `Key` | extends [`FieldId`](react_formz_src_types_field.md#fieldid) = [`FieldId`](react_formz_src_types_field.md#fieldid) |
-| `Ref` | `unknown` |
-
-#### Defined in
-
-[packages/react-formz/src/types/field.ts:106](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/field.ts#L106)
+[packages/react-formz/src/types/field.ts:29](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/field.ts#L29)
 
 ___
 
@@ -102,25 +82,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/types/field.ts:6](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/field.ts#L6)
-
-___
-
-### FieldProps
-
-Ƭ **FieldProps**<`Value`, `Key`, `Ref`\>: [`BaseFieldProps`](../interfaces/react_formz_src_types_field.BaseFieldProps.md)<`Value`, `Key`, `Ref`\>
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `Value` | extends [`FieldValue`](react_formz_src_types_field.md#fieldvalue) = [`FieldValue`](react_formz_src_types_field.md#fieldvalue) |
-| `Key` | extends [`FieldId`](react_formz_src_types_field.md#fieldid) = [`FieldId`](react_formz_src_types_field.md#fieldid) |
-| `Ref` | `unknown` |
-
-#### Defined in
-
-[packages/react-formz/src/types/field.ts:150](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/field.ts#L150)
+[packages/react-formz/src/types/field.ts:5](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/field.ts#L5)
 
 ___
 
@@ -153,7 +115,7 @@ but the validator can be async/return a Promise.
 
 #### Defined in
 
-[packages/react-formz/src/types/field.ts:26](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/field.ts#L26)
+[packages/react-formz/src/types/field.ts:25](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/field.ts#L25)
 
 ___
 
@@ -163,7 +125,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/types/field.ts:11](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/field.ts#L11)
+[packages/react-formz/src/types/field.ts:10](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/field.ts#L10)
 
 ___
 
@@ -196,7 +158,7 @@ ___
 
 #### Defined in
 
-[packages/react-formz/src/types/field.ts:43](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/field.ts#L43)
+[packages/react-formz/src/types/field.ts:42](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/field.ts#L42)
 
 ___
 
@@ -208,4 +170,4 @@ Native HTMLField Values
 
 #### Defined in
 
-[packages/react-formz/src/types/field.ts:9](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/field.ts#L9)
+[packages/react-formz/src/types/field.ts:8](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz/src/types/field.ts#L8)

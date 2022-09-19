@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react-native";
-import { Form, Field, ErrorMessage } from "@zerry/react-formz-native";
+import { Form, TextField, ErrorMessage } from "@zerry/react-formz-native";
 import { StyleSheet, TextInput, View } from "react-native";
 
 export default {
@@ -38,7 +38,7 @@ const FieldTemplate: ComponentStory<typeof Form> = () => {
       initialValues={{ firstName: "Alex", email: "" }}
       component={({ children }) => <View style={styles.container} key="story">{children}</View>}
     >
-      <Field<string>
+      <TextField
         name="firstName"
         required
         type="default"
@@ -53,7 +53,7 @@ const FieldTemplate: ComponentStory<typeof Form> = () => {
           </>
         )}
       />
-      <Field<string>
+      <TextField
         name="email"
         type="email-address"
         as={({ input }) => (

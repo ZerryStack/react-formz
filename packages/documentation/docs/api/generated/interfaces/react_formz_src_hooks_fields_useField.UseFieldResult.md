@@ -15,7 +15,7 @@ custom_edit_url: null
 
 ## Hierarchy
 
-- [`FieldEevents`](react_formz_src_hooks_fields_useFieldEvents.FieldEevents.md)<`Value`\>
+- [`FieldEvents`](react_formz_src_hooks_fields_useFieldEvents.FieldEvents.md)<`Value`\>
 
   ↳ **`UseFieldResult`**
 
@@ -78,7 +78,7 @@ i.e. the `onBlur` event is called.
 
 #### Inherited from
 
-[FieldEevents](react_formz_src_hooks_fields_useFieldEvents.FieldEevents.md).[onBlur](react_formz_src_hooks_fields_useFieldEvents.FieldEevents.md#onblur)
+[FieldEvents](react_formz_src_hooks_fields_useFieldEvents.FieldEvents.md).[onBlur](react_formz_src_hooks_fields_useFieldEvents.FieldEvents.md#onblur)
 
 #### Defined in
 
@@ -100,7 +100,7 @@ changes. This will update the form state.
 
 #### Inherited from
 
-[FieldEevents](react_formz_src_hooks_fields_useFieldEvents.FieldEevents.md).[onChange](react_formz_src_hooks_fields_useFieldEvents.FieldEevents.md#onchange)
+[FieldEvents](react_formz_src_hooks_fields_useFieldEvents.FieldEvents.md).[onChange](react_formz_src_hooks_fields_useFieldEvents.FieldEvents.md#onchange)
 
 #### Defined in
 

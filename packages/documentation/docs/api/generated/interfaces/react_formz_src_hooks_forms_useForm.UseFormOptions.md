@@ -13,6 +13,12 @@ custom_edit_url: null
 | :------ | :------ |
 | `Values` | extends [`FormzValues`](../modules/react_formz_src_types_form.md#formzvalues) |
 
+## Hierarchy
+
+- **`UseFormOptions`**
+
+  ↳ [`FormProps`](react_formz_web_src_components_Form_Form_types.FormProps.md)
+
 ## Properties
 
 ### id
@@ -85,7 +91,7 @@ ___
 
 ### schemaValidator
 
-• `Optional` **schemaValidator**: `SchemaValidator`<`Values`\>
+• `Optional` **schemaValidator**: [`SchemaValidator`](../classes/react_formz_src_models_SchemaValidator.SchemaValidator.md)<`Values`\>
 
 #### Defined in
 

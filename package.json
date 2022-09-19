@@ -8,7 +8,8 @@
     "packages/react-formz-validators/zod"
   ],
   "scripts": {
-    "test": "yarn workspace @zerry/react-formz test",
-    "build:documentation": "yarn workspace @zerry/react-formz-documentation build"
+    "test": "yarn workspace @zerry/react-formz-core test && yarn workspace @zerry/react-formz test",
+    "documentation:build": "yarn workspace @zerry/react-formz-documentation build",
+    "documentation:start": "yarn workspace @zerry/react-formz-documentation start"
   }
 }

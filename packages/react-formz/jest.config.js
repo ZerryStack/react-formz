@@ -10,7 +10,7 @@ const config = {
   verbose: true,
   setupFilesAfterEnv: [path.resolve(__dirname, "configs", "jest", "setup.js")],
   transform: {
-    "\\.[jt]sx?$": path.resolve(workspaceNodeModules, "babel-jest"),
+    "\\.[jt]sx?$": "babel-jest",
   },
   moduleDirectories: [
     workspaceNodeModules,

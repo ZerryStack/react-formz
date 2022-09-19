@@ -3,15 +3,17 @@ import {
   FieldId,
   isValidInputValue,
   logger,
+  useStableCallback,
 } from "../../../../react-formz";
 import React from "react";
 import { NativeFieldProps } from "./Field.types";
 import useNativeField from "../../hooks/fields/useField";
+import { TextInput } from "react-native";
 
 const FieldInner = <
   Value extends FieldValue = FieldValue,
   Key extends FieldId = FieldId,
-  Ref = unknown
+  Ref = TextInput
 >(
   props: NativeFieldProps<Value, Key, Ref>,
   ref: React.Ref<Ref>
@@ -40,19 +42,22 @@ const FieldInner = <
     label,
   });
 
+  const handleChange = useStableCallback((value: Value) => {
+    field.onChange(value)
+  });
+
   const inputProps = {
     label,
     name,
     required,
     type,
-    checked: field.checked,
     onBlur: field.onBlur,
-    onChange: field.onChange,
+    onChangeText: handleChange,
     "aria-invalid": field.error !== undefined || undefined,
     "aria-required": required ?? undefined,
-    value: isValidInputValue(field.value) ? field.value : undefined,
     "aria-describedby": `${name}-error`,
-    id: name,
+    nativeID: name,
+    value: isValidInputValue(field.value) ? field.value : undefined,
   };
 
   if (Tag) {
@@ -97,10 +102,10 @@ const FieldInner = <
  * @typeParam `Ref` - The type of react ref that will be passed to the underlying element.
  */
 
-const Field = React.forwardRef<unknown, NativeFieldProps>(FieldInner) as <
+const Field = React.forwardRef<any, NativeFieldProps>(FieldInner) as <
   Value extends FieldValue = FieldValue,
   Key extends FieldId = FieldId,
-  Ref = unknown
+  Ref = TextInput
 >(
   props: NativeFieldProps<Value, Key, Ref>
 ) => JSX.Element;

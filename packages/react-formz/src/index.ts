@@ -2,6 +2,8 @@
 
 // -------------------------------- Hooks --------------------------------
 
+export type { FieldActions } from "./hooks/fields/useFieldActions";
+export type { FieldEvents } from "./hooks/fields/useFieldEvents";
 export { default as useDependentFieldEvents, UseDependentFieldEventsOptions } from "./hooks/fields/useDependentFieldEvents";
 export type { UseFieldOptions, UseFieldResult } from "./hooks/fields/useField";
 export { default as useField } from "./hooks/fields/useField";
@@ -61,11 +63,8 @@ export {
   FieldId,
   FieldValue,
   FieldValidator,
-  FieldComponentProps,
-  FieldInputProps,
   FieldProps,
   FieldValueFormatter,
-  BaseFieldProps,
 } from "./types/field";
 export {
   FormId,

@@ -8,16 +8,13 @@ function createField<Value extends FieldValue>(
   additionalProps?: { multiple?: boolean }
 ) {
   const component = React.forwardRef<
-    unknown,
-    FieldProps<Value, FieldId, unknown>
-  >((props: FieldProps<Value, FieldId, unknown>, ref) => {
+    HTMLInputElement,
+    FieldProps<Value, FieldId, HTMLInputElement>
+  >((props: FieldProps<Value, FieldId, HTMLInputElement>, ref) => {
     return <Field type={type} {...additionalProps} {...props} ref={ref} />;
   });
 
-  return component as <
-    Key extends FieldId,
-    Ref = unknown,
-  >(
+  return component as <Key extends FieldId, Ref = HTMLInputElement>(
     props: FieldProps<Value, Key, Ref>
   ) => JSX.Element;
 }
@@ -28,7 +25,7 @@ function createField<Value extends FieldValue>(
  *
  * - `type` - text
  * - `value` - string | undefined
- * 
+ *
  * @typeParam `Key` {@link FieldId} - The input/field `name` property. This value should correspond to a property in the form.
  * @typeParam `Element` - The underlying html element either "input", "select", or "textarea".
  */
@@ -40,7 +37,7 @@ export const TextField = createField<string | undefined>("text");
  *
  * - `type` - number
  * - `value` - number
- * 
+ *
  * @typeParam `Key` {@link FieldId} - The input/field `name` property. This value should correspond to a property in the form.
  * @typeParam `Element` - The underlying html element either "input", "select", or "textarea".
  */
@@ -52,7 +49,7 @@ export const NumberField = createField<number>("number");
  *
  * - `type` - checkbox
  * - `value` - boolean
- * 
+ *
  * @typeParam `Key` {@link FieldId} - The input/field `name` property. This value should correspond to a property in the form.
  * @typeParam `Element` - The underlying html element either "input", "select", or "textarea".
  */
@@ -64,7 +61,7 @@ export const CheckboxField = createField<boolean>("checkbox");
  *
  * - `type` - radio
  * - `value` - string | undefined
- * 
+ *
  * @typeParam `Key` {@link FieldId} - The input/field `name` property. This value should correspond to a property in the form.
  * @typeParam `Element` - The underlying html element either "input", "select", or "textarea".
  */
@@ -76,7 +73,7 @@ export const RadioField = createField<string | undefined>("radio");
  *
  * - `type` - select
  * - `value` - string | undefined
- * 
+ *
  * @typeParam `Key` {@link FieldId} - The input/field `name` property. This value should correspond to a property in the form.
  * @typeParam `Element` - The underlying html element either "input", "select", or "textarea".
  */
@@ -88,16 +85,16 @@ export const SelectField = createField<string | undefined>("select");
  *
  * - `type` - date
  * - `value` - string | undefined
- * 
+ *
  * @typeParam `Key` {@link FieldId} - The input/field `name` property. This value should correspond to a property in the form.
  * @typeParam `Element` - The underlying html element either "input", "select", or "textarea".
  */
- export const DateField = createField<string | undefined>("date");
+export const DateField = createField<string | undefined>("date");
 
 /**
  * An abstraction of `Field` that can be used for multi select field values. The default
  * input type will be `select` but can be overriden.
- * 
+ *
  * - `type` - select
  * - `value` - string
  *

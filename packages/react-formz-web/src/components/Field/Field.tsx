@@ -6,7 +6,7 @@ import { WebFieldProps } from "./Field.types";
 const FieldInner = <
 Value extends FieldValue = FieldValue,
   Key extends FieldId = FieldId,
-  Ref = unknown,
+  Ref = HTMLInputElement,
 >(
   props: WebFieldProps<Value, Key, Ref>,
   ref: React.Ref<Ref>
@@ -90,10 +90,10 @@ Value extends FieldValue = FieldValue,
  * @typeParam `Ref` - The type of react ref that will be passed to the underlying element.
  */
 
-const Field = React.forwardRef<unknown, WebFieldProps>(FieldInner) as <
+const Field = React.forwardRef<any, WebFieldProps>(FieldInner) as <
   Value extends FieldValue = FieldValue,
   Key extends FieldId = FieldId,
-  Ref = unknown,
+  Ref = HTMLInputElement,
 >(
   props: WebFieldProps<Value, Key, Ref>
 ) => JSX.Element;

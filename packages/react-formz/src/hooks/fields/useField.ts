@@ -4,7 +4,7 @@ import { FieldId, FieldValue } from "../../types/field";
 import { FormzError } from "../../types/form";
 import { isBoolean } from "../../utils/is";
 import useFieldActions, { FieldActions } from "./useFieldActions";
-import useFieldEvents, { FieldEevents } from "./useFieldEvents";
+import useFieldEvents, { FieldEvents } from "./useFieldEvents";
 import useFieldRegistration from "./useFieldRegistration";
 import useFieldValidation, {
   UseFieldValidationOptions,
@@ -16,7 +16,7 @@ export interface UseFieldOptions<Value extends FieldValue>
   label?: string;
 }
 
-export interface UseFieldResult<Value extends FieldValue> extends FieldEevents<Value> {
+export interface UseFieldResult<Value extends FieldValue> extends FieldEvents<Value> {
   value: Value;
   error: FormzError | undefined;
   checked?: boolean;

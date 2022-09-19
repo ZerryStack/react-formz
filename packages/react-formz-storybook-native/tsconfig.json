@@ -4,7 +4,6 @@
     "baseUrl": "./",
     "strict": true,
     "paths": {
-      "@zerry/react-formz": ["../react-formz/src/index.ts"],
       "@zerry/react-formz-native": ["../react-formz-native/src/index.ts"]
     }
   },

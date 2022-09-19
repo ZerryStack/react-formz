@@ -26,7 +26,7 @@ const FormInner = <Values extends FormzValues>({
   if (!initialized) return null;
 
   return (
-    <Component noValidate {...formProps} onSubmit={handleSubmit} name={name}>
+    <Component {...formProps} noValidate onSubmit={handleSubmit} name={name}>
       {children}
     </Component>
   );

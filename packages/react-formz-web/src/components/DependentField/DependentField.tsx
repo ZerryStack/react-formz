@@ -7,7 +7,7 @@ const DependentFieldInner = <
   Values extends FormzValues = FormzValues,
   Value extends FieldValue = FieldValue,
   Key extends FieldId = FieldId,
-  Ref = unknown,
+  Ref = HTMLInputElement,
   DependentValues extends Partial<Values> = Partial<Values>
 >(
   props: DependentFieldProps<Values, Value, Key, Ref, DependentValues>,
@@ -61,7 +61,7 @@ const DependentField = React.forwardRef<any, DependentFieldProps>(
   Values extends FormzValues = FormzValues,
   Value extends FieldValue = FieldValue,
   Key extends FieldId = FieldId,
-  Ref = unknown,
+  Ref = HTMLInputElement,
   DependentValues extends Partial<Values> = Partial<Values>
 >(
   props: DependentFieldProps<Values, Value, Key, Ref, DependentValues>

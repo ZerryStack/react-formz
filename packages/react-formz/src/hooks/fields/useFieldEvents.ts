@@ -3,7 +3,7 @@ import { FormzChangeEventHandler } from "../../types/events";
 import { FieldValue } from "../../types/field";
 import useStableCallback from "../utils/useStableCallback";
 
-export interface FieldEevents<Value extends FieldValue> {
+export interface FieldEvents<Value extends FieldValue> {
   /**
    * The `onChange` callback should be called when the value of a field
    * changes. This will update the form state. 
@@ -31,7 +31,7 @@ function useFieldEvents<Value extends FieldValue>(
   formId: string,
   fieldName: string,
   validate: () => Promise<boolean>
-): FieldEevents<Value> {
+): FieldEvents<Value> {
   const handleChange: FormzChangeEventHandler<Value> = useStableCallback((eventOrValue) => {
     actions.updateFormValue(eventOrValue, formId, fieldName);
 

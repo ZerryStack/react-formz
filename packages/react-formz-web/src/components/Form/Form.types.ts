@@ -2,8 +2,10 @@ import { FormRehydrationCallback, FormSubmitCallback, FormzValues, SchemaValidat
 import React from "react";
 
 
+type HtmlFormProps = Omit<React.DetailedHTMLProps<React.FormHTMLAttributes<HTMLFormElement>, HTMLFormElement>, "onSubmit">;
+
 export interface FormProps<Values extends FormzValues>
-  extends UseFormOptions<Values> {
+  extends UseFormOptions<Values>, HtmlFormProps {
   children?: React.ReactNode;
   /**
    * A callback that will be called if and when a form is submitted and 

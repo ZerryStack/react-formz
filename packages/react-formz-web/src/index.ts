@@ -1,12 +1,32 @@
 // -------------------------------- Components --------------------------------
 export type { ArrayFieldProps } from "./components/ArrayField";
 export { default as ArrayField } from "./components/ArrayField";
-export type { FieldProps } from "./components/Field";
-export { default as Field } from "./components/Field";
+export type { FieldProps, FieldComponentProps } from "./components/Field";
+export {
+  default as Field,
+  DateField,
+  TextField,
+  NumberField,
+  SelectField,
+  RadioField,
+  MultiSelectField,
+  CheckboxField,
+} from "./components/Field";
 export { default as ErrorMessage } from "./components/ErrorMessage";
 export type { FormProps } from "./components/Form";
 export { default as Form } from "./components/Form";
 export { default as SubmitButton } from "./components/SubmitButton";
+export { default as CustomField } from "./components/CustomField";
+export { default as FormLastPersistedAt } from "./components/FormLastPersistedAt";
+export {
+  default as DependentField,
+  DependentCheckboxField,
+  DependentMultiSelectField,
+  DependentNumberField,
+  DependentRadioField,
+  DependentSelectField,
+  DependentTextField,
+} from "./components/DependentField";
 
 // -------------------------------- Hooks --------------------------------
 

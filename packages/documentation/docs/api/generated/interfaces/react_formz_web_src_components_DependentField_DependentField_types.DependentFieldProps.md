@@ -19,7 +19,7 @@ custom_edit_url: null
 
 ## Hierarchy
 
-- `Omit`<[`WebFieldProps`](react_formz_web_src_components_Field_Field_types.WebFieldProps.md)<`Value`, `Key`, `Ref`\>, ``"validate"``\>
+- `Omit`<[`WebFieldProps`](react_formz_web_src_components_Field_Field_types.WebFieldProps.md)<`Value`, `Key`, `Ref`\>, ``"validate"`` \| ``"as"``\>
 
 - [`UseDependentFieldEventsOptions`](react_formz_src_hooks_fields_useDependentFieldEvents.UseDependentFieldEventsOptions.md)<`Values`, `Value`, `DependentValues`\>
 
@@ -29,17 +29,11 @@ custom_edit_url: null
 
 ### as
 
-• `Optional` **as**: `ComponentType`<[`FieldComponentProps`](react_formz_web_src_components_Field_Field_types.FieldComponentProps.md)<`Value`, `Key`, `Ref`\>\>
-
-The component to render the ui of the field.
-
-#### Inherited from
-
-Omit.as
+• `Optional` **as**: `ComponentType`<[`FieldComponentProps`](react_formz_web_src_components_Field_Field_types.FieldComponentProps.md)<`Value`, `Key`, `Ref`\> & { `dependencies`: `DependentValues`  }\>
 
 #### Defined in
 
-[packages/react-formz-web/src/components/Field/Field.types.ts:79](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz-web/src/components/Field/Field.types.ts#L79)
+[packages/react-formz-web/src/components/DependentField/DependentField.types.ts:12](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz-web/src/components/DependentField/DependentField.types.ts#L12)
 
 ___
 

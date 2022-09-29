@@ -203,7 +203,7 @@ ___
 
 ### value
 
-• `Optional` **value**: `Value` extends `boolean` ? `undefined` : `Value`
+• `Optional` **value**: `Value`
 
 The current value of the input.
 

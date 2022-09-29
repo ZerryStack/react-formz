@@ -1,7 +1,6 @@
 import {
   FieldValue,
   FieldId,
-  isValidInputValue,
   logger,
 } from "../../../../react-formz";
 import React from "react";
@@ -60,7 +59,7 @@ const FieldInner = <
     "aria-required": required ?? undefined,
     "aria-describedby": `${name}-error`,
     nativeID: name,
-    value: isValidInputValue(value) ? value : undefined,
+    value: value,
     onEndEditing: handleFinishEditing,
     onSubmitEditing: handleFinishEditing,
   };

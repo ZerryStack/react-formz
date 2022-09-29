@@ -1,5 +1,5 @@
 import { FieldId, FieldValue, FormzValues, UseDependentFieldEventsOptions } from "../../../../react-formz";
-import { WebFieldProps } from "../Field/Field.types";
+import { FieldComponentProps, WebFieldProps } from "../Field/Field.types";
 
 export interface DependentFieldProps<
   Values extends FormzValues = FormzValues,
@@ -7,5 +7,7 @@ export interface DependentFieldProps<
   Key extends FieldId = FieldId,
   Ref = HTMLInputElement,
   DependentValues extends Partial<Values> = Partial<Values>
-> extends Omit<WebFieldProps<Value, Key, Ref>, "validate">,
-    UseDependentFieldEventsOptions<Values, Value, DependentValues> {}
+> extends Omit<WebFieldProps<Value, Key, Ref>, "validate" | "as">,
+    UseDependentFieldEventsOptions<Values, Value, DependentValues> {
+      as?: React.ComponentType<FieldComponentProps<Value, Key, Ref> & { dependencies: DependentValues }> 
+    }

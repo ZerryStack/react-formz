@@ -233,3 +233,9 @@ ___
 ### useField
 
 Renames and re-exports [useNativeField](react_formz_native_src_hooks_fields_useField.md#usenativefield)
+
+___
+
+### useFormSubmission
+
+Re-exports [useFormSubmission](react_formz_src_hooks_forms_useFormSubmission.md#useformsubmission)

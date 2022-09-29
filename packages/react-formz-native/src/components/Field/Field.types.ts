@@ -59,7 +59,7 @@ export interface FieldInputProps<
   /**
    * The current value of the input.
    */
-  value?: Value extends boolean ? undefined : Value;
+  value?: Value;
 }
 
 export interface FieldComponentProps<

@@ -1,6 +1,6 @@
 import { FieldId, FieldValue, FormzValues, useDependentFieldEvents } from "../../../../react-formz";
 import React from "react";
-import Field from "../Field";
+import Field, { FieldComponentProps } from "../Field";
 import { DependentFieldProps } from "./DependentField.types";
 
 const DependentFieldInner = <
@@ -13,15 +13,21 @@ const DependentFieldInner = <
   props: DependentFieldProps<Values, Value, Key, Ref, DependentValues>,
   ref: React.Ref<Ref>
 ) => {
-  const { dependencies, onDependenciesChange, name, validate, ...restProps } = props;
+  const { dependencies, onDependenciesChange, name, validate, as: Component, ...restProps } = props;
 
-  const { validate: dependentValidate } = useDependentFieldEvents(name, {
+  const { validate: dependentValidate, dependentFields } = useDependentFieldEvents(name, {
     dependencies,
     onDependenciesChange,
     validate
   });
 
-  return <Field<Value, Key, Ref> {...restProps} name={name} ref={ref} validate={dependentValidate} />;
+  const DependentComponent = (props: FieldComponentProps<Value, Key, Ref>) => {
+    if (!Component) return null;
+
+    return <Component {...props} dependencies={dependentFields} />
+  };
+  
+  return <Field<Value, Key, Ref> {...restProps} as={DependentComponent} name={name} ref={ref} validate={dependentValidate} />;
 };
 
 /**

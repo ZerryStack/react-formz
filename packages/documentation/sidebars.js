@@ -22,7 +22,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'Guides',
-      items: ['guides/basic-usage', 'guides/form-validations', 'guides/field-validation', 'guides/form-persistance', 'guides/dependent-field'],
+      items: ['guides/basic-usage', 'guides/form-validations', 'guides/field-validation', 'guides/form-persistance', 'guides/dependent-field', 'guides/conditional-field'],
     },
     {
       type: 'category',

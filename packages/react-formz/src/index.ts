@@ -4,7 +4,8 @@
 
 export type { FieldActions } from "./hooks/fields/useFieldActions";
 export type { FieldEvents } from "./hooks/fields/useFieldEvents";
-export { default as useDependentFieldEvents, UseDependentFieldEventsOptions } from "./hooks/fields/useDependentFieldEvents";
+export type { UseDependentFieldEventsOptions } from "./hooks/fields/useDependentFieldEvents";
+export { default as useDependentFieldEvents } from "./hooks/fields/useDependentFieldEvents";
 export type { UseFieldOptions, UseFieldResult } from "./hooks/fields/useField";
 export { default as useField } from "./hooks/fields/useField";
 export type { UseDependentFieldOptions } from "./hooks/fields/useDependentField";

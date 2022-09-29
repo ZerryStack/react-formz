@@ -48,4 +48,4 @@ the user finishes typing or submits the form.
 
 #### Defined in
 
-packages/react-formz-native/src/hooks/fields/useInternalFieldValue.ts:25
+[packages/react-formz-native/src/hooks/fields/useInternalFieldValue.ts:25](https://github.com/ZerryStack/react-formz/blob/main/packages/react-formz-native/src/hooks/fields/useInternalFieldValue.ts#L25)

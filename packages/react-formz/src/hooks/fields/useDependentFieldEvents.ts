@@ -87,7 +87,7 @@ function useDependentFieldEvents<
     })();
   }, [dependentFields]);
 
-  return { validate: dependentValidate };
+  return { validate: dependentValidate, dependentFields };
 }
 
 export default useDependentFieldEvents;

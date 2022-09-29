@@ -42,6 +42,7 @@ that will be called when the dependencies change.
 
 | Name | Type |
 | :------ | :------ |
+| `dependentFields` | `DependentValues` |
 | `validate` | [`FieldValidator`](react_formz_src_types_field.md#fieldvalidator)<`Value`\> |
 
 #### Defined in

@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom";
-import { formzFieldsStore, formzStore } from "../../../react-formz/src";
+import { formzFieldsStore, formzStore } from "@zerry/react-formz-core";
 
 beforeEach(() => {
   formzFieldsStore.setState((state) => {

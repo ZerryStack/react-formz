@@ -1,0 +1,8 @@
+{
+    "name": "@zerry/react-formz-native",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "packages/react-formz-native/src",
+    "projectType": "library",
+    "targets": {},
+    "tags": []
+  }

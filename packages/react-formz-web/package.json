@@ -26,7 +26,7 @@
     "build-storybook": "build-storybook",
     "typecheck": "tsc --noEmit",
     "clean:dist": "rm -rf ./dist",
-    "build": "yarn clean:dist && yarn typecheck && yarn build:src && yarn build:types && yarn build:documentation",
+    "build": "yarn clean:dist && yarn typecheck && yarn build:src && yarn build:types",
     "build:src": "vite build",
     "build:types": "tsc -P tsconfig.build.json",
     "build:documentation": "yarn workspace @zerry/react-formz-documentation build",

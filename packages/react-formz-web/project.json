@@ -1,0 +1,8 @@
+{
+    "name": "@zerry/react-formz",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "packages/react-formz-web/src",
+    "projectType": "library",
+    "targets": {},
+    "tags": []
+  }

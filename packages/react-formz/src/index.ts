@@ -14,11 +14,8 @@ export type { ArrayHelpers } from "./hooks/fields/useFieldArrayHelpers";
 export { default as useFieldArrayHelpers } from "./hooks/fields/useFieldArrayHelpers";
 export { default as useFieldErrorMessage } from "./hooks/fields/useErrorMessage";
 export { default as useFieldTouched } from "./hooks/fields/useFieldTouched";
-export {
-  default as useForm,
-  UseFormOptions,
-  UseFormResult,
-} from "./hooks/forms/useForm";
+export type { UseFormOptions, UseFormResult } from "./hooks/forms/useForm";
+export { default as useForm } from "./hooks/forms/useForm";
 export { default as useStableCallback } from "./hooks/utils/useStableCallback";
 export { default as useStableValue } from "./hooks/utils/useStableValue";
 export { default as useFormStateInitialized } from "./hooks/forms/useFormStateInitialized";
@@ -61,24 +58,24 @@ export {
 
 // -------------------------------- Types --------------------------------
 
-export { AnyObject } from "./types/common";
-export {
+export type { AnyObject } from "./types/common";
+export type {
   FieldId,
   FieldValue,
   FieldValidator,
   FieldProps,
   FieldValueFormatter,
 } from "./types/field";
-export {
+export type {
   FormId,
   FormzError,
   FormzErrors,
   FormzValues,
   FormRehydrationCallback,
   FormSubmitCallback,
-  FormProps
+  FormProps,
 } from "./types/form";
-export { LiteralUnion } from "./types/utils";
+export type { LiteralUnion } from "./types/utils";
 
 // -------------------------------- Utils --------------------------------
 

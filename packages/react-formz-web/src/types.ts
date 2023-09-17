@@ -4,6 +4,6 @@ import type {
   FormzError,
   FormzErrors,
   FormzValues,
-} from "../../react-formz";
+} from "@zerry/react-formz-core";
 
 export { FieldId, FieldValue, FormzError, FormzErrors, FormzValues };

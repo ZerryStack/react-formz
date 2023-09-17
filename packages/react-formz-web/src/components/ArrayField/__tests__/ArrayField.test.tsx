@@ -6,10 +6,9 @@ import userEvent from "@testing-library/user-event";
 import { ArrayFieldProps } from "../ArrayField.types";
 import SubmitButton from "../../SubmitButton";
 import Field, { FieldProps } from "../../Field";
-import TestFieldComponent from "../../../../testUtils/TestFieldComponent";
 import ErrorMessage from "../../ErrorMessage";
-import { formzStore } from "../../../../../react-formz";
-import { defaultTestFormName, createDefaultFormzState } from "../../../../../react-formz/testUtils";
+import { formzStore, defaultTestFormName, createDefaultFormzState } from "@zerry/react-formz-core";
+import TestFieldComponent from "../../../../testUtils/TestFieldComponent";
 
 type FormState = {
   name: string;

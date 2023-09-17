@@ -9,8 +9,7 @@ import Field, { FieldProps } from "../../Field";
 import subYears from "date-fns/subYears";
 import format from "date-fns/format";
 import TestFieldComponent from "../../../../testUtils/TestFieldComponent";
-import { formzStore } from "../../../../../react-formz";
-import { defaultTestFormName, createDefaultFormzState } from "../../../../../react-formz/testUtils";
+import { formzStore, defaultTestFormName, createDefaultFormzState } from "@zerry/react-formz-core";
 
 type FormState = {
   name: string;

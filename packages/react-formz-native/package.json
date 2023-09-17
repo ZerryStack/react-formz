@@ -22,6 +22,7 @@
     "build": "rm -rf dist && tsc -p tsconfig.build.json"
   },
   "dependencies": {
+    "@zerry/react-formz-core": "workspace:^",
     "react-uuid": "^1.0.3",
     "zustand": "^4.1.1"
   },

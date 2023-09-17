@@ -8,6 +8,6 @@
     "emitDeclarationOnly": true,
     "baseUrl": "./src",
   },
-  "include": ["./src/index.ts", "../react-formz/index.ts", "../react-formz/src/index.ts"],
+  "include": ["./src/**/*"],
   "exclude": ["./src/**/*.test.ts", "./src/**/*.test.tsx"]
 }

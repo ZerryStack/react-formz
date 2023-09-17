@@ -35,7 +35,7 @@ export { default as useField } from "./hooks/fields/useField";
 
 // -------------------------------- Models --------------------------------
 
-export { SchemaValidator } from "../../react-formz";
+export { SchemaValidator } from "@zerry/react-formz-core";
 
 // -------------------------------- Types --------------------------------
 
@@ -45,7 +45,7 @@ export type {
   FormzError,
   FormzErrors,
   FormzValues,
-} from "../../react-formz/src";
+} from "@zerry/react-formz-core";
 
 // -------------------------------- Utils --------------------------------
 
@@ -57,4 +57,4 @@ export {
   isNumber,
   set,
   get
-} from "../../react-formz/src";
+} from "@zerry/react-formz-core";

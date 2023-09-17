@@ -12,7 +12,7 @@ export default defineConfig({
       fileName: "index",
     },
     rollupOptions: {
-      external: ["react", "react-dom", "immer"],
+      external: ["react", "react-dom", "immer", "@zerry/react-formz-core"],
       output: {
         // Provide global variables to use in the UMD build
         // for externalized deps
@@ -20,6 +20,8 @@ export default defineConfig({
           react: "React",
           "react-dom": "ReactDOM",
           immer: "immer",
+          "@zerry/react-formz-core": "ReactFormzCore"
+
         },
       },
     },

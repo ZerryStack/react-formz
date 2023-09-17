@@ -1,7 +1,7 @@
 {
   "$schema": "node_modules/lerna/schemas/lerna-schema.json",
   "useWorkspaces": true,
-  "version": "1.2.0",
+  "version": "1.4.0",
   "npmClient": "yarn",
   "gitTagVersion": true,
   "conventionalCommits": true,
@@ -14,11 +14,14 @@
   },
   "useNx": true,
   "loglevel": "debug",
-  "packages": ["packages/*"],
+  "packages": [
+    "packages/*"
+  ],
   "ignore": "packages/(react-formz-storybook|documentation|react-formz-storybook-native)/**",
   "ignoreChanges": [
     "packages/react-formz-storybook/**",
     "packages/documentation/**",
     "packages/react-formz-storybook-native/**"
-  ]
+  ],
+  "private": false
 }

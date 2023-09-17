@@ -17,7 +17,6 @@
   "packages": [
     "packages/*"
   ],
-  "ignore": "packages/(react-formz-storybook|documentation|react-formz-storybook-native)/**",
   "ignoreChanges": [
     "packages/react-formz-storybook/**",
     "packages/documentation/**",

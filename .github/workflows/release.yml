@@ -34,8 +34,15 @@ jobs:
     #   - name: Linting Check
     #     run: yarn nx run workspace:packages:lint
 
-      - name: Release
+      - name: Version
         run: yarn nx run workspace:version
+        env:
+            GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Release
+        run: yarn nx run workspace:release
         env:
             GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

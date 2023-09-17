@@ -23,5 +23,6 @@
     "packages/documentation/**",
     "packages/react-formz-storybook-native/**"
   ],
-  "private": false
+  "private": false,
+  "verbose": true
 }

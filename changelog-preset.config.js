@@ -3,6 +3,8 @@
 const config = require('conventional-changelog-conventionalcommits');
 const { releaseRules } = require('./.releaseRules');
 
+console.log("here!!!!");
+
 const releaseRulesMap = releaseRules.reduce((map, rule) => {
     return {
         ...map,

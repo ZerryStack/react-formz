@@ -1,6 +1,6 @@
 {
   "name": "@zerry/react-formz-validators-yup",
-  "version": "0.3.0-beta",
+  "version": "1.1.0",
   "license": "MIT",
   "description": "Up validator for @zerry/react-formz to validate form data against a zod schema.",
   "main": "dist/yup.js",

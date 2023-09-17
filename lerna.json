@@ -13,5 +13,11 @@
     "publish": {}
   },
   "useNx": true,
-  "loglevel": "debug"
+  "loglevel": "debug",
+  "packages": ["packages/*"],
+  "ignoreChanges": [
+    "packages/react-formz-storybook/**",
+    "packages/documentation/**",
+    "packages/react-formz-storybook-native/**"
+  ]
 }

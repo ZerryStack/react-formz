@@ -49,5 +49,6 @@
     "react-hook-form": "^7.35.0",
     "react-uuid": "^1.0.3",
     "zod": "^3.19.1"
-  }
+  },
+  "private": true
 }

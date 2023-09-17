@@ -113,13 +113,13 @@
       "version": {
         "executor": "nx:run-commands",
         "options": {
-          "command": "npx lerna version --force-publish --yes --create-release github --ignore-changes 'packages/documentation/**' --ignore-changes 'packages/react-formz-storybook/**' --ignore-changes 'packages/react-formz-storybook-native/**' --ignore-changes 'packages/react-formz-validators/**'"
+          "command": "npx lerna version --force-publish --yes --create-release github"
         }
       },
       "release": {
         "executor": "nx:run-commands",
         "options": {
-          "command": "npx lerna publish from-git --yes --ignore-changes 'packages/documentation/**' --ignore-changes 'packages/react-formz-storybook/**' --ignore-changes 'packages/react-formz-storybook-native/**' --ignore-changes 'packages/react-formz-validators/**'"
+          "command": "npx lerna publish from-git --yes"
         }
       }
     }

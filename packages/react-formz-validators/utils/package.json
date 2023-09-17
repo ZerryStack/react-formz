@@ -5,7 +5,7 @@
   "description": "Shared utilitity functions for zod validators.",
   "main": "index.ts",
   "peerDependencies": {
-    "@zerry/react-formz": ">=0.3.4-beta"
+    "@zerry/react-formz": ">=1.1.0"
   },
   "files": [
     "dist"

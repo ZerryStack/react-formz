@@ -9,12 +9,13 @@
   "source": "index.ts",
   "types": "dist/yup.d.ts",
   "devDependencies": {
+    "@zerry/react-formz": "workspace:^",
     "@zerry/react-formz-validators-utils": "workspace:^",
     "yup": "^0.32.11"
   },
   "peerDependencies": {
-    "@zerry/react-formz": ">=0.3.4-beta",
-    "@zerry/react-formz-native": ">=0.0.5-beta",
+    "@zerry/react-formz": ">=1.1.0",
+    "@zerry/react-formz-native": ">=1.1.0",
     "yup": "*"
   },
   "peerDependenciesMeta": {

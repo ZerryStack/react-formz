@@ -1,4 +1,4 @@
-import { SchemaValidator, FormzValues, FormzErrors } from "@zerry/react-formz";
+import { SchemaValidator, FormzValues, FormzErrors } from "@zerry/react-formz-core";
 import { toNestedErrors } from "@zerry/react-formz-validators-utils";
 import zod from "zod";
 

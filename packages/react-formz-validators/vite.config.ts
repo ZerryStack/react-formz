@@ -75,7 +75,6 @@ export default defineConfig({
       external: ["@zerry/react-formz"].concat(external ?? []),
       output: {
         globals: {
-          "@zerry/react-formz": "@zerry/react-formz",
           ...globals,
         },
       },

@@ -1,4 +1,4 @@
-import { useFieldErrorMessage, useFieldTouched } from "../../../../react-formz";
+import { useFieldErrorMessage, useFieldTouched } from "@zerry/react-formz-core";
 import React from "react";
 import { Text } from "react-native";
 import { ErrorMessageProps } from "./ErrorMessage.types";

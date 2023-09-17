@@ -4,7 +4,7 @@ import {
   useFormStateInitialized,
   useFormIdContext,
   useStableValue,
-} from "../../../../react-formz";
+} from "@zerry/react-formz-core";
 import React from "react";
 import { NativeFormProps } from "./Form.types";
 import { View, ViewProps } from "react-native";

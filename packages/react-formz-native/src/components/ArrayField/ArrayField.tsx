@@ -1,4 +1,4 @@
-import { FieldId, useFieldArrayHelpers } from "../../../../react-formz";
+import { FieldId, useFieldArrayHelpers } from "@zerry/react-formz-core";
 import React from "react";
 import useNativeField from "../../hooks/fields/useField";
 import { ArrayFieldProps } from "./ArrayField.types";

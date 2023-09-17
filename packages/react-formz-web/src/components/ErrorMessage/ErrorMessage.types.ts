@@ -1,4 +1,4 @@
-import { FormzError } from "../../../../react-formz";
+import { FormzError } from "@zerry/react-formz-core";
 import React from "react";
 
 type HtmlSpanProps = React.DetailedHTMLProps<React.HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>;

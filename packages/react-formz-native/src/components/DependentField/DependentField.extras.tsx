@@ -1,4 +1,4 @@
-import { FieldId, FieldValue, FormzValues } from "../../../../react-formz";
+import { FieldId, FieldValue, FormzValues } from "@zerry/react-formz-core";
 import React from "react";
 import DependentField from "./DependentField";
 import { DependentFieldProps } from "./DependentField.types";

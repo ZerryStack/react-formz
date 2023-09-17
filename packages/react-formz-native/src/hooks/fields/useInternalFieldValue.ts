@@ -6,7 +6,7 @@ import {
   useFieldValidation,
   useFormz,
   useStableCallback,
-} from "../../../../react-formz";
+} from "@zerry/react-formz-core";
 import { useArrayFieldProvider } from "../../providers/ArrayFieldProvider";
 
 /**

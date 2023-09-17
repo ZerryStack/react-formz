@@ -39,6 +39,7 @@
     "native:test": "yarn workspace @zerry/react-formz-native test"
   },
   "dependencies": {
+    "@zerry/react-formz-core": "workspace:^",
     "react-uuid": "^1.0.3",
     "zustand": "^4.1.1"
   },

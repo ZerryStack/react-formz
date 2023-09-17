@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "react-native";
-import { useFormIdContext, useFormSubmission } from "../../../../react-formz";
+import { useFormIdContext, useFormSubmission } from "@zerry/react-formz-core";
 import { useFormSubmitContext } from "../../providers/FormSubmitProvider";
 import { SubmitButtonProps } from "./SubmitButton.types";
 

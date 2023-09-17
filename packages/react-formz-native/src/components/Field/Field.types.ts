@@ -4,7 +4,7 @@ import {
   FieldProps,
   FieldValue,
   FormzError,
-} from "../../../../react-formz";
+} from "@zerry/react-formz-core";
 import { KeyboardType, TextInput } from "react-native";
 export interface FieldInputProps<
   Key extends FieldId = FieldId,

@@ -9,7 +9,7 @@ import {
   useStableCallback,
   useStableValue,
   useFormSubmission,
-} from "../../../../react-formz";
+} from "@zerry/react-formz-core";
 
 const FormInner = <Values extends FormzValues>({
   name,

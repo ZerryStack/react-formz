@@ -1,4 +1,4 @@
-import { ArrayHelpers, FieldId, FieldValidator } from "../../../../react-formz";
+import { ArrayHelpers, FieldId, FieldValidator } from "@zerry/react-formz-core";
 import React from "react";
 
 export interface ArrayFieldComponentProps<Value> {

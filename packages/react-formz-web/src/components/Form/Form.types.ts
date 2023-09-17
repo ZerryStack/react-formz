@@ -2,7 +2,7 @@ import {
   FormzValues,
   UseFormResult,
   FormProps,
-} from "../../../../react-formz";
+} from "@zerry/react-formz-core";
 import React from "react";
 
 type HtmlFormProps = Omit<

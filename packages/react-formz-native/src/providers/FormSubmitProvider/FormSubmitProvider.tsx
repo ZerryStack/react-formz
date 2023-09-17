@@ -4,7 +4,7 @@ import {
   FormzValues,
   useStableCallback,
   useStableValue,
-} from "../../../../react-formz";
+} from "@zerry/react-formz-core";
 
 export interface FormSubmitProviderProps<Values extends FormzValues> {
   onSubmit?: FormSubmitCallback<Values>;

@@ -4,7 +4,7 @@ import {
   FieldValue,
   UseFieldOptions,
   LiteralUnion,
-} from "../../../../react-formz";
+} from "@zerry/react-formz-core";
 
 export interface UseWebFieldOptions<Value extends FieldValue = FieldValue>
   extends Omit<UseFieldOptions<Value>, "type"> {

@@ -14,6 +14,15 @@
     "web:build": "yarn workspace @zerry/react-formz build",
     "web:publish": "cd packages/react-formz-web && npm publish --access public",
     "native:publish": "cd packages/react-formz-native && npm publish --access public",
-    "native:build": "yarn workspace @zerry/react-formz-native build"
+    "native:build": "yarn workspace @zerry/react-formz-native build",
+    "build": "nx run workspace:build"
+  },
+  "devDependencies": {
+    "@nrwl/jest": "^16.8.1",
+    "conventional-changelog-conventionalcommits": "^7.0.2",
+    "lerna": "^6.6.2"
+  },
+  "dependencies": {
+    "nx": "^16.8.1"
   }
 }

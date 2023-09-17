@@ -6,7 +6,7 @@ import {
   FieldValue,
   FormzError,
   LiteralUnion,
-} from "../../../../react-formz";
+} from "@zerry/react-formz-core";
 
 export interface FieldInputProps<
   Key extends FieldId = FieldId,

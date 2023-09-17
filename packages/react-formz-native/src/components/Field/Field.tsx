@@ -2,7 +2,7 @@ import {
   FieldValue,
   FieldId,
   logger,
-} from "../../../../react-formz";
+} from "@zerry/react-formz-core";
 import React from "react";
 import { NativeFieldProps } from "./Field.types";
 import useNativeField from "../../hooks/fields/useField";

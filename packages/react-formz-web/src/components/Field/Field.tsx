@@ -1,4 +1,4 @@
-import { FieldValue, FieldId, isValidInputValue, logger } from "../../../../react-formz";
+import { FieldValue, FieldId, isValidInputValue, logger } from "@zerry/react-formz-core";
 import React from "react";
 import useWebField from "../../hooks/fields/useField";
 import { WebFieldProps } from "./Field.types";

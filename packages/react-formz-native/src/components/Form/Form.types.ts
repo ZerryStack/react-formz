@@ -1,4 +1,4 @@
-import { FormProps, FormzValues } from "../../../../react-formz";
+import { FormProps, FormzValues } from "@zerry/react-formz-core";
 import { ViewProps } from "react-native";
 
 export interface NativeFormProps<Values extends FormzValues> extends FormProps<Values>, ViewProps {

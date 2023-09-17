@@ -1,4 +1,4 @@
-import { useFormIdContext, useFormz } from "../../../../react-formz";
+import { useFormIdContext, useFormz } from "@zerry/react-formz-core";
 import React from "react";
 import { SubmitButtonProps } from "./SubmitButton.types";
 

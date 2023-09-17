@@ -3,7 +3,7 @@ import {
   UseFieldResult,
   FieldValue,
   UseFieldOptions,
-} from "../../../../react-formz";
+} from "@zerry/react-formz-core";
 import { KeyboardType } from "react-native";
 
 export interface UseNativeFieldOptions<Value extends FieldValue = FieldValue>

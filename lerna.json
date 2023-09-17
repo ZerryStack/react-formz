@@ -1,0 +1,16 @@
+{
+  "$schema": "node_modules/lerna/schemas/lerna-schema.json",
+  "useWorkspaces": true,
+  "version": "1.0.0",
+  "npmClient": "yarn",
+  "gitTagVersion": true,
+  "conventionalCommits": true,
+  "changelogPreset": "./changelog-preset.config.js",
+  "command": {
+    "version": {
+      "message": "release %s [skip ci]"
+    },
+    "publish": {}
+  },
+  "useNx": true
+}

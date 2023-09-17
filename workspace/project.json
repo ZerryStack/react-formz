@@ -1,0 +1,126 @@
+{
+    "$schema": "../node_modules/nx/schemas/project-schema.json",
+    "name": "workspace",
+    "targets": {
+      "packages:lint": {
+        "executor": "nx:run-commands",
+        "options": {
+          "commands": [
+            {
+              "command": "nx run-many --target=lint --projects=@zerry/react-formz,@zerry/react-formz-native",
+              "forwardAllArgs": false
+            }
+          ],
+          "parallel": false
+        }
+      },
+      "packages:test": {
+        "executor": "nx:run-commands",
+        "options": {
+          "commands": [
+            {
+              "command": "nx run-many --target=test --projects=@zerry/react-formz,@zerry/react-formz-native",
+              "forwardAllArgs": false
+            }
+          ],
+          "parallel": false
+        }
+      },
+      "test:watch": {
+        "executor": "nx:run-commands",
+        "options": {
+          "commands": [
+            {
+              "command": "nx run-many --target=test:watch --projects=@zerry/react-formz,@zerry/react-formz-native",
+              "forwardAllArgs": true
+            }
+          ],
+          "parallel": false
+        }
+      },
+      "packages:build": {
+        "executor": "nx:run-commands",
+        "options": {
+          "commands": [
+            {
+              "command": "nx run-many --target=build --projects=@zerry/react-formz,@zerry/react-formz-native",
+              "forwardAllArgs": false
+            }
+          ],
+          "parallel": false
+        }
+      },
+      "packages:format": {
+        "executor": "nx:run-commands",
+        "options": {
+          "commands": [
+            {
+              "command": "nx run-many --target=format --projects=@zerry/react-formz,@zerry/react-formz-native",
+              "forwardAllArgs": false
+            }
+          ],
+          "parallel": false
+        }
+      },
+      "packages:check-types": {
+        "executor": "nx:run-commands",
+        "options": {
+          "commands": [
+            {
+              "command": "nx run-many --target=check-types --projects=@zerry/react-formz,@zerry/react-formz-native",
+              "forwardAllArgs": false
+            }
+          ],
+          "parallel": false
+        }
+      },
+      "packages:check-formatting": {
+        "executor": "nx:run-commands",
+        "options": {
+          "commands": [
+            {
+              "command": "nx run-many --target=check-formatting --projects=@zerry/react-formz,@zerry/react-formz-native",
+              "forwardAllArgs": false
+            }
+          ],
+          "parallel": false
+        }
+      },
+      "format": {
+        "executor": "nx:run-commands",
+        "options": {
+          "commands": [
+            {
+              "command": "nx run-many --target=format --exclude=workspace",
+              "forwardAllArgs": false
+            }
+          ],
+          "parallel": false
+        }
+      },
+      "check-types": {
+        "executor": "nx:run-commands",
+        "options": {
+          "commands": [
+            {
+              "command": "nx run-many --target=check-types --exclude=workspace",
+              "forwardAllArgs": false
+            }
+          ],
+          "parallel": false
+        }
+      },
+      "version": {
+        "executor": "nx:run-commands",
+        "options": {
+          "command": "npx lerna version --force-publish --yes --create-release github"
+        }
+      },
+      "release": {
+        "executor": "nx:run-commands",
+        "options": {
+          "command": "npx lerna publish from-git --yes"
+        }
+      }
+    }
+  }

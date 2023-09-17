@@ -1,0 +1,58 @@
+{
+    "extends": "nx/presets/npm.json",
+    "$schema": "./node_modules/nx/schemas/nx-schema.json",
+    "tasksRunnerOptions": {
+      "default": {
+        "runner": "nx/tasks-runners/default",
+        "options": {
+          "cacheableOperations": ["build"]
+        }
+      }
+    },
+    "targetDefaults": {
+      "build": {
+        "executor": "nx:run-script",
+        "options": {
+          "script": "build"
+        }
+      },
+      "lint": {
+        "executor": "nx:run-script",
+        "options": {
+          "script": "lint"
+        }
+      },
+      "test": {
+        "executor": "@nx/jest:jest",
+        "options": {
+          "verbose": true
+        }
+      },
+      "test:watch": {
+        "executor": "@nx/jest:jest",
+        "options": {
+          "watch": true,
+          "watchAll": true,
+          "verbose": true
+        }
+      },
+      "format": {
+        "executor": "nx:run-script",
+        "options": {
+          "script": "format"
+        }
+      },
+      "check-types": {
+        "executor": "nx:run-script",
+        "options": {
+          "script": "check-types"
+        }
+      },
+      "check-formatting": {
+        "executor": "nx:run-script",
+        "options": {
+          "script": "check-formatting"
+        }
+      }
+    }
+  }

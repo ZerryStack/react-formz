@@ -1,16 +1,28 @@
 {
   "name": "@zerry/react-formz-validators-utils",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "license": "MIT",
   "description": "Shared utilitity functions for zod validators.",
   "main": "index.ts",
   "peerDependencies": {
-    "@zerry/react-formz": ">=1.1.0"
+    "@zerry/react-formz": ">=1.1.0",
+    "@zerry/react-formz-core": ">=1.1.0",
+    "@zerry/react-formz-native": ">=1.1.0"
+  },
+  "peerDependenciesMeta": {
+    "@zerry/react-formz": {
+      "optional": true
+    },
+    "@zerry/react-formz-native": {
+      "optional": true
+    }
   },
   "files": [
     "dist"
   ],
   "devDependencies": {
-    "@zerry/react-formz": "workspace:^"
+    "@zerry/react-formz": "workspace:^",
+    "@zerry/react-formz-core": "workspace:^",
+    "@zerry/react-formz-native": "workspace:^"
   }
 }

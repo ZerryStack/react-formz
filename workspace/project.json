@@ -7,7 +7,7 @@
         "options": {
           "commands": [
             {
-              "command": "nx run-many --target=lint --projects=@zerry/react-formz-core,@zerry/react-formz,@zerry/react-formz-native",
+              "command": "nx run-many --target=lint --projects=@zerry/react-formz-core,@zerry/react-formz,@zerry/react-formz-native,@zerry/react-formz-validators",
               "forwardAllArgs": false
             }
           ],
@@ -19,7 +19,7 @@
         "options": {
           "commands": [
             {
-              "command": "nx run-many --target=test --projects=@zerry/react-formz-core,@zerry/react-formz,@zerry/react-formz-native",
+              "command": "nx run-many --target=test --projects=@zerry/react-formz-core,@zerry/react-formz,@zerry/react-formz-native,@zerry/react-formz-validators",
               "forwardAllArgs": false
             }
           ],
@@ -31,7 +31,7 @@
         "options": {
           "commands": [
             {
-              "command": "nx run-many --target=test:watch --projects=@zerry/react-formz-core,@zerry/react-formz,@zerry/react-formz-native",
+              "command": "nx run-many --target=test:watch --projects=@zerry/react-formz-core,@zerry/react-formz,@zerry/react-formz-native,@zerry/react-formz-validators",
               "forwardAllArgs": true
             }
           ],
@@ -43,7 +43,7 @@
         "options": {
           "commands": [
             {
-              "command": "nx run-many --target=build --projects=@zerry/react-formz-core,@zerry/react-formz,@zerry/react-formz-native",
+              "command": "nx run-many --target=build --projects=@zerry/react-formz-core,@zerry/react-formz,@zerry/react-formz-native,@zerry/react-formz-validators",
               "forwardAllArgs": false
             }
           ],
@@ -55,7 +55,7 @@
         "options": {
           "commands": [
             {
-              "command": "nx run-many --target=format --projects=@zerry/react-formz-core,@zerry/react-formz,@zerry/react-formz-native",
+              "command": "nx run-many --target=format --projects=@zerry/react-formz-core,@zerry/react-formz,@zerry/react-formz-native,@zerry/react-formz-validators",
               "forwardAllArgs": false
             }
           ],
@@ -67,7 +67,7 @@
         "options": {
           "commands": [
             {
-              "command": "nx run-many --target=check-types --projects=@zerry/react-formz-core,@zerry/react-formz,@zerry/react-formz-native",
+              "command": "nx run-many --target=check-types --projects=@zerry/react-formz-core,@zerry/react-formz,@zerry/react-formz-native,@zerry/react-formz-validators",
               "forwardAllArgs": false
             }
           ],
@@ -79,7 +79,7 @@
         "options": {
           "commands": [
             {
-              "command": "nx run-many --target=check-formatting --projects=@zerry/react-formz-core,@zerry/react-formz,@zerry/react-formz-native",
+              "command": "nx run-many --target=check-formatting --projects=@zerry/react-formz-core,@zerry/react-formz,@zerry/react-formz-native,@zerry/react-formz-validators",
               "forwardAllArgs": false
             }
           ],

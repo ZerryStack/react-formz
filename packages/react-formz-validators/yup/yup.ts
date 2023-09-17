@@ -1,4 +1,4 @@
-import { FormzErrors, FormzValues, SchemaValidator } from "@zerry/react-formz";
+import { FormzErrors, FormzValues, SchemaValidator } from "@zerry/react-formz-core";
 import { toNestedErrors } from "@zerry/react-formz-validators-utils";
 import * as yup from "yup";
 import { ValidateOptions } from "yup/lib/types";

@@ -21,6 +21,13 @@ const config: Record<
     formats: LibraryFormats[];
   }
 > = {
+  utils: {
+    entry: path.resolve(__dirname, "utils", "index.ts"),
+    fileName: "utils",
+    name: "utils",
+    library: "utils",
+    formats: ["es", "cjs", "umd"],
+  },
   yup: {
     entry: path.resolve(__dirname, "yup", "index.ts"),
     fileName: "yup",

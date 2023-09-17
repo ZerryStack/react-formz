@@ -11696,8 +11696,17 @@ __metadata:
   resolution: "@zerry/react-formz-validators-utils@workspace:packages/react-formz-validators/utils"
   dependencies:
     "@zerry/react-formz": "workspace:^"
+    "@zerry/react-formz-core": "workspace:^"
+    "@zerry/react-formz-native": "workspace:^"
   peerDependencies:
     "@zerry/react-formz": ">=1.1.0"
+    "@zerry/react-formz-core": ">=1.1.0"
+    "@zerry/react-formz-native": ">=1.1.0"
+  peerDependenciesMeta:
+    "@zerry/react-formz":
+      optional: true
+    "@zerry/react-formz-native":
+      optional: true
   languageName: unknown
   linkType: soft
 
@@ -11706,6 +11715,7 @@ __metadata:
   resolution: "@zerry/react-formz-validators-yup@workspace:packages/react-formz-validators/yup"
   dependencies:
     "@zerry/react-formz": "workspace:^"
+    "@zerry/react-formz-core": "workspace:^"
     "@zerry/react-formz-validators-utils": "workspace:^"
     yup: ^0.32.11
   peerDependencies:
@@ -11725,6 +11735,7 @@ __metadata:
   resolution: "@zerry/react-formz-validators-zod@workspace:packages/react-formz-validators/zod"
   dependencies:
     "@zerry/react-formz": "workspace:^"
+    "@zerry/react-formz-core": "workspace:^"
     "@zerry/react-formz-validators-utils": "workspace:^"
     zod: ^3.19.1
   peerDependencies:

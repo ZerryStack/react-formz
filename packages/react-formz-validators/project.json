@@ -1,0 +1,8 @@
+{
+    "name": "@zerry/react-formz-validators",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "packages/react-formz-validators",
+    "projectType": "library",
+    "targets": {},
+    "tags": []
+  }

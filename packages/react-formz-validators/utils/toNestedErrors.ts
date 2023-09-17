@@ -1,4 +1,4 @@
-import { FormzErrors, FormzValues } from "@zerry/react-formz";
+import { FormzErrors, FormzValues } from "@zerry/react-formz-core";
 
 function tryRequire(pkg: string) {
     try {

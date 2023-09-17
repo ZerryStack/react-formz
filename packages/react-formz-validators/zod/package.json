@@ -1,6 +1,6 @@
 {
   "name": "@zerry/react-formz-validators-zod",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "license": "MIT",
   "description": "Zod validator for @zerry/react-formz to validate form data against a zod schema.",
   "main": "dist/zod.js",
@@ -8,8 +8,12 @@
   "exports": "./dist/zod.js",
   "source": "index.ts",
   "types": "dist/zod.d.ts",
+  "scripts": {
+    "build": "LIB=zod vite build && tsc -p ./tsconfig.build.json"
+  },
   "devDependencies": {
     "@zerry/react-formz": "workspace:^",
+    "@zerry/react-formz-core": "workspace:^",
     "@zerry/react-formz-validators-utils": "workspace:^",
     "zod": "^3.19.1"
   },

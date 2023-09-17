@@ -1,0 +1,38 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  check-build-release:
+    name: Check, Build, and Release
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v3.4.1
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: Install Dependencies (with Cache)
+        uses: ./.github/actions/yarn-install-wcache
+
+      - name: Build
+        run: yarn nx run workspace:packages:build
+        
+    #   - name: Check Types (TypeScript)
+    #     run: yarn nx run workspace:packages:check-types
+
+    #   - name: Formatting Check
+    #     run: yarn nx run workspace:packages:check-formatting
+
+    #   - name: Linting Check
+    #     run: yarn nx run workspace:packages:lint
+
+      - name: Release
+        run: yarn nx run workspace:version

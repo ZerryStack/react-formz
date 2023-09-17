@@ -1,0 +1,39 @@
+# Taken mostly from https://gist.github.com/belgattitude/042f9caf10d029badbde6cf9d43e400a
+
+name: Yarn Install (with Cache)
+description: Runs yarn install with the node_modules linker and with the cache enabled
+
+runs:
+  using: composite
+  steps:
+    - name: Expose Yarn Cache Directory
+      id: yarn-config
+      shell: bash
+      run: |
+        echo "CACHE_FOLDER=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
+
+    - name: Restore Yarn Cache
+      uses: actions/cache@v3
+      id: yarn-download-cache
+      with:
+        path: ${{ steps.yarn-config.outputs.CACHE_FOLDER }}
+        key: yarn-download-cache-${{ hashFiles('yarn.lock') }}
+        restore-keys: |
+          yarn-download-cache-
+
+    - name: Restore Yarn Install State
+      id: yarn-install-state-cache
+      uses: actions/cache@v3
+      with:
+        path: .yarn/ci-cache/
+        key: ${{ runner.os }}-yarn-install-state-cache-${{ hashFiles('yarn.lock', '.yarnrc.yml') }}
+
+    - name: Install Dependencies
+      shell: bash
+      run: |
+        yarn install --immutable --inline-builds
+      env:
+        # CI optimizations. Overrides yarnrc.yml options (or their defaults) in the CI action.
+        YARN_ENABLE_GLOBAL_CACHE: 'false' # Use local cache folder to keep downloaded archives
+        YARN_NM_MODE: 'hardlinks-local' # Hardlinks-(local|global) reduces io / node_modules size
+        YARN_INSTALL_STATE_PATH: .yarn/ci-cache/install-state.gz # Very small speedup when lock does not change

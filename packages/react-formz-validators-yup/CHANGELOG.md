@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.1](https://github.com/ZerryStack/react-formz/compare/v1.5.0...v1.5.1) (2023-09-18)
+
+**Note:** Version bump only for package @zerry/react-formz-validators-yup
+
 ## [1.5.0](https://github.com/ZerryStack/react-formz/compare/v1.4.0...v1.5.0) (2023-09-18)
 
 **Note:** Version bump only for package @zerry/react-formz-validators-yup

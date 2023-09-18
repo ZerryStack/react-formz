@@ -1,6 +1,6 @@
 {
   "name": "@zerry/react-formz-validators-utils",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "license": "MIT",
   "description": "Shared utilitity functions for zod validators.",
   "main": "./dist/index.js",

@@ -45,6 +45,11 @@ jobs:
     #   - name: Linting Check
     #     run: yarn nx run workspace:packages:lint
 
+      - name: Set NPM Auth
+        run: npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
       - name: Version
         run: npx lerna version --yes --no-private --force-publish --create-release github
         env:

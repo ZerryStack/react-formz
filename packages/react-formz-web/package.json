@@ -1,6 +1,6 @@
 {
   "name": "@zerry/react-formz",
-  "version": "1.2.0",
+  "version": "1.8.0",
   "files": [
     "dist"
   ],
@@ -30,7 +30,6 @@
     "build:src": "vite build",
     "build:types": "tsc -P tsconfig.build.json",
     "build:documentation": "yarn workspace @zerry/react-formz-documentation build",
-    "prepublishOnly": "yarn test && yarn core:test && yarn build",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:generate-output": "jest --json --outputFile=.jest-test-results.json",
@@ -72,5 +71,8 @@
     "typescript": "^4.8.2",
     "vite": "^3.1.0",
     "vite-tsconfig-paths": "^3.5.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

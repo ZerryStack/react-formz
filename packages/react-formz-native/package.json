@@ -1,6 +1,6 @@
 {
   "name": "@zerry/react-formz-native",
-  "version": "1.2.0",
+  "version": "1.8.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/ZerryStack/react-formz.git"
@@ -18,7 +18,6 @@
   "scripts": {
     "core:test": "yarn workspace @zerry/react-formz-core test",
     "web:test": "yarn workspace @zerry/react-formz test",
-    "prepublishOnly": "yarn core:test && yarn web:test && yarn build",
     "build": "rm -rf dist && tsc -p tsconfig.build.json"
   },
   "dependencies": {
@@ -42,5 +41,8 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
 }

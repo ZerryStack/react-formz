@@ -9,6 +9,7 @@ custom_edit_url: null
 
 ## Modules
 
+- [react-formz](modules/react_formz.md)
 - [react-formz-native/src](modules/react_formz_native_src.md)
 - [react-formz-native/src/components/ArrayField](modules/react_formz_native_src_components_ArrayField.md)
 - [react-formz-native/src/components/ArrayField/ArrayField](modules/react_formz_native_src_components_ArrayField_ArrayField.md)

@@ -1,6 +1,6 @@
 {
   "name": "@zerry/react-formz-core",
-  "version": "1.2.0",
+  "version": "1.8.0",
   "packageManager": "yarn@3.2.3",
   "license": "MIT",
   "sideEffects": false,
@@ -48,9 +48,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:generate-output": "jest --json --outputFile=.jest-test-results.json",
-    "test:coverage": "jest --coverage=true",
-    "prepublishOnly": "echo \"Do not publish the core package\" && exit 1",
-    "prepublish": "echo \"Do not publish the core package\" && exit 1"
+    "test:coverage": "jest --coverage=true"
   },
   "dependencies": {
     "react-uuid": "^1.0.3",
@@ -62,5 +60,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/ZerryStack/react-formz.git"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

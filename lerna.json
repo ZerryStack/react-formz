@@ -15,7 +15,8 @@
   "useNx": true,
   "loglevel": "debug",
   "packages": [
-    "packages/*"
+    "packages/*",
+    "packages/react-formz-validators/*"
   ],
   "private": false,
   "verbose": true

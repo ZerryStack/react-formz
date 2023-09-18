@@ -1,6 +1,7 @@
 {
   "name": "react-formz",
   "packageManager": "yarn@3.2.3",
+  "version": "1.2.0",
   "workspaces": [
     "packages/*",
     "packages/react-formz-validators/utils",

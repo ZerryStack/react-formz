@@ -13,8 +13,8 @@
     "form-builder",
     "react-native"
   ],
-  "main": "./dist/react-formz-native/index.js",
-  "types": "./dist/react-formz-native/index.d.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "core:test": "yarn workspace @zerry/react-formz-core test",
     "web:test": "yarn workspace @zerry/react-formz test",

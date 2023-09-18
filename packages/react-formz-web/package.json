@@ -5,7 +5,7 @@
     "dist"
   ],
   "main": "./dist/index.umd.js",
-  "types": "./dist/react-formz-web/src/index.d.ts",
+  "types": "./dist/index.d.ts",
   "module": "./dist/index.es.js",
   "exports": {
     ".": {

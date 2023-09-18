@@ -48,9 +48,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:generate-output": "jest --json --outputFile=.jest-test-results.json",
-    "test:coverage": "jest --coverage=true",
-    "prepublishOnly": "echo \"Do not publish the core package\" && exit 1",
-    "prepublish": "echo \"Do not publish the core package\" && exit 1"
+    "test:coverage": "jest --coverage=true"
   },
   "dependencies": {
     "react-uuid": "^1.0.3",

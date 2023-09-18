@@ -26,5 +26,6 @@
   },
   "dependencies": {
     "nx": "^16.8.1"
-  }
+  },
+  "private": true
 }

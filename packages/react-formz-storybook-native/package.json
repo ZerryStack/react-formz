@@ -14,7 +14,8 @@
     "storybook-watcher": "sb-rn-watcher --config-path .ondevice",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "publish:dev": "npx expo publish --release-channel development"
+    "publish:dev": "npx expo publish --release-channel development",
+    "check-types": "tsc --noEmit"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "~1.17.3",

@@ -48,7 +48,8 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:generate-output": "jest --json --outputFile=.jest-test-results.json",
-    "test:coverage": "jest --coverage=true"
+    "test:coverage": "jest --coverage=true",
+    "check-types": "tsc --noEmit"
   },
   "dependencies": {
     "react-uuid": "^1.0.3",

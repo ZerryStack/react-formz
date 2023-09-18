@@ -35,7 +35,8 @@
     "test:generate-output": "jest --json --outputFile=.jest-test-results.json",
     "test:coverage": "jest --coverage=true",
     "core:test": "yarn workspace @zerry/react-formz-core test",
-    "native:test": "yarn workspace @zerry/react-formz-native test"
+    "native:test": "yarn workspace @zerry/react-formz-native test",
+    "check-types": "tsc --noEmit"
   },
   "dependencies": {
     "@zerry/react-formz-core": "workspace:^",

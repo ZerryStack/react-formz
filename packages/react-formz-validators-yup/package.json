@@ -9,7 +9,8 @@
   "source": "index.ts",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "vite build && tsc -p ./tsconfig.build.json"
+    "build": "vite build && tsc -p ./tsconfig.build.json",
+    "check-types": "tsc --noEmit"
   },
   "dependencies": {
     "@zerry/react-formz-validators-utils": "workspace:^"

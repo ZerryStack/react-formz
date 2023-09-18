@@ -18,7 +18,8 @@
   "scripts": {
     "core:test": "yarn workspace @zerry/react-formz-core test",
     "web:test": "yarn workspace @zerry/react-formz test",
-    "build": "rm -rf dist && tsc -p tsconfig.build.json"
+    "build": "rm -rf dist && tsc -p tsconfig.build.json",
+    "check-types": "tsc --noEmit"
   },
   "dependencies": {
     "@zerry/react-formz-core": "workspace:^",

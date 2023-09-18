@@ -37,7 +37,8 @@
   "scripts": {
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "check-types": "tsc --noEmit"
   },
   "repository": {
     "type": "git",

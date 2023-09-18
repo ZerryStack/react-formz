@@ -36,8 +36,8 @@ jobs:
       - name: Test
         run: yarn test
         
-    #   - name: Check Types (TypeScript)
-    #     run: yarn nx run workspace:packages:check-types
+      - name: Check Types (TypeScript)
+        run: yarn nx run workspace:packages:check-types
 
     #   - name: Formatting Check
     #     run: yarn nx run workspace:packages:check-formatting

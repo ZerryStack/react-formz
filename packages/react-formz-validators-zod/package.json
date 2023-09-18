@@ -1,6 +1,6 @@
 {
   "name": "@zerry/react-formz-validators-zod",
-  "version": "1.9.0",
+  "version": "1.10.0",
   "license": "MIT",
   "description": "Zod validator for @zerry/react-formz to validate form data against a zod schema.",
   "main": "dist/index.js",

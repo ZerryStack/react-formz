@@ -113,7 +113,7 @@
       "version": {
         "executor": "nx:run-commands",
         "options": {
-          "command": "npx lerna version --yes --create-release github"
+          "command": "npx lerna version --yes --private --force-publish --create-release github"
         }
       },
       "release": {

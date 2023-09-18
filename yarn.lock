@@ -11698,13 +11698,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zerry/react-formz-validators-utils@workspace:^, @zerry/react-formz-validators-utils@workspace:packages/react-formz-validators/utils":
+"@zerry/react-formz-validators-utils@workspace:^, @zerry/react-formz-validators-utils@workspace:packages/react-formz-validators-utils":
   version: 0.0.0-use.local
-  resolution: "@zerry/react-formz-validators-utils@workspace:packages/react-formz-validators/utils"
+  resolution: "@zerry/react-formz-validators-utils@workspace:packages/react-formz-validators-utils"
   dependencies:
     "@zerry/react-formz": "workspace:^"
     "@zerry/react-formz-core": "workspace:^"
     "@zerry/react-formz-native": "workspace:^"
+    typescript: ^4.8.3
+    vite: ^3.1.0
   peerDependencies:
     "@zerry/react-formz": ">=1.1.0"
     "@zerry/react-formz-core": ">=1.1.0"
@@ -11717,13 +11719,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zerry/react-formz-validators-yup@workspace:packages/react-formz-validators/yup":
+"@zerry/react-formz-validators-yup@workspace:packages/react-formz-validators-yup":
   version: 0.0.0-use.local
-  resolution: "@zerry/react-formz-validators-yup@workspace:packages/react-formz-validators/yup"
+  resolution: "@zerry/react-formz-validators-yup@workspace:packages/react-formz-validators-yup"
   dependencies:
+    "@babel/core": ^7.19.0
+    "@babel/preset-env": ^7.19.0
+    "@babel/preset-typescript": ^7.18.6
     "@zerry/react-formz": "workspace:^"
     "@zerry/react-formz-core": "workspace:^"
     "@zerry/react-formz-validators-utils": "workspace:^"
+    typescript: ^4.8.3
+    vite: ^3.1.0
     yup: ^0.32.11
   peerDependencies:
     "@zerry/react-formz": ">=1.1.0"
@@ -11737,13 +11744,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zerry/react-formz-validators-zod@workspace:^, @zerry/react-formz-validators-zod@workspace:packages/react-formz-validators/zod":
+"@zerry/react-formz-validators-zod@workspace:^, @zerry/react-formz-validators-zod@workspace:packages/react-formz-validators-zod":
   version: 0.0.0-use.local
-  resolution: "@zerry/react-formz-validators-zod@workspace:packages/react-formz-validators/zod"
+  resolution: "@zerry/react-formz-validators-zod@workspace:packages/react-formz-validators-zod"
   dependencies:
+    "@babel/core": ^7.19.0
+    "@babel/preset-env": ^7.19.0
+    "@babel/preset-typescript": ^7.18.6
     "@zerry/react-formz": "workspace:^"
     "@zerry/react-formz-core": "workspace:^"
     "@zerry/react-formz-validators-utils": "workspace:^"
+    typescript: ^4.8.3
+    vite: ^3.1.0
     zod: ^3.19.1
   peerDependencies:
     "@zerry/react-formz": ">=1.1.0"

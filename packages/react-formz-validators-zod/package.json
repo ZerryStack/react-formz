@@ -12,9 +12,14 @@
     "build": "LIB=zod vite build && tsc -p ./tsconfig.build.json"
   },
   "devDependencies": {
+    "@babel/core": "^7.19.0",
+    "@babel/preset-env": "^7.19.0",
+    "@babel/preset-typescript": "^7.18.6",
     "@zerry/react-formz": "workspace:^",
     "@zerry/react-formz-core": "workspace:^",
     "@zerry/react-formz-validators-utils": "workspace:^",
+    "typescript": "^4.8.3",
+    "vite": "^3.1.0",
     "zod": "^3.19.1"
   },
   "peerDependencies": {

@@ -1,0 +1,14 @@
+{
+    "name": "@zerry/react-formz-validators-zod",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "packages/react-formz-validators-zod/src",
+    "projectType": "library",
+    "targets": {
+      "build": {
+        "dependsOn": [
+          { "projects": ["@zerry/react-formz-validators-utils"], "target": "build" }
+        ]
+      }
+    },
+    "tags": []
+  }

@@ -3,7 +3,14 @@
   "version": "1.2.0",
   "license": "MIT",
   "description": "Shared utilitity functions for zod validators.",
-  "main": "index.ts",
+  "main": "./dist/index.js",
+  "umd:main": "dist/index.umd.js",
+  "exports": "./dist/index.js",
+  "source": "index.ts",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "vite build && tsc -p ./tsconfig.build.json"
+  },
   "peerDependencies": {
     "@zerry/react-formz": ">=1.1.0",
     "@zerry/react-formz-core": ">=1.1.0",
@@ -23,6 +30,8 @@
   "devDependencies": {
     "@zerry/react-formz": "workspace:^",
     "@zerry/react-formz-core": "workspace:^",
-    "@zerry/react-formz-native": "workspace:^"
+    "@zerry/react-formz-native": "workspace:^",
+    "typescript": "^4.8.3",
+    "vite": "^3.1.0"
   }
 }

@@ -1,0 +1,14 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "outDir": "./dist",
+        "declaration": true,
+        "emitDeclarationOnly": true,
+        "moduleResolution": "node",
+        "skipLibCheck": true
+    },
+    "include": [
+        "./src"
+    ],
+    "exclude": ["./src/**/*.test.ts", "./src/**/*.test.tsx"]
+}

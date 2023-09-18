@@ -14,7 +14,7 @@ export default defineConfig({
     },
     emptyOutDir: true,
     rollupOptions: {
-      external: ['@zerry/react-formz', '@zerry/react-formz-validators-utils', 'zod'],
+      external: ['@zerry/react-formz-core', '@zerry/react-formz-validators-utils', 'zod'],
       output: {
         globals: {
           zod: 'zod',

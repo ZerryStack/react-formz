@@ -3,11 +3,11 @@
   "version": "1.8.0",
   "license": "MIT",
   "description": "Zod validator for @zerry/react-formz to validate form data against a zod schema.",
-  "main": "dist/zod.js",
-  "umd:main": "dist/zod.umd.js",
-  "exports": "./dist/zod.js",
+  "main": "dist/index.js",
+  "umd:main": "dist/index.umd.js",
+  "exports": "./dist/index.js",
   "source": "index.ts",
-  "types": "dist/zod.d.ts",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "LIB=zod vite build && tsc -p ./tsconfig.build.json"
   },

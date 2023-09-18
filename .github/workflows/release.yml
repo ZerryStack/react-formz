@@ -42,14 +42,14 @@ jobs:
     #     run: yarn nx run workspace:packages:lint
 
       - name: Version
-        run: yarn nx run workspace:version
+        run: npx lerna version --yes --no-private --force-publish --create-release github
         env:
             GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Release
-        run: yarn nx run workspace:release
+        run: npx lerna publish from-git --yes
         env:
             GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

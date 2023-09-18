@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.0](https://github.com/ZerryStack/react-formz/compare/v1.5.2...v1.6.0) (2023-09-18)
+
+### Updates
+
+- Publish core package ([613f184](https://github.com/ZerryStack/react-formz/commit/613f1841512f49620b282cc4f14ce43b7f4bc26a))
+
 ## [1.5.2](https://github.com/ZerryStack/react-formz/compare/v1.5.1...v1.5.2) (2023-09-18)
 
 ### Updates

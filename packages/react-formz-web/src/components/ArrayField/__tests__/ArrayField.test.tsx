@@ -7,8 +7,10 @@ import { ArrayFieldProps } from "../ArrayField.types";
 import SubmitButton from "../../SubmitButton";
 import Field, { FieldProps } from "../../Field";
 import ErrorMessage from "../../ErrorMessage";
-import { formzStore, defaultTestFormName, createDefaultFormzState } from "@zerry/react-formz-core";
+import { formzStore } from "@zerry/react-formz-core";
 import TestFieldComponent from "../../../../testUtils/TestFieldComponent";
+import { defaultTestFormName } from "../../../../testUtils/constants";
+import createDefaultFormzState from "../../../../testUtils/createDefaultFormzState";
 
 type FormState = {
   name: string;

@@ -74,6 +74,7 @@ export type {
   FormRehydrationCallback,
   FormSubmitCallback,
   FormProps,
+  FormzState
 } from "./types/form";
 export type { LiteralUnion } from "./types/utils";
 
